@@ -76,7 +76,7 @@ UPDATE wp_options
         WHEN 'home' THEN 'http://wordpress.dev'
         WHEN 'default_comment_status' THEN 'closed'
         WHEN 'permalink_structure' THEN '/%postname%/'
-        WHEN 'active_plugins' THEN 'a:5:{i:0;s:13:"cmb2/init.php";i:1;s:36:"contact-form-7/wp-contact-form-7.php";i:2;s:36:"google-sitemap-generator/sitemap.php";i:3;s:47:"really-simple-captcha/really-simple-captcha.php";i:4;s:24:"wordpress-seo/wp-seo.php";}'
+        WHEN 'active_plugins' THEN 'a:7:{i:0;s:32:"cmb2-map-field/cmb-field-map.php";i:1;s:13:"cmb2/init.php";i:2;s:36:"contact-form-7-honeypot/honeypot.php";i:3;s:36:"contact-form-7/wp-contact-form-7.php";i:4;s:36:"google-sitemap-generator/sitemap.php";i:5;s:47:"really-simple-captcha/really-simple-captcha.php";i:6;s:24:"wordpress-seo/wp-seo.php";}'
         WHEN 'template' THEN '_s'
         WHEN 'stylesheet' THEN '_s'
         WHEN 'uploads_use_yearmonth_folders' THEN 'no'
