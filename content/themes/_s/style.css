@@ -25,21 +25,17 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 2.0 Typography
 3.0 Elements
 4.0 Forms
-5.0 Navigation
-	5.1 Links
-	5.2 Menus
-6.0 Accessibility
-7.0 Alignments
-8.0 Clearings
-9.0 Widgets
-10.0 Content
-	10.1 Posts and pages
-	10.2 Asides
-	10.3 Comments
-11.0 Infinite scroll
-12.0 Media
-	12.1 Captions
-	12.2 Galleries
+5.0 Media
+	5.1 Captions
+	5.2 Galleries
+6.0 Navigation
+	6.1 Links
+	6.2 Menus
+7.0 Content
+	7.1 Posts and pages
+	7.2 Asides
+	7.3 Comments
+	7.4 Widgets
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1.0 Normalize
@@ -542,7 +538,137 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-5.0 Navigation
+5.0 Media
+--------------------------------------------------------------*/
+/* line 1, sass/media/_media.scss */
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+/* line 11, sass/media/_media.scss */
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+/* line 17, sass/media/_media.scss */
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */
+}
+
+/*--------------------------------------------------------------
+11.1 Captions
+--------------------------------------------------------------*/
+/* line 1, sass/media/_captions.scss */
+.wp-caption {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+}
+/* line 5, sass/media/_captions.scss */
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 9, sass/media/_captions.scss */
+.wp-caption .wp-caption-text {
+  margin: 0.8075em 0;
+}
+
+/* line 14, sass/media/_captions.scss */
+.wp-caption-text {
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
+11.2 Galleries
+--------------------------------------------------------------*/
+/* line 1, sass/media/_galleries.scss */
+.gallery {
+  margin-bottom: 1.5em;
+}
+
+/* line 5, sass/media/_galleries.scss */
+.gallery-item {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
+}
+/* line 11, sass/media/_galleries.scss */
+.gallery-columns-2 .gallery-item {
+  max-width: 50%;
+}
+/* line 15, sass/media/_galleries.scss */
+.gallery-columns-3 .gallery-item {
+  max-width: 33.33%;
+}
+/* line 19, sass/media/_galleries.scss */
+.gallery-columns-4 .gallery-item {
+  max-width: 25%;
+}
+/* line 23, sass/media/_galleries.scss */
+.gallery-columns-5 .gallery-item {
+  max-width: 20%;
+}
+/* line 27, sass/media/_galleries.scss */
+.gallery-columns-6 .gallery-item {
+  max-width: 16.66%;
+}
+/* line 31, sass/media/_galleries.scss */
+.gallery-columns-7 .gallery-item {
+  max-width: 14.28%;
+}
+/* line 35, sass/media/_galleries.scss */
+.gallery-columns-8 .gallery-item {
+  max-width: 12.5%;
+}
+/* line 39, sass/media/_galleries.scss */
+.gallery-columns-9 .gallery-item {
+  max-width: 11.11%;
+}
+
+/* line 44, sass/media/_galleries.scss */
+.gallery-caption {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+11.3 Alignments
+--------------------------------------------------------------*/
+/* line 1, sass/media/_alignments.scss */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+
+/* line 7, sass/media/_alignments.scss */
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+
+/* line 13, sass/media/_alignments.scss */
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+6.0 Navigation
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 5.1 Links
@@ -663,32 +789,10 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
-8.0 Clearings
+7.0 Content
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-9.0 Widgets
---------------------------------------------------------------*/
-/* line 1, sass/site/secondary/_widgets.scss */
-.widget {
-  margin: 0 0 1.5em;
-  /* Make sure select elements fit in widgets. */
-}
-/* line 5, sass/site/secondary/_widgets.scss */
-.widget select {
-  max-width: 100%;
-}
-
-/* Search widget. */
-/* line 11, sass/site/secondary/_widgets.scss */
-.widget_search .search-submit {
-  display: none;
-}
-
-/*--------------------------------------------------------------
-10.0 Content
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-10.1 Posts and pages
+7.1 Posts and pages
 --------------------------------------------------------------*/
 /* line 1, sass/site/primary/_posts-and-pages.scss */
 .sticky {
@@ -726,7 +830,7 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
-10.2 Asides
+7.2 Asides
 --------------------------------------------------------------*/
 /* line 1, sass/site/primary/_asides.scss */
 .blog .format-aside .entry-title,
@@ -735,7 +839,7 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
-10.3 Comments
+7.3 Comments
 --------------------------------------------------------------*/
 /* line 1, sass/site/primary/_comments.scss */
 .comment-content a {
@@ -748,148 +852,20 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
-11.0 Infinite scroll
+7.4 Widgets
 --------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-/* line 2, sass/modules/_infinite-scroll.scss */
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-  /* Theme Footer (when set to scrolling) */
+/* line 1, sass/site/secondary/_widgets.scss */
+.widget {
+  margin: 0 0 1.5em;
+  /* Make sure select elements fit in widgets. */
+}
+/* line 5, sass/site/secondary/_widgets.scss */
+.widget select {
+  max-width: 100%;
+}
+
+/* Search widget. */
+/* line 11, sass/site/secondary/_widgets.scss */
+.widget_search .search-submit {
   display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-/* line 8, sass/modules/_infinite-scroll.scss */
-.infinity-end.neverending .site-footer {
-  display: block;
-}
-
-/*--------------------------------------------------------------
-12.0 Media
---------------------------------------------------------------*/
-/* line 1, sass/media/_media.scss */
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
-.comment-content .wp-smiley {
-  border: none;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding: 0;
-}
-
-/* Make sure embeds and iframes fit their containers. */
-/* line 11, sass/media/_media.scss */
-embed,
-iframe,
-object {
-  max-width: 100%;
-}
-
-/* line 17, sass/media/_media.scss */
-img {
-  height: auto;
-  /* Make sure images are scaled correctly. */
-  max-width: 100%;
-  /* Adhere to container width. */
-}
-
-/*--------------------------------------------------------------
-12.1 Captions
---------------------------------------------------------------*/
-/* line 1, sass/media/_captions.scss */
-.wp-caption {
-  margin-bottom: 1.5em;
-  max-width: 100%;
-}
-/* line 5, sass/media/_captions.scss */
-.wp-caption img[class*="wp-image-"] {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* line 9, sass/media/_captions.scss */
-.wp-caption .wp-caption-text {
-  margin: 0.8075em 0;
-}
-
-/* line 14, sass/media/_captions.scss */
-.wp-caption-text {
-  text-align: center;
-}
-
-/*--------------------------------------------------------------
-12.2 Galleries
---------------------------------------------------------------*/
-/* line 1, sass/media/_galleries.scss */
-.gallery {
-  margin-bottom: 1.5em;
-}
-
-/* line 5, sass/media/_galleries.scss */
-.gallery-item {
-  display: inline-block;
-  text-align: center;
-  vertical-align: top;
-  width: 100%;
-}
-/* line 11, sass/media/_galleries.scss */
-.gallery-columns-2 .gallery-item {
-  max-width: 50%;
-}
-/* line 15, sass/media/_galleries.scss */
-.gallery-columns-3 .gallery-item {
-  max-width: 33.33%;
-}
-/* line 19, sass/media/_galleries.scss */
-.gallery-columns-4 .gallery-item {
-  max-width: 25%;
-}
-/* line 23, sass/media/_galleries.scss */
-.gallery-columns-5 .gallery-item {
-  max-width: 20%;
-}
-/* line 27, sass/media/_galleries.scss */
-.gallery-columns-6 .gallery-item {
-  max-width: 16.66%;
-}
-/* line 31, sass/media/_galleries.scss */
-.gallery-columns-7 .gallery-item {
-  max-width: 14.28%;
-}
-/* line 35, sass/media/_galleries.scss */
-.gallery-columns-8 .gallery-item {
-  max-width: 12.5%;
-}
-/* line 39, sass/media/_galleries.scss */
-.gallery-columns-9 .gallery-item {
-  max-width: 11.11%;
-}
-
-/* line 44, sass/media/_galleries.scss */
-.gallery-caption {
-  display: block;
-}
-
-/*--------------------------------------------------------------
-12.3 Alignments
---------------------------------------------------------------*/
-/* line 1, sass/media/_alignments.scss */
-.alignleft {
-  display: inline;
-  float: left;
-  margin-right: 1.5em;
-}
-
-/* line 7, sass/media/_alignments.scss */
-.alignright {
-  display: inline;
-  float: right;
-  margin-left: 1.5em;
-}
-
-/* line 13, sass/media/_alignments.scss */
-.aligncenter {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
