@@ -666,30 +666,6 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
-7.0 Alignments
---------------------------------------------------------------*/
-/* line 1, sass/modules/_alignments.scss */
-.alignleft {
-  display: inline;
-  float: left;
-  margin-right: 1.5em;
-}
-
-/* line 7, sass/modules/_alignments.scss */
-.alignright {
-  display: inline;
-  float: right;
-  margin-left: 1.5em;
-}
-
-/* line 13, sass/modules/_alignments.scss */
-.aligncenter {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/*--------------------------------------------------------------
 8.0 Clearings
 --------------------------------------------------------------*/
 /* line 1, sass/modules/_clearings.scss */
@@ -922,4 +898,28 @@ img {
 /* line 44, sass/media/_galleries.scss */
 .gallery-caption {
   display: block;
+}
+
+/*--------------------------------------------------------------
+12.3 Alignments
+--------------------------------------------------------------*/
+/* line 1, sass/media/_alignments.scss */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+
+/* line 7, sass/media/_alignments.scss */
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+
+/* line 13, sass/media/_alignments.scss */
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
