@@ -437,12 +437,6 @@ html {
   box-sizing: inherit;
 }
 
-/* line 11, sass/elements/_elements.scss */
-body {
-  background: #fff;
-  /* Fallback for when there is no custom background color defined. */
-}
-
 /* line 15, sass/elements/_elements.scss */
 hr {
   background-color: #ccc;
