@@ -36,7 +36,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	7.2 Asides
 	7.3 Comments
 	7.4 Widgets
-8.0 Content
+8.0 Modules
+	8.1 Print Style Sheet
 --------------------------------------------------------------*/
 /* line 10, sass/imports/_grid-vertical.scss */
 body {
@@ -979,4 +980,97 @@ a:hover, a:active {
 /* line 11, sass/site/secondary/_widgets.scss */
 .widget_search .search-submit {
   display: none;
+}
+
+/*--------------------------------------------------------------
+8.0 Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+8.1 Print Style Sheet
+--------------------------------------------------------------*/
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css
+   ========================================================================== */
+@media print {
+  /* line 9, sass/modules/_print.scss */
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+       http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* line 19, sass/modules/_print.scss */
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  /* line 24, sass/modules/_print.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 28, sass/modules/_print.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  /* line 37, sass/modules/_print.scss */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  /* line 42, sass/modules/_print.scss */
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  /* line 53, sass/modules/_print.scss */
+  thead {
+    display: table-header-group;
+  }
+
+  /* line 57, sass/modules/_print.scss */
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  /* line 62, sass/modules/_print.scss */
+  img {
+    max-width: 100% !important;
+  }
+
+  /* line 66, sass/modules/_print.scss */
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 73, sass/modules/_print.scss */
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }

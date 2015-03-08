@@ -37,7 +37,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	7.2 Asides
 	7.3 Comments
 	7.4 Widgets
-8.0 Content
+8.0 Modules
+	8.1 Print Style Sheet
 --------------------------------------------------------------*/
 @import "variables/variables";
 @import "imports/imports";
@@ -77,3 +78,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 7.0 Content
 --------------------------------------------------------------*/
 @import "site/site";
+
+/*--------------------------------------------------------------
+8.0 Content
+--------------------------------------------------------------*/
+@import "modules/modules";
