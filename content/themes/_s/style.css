@@ -665,33 +665,6 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 8.0 Clearings
 --------------------------------------------------------------*/
-/* line 1, sass/modules/_clearings.scss */
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
-  content: "";
-  display: table;
-}
-
-/* line 16, sass/modules/_clearings.scss */
-.clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after,
-.site-content:after,
-.site-footer:after {
-  clear: both;
-}
-
 /*--------------------------------------------------------------
 9.0 Widgets
 --------------------------------------------------------------*/
