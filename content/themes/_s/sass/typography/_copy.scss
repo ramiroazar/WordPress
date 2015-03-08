@@ -1,5 +1,5 @@
 p {
-	margin-bottom: 1.5em;
+	margin-bottom: rhythm();
 }
 
 dfn, cite, em, i {
@@ -16,21 +16,21 @@ blockquote, q {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	margin: 0 rhythm();
 }
 
 address {
-	margin: 0 0 1.5em;
+	margin: 0 0 rhythm();
 }
 
 pre {
 	background: $color__background-pre;
 	font-family: $font__pre;
 	line-height: $font__line-height-pre;
-	margin-bottom: 1.6em;
+	margin-bottom: rhythm();
 	max-width: 100%;
 	overflow: auto;
-	padding: 1.6em;
+	padding: rhythm();
 }
 
 code, kbd, tt, var {

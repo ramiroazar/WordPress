@@ -18,11 +18,11 @@
 		display: block;
 		font-weight: bold;
 		height: auto;
-		left: 5px;
+		left: rhythm(.25);
 		line-height: normal;
-		padding: 15px 23px 14px;
+		padding: rhythm(.5) rhythm();
 		text-decoration: none;
-		top: 5px;
+		top: rhythm(.25);
 		width: auto;
 		z-index: 100000; /* Above WP toolbar. */
 	}
