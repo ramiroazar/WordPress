@@ -37,9 +37,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	7.2 Asides
 	7.3 Comments
 	7.4 Widgets
+8.0 Content
 --------------------------------------------------------------*/
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
+@import "variables/variables";
+@import "mixins/mixins";
+@import "modules/modules";
 
 /*--------------------------------------------------------------
 1.0 Normalize

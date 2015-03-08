@@ -1,0 +1,13 @@
+// Initiate Susy
+
+@import "susy";
+
+$susy: (
+  container: 1140px,
+  container-position: center,
+  grid-padding: 2%,
+  columns: 12,
+  gutters: 1/4,
+  output: isolate,
+  global-box-sizing: border-box,
+);
