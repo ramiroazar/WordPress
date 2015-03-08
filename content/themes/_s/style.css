@@ -390,7 +390,7 @@ big {
 
 /* Text meant only for screen readers. */
 /* line 3, sass/typography/_accessibility.scss */
-.screen-reader-text {
+.screen-reader-text, label {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
   height: 1px;
@@ -398,7 +398,7 @@ big {
   overflow: hidden;
 }
 /* line 10, sass/typography/_accessibility.scss */
-.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
+.screen-reader-text:hover, label:hover, .screen-reader-text:active, label:active, .screen-reader-text:focus, label:focus {
   background-color: #f1f1f1;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -517,8 +517,9 @@ textarea {
   color: #666;
   border: 1px solid #ccc;
   border-radius: 3px;
+  max-width: 100%;
 }
-/* line 13, sass/forms/_fields.scss */
+/* line 14, sass/forms/_fields.scss */
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -530,7 +531,7 @@ textarea:focus {
   color: #111;
 }
 
-/* line 18, sass/forms/_fields.scss */
+/* line 19, sass/forms/_fields.scss */
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -541,10 +542,116 @@ input[type="tel"] {
   padding: 3px;
 }
 
-/* line 28, sass/forms/_fields.scss */
+/* line 29, sass/forms/_fields.scss */
 textarea {
   padding-left: 3px;
   width: 100%;
+}
+
+/* line 1, sass/forms/_contact-form-7.scss */
+div.wpcf7 {
+  margin: 0;
+  padding: 0;
+}
+/* line 8, sass/forms/_contact-form-7.scss */
+div.wpcf7 div.wpcf7-response-output {
+  margin: 2em 0.5em 1em;
+  padding: 0.2em 1em;
+}
+/* line 13, sass/forms/_contact-form-7.scss */
+div.wpcf7 .screen-reader-response {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+/* line 24, sass/forms/_contact-form-7.scss */
+div.wpcf7 div.wpcf7-mail-sent-ok {
+  border: 2px solid #398f14;
+}
+/* line 28, sass/forms/_contact-form-7.scss */
+div.wpcf7 div.wpcf7-mail-sent-ng {
+  border: 2px solid #ff0000;
+}
+/* line 32, sass/forms/_contact-form-7.scss */
+div.wpcf7 div.wpcf7-spam-blocked {
+  border: 2px solid #ffa500;
+}
+/* line 36, sass/forms/_contact-form-7.scss */
+div.wpcf7 div.wpcf7-validation-errors {
+  border: 2px solid #f7e700;
+}
+/* line 40, sass/forms/_contact-form-7.scss */
+div.wpcf7 span.wpcf7-form-control-wrap {
+  position: relative;
+}
+/* line 44, sass/forms/_contact-form-7.scss */
+div.wpcf7 span.wpcf7-not-valid-tip {
+  color: #f00;
+  font-size: 1em;
+  display: block;
+}
+/* line 50, sass/forms/_contact-form-7.scss */
+div.wpcf7 .use-floating-validation-tip span.wpcf7-not-valid-tip {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  z-index: 100;
+  border: 1px solid #ff0000;
+  background: #fff;
+  padding: .2em .8em;
+}
+/* line 60, sass/forms/_contact-form-7.scss */
+div.wpcf7 span.wpcf7-list-item {
+  margin-left: 0.5em;
+}
+/* line 64, sass/forms/_contact-form-7.scss */
+div.wpcf7 .wpcf7-display-none {
+  display: none;
+}
+/* line 68, sass/forms/_contact-form-7.scss */
+div.wpcf7 img.ajax-loader {
+  border: none;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+/* line 74, sass/forms/_contact-form-7.scss */
+div.wpcf7 div.ajax-error {
+  display: none;
+}
+/* line 78, sass/forms/_contact-form-7.scss */
+div.wpcf7 .placeheld {
+  color: #888;
+}
+/* line 84, sass/forms/_contact-form-7.scss */
+div.wpcf7 br {
+  display: none;
+}
+/* line 88, sass/forms/_contact-form-7.scss */
+div.wpcf7 .form-validation {
+  position: relative;
+}
+/* line 90, sass/forms/_contact-form-7.scss */
+div.wpcf7 .form-validation br {
+  display: none;
+}
+/* line 93, sass/forms/_contact-form-7.scss */
+div.wpcf7 .form-validation img.wpcf7-captchac {
+  position: absolute;
+  right: 0;
+  width: auto;
+  height: 100%;
+  max-height: 3em;
+  margin: 0;
+  padding: 1px;
+}
+/* line 102, sass/forms/_contact-form-7.scss */
+div.wpcf7 .form-validation .wpcf7-captchar {
+  padding-right: 10em;
 }
 
 /*--------------------------------------------------------------
