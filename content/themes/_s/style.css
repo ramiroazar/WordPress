@@ -463,8 +463,9 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+  padding: .5em;
+  border: 0;
   background: #e6e6e6;
-  padding: 1em;
 }
 
 /* line 1, sass/forms/_fields.scss */

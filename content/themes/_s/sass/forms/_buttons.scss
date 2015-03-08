@@ -2,8 +2,9 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+	padding: .5em;
+	border: 0;
 	background: $color__background-button;
-	padding: 1em;
 
 	&:hover {
 	}
