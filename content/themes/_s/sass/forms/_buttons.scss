@@ -1,10 +1,15 @@
+%button {
+	padding: rhythm(.5);
+	border: 0;
+	@include border-radius;
+	background: $color__background-button;
+}
+
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	padding: .5em;
-	border: 0;
-	background: $color__background-button;
+	@extend %button;
 
 	&:hover {
 	}
