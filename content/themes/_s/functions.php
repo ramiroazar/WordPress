@@ -109,6 +109,15 @@ function _s_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// wp_enqueue_script( 'jquery' );
+
+	// 1) Deregister local copy of jQuery
+	wp_deregister_script('jquery');
+	// 2) Replace with Google CDN
+	wp_register_script('jquery', ("//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"), false, '', true);
+	// 3) Load at the end of page
+	wp_enqueue_script('jquery');
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
