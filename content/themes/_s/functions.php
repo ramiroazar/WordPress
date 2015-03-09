@@ -150,3 +150,33 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Custom Functions
+ */
+
+// Custom Login Page
+
+	//Updated to proper 'enqueue' method
+	//http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
+	function _s_login_css() {
+		wp_enqueue_style( '_s_login_css', get_template_directory_uri() . '/login.css', false );
+	}
+	// changing the logo link from wordpress.org to your site
+	function _s_login_url() {  return home_url(); }
+	// changing the alt text on the logo to show your site name
+	function _s_login_title() { return get_option( 'blogname' ); }
+	// calling it only on the login page
+	add_action( 'login_enqueue_scripts', '_s_login_css', 10 );
+	add_filter( 'login_headerurl', '_s_login_url' );
+	add_filter( 'login_headertitle', '_s_login_title' );
+
+// Custom Admin Footer
+
+	// Custom Backend Footer
+	function _s_custom_admin_footer() {
+		_e('<span id="footer-thankyou">Developed by <a href="http://insightdigital.com.au/" target="_blank">Insight Digital Marketing</a></span>. Built using <a href="http://underscores.me/" target="_blank">Underscores (_s)</a>.', '_s');
+	}
+
+	// adding it to the admin area
+	add_filter( 'admin_footer_text', '_s_custom_admin_footer' );
