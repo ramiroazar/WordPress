@@ -155,7 +155,7 @@ require get_template_directory() . '/inc/jetpack.php';
  * Custom Functions
  */
 
-// Custom Login Page
+// Custom Login Page CSS
 
 	//Updated to proper 'enqueue' method
 	//http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
@@ -171,7 +171,7 @@ require get_template_directory() . '/inc/jetpack.php';
 	add_filter( 'login_headerurl', '_s_login_url' );
 	add_filter( 'login_headertitle', '_s_login_title' );
 
-// Custom Admin Footer
+// Custom Admin Footer Text
 
 	// Custom Backend Footer
 	function _s_custom_admin_footer() {
