@@ -155,6 +155,12 @@ require get_template_directory() . '/inc/jetpack.php';
  * Custom Functions
  */
 
+// Shortcodes
+	require get_template_directory() . '/inc/_s_shortcodes.php';
+
+// Post Types
+	require get_template_directory() . '/post-types/_s_post-type-gallery.php';
+
 // Custom Login Page CSS
 
 	//Updated to proper 'enqueue' method
