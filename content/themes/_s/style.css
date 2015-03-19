@@ -703,8 +703,12 @@ img {
 /* line 1, sass/media/_galleries.scss */
 .gallery {
   margin-bottom: 1.5em;
-  overflow: hidden;
-  *zoom: 1;
+}
+/* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
+.gallery:after {
+  content: " ";
+  display: block;
+  clear: both;
 }
 
 /* line 6, sass/media/_galleries.scss */
@@ -1063,10 +1067,11 @@ img {
 /*--------------------------------------------------------------
 11.4 Carousels
 --------------------------------------------------------------*/
-/* line 3, sass/media/_carousel.scss */
-.carousel {
-  overflow: hidden;
-  *zoom: 1;
+/* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
+.carousel:after {
+  content: " ";
+  display: block;
+  clear: both;
 }
 /* line 7, sass/media/_carousel.scss */
 .carousel .carousel-item.carousel-active {

@@ -1,7 +1,7 @@
 // Custom Defaults
 
 .carousel {
-	@include clearfix;
+	@include susy-clearfix;
 
 	.carousel-item {
 		&.carousel-active {

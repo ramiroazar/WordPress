@@ -1,6 +1,6 @@
 .gallery {
 	margin-bottom: 1.5em;
-	@include clearfix;
+	@include susy-clearfix;
 }
 
 .gallery-item {
