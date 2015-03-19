@@ -4,3 +4,21 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+
+// Susy rows
+@mixin span-per-row($columns_per_row, $columns_total: susy-get(columns), $last: false) {
+
+	$span: $columns_total / $columns_per_row;
+
+	@include span($span);
+
+	@if $last {
+
+		@include last;
+
+	} @else {
+
+		&:nth-of-type(#{$columns_per_row}n) { @include last; }
+
+	}
+}
