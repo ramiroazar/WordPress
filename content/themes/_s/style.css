@@ -1073,15 +1073,15 @@ img {
   display: block;
   clear: both;
 }
-/* line 7, sass/media/_carousel.scss */
+/* line 7, sass/media/_carousels.scss */
 .carousel .carousel-item.carousel-active {
   z-index: 1;
 }
-/* line 12, sass/media/_carousel.scss */
+/* line 12, sass/media/_carousels.scss */
 .carousel figure {
   margin: 0;
 }
-/* line 18, sass/media/_carousel.scss */
+/* line 18, sass/media/_carousels.scss */
 .carousel .carousel-nav ol {
   position: absolute;
   z-index: 1;
@@ -1090,7 +1090,7 @@ img {
   margin: 0;
   text-align: center;
 }
-/* line 27, sass/media/_carousel.scss */
+/* line 27, sass/media/_carousels.scss */
 .carousel .carousel-nav .prev, .carousel .carousel-nav .next {
   position: absolute;
   z-index: 1;
@@ -1100,25 +1100,25 @@ img {
   margin-top: -0.75em;
   text-align: center;
 }
-/* line 36, sass/media/_carousel.scss */
+/* line 36, sass/media/_carousels.scss */
 .carousel .carousel-nav .prev i, .carousel .carousel-nav .next i {
   font-size: 1.5em;
 }
-/* line 41, sass/media/_carousel.scss */
+/* line 41, sass/media/_carousels.scss */
 .carousel .carousel-nav .prev {
   left: 0.375em;
 }
-/* line 45, sass/media/_carousel.scss */
+/* line 45, sass/media/_carousels.scss */
 .carousel .carousel-nav .next {
   right: 0.375em;
 }
 
-/* line 55, sass/media/_carousel.scss */
+/* line 55, sass/media/_carousels.scss */
 .brands .carousel figure {
   position: relative;
 }
 @media (min-width: 481px) and (max-width: 768px) {
-  /* line 55, sass/media/_carousel.scss */
+  /* line 55, sass/media/_carousels.scss */
   .brands .carousel figure {
     width: 49.15254%;
     float: left;
@@ -1131,7 +1131,7 @@ img {
   }
 }
 @media (min-width: 768px) {
-  /* line 55, sass/media/_carousel.scss */
+  /* line 55, sass/media/_carousels.scss */
   .brands .carousel figure {
     width: 23.72881%;
     float: left;
@@ -1143,7 +1143,7 @@ img {
     margin-right: 0;
   }
 }
-/* line 68, sass/media/_carousel.scss */
+/* line 68, sass/media/_carousels.scss */
 .brands .carousel figure:hover .caption .caption-link {
   position: absolute;
   top: 0;
@@ -1151,16 +1151,16 @@ img {
   width: 100%;
   height: 100%;
 }
-/* line 79, sass/media/_carousel.scss */
+/* line 79, sass/media/_carousels.scss */
 .brands .carousel figure .caption .caption-link {
   display: none;
 }
 
-/* line 91, sass/media/_carousel.scss */
+/* line 91, sass/media/_carousels.scss */
 .slider .carousel figure {
   height: 30em;
 }
-/* line 95, sass/media/_carousel.scss */
+/* line 95, sass/media/_carousels.scss */
 .slider .carousel img {
   position: absolute;
   top: -100%;
@@ -1173,7 +1173,7 @@ img {
   min-width: 100%;
   min-height: 100%;
 }
-/* line 108, sass/media/_carousel.scss */
+/* line 108, sass/media/_carousels.scss */
 .slider .carousel figcaption {
   position: relative;
   z-index: 2;
@@ -1190,10 +1190,18 @@ img {
   display: block;
   clear: both;
 }
-/* line 117, sass/media/_carousel.scss */
+/* line 117, sass/media/_carousels.scss */
 .slider .carousel .caption {
   display: table-cell;
   vertical-align: middle;
+}
+
+/*--------------------------------------------------------------
+11.5 Maps
+--------------------------------------------------------------*/
+/* line 2, sass/media/_maps.scss */
+.map-canvas img {
+  max-width: none;
 }
 
 /*--------------------------------------------------------------
