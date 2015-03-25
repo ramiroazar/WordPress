@@ -1,8 +1,6 @@
 <?php
 /**
  * Plugin Name: Gallery
- * Plugin URI: https://github.com/filamentgroup/responsive-carousel
- * Description: Add gallery custom post type and gallery shortcode
  * Author: Insight Digital
  * Author URI: http://insightdigital.com.au
  * License: GNU General Public License (http://www.gnu.org/copyleft/gpl.html)

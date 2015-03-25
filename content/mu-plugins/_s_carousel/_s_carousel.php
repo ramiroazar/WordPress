@@ -2,7 +2,6 @@
 /**
  * Plugin Name: Carousel
  * Plugin URI: https://github.com/filamentgroup/responsive-carousel
- * Description: Add Carousel custom post type, carousel shortcode and carousel resources.
  * Author: Insight Digital
  * Author URI: http://insightdigital.com.au
  * License: GNU General Public License (http://www.gnu.org/copyleft/gpl.html)
