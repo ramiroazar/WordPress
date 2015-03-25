@@ -448,7 +448,7 @@ hr {
 
 /* line 1, sass/elements/_lists.scss */
 ul, ol {
-  margin: 0 0 1.5em 3em;
+  margin: 0 0 1.5em 0;
 }
 
 /* line 5, sass/elements/_lists.scss */
@@ -475,13 +475,22 @@ dt {
 
 /* line 23, sass/elements/_lists.scss */
 dd {
-  margin: 0 1.5em 1.5em;
+  margin: 0 0 1.5em 0;
 }
 
 /* line 1, sass/elements/_tables.scss */
 table {
   margin: 0 0 1.5em;
   width: 100%;
+}
+
+/* line 1, sass/elements/_tabs.scss */
+.tabpanel {
+  display: none;
+}
+/* line 4, sass/elements/_tabs.scss */
+.tabpanel.active {
+  display: block;
 }
 
 /*--------------------------------------------------------------

@@ -121,6 +121,9 @@ function _s_scripts() {
 	// 4) Load jQuery backup script (http://stackoverflow.com/a/1014251)
 	wp_enqueue_script('_s-jquery-backup', (get_template_directory_uri() . "/js/jquery-backup.js"), false, '', true);
 
+	// Load tabs
+	wp_enqueue_script('_s-tab', (get_template_directory_uri() . "/js/tab.js"), array('_s-jquery'), '', true);
+
 	// icon stylesheet
 	wp_enqueue_style( '_s-icon-stylesheet', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), null);
 }
@@ -178,5 +181,39 @@ require get_template_directory() . '/inc/jetpack.php';
 		_e('<span id="footer-thankyou">Developed by <a href="http://insightdigital.com.au/" target="_blank">Insight Digital Marketing</a></span>. Built using <a href="http://underscores.me/" target="_blank">Underscores (_s)</a>.', '_s');
 	}
 
+// Query Shortcode
+
 	// adding it to the admin area
 	add_filter( 'admin_footer_text', '_s_custom_admin_footer' );
+
+	function _s_query($atts) {
+
+	   // EXAMPLE USAGE:
+	   // [_s_query arguements="showposts=100&post_type=page&post_parent=453"]
+	   
+	   // Defaults
+	   extract(shortcode_atts(array(
+	      "arguements" => '',
+	      "markup" => '',
+	   ), $atts));
+
+	   // de-funkify query
+	   $arguements = preg_replace('~&#x0*([0-9a-f]+);~ei', 'chr(hexdec("\\1"))', $arguements);
+	   $arguements = preg_replace('~&#0*([0-9]+);~e', 'chr(\\1)', $arguements);
+
+	   // query is made               
+	   query_posts($arguements);
+	   
+	   // Reset and setup variables
+	   $output = '';
+
+		ob_start();  
+		get_template_part($markup);  
+		$output .= ob_get_contents();  
+		ob_end_clean();
+	   
+	   wp_reset_query();
+	   return $output;
+	   
+	}
+	add_shortcode("_s_query", "_s_query");
