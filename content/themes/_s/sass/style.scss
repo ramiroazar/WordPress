@@ -29,6 +29,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 5.0 Media
 	5.1 Captions
 	5.2 Galleries
+	5.2 Alignments
+	5.2 Carousels
+	5.2 Maps
 6.0 Navigation
 	6.1 Links
 	6.2 Menus
@@ -39,6 +42,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	7.4 Widgets
 8.0 Modules
 	8.1 Print Style Sheet
+9.0 Breakpoints
 --------------------------------------------------------------*/
 @import "variables/variables";
 @import "imports/imports";
@@ -83,3 +87,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 8.0 Modules
 --------------------------------------------------------------*/
 @import "modules/modules";
+
+/*--------------------------------------------------------------
+9.0 Breakpoints
+--------------------------------------------------------------*/
+@import "breakpoints/breakpoints";
