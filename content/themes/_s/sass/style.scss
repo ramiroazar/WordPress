@@ -42,7 +42,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	7.4 Widgets
 8.0 Modules
 	8.1 Print Style Sheet
-9.0 Breakpoints
+9.0 Layout
+10.0 Breakpoints
 --------------------------------------------------------------*/
 @import "variables/variables";
 @import "imports/imports";
@@ -89,6 +90,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "modules/modules";
 
 /*--------------------------------------------------------------
-9.0 Breakpoints
+9.0 Layout
+--------------------------------------------------------------*/
+@import "layout/layout";
+
+/*--------------------------------------------------------------
+10.0 Breakpoints
 --------------------------------------------------------------*/
 @import "breakpoints/breakpoints";

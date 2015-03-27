@@ -188,8 +188,6 @@ function _s_carousel( $atts ) {
 	if ( $the_query->have_posts() ) :
 	while ($the_query->have_posts()) : $the_query->the_post();
 
-		the_title();
-
 		$prefix = '_cmb2_';
 
 		$slides = get_post_meta( get_the_ID(), $prefix . 'slides', true );

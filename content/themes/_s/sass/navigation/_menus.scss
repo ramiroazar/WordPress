@@ -1,8 +1,5 @@
-.main-navigation {
-	clear: both;
+.site-navigation {
 	display: block;
-	float: left;
-	width: 100%;
 
 	ul {
 		list-style: none;
@@ -66,13 +63,13 @@
 	display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: $breakpoint__medium) {
 	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
+	.site-navigation.toggled .nav-menu {
 		display: block;
 	}
 
-	.main-navigation ul {
+	.site-navigation ul {
 		display: none;
 	}
 }

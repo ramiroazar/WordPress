@@ -10,7 +10,8 @@
 	margin: 0 0 gutter() 0;
 
 	img {
-		display: block;
+		display: inline-block;
+		vertical-align: top;
 	}
 
 	.gallery-columns-2 & {
