@@ -4,69 +4,69 @@
 // http://schema.org/WebPage
 // Use with html_tag_schema();
 
-  function body_tag_schema() {
+    function body_tag_schema() {
 
-    $base = 'http://schema.org/';
+        $base = 'http://schema.org/';
 
-    //
-    // WordPress page types
-    //   
+        //
+        // WordPress page types
+        //   
 
-    // Is author page
-    if( is_author() ) :    
-      $type = 'ProfilePage';    
+        // Is author page
+        if( is_author() ) :    
+          $type = 'ProfilePage';    
 
-    // Is search results page
-    elseif( is_search() ) :    
-      $type = 'SearchResultsPage';    
+        // Is search results page
+        elseif( is_search() ) :    
+          $type = 'SearchResultsPage';    
 
-    //
-    // Theme page types
-    //
+        //
+        // Theme page types
+        //
 
-    // Contact page ID
-    //elseif( is_page( 0 ) ) :    
-    //  $type = 'ContactPage';
+        // Contact page ID
+        //elseif( is_page( 0 ) ) :    
+        //  $type = 'ContactPage';
 
-    // About page ID
-    //elseif( is_page( 0 ) ) :    
-    //  $type = 'AboutPage';
+        // About page ID
+        //elseif( is_page( 0 ) ) :    
+        //  $type = 'AboutPage';
 
-    // FAQs page ID
-    //elseif( is_page( 0 ) ) :    
-    //  $type = 'QAPage';
+        // FAQs page ID
+        //elseif( is_page( 0 ) ) :    
+        //  $type = 'QAPage';
 
-    // Gallery page ID
-    //elseif( is_page( 0 ) ) :    
-    //  $type = 'ImageGallery';
+        // Gallery page ID
+        //elseif( is_page( 0 ) ) :    
+        //  $type = 'ImageGallery';
 
-    // add custom post types that describe a single item to this array
-    //elseif( is_singular( array( 'book', 'movie' ) ) ) :    
-    //  $type = 'ItemPage';
+        // add custom post types that describe a single item to this array
+        //elseif( is_singular( array( 'book', 'movie' ) ) ) :    
+        //  $type = 'ItemPage';
 
-    //
-    // WooCommerce page types
-    //
+        //
+        // WooCommerce page types
+        //
 
-    // Is single product page
-    //elseif( is_product() ) :    
-    //  $type = 'ItemPage';
+        // Is single product page
+        //elseif( is_product() ) :    
+        //  $type = 'ItemPage';
 
-    // Is checkout page
-    //elseif( is_checkout() ) :    
-    //  $type = 'CheckoutPage';
+        // Is checkout page
+        //elseif( is_checkout() ) :    
+        //  $type = 'CheckoutPage';
 
-    //
-    // Default page type
-    //
+        //
+        // Default page type
+        //
 
-    else :    
-      $type = 'WebPage';
+        else :    
+          $type = 'WebPage';
 
-    endif;    
+        endif;    
 
-    return 'itemscope itemtype="' . $base . $type . '"';
+        return 'itemscope itemtype="' . $base . $type . '"';
 
-  }
+    }
 
 ?>
