@@ -54,7 +54,7 @@
 		section {
 			@include container;
 
-			&#fold {
+			&#featured {
 				.carousel {
 					@include carousel-background;
 				}
@@ -78,19 +78,19 @@
 
 .site-footer {
 
-	> div {
+	> section {
 		&:first-child {
 			@include container;
 		}
 	}
 
-	.site-sitemap, .site-contact {
+	.site-sitemap, .site-sitemap-featured {
 		@include susy-breakpoint($breakpoint__medium) {
 			@include span(4);			
 		}
 	}
 
-	.site-info {
+	.site-contact {
 		@include susy-breakpoint($breakpoint__medium) {
 			@include span(last 4);			
 		}

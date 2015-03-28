@@ -37,21 +37,33 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '_s' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="site-header-content">
+		<div>
 			<div class="site-branding">
 				<div>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<img src="<?php echo get_template_directory_uri(); ?>/favicon.png" alt="<?php bloginfo('name'); ?> Logo" itemprop="logo" />
+					</a>
+					<?php if (is_front_page() || is_home()) : ?>
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php else : ?>
+						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php endif; ?>
+					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+					<?php if (_s_contact()) : ?>
+						<a href="tel:<?php echo _s_contact(phone) ?>" class="phone" itemprop="telephone">
+							<?php echo _s_contact(phone) ?>
+						</a>
+					<?php endif; ?>
 				</div>
 			</div><!-- .site-branding -->
 
-			<nav id="site-navigation" class="site-navigation" role="navigation">
+			<div id="site-navigation" class="site-navigation" role="navigation">
 				<div>
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Primary Menu', '_s' ); ?></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 				</div>
-			</nav><!-- .main-navigation -->
-		</div><!-- .site-footer-content -->
+			</div><!-- .main-navigation -->
+		</div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

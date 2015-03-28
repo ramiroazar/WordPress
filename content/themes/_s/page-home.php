@@ -15,9 +15,11 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<section id="lead">
+			<section id="featured">
 
 				<div>
+
+					<h2>Featured</h2>
 
 					<?php echo _s_carousel(array('placeholder' => '1920x500')); ?>
 
@@ -31,7 +33,11 @@ get_header(); ?>
 
 					<div>
 
-						<?php get_template_part( 'content', 'page' ); ?>
+						<?php the_title("<h2>", "</h2>"); ?>
+
+						<?php the_content(); ?>
+
+						<?php // get_template_part( 'content', 'page' ); ?>
 
 					</div>
 

@@ -51,6 +51,8 @@ function _s_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', '_s' ),
+		'secondary' => __( 'Secondary Menu', '_s' ),
+		'tertiary' => __( 'Tertiary Menu', '_s' ),
 	) );
 
 	/*
@@ -90,8 +92,8 @@ function _s_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', '_s_widgets_init' );
@@ -217,3 +219,26 @@ require get_template_directory() . '/inc/jetpack.php';
 	   
 	}
 	add_shortcode("_s_query", "_s_query");
+
+// Contact information
+
+	function _s_contact($type) {
+		$contact = array();
+		$contact[phone]		= get_theme_mod( 'phone' );
+		$contact[mobile]		= get_theme_mod( 'mobile' );
+		$contact[fax]			= get_theme_mod( 'fax' );
+		$contact[address]		= get_theme_mod( 'address' );
+		$contact[facebook]	= get_theme_mod( 'facebook' );
+		$contact[googleplus]	= get_theme_mod( 'googleplus' );
+		$contact[twitter]		= get_theme_mod( 'twitter' );
+		$contact[instagram]	= get_theme_mod( 'instagram' );
+		$contact[pinterest]	= get_theme_mod( 'pinterest' );
+		$contact[youtube]		= get_theme_mod( 'youtube' );
+		$contact[linkedin]	= get_theme_mod( 'linkedin' );
+		$contact = array_filter($contact);
+
+		if ($type)
+			return $contact[$type];
+		else
+			return $contact;
+	}

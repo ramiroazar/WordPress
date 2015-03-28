@@ -327,9 +327,46 @@ html {
   line-height: 1.5em;
 }
 
-/* line 1, sass/typography/_headings.scss */
-h1, h2, h3, h4, h5, h6 {
-  clear: both;
+/* line 4, sass/typography/_headings.scss */
+h1 {
+  font-size: 2.25em;
+  line-height: 1.33333em;
+  margin: 0.66667em 0 0.66667em 0;
+}
+
+/* line 9, sass/typography/_headings.scss */
+h2 {
+  font-size: 1.875em;
+  line-height: 1.2em;
+  margin: 0.8em 0 0.8em 0;
+}
+
+/* line 14, sass/typography/_headings.scss */
+h3 {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  margin: 1em 0 1em 0;
+}
+
+/* line 19, sass/typography/_headings.scss */
+h4 {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  margin: 1.33333em 0 1.33333em 0;
+}
+
+/* line 24, sass/typography/_headings.scss */
+h5 {
+  font-size: 0.875em;
+  line-height: 1.71429em;
+  margin: 1.71429em 0 1.71429em 0;
+}
+
+/* line 29, sass/typography/_headings.scss */
+h6 {
+  font-size: 0.75em;
+  line-height: 2em;
+  margin: 2em 0 2em 0;
 }
 
 /* line 1, sass/typography/_copy.scss */
@@ -396,7 +433,7 @@ big {
 
 /* Text meant only for screen readers. */
 /* line 3, sass/typography/_accessibility.scss */
-.screen-reader-text, label {
+.screen-reader-text, div.wpcf7 label {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
   height: 1px;
@@ -404,7 +441,7 @@ big {
   overflow: hidden;
 }
 /* line 10, sass/typography/_accessibility.scss */
-.screen-reader-text:hover, label:hover, .screen-reader-text:active, label:active, .screen-reader-text:focus, label:focus {
+.screen-reader-text:hover, div.wpcf7 label:hover, .screen-reader-text:active, div.wpcf7 label:active, .screen-reader-text:focus, div.wpcf7 label:focus {
   background-color: #f1f1f1;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -645,15 +682,15 @@ div.wpcf7 .placeheld {
 div.wpcf7 br {
   display: none;
 }
-/* line 88, sass/forms/_contact-form-7.scss */
+/* line 92, sass/forms/_contact-form-7.scss */
 div.wpcf7 .form-validation {
   position: relative;
 }
-/* line 90, sass/forms/_contact-form-7.scss */
+/* line 94, sass/forms/_contact-form-7.scss */
 div.wpcf7 .form-validation br {
   display: none;
 }
-/* line 93, sass/forms/_contact-form-7.scss */
+/* line 97, sass/forms/_contact-form-7.scss */
 div.wpcf7 .form-validation img.wpcf7-captchac {
   position: absolute;
   right: 0;
@@ -663,7 +700,7 @@ div.wpcf7 .form-validation img.wpcf7-captchac {
   margin: 0;
   padding: 1px;
 }
-/* line 102, sass/forms/_contact-form-7.scss */
+/* line 106, sass/forms/_contact-form-7.scss */
 div.wpcf7 .form-validation .wpcf7-captchar {
   padding-right: 10em;
 }
@@ -1516,11 +1553,11 @@ a:hover, a:active {
   clear: both;
 }
 /* line 95, sass/media/_carousels.scss */
-.home .site-content section#fold .carousel figure {
+.home .site-content section#featured .carousel figure {
   height: 30em;
 }
 /* line 99, sass/media/_carousels.scss */
-.home .site-content section#fold .carousel img {
+.home .site-content section#featured .carousel img {
   position: absolute;
   top: -100%;
   bottom: -100%;
@@ -1533,7 +1570,7 @@ a:hover, a:active {
   min-height: 100%;
 }
 /* line 112, sass/media/_carousels.scss */
-.home .site-content section#fold .carousel figcaption {
+.home .site-content section#featured .carousel figcaption {
   position: relative;
   z-index: 2;
   max-width: 1140px;
@@ -1544,13 +1581,13 @@ a:hover, a:active {
   height: 100%;
 }
 /* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-.home .site-content section#fold .carousel figcaption:after {
+.home .site-content section#featured .carousel figcaption:after {
   content: " ";
   display: block;
   clear: both;
 }
 /* line 121, sass/media/_carousels.scss */
-.home .site-content section#fold .carousel .caption {
+.home .site-content section#featured .carousel .caption {
   display: table-cell;
   vertical-align: middle;
 }
@@ -1602,20 +1639,20 @@ a:hover, a:active {
 }
 
 /* line 82, sass/layout/_content-sidebar.scss */
-.site-footer > div:first-child {
+.site-footer > section:first-child {
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
 }
 /* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-.site-footer > div:first-child:after {
+.site-footer > section:first-child:after {
   content: " ";
   display: block;
   clear: both;
 }
 @media (min-width: 62em) {
   /* line 87, sass/layout/_content-sidebar.scss */
-  .site-footer .site-sitemap, .site-footer .site-contact {
+  .site-footer .site-sitemap, .site-footer .site-sitemap-featured {
     width: 31.42857%;
     float: left;
     margin-right: 2.85714%;
@@ -1623,7 +1660,7 @@ a:hover, a:active {
 }
 @media (min-width: 62em) {
   /* line 93, sass/layout/_content-sidebar.scss */
-  .site-footer .site-info {
+  .site-footer .site-contact {
     width: 31.42857%;
     float: right;
     margin-right: 0;
