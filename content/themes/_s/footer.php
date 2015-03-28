@@ -10,16 +10,16 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 		<section>
 			<h2>Footer</h2>
-			<nav id="site-sitemap" class="site-sitemap" role="navigation">
+			<nav id="site-sitemap" class="site-sitemap" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 				<div>
 					<h3>Sitemap</h3>
 					<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'secondary-menu' ) ); ?>
 				</div>
 			</nav><!-- .site-sitemap -->
-			<nav id="site-sitemap-featured" class="site-sitemap-featured" role="navigation">
+			<nav id="site-sitemap-featured" class="site-sitemap-featured" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 				<div>
 					<h3>Sitemap Featured</h3>
 					<?php wp_nav_menu( array( 'theme_location' => 'tertiary', 'menu_id' => 'tertiary-menu' ) ); ?>
@@ -36,8 +36,26 @@
 		<div id="copyright">
 			<div>
 				<p class="source-org copyright">
-					&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>. 
-					<?php printf( __( 'Website Designed & Developed by %2$s.', '_s' ), '_s', '<a href="http://www.insightdigital.com.au" rel="designer">Insight Digital</a>' ); ?>
+					&copy; 
+					<span itemprop="copyrightYear">
+						<?php echo date('Y'); ?>
+					</span> 
+					<span itemprop="copyrightHolder" itemscope itemtype="http://schema.org/Organization">
+						<span itemprop="name">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url">
+								<?php bloginfo( 'name' ); ?>
+							</a>
+						</span>
+					</span>. 
+					<?php printf(
+						__( 'Website Designed & Developed by %2$s.', '_s' ), 
+						'_s', 
+						'<span itemscope itemtype="http://schema.org/Organization">
+							<span itemprop="name">
+								<a href="http://www.insightdigital.com.au" rel="designer" itemprop="url">Insight Digital</a>
+							</span>
+						</span>'
+					); ?>
 				</p>
 			</div>
 		</div><!-- #copyright -->

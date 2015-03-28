@@ -160,6 +160,10 @@ require get_template_directory() . '/inc/jetpack.php';
  * Custom Functions
  */
 
+// Load Schema.org
+
+require get_template_directory() . '/inc/_s_schema.org.php';
+
 // Custom Login Page CSS
 
 	//Updated to proper 'enqueue' method

@@ -32,23 +32,31 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> <?php echo body_tag_schema(); ?>>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '_s' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 		<div>
-			<div class="site-branding">
+			<div class="site-branding" itemscope itemtype="http://schema.org/Organization">
 				<div>
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url">
 						<img src="<?php echo get_template_directory_uri(); ?>/favicon.png" alt="<?php bloginfo('name'); ?> Logo" itemprop="logo" />
 					</a>
 					<?php if (is_front_page() || is_home()) : ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						<h1 class="site-title" itemprop="name">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url">
+								<?php bloginfo( 'name' ); ?>
+							</a>
+						</h1>
 					<?php else : ?>
-						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<p class="site-title" itemprop="name">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url">
+								<?php bloginfo( 'name' ); ?>
+							</a>
+						</p>
 					<?php endif; ?>
-					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+					<p class="site-description" itemprop="description"><?php bloginfo( 'description' ); ?></p>
 					<?php if (_s_contact()) : ?>
 						<a href="tel:<?php echo _s_contact(phone) ?>" class="phone" itemprop="telephone">
 							<?php echo _s_contact(phone) ?>
@@ -57,7 +65,7 @@
 				</div>
 			</div><!-- .site-branding -->
 
-			<div id="site-navigation" class="site-navigation" role="navigation">
+			<div id="site-navigation" class="site-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 				<div>
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Primary Menu', '_s' ); ?></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
