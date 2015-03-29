@@ -164,6 +164,14 @@ require get_template_directory() . '/inc/jetpack.php';
 
 require get_template_directory() . '/inc/_s_schema.org.php';
 
+// Remove Contact Form 7 Stylesheet
+
+  function deregister_ct7_styles() {
+      wp_deregister_style( 'contact-form-7' );
+  }
+
+  add_action( 'wp_print_styles', 'deregister_ct7_styles', 100 );
+
 // Custom Login Page CSS
 
 	//Updated to proper 'enqueue' method

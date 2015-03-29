@@ -6,35 +6,30 @@ div.wpcf7 {
 	padding: 0;
 
 	div.wpcf7-response-output {
-		margin: 2em 0.5em 1em;
-		padding: 0.2em 1em;
 	}
 
 	.screen-reader-response {
-		position: absolute;
-		overflow: hidden;
-		clip: rect(1px, 1px, 1px, 1px);
-		height: 1px;
-		width: 1px;
-		margin: 0;
-		padding: 0;
-		border: 0;
+		@extend %sr-text;
 	}
 
 	div.wpcf7-mail-sent-ok {
-		border: 2px solid #398f14;
+		@extend %alert;
+		@extend %alert-success;
 	}
 
 	div.wpcf7-mail-sent-ng {
-		border: 2px solid #ff0000;
+		@extend %alert;
+		@extend %alert-error;
 	}
 
 	div.wpcf7-spam-blocked {
-		border: 2px solid #ffa500;
+		@extend %alert;
+		@extend %alert-info;
 	}
 
 	div.wpcf7-validation-errors {
-		border: 2px solid #f7e700;
+		@extend %alert;
+		@extend %alert-error;
 	}
 
 	span.wpcf7-form-control-wrap {
@@ -42,23 +37,10 @@ div.wpcf7 {
 	}
 
 	span.wpcf7-not-valid-tip {
-		color: #f00;
-		font-size: 1em;
-		display: block;
-	}
-
-	.use-floating-validation-tip span.wpcf7-not-valid-tip { 
-		position: absolute;
-		top: 20%;
-		left: 20%;
-		z-index: 100;
-		border: 1px solid #ff0000;
-		background: #fff;
-		padding: .2em .8em;
 	}
 
 	span.wpcf7-list-item {
-		margin-left: 0.5em;
+		margin-left: rhythm(.5);
 	}
 
 	.wpcf7-display-none {
@@ -68,7 +50,7 @@ div.wpcf7 {
 	img.ajax-loader {
 		border: none;
 		vertical-align: middle;
-		margin-left: 4px;
+		margin-left: rhythm(.25);
 	}
 
 	div.ajax-error {
@@ -76,7 +58,7 @@ div.wpcf7 {
 	}
 
 	.placeheld {
-		color: #888;
+		color: $color__text-input;
 	}
 
 	// Custom
@@ -96,6 +78,7 @@ div.wpcf7 {
 		}
 		img.wpcf7-captchac {
 			position: absolute;
+			z-index: 1;
 			right: 0;
 			width: auto;
 			height: 100%;
@@ -103,7 +86,8 @@ div.wpcf7 {
 			margin: 0;
 			padding: 1px;
 		}
-		.wpcf7-captchar {
+		input.wpcf7-captchar {
+			width: 100%;
 			padding-right: 10em;
 		}
 	}

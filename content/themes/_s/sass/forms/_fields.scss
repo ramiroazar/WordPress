@@ -6,10 +6,11 @@ input[type="search"],
 input[type="number"],
 input[type="tel"],
 textarea {
-	color: $color__text-input;
-	border: 1px solid $color__border-input;
-	border-radius: 3px;
 	max-width: 100%;
+	border: 1px solid $color__border-input;
+	@include border-radius;
+	@include adjust-font-size-to(16px);
+	color: $color__text-input;
 
 	&:focus {
 		color: $color__text-input-focus;
@@ -22,11 +23,11 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 input[type="number"],
-input[type="tel"], {
-	padding: 3px;
+input[type="tel"],
+textarea {
+	padding: rhythm($lines: .5, $offset: 1px);
 }
 
 textarea {
-	padding-left: 3px;
 	width: 100%;
 }

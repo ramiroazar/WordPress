@@ -2,6 +2,7 @@
 	padding: rhythm(.5);
 	border: 0;
 	@include border-radius;
+	@include adjust-font-size-to(16px);
 	background: $color__background-button;
 }
 

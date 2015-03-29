@@ -371,7 +371,7 @@ h6 {
 
 /* line 1, sass/typography/_copy.scss */
 p {
-  margin-bottom: 1.5em;
+  margin: 1.5em 0;
 }
 
 /* line 5, sass/typography/_copy.scss */
@@ -433,7 +433,7 @@ big {
 
 /* Text meant only for screen readers. */
 /* line 3, sass/typography/_accessibility.scss */
-.screen-reader-text, div.wpcf7 label {
+.screen-reader-text, div.wpcf7 .screen-reader-response, div.wpcf7 label {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
   height: 1px;
@@ -441,7 +441,7 @@ big {
   overflow: hidden;
 }
 /* line 10, sass/typography/_accessibility.scss */
-.screen-reader-text:hover, div.wpcf7 label:hover, .screen-reader-text:active, div.wpcf7 label:active, .screen-reader-text:focus, div.wpcf7 label:focus {
+.screen-reader-text:hover, div.wpcf7 .screen-reader-response:hover, div.wpcf7 label:hover, .screen-reader-text:active, div.wpcf7 .screen-reader-response:active, div.wpcf7 label:active, .screen-reader-text:focus, div.wpcf7 .screen-reader-response:focus, div.wpcf7 label:focus {
   background-color: #f1f1f1;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -478,11 +478,6 @@ html {
 *:after {
   /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
   box-sizing: inherit;
-}
-
-/* line 11, sass/elements/_elements.scss */
-body {
-  overflow-x: hidden;
 }
 
 /* line 16, sass/elements/_elements.scss */
@@ -543,19 +538,6 @@ table {
 /*--------------------------------------------------------------
 4.0 Forms
 --------------------------------------------------------------*/
-/* line 1, sass/forms/_buttons.scss */
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  padding: 0.75em;
-  border: 0;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  background: #e6e6e6;
-}
-
 /* line 1, sass/forms/_fields.scss */
 input[type="text"],
 input[type="email"],
@@ -565,12 +547,16 @@ input[type="search"],
 input[type="number"],
 input[type="tel"],
 textarea {
-  color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
   max-width: 100%;
+  border: 1px solid #ccc;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #666;
 }
-/* line 14, sass/forms/_fields.scss */
+/* line 15, sass/forms/_fields.scss */
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -582,21 +568,71 @@ textarea:focus {
   color: #111;
 }
 
-/* line 19, sass/forms/_fields.scss */
+/* line 20, sass/forms/_fields.scss */
 input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
 input[type="number"],
-input[type="tel"] {
-  padding: 3px;
+input[type="tel"],
+textarea {
+  padding: 0.6875em;
 }
 
-/* line 29, sass/forms/_fields.scss */
+/* line 31, sass/forms/_fields.scss */
 textarea {
-  padding-left: 3px;
   width: 100%;
+}
+
+/* line 1, sass/forms/_buttons.scss */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  padding: 0.75em;
+  border: 0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 1em;
+  line-height: 1.5em;
+  background: #e6e6e6;
+}
+
+/* line 9, sass/forms/_alerts.scss */
+div.wpcf7 div.wpcf7-mail-sent-ok, div.wpcf7 div.wpcf7-mail-sent-ng, div.wpcf7 div.wpcf7-spam-blocked, div.wpcf7 div.wpcf7-validation-errors {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0.6875em;
+  border: 1px solid;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* line 20, sass/forms/_alerts.scss */
+div.wpcf7 div.wpcf7-mail-sent-ok {
+  border-color: #4fb543;
+  color: #4fb543;
+  background-color: #4fb543;
+  background-color: rgba(79, 181, 67, 0.1);
+}
+
+/* line 28, sass/forms/_alerts.scss */
+div.wpcf7 div.wpcf7-mail-sent-ng, div.wpcf7 div.wpcf7-validation-errors {
+  border-color: #f46057;
+  color: #f46057;
+  background-color: #f46057;
+  background-color: rgba(244, 96, 87, 0.1);
+}
+
+/* line 32, sass/forms/_alerts.scss */
+div.wpcf7 div.wpcf7-spam-blocked {
+  border-color: #6ca7db;
+  color: #6ca7db;
+  background-color: #6ca7db;
+  background-color: rgba(108, 167, 219, 0.1);
 }
 
 /* line 1, sass/forms/_contact-form-7.scss */
@@ -604,95 +640,48 @@ div.wpcf7 {
   margin: 0;
   padding: 0;
 }
-/* line 8, sass/forms/_contact-form-7.scss */
-div.wpcf7 div.wpcf7-response-output {
-  margin: 2em 0.5em 1em;
-  padding: 0.2em 1em;
-}
-/* line 13, sass/forms/_contact-form-7.scss */
-div.wpcf7 .screen-reader-response {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  width: 1px;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-/* line 24, sass/forms/_contact-form-7.scss */
-div.wpcf7 div.wpcf7-mail-sent-ok {
-  border: 2px solid #398f14;
-}
-/* line 28, sass/forms/_contact-form-7.scss */
-div.wpcf7 div.wpcf7-mail-sent-ng {
-  border: 2px solid #ff0000;
-}
-/* line 32, sass/forms/_contact-form-7.scss */
-div.wpcf7 div.wpcf7-spam-blocked {
-  border: 2px solid #ffa500;
-}
-/* line 36, sass/forms/_contact-form-7.scss */
-div.wpcf7 div.wpcf7-validation-errors {
-  border: 2px solid #f7e700;
-}
-/* line 40, sass/forms/_contact-form-7.scss */
+/* line 35, sass/forms/_contact-form-7.scss */
 div.wpcf7 span.wpcf7-form-control-wrap {
   position: relative;
 }
-/* line 44, sass/forms/_contact-form-7.scss */
-div.wpcf7 span.wpcf7-not-valid-tip {
-  color: #f00;
-  font-size: 1em;
-  display: block;
-}
-/* line 50, sass/forms/_contact-form-7.scss */
-div.wpcf7 .use-floating-validation-tip span.wpcf7-not-valid-tip {
-  position: absolute;
-  top: 20%;
-  left: 20%;
-  z-index: 100;
-  border: 1px solid #ff0000;
-  background: #fff;
-  padding: .2em .8em;
-}
-/* line 60, sass/forms/_contact-form-7.scss */
+/* line 42, sass/forms/_contact-form-7.scss */
 div.wpcf7 span.wpcf7-list-item {
-  margin-left: 0.5em;
+  margin-left: 0.75em;
 }
-/* line 64, sass/forms/_contact-form-7.scss */
+/* line 46, sass/forms/_contact-form-7.scss */
 div.wpcf7 .wpcf7-display-none {
   display: none;
 }
-/* line 68, sass/forms/_contact-form-7.scss */
+/* line 50, sass/forms/_contact-form-7.scss */
 div.wpcf7 img.ajax-loader {
   border: none;
   vertical-align: middle;
-  margin-left: 4px;
+  margin-left: 0.375em;
 }
-/* line 74, sass/forms/_contact-form-7.scss */
+/* line 56, sass/forms/_contact-form-7.scss */
 div.wpcf7 div.ajax-error {
   display: none;
 }
-/* line 78, sass/forms/_contact-form-7.scss */
+/* line 60, sass/forms/_contact-form-7.scss */
 div.wpcf7 .placeheld {
-  color: #888;
+  color: #666;
 }
-/* line 84, sass/forms/_contact-form-7.scss */
+/* line 66, sass/forms/_contact-form-7.scss */
 div.wpcf7 br {
   display: none;
 }
-/* line 92, sass/forms/_contact-form-7.scss */
+/* line 74, sass/forms/_contact-form-7.scss */
 div.wpcf7 .form-validation {
   position: relative;
 }
-/* line 94, sass/forms/_contact-form-7.scss */
+/* line 76, sass/forms/_contact-form-7.scss */
 div.wpcf7 .form-validation br {
   display: none;
 }
-/* line 97, sass/forms/_contact-form-7.scss */
+/* line 79, sass/forms/_contact-form-7.scss */
 div.wpcf7 .form-validation img.wpcf7-captchac {
   position: absolute;
+  z-index: 1;
   right: 0;
   width: auto;
   height: 100%;
@@ -700,8 +689,9 @@ div.wpcf7 .form-validation img.wpcf7-captchac {
   margin: 0;
   padding: 1px;
 }
-/* line 106, sass/forms/_contact-form-7.scss */
-div.wpcf7 .form-validation .wpcf7-captchar {
+/* line 89, sass/forms/_contact-form-7.scss */
+div.wpcf7 .form-validation input.wpcf7-captchar {
+  width: 100%;
   padding-right: 10em;
 }
 
