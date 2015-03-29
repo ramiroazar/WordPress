@@ -29,7 +29,7 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<section id="page-content">
+				<section id="front-page">
 
 					<div>
 
@@ -57,29 +57,37 @@ get_header(); ?>
 
 			</section>
 
-			<section id="reviews">
+			<div class="section">
 
 				<div>
 
-					<h2>Reviews</h2>
+					<section id="reviews">
 
-					<?php // echo _s_gallery(); ?>
+						<div>
+
+							<h2>Reviews</h2>
+
+							<?php // echo _s_gallery(); ?>
+
+						</div>
+
+					</section>
+
+					<section id="galleries">
+
+						<div>
+
+							<h2>Gallery</h2>
+
+							<?php echo _s_gallery(); ?>
+
+						</div>
+
+					</section>
 
 				</div>
 
-			</section>
-
-			<section id="gallery">
-
-				<div>
-
-					<h2>Gallery</h2>
-
-					<?php echo _s_gallery(); ?>
-
-				</div>
-
-			</section>
+			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

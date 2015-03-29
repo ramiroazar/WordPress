@@ -1,0 +1,60 @@
+.site-header {
+	.site-branding {
+
+		> div {
+			@include container;
+			@include susy-clearfix;
+			@include susy-breakpoint($breakpoint__medium) {
+				display: table;	
+				width: 100%;
+			}
+		}
+
+		.site-brand {
+			@include susy-breakpoint($breakpoint__medium) {
+				display: table-cell;	
+				width: span(6 wide);
+			}
+
+			.site-logo {
+				display: inline-block;
+				img {
+					width: auto;
+					max-height: rhythm(4);
+					display: inline-block;
+					vertical-align: bottom;
+				}
+			}
+
+			.site-title {
+				@extend %h1;
+				@extend %sr-text;
+			}
+
+			.site-description {
+				margin: 0;
+				@extend %sr-text;
+			}		
+		}
+
+		.site-contact {
+			@include susy-breakpoint($breakpoint__medium) {
+				display: table-cell;
+				width: span(6);
+				vertical-align: middle;
+				text-align: right;
+			}
+
+			.phone {
+				@extend %h3;				
+			}
+		}
+	}
+
+	.site-navigation {
+
+		> div {
+			@include container;
+		}
+	}
+}

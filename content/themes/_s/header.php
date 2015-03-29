@@ -40,29 +40,32 @@
 		<div>
 			<div class="site-branding" itemscope itemtype="http://schema.org/Organization">
 				<div>
-					<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url">
-						<img src="<?php echo get_template_directory_uri(); ?>/favicon.png" alt="<?php bloginfo('name'); ?> Logo" itemprop="logo" />
-					</a>
-					<?php if (is_front_page() || is_home()) : ?>
-						<h1 class="site-title" itemprop="name">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url">
-								<?php bloginfo( 'name' ); ?>
-							</a>
-						</h1>
-					<?php else : ?>
-						<span class="site-title" itemprop="name">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url">
-								<?php bloginfo( 'name' ); ?>
-							</a>
-						</span>
-					<?php endif; ?>
-					<span class="site-description" itemprop="description"><?php bloginfo( 'description' ); ?></span>
+					<div class="site-brand">
+						<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url">
+							<img src="http://placehold.it/161x100" alt="<?php bloginfo('name'); ?> Logo" itemprop="logo" />
+							<?php /* <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo('name'); ?> Logo" itemprop="logo" /> */ ?>
+						</a>
+						<?php if (is_front_page() || is_home()) : ?>
+							<h1 class="site-title" itemprop="name">
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url">
+									<?php bloginfo( 'name' ); ?>
+								</a>
+							</h1>
+						<?php else : ?>
+							<p class="site-title" itemprop="name">
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url">
+									<?php bloginfo( 'name' ); ?>
+								</a>
+							</p>
+						<?php endif; ?>
+						<p class="site-description" itemprop="description"><?php bloginfo( 'description' ); ?></p>
+					</div>
 					<?php if (_s_contact()) : ?>
-						<span class="site-contact">
+						<div class="site-contact">
 							<a href="tel:<?php echo _s_contact(phone) ?>" class="phone" itemprop="telephone">
 								<?php echo _s_contact(phone) ?>
 							</a>
-						</span>
+						</div>
 					<?php endif; ?>
 				</div>
 			</div><!-- .site-branding -->
