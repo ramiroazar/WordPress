@@ -116,6 +116,7 @@ function _s_gallery( $atts ) {
 			'image_total' => 4,
 			'image_size' => 'thumbnail',
 			'columns' => 2,
+			'caption' => false,
 		), $atts )
 	);
 
@@ -161,10 +162,12 @@ function _s_gallery( $atts ) {
 							$return.= 			"<img width='150' height='150' src='" . $gallery_image_thumb_url . "' class='attachment-thumbnail' alt='" . $gallery_image_caption . "'>";
 							$return.= 		"</a>";
 							$return.= 	"</div>";
-								if ( $gallery_image_caption ) :
-									$return.= "<figcaption class='wp-caption-text gallery-caption' id='gallery-1-21'>";
-									$return.= 	$gallery_image_caption;
-									$return.= "</figcaption>";
+								if($caption):
+									if ( $gallery_image_caption ) :
+										$return.= "<figcaption class='wp-caption-text gallery-caption' id='gallery-1-21'>";
+										$return.= 	$gallery_image_caption;
+										$return.= "</figcaption>";
+									endif;
 								endif;
 							$return.= "</figure>";
 			         endif; 

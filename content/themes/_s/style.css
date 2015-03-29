@@ -393,18 +393,22 @@ blockquote, q {
 blockquote:before, blockquote:after, q:before, q:after {
   content: "";
 }
-
-/* line 18, sass/typography/_copy.scss */
-blockquote {
-  margin: 0 1.5em;
+/* line 17, sass/typography/_copy.scss */
+blockquote.review, q.review {
+  margin: 1.5em 0;
 }
 
 /* line 22, sass/typography/_copy.scss */
+blockquote {
+  margin: 1.5em;
+}
+
+/* line 26, sass/typography/_copy.scss */
 address {
   margin: 0 0 1.5em;
 }
 
-/* line 26, sass/typography/_copy.scss */
+/* line 30, sass/typography/_copy.scss */
 pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
@@ -415,24 +419,24 @@ pre {
   padding: 1.5em;
 }
 
-/* line 36, sass/typography/_copy.scss */
+/* line 40, sass/typography/_copy.scss */
 code, kbd, tt, var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 
-/* line 40, sass/typography/_copy.scss */
+/* line 44, sass/typography/_copy.scss */
 abbr, acronym {
   border-bottom: 1px dotted #666;
   cursor: help;
 }
 
-/* line 45, sass/typography/_copy.scss */
+/* line 49, sass/typography/_copy.scss */
 mark, ins {
   background: #fff9c0;
   text-decoration: none;
 }
 
-/* line 50, sass/typography/_copy.scss */
+/* line 54, sass/typography/_copy.scss */
 big {
   font-size: 125%;
 }

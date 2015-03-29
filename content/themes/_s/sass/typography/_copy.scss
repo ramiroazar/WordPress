@@ -13,10 +13,14 @@ blockquote, q {
 	&:after {
 		content: "";
 	}
+
+	&.review {
+		margin: rhythm() 0;
+	}
 }
 
 blockquote {
-	margin: 0 rhythm();
+	margin: rhythm();
 }
 
 address {

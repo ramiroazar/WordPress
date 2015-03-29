@@ -173,13 +173,13 @@ require get_template_directory() . '/inc/_s_schema.org.php';
 
 	// Replace [...] with Read More link
 	function _s_excerpt_more( $more ) {
-		return '... ' . _s_excerpt_more_output();
+		return '...';
 	}
 	add_filter( 'excerpt_more', '_s_excerpt_more' );
 
 	// Limit Excerpt
 	function _s_excerpt($limit) {
-	    return wp_trim_words(get_the_excerpt(), $limit) . " " . _s_excerpt_more_output();
+	    return wp_trim_words(get_the_excerpt(), $limit); // . " " . _s_excerpt_more_output();
 	}
 
 // Remove Contact Form 7 Stylesheet

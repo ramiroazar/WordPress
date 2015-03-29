@@ -67,7 +67,7 @@ get_header(); ?>
 
 							<h2>Reviews</h2>
 
-							<?php // echo _s_gallery(); ?>
+							<?php echo _s_review(array('limit' => 2)); ?>
 
 						</div>
 
