@@ -166,24 +166,29 @@ require get_template_directory() . '/inc/_s_schema.org.php';
 
 // Excerpt
 
+	// Output Read More link
+	function _s_excerpt_more_output( $more ) {
+		return '<a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', '_s') . '</a>';
+	}
+
 	// Replace [...] with Read More link
 	function _s_excerpt_more( $more ) {
-		return '... <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', '_s') . '</a>';
+		return '... ' . _s_excerpt_more_output();
 	}
 	add_filter( 'excerpt_more', '_s_excerpt_more' );
 
 	// Limit Excerpt
-	function excerpt($limit) {
-	    return wp_trim_words(get_the_excerpt(), $limit) . _s_excerpt_more();
+	function _s_excerpt($limit) {
+	    return wp_trim_words(get_the_excerpt(), $limit) . " " . _s_excerpt_more_output();
 	}
 
 // Remove Contact Form 7 Stylesheet
 
-  function deregister_ct7_styles() {
+  function _s_deregister_ct7_styles() {
       wp_deregister_style( 'contact-form-7' );
   }
 
-  add_action( 'wp_print_styles', 'deregister_ct7_styles', 100 );
+  add_action( 'wp_print_styles', '_s_deregister_ct7_styles', 100 );
 
 // Custom Login Page CSS
 
