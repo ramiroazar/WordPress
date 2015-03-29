@@ -12,7 +12,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 		<section>
-			<h2>Footer</h2>
+			<h2 class="footer-title">Footer</h2>
 			<nav id="site-sitemap" class="site-sitemap" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 				<div>
 					<h3>Sitemap</h3>

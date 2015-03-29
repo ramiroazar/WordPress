@@ -5,8 +5,23 @@
 			@include center-content-bleed-background;
 		}
 
-		.site-title, .site-description {
+		.site-logo {
+			img {
+				display: inline-block;
+				vertical-align: bottom;
+			}
+		}
+
+		.site-title {
+			@extend %sr-text;
+		}
+
+		.site-description {
 			margin: 0;
+		}
+
+		.site-contact {
+
 		}
 	}
 
@@ -33,6 +48,10 @@
 	.widget-area {
 		@include susy-breakpoint($breakpoint__medium) {
 			@include span(last 4);		
+		}
+
+		.sidebar-title {
+			@extend %sr-text;
 		}
 	}
 
@@ -81,6 +100,10 @@
 	> section {
 		&:first-child {
 			@include container;
+		}
+
+		.footer-title {
+			@extend %sr-text;
 		}
 	}
 

@@ -40,7 +40,7 @@
 		<div>
 			<div class="site-branding" itemscope itemtype="http://schema.org/Organization">
 				<div>
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url">
+					<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url">
 						<img src="<?php echo get_template_directory_uri(); ?>/favicon.png" alt="<?php bloginfo('name'); ?> Logo" itemprop="logo" />
 					</a>
 					<?php if (is_front_page() || is_home()) : ?>
@@ -50,17 +50,19 @@
 							</a>
 						</h1>
 					<?php else : ?>
-						<p class="site-title" itemprop="name">
+						<span class="site-title" itemprop="name">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url">
 								<?php bloginfo( 'name' ); ?>
 							</a>
-						</p>
+						</span>
 					<?php endif; ?>
-					<p class="site-description" itemprop="description"><?php bloginfo( 'description' ); ?></p>
+					<span class="site-description" itemprop="description"><?php bloginfo( 'description' ); ?></span>
 					<?php if (_s_contact()) : ?>
-						<a href="tel:<?php echo _s_contact(phone) ?>" class="phone" itemprop="telephone">
-							<?php echo _s_contact(phone) ?>
-						</a>
+						<span class="site-contact">
+							<a href="tel:<?php echo _s_contact(phone) ?>" class="phone" itemprop="telephone">
+								<?php echo _s_contact(phone) ?>
+							</a>
+						</span>
 					<?php endif; ?>
 				</div>
 			</div><!-- .site-branding -->

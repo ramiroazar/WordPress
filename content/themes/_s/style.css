@@ -433,7 +433,7 @@ big {
 
 /* Text meant only for screen readers. */
 /* line 3, sass/typography/_accessibility.scss */
-.screen-reader-text, div.wpcf7 .screen-reader-response, div.wpcf7 label {
+.screen-reader-text, div.wpcf7 .screen-reader-response, div.wpcf7 label, .site-header .site-branding .site-title, .site-content .widget-area .sidebar-title, .site-footer > section .footer-title {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
   height: 1px;
@@ -441,7 +441,7 @@ big {
   overflow: hidden;
 }
 /* line 10, sass/typography/_accessibility.scss */
-.screen-reader-text:hover, div.wpcf7 .screen-reader-response:hover, div.wpcf7 label:hover, .screen-reader-text:active, div.wpcf7 .screen-reader-response:active, div.wpcf7 label:active, .screen-reader-text:focus, div.wpcf7 .screen-reader-response:focus, div.wpcf7 label:focus {
+.screen-reader-text:hover, div.wpcf7 .screen-reader-response:hover, div.wpcf7 label:hover, .site-header .site-branding .site-title:hover, .site-content .widget-area .sidebar-title:hover, .site-footer > section .footer-title:hover, .screen-reader-text:active, div.wpcf7 .screen-reader-response:active, div.wpcf7 label:active, .site-header .site-branding .site-title:active, .site-content .widget-area .sidebar-title:active, .site-footer > section .footer-title:active, .screen-reader-text:focus, div.wpcf7 .screen-reader-response:focus, div.wpcf7 label:focus, .site-header .site-branding .site-title:focus, .site-content .widget-area .sidebar-title:focus, .site-footer > section .footer-title:focus {
   background-color: #f1f1f1;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -1471,11 +1471,16 @@ a:hover, a:active {
   width: 100%;
   padding: 0 calc(50% - (1140px / 2));
 }
-/* line 8, sass/layout/_content-sidebar.scss */
-.site-header .site-branding .site-title, .site-header .site-branding .site-description {
+/* line 9, sass/layout/_content-sidebar.scss */
+.site-header .site-branding .site-logo img {
+  display: inline-block;
+  vertical-align: bottom;
+}
+/* line 19, sass/layout/_content-sidebar.scss */
+.site-header .site-branding .site-description {
   margin: 0;
 }
-/* line 15, sass/layout/_content-sidebar.scss */
+/* line 30, sass/layout/_content-sidebar.scss */
 .site-header .site-navigation > div {
   max-width: 1140px;
   margin-left: auto;
@@ -1488,7 +1493,7 @@ a:hover, a:active {
   clear: both;
 }
 
-/* line 21, sass/layout/_content-sidebar.scss */
+/* line 36, sass/layout/_content-sidebar.scss */
 .site-content {
   max-width: 1140px;
   margin-left: auto;
@@ -1501,7 +1506,7 @@ a:hover, a:active {
   clear: both;
 }
 @media (min-width: 62em) {
-  /* line 24, sass/layout/_content-sidebar.scss */
+  /* line 39, sass/layout/_content-sidebar.scss */
   .site-content .content-area {
     width: 65.71429%;
     float: left;
@@ -1509,7 +1514,7 @@ a:hover, a:active {
   }
 }
 @media (min-width: 62em) {
-  /* line 33, sass/layout/_content-sidebar.scss */
+  /* line 48, sass/layout/_content-sidebar.scss */
   .site-content .widget-area {
     width: 31.42857%;
     float: right;
@@ -1517,20 +1522,20 @@ a:hover, a:active {
   }
 }
 
-/* line 42, sass/layout/_content-sidebar.scss */
+/* line 61, sass/layout/_content-sidebar.scss */
 .home .site-content {
   max-width: none;
   margin: 0;
 }
 @media (min-width: 62em) {
-  /* line 46, sass/layout/_content-sidebar.scss */
+  /* line 65, sass/layout/_content-sidebar.scss */
   .home .site-content .content-area {
     float: none;
     width: 100%;
     margin: 0;
   }
 }
-/* line 54, sass/layout/_content-sidebar.scss */
+/* line 73, sass/layout/_content-sidebar.scss */
 .home .site-content section {
   max-width: 1140px;
   margin-left: auto;
@@ -1623,12 +1628,12 @@ a:hover, a:active {
 .home .site-content section#associations .carousel figure .caption .caption-link {
   display: none;
 }
-/* line 73, sass/layout/_content-sidebar.scss */
+/* line 92, sass/layout/_content-sidebar.scss */
 .home .site-content .widget-area {
   display: none;
 }
 
-/* line 82, sass/layout/_content-sidebar.scss */
+/* line 101, sass/layout/_content-sidebar.scss */
 .site-footer > section:first-child {
   max-width: 1140px;
   margin-left: auto;
@@ -1641,7 +1646,7 @@ a:hover, a:active {
   clear: both;
 }
 @media (min-width: 62em) {
-  /* line 87, sass/layout/_content-sidebar.scss */
+  /* line 110, sass/layout/_content-sidebar.scss */
   .site-footer .site-sitemap, .site-footer .site-sitemap-featured {
     width: 31.42857%;
     float: left;
@@ -1649,14 +1654,14 @@ a:hover, a:active {
   }
 }
 @media (min-width: 62em) {
-  /* line 93, sass/layout/_content-sidebar.scss */
+  /* line 116, sass/layout/_content-sidebar.scss */
   .site-footer .site-contact {
     width: 31.42857%;
     float: right;
     margin-right: 0;
   }
 }
-/* line 101, sass/layout/_content-sidebar.scss */
+/* line 124, sass/layout/_content-sidebar.scss */
 .site-footer #copyright > div {
   max-width: 1140px;
   margin-left: auto;
