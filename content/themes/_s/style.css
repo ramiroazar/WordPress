@@ -1616,7 +1616,17 @@ a:hover, a:active {
   min-width: 100%;
   min-height: 100%;
 }
-/* line 112, sass/media/_carousels.scss */
+/* line 111, sass/media/_carousels.scss */
+.home .site-content .site-main > section#featured .carousel img.tall {
+  min-width: 100%;
+  height: auto;
+}
+/* line 116, sass/media/_carousels.scss */
+.home .site-content .site-main > section#featured .carousel img.wide {
+  min-height: 100%;
+  width: auto;
+}
+/* line 122, sass/media/_carousels.scss */
 .home .site-content .site-main > section#featured .carousel figcaption {
   position: relative;
   z-index: 2;
@@ -1633,7 +1643,7 @@ a:hover, a:active {
   display: block;
   clear: both;
 }
-/* line 121, sass/media/_carousels.scss */
+/* line 131, sass/media/_carousels.scss */
 .home .site-content .site-main > section#featured .carousel .caption {
   display: table-cell;
   vertical-align: middle;
