@@ -1,78 +1,33 @@
-(function($) {
+$(window).load(function() {  
 
-	/*var pluginName = "carousel",
-		initSelector = "." + pluginName,
-		//img = initSelector.find("img"),
-		aspectRatioMethods = {
-			_aspectRatio: function(){
-				var $self = $( this );
-				$self.addClass("yayyyyy");
-			},
-		};
+		var $theWindow        = $(".carousel figure");  
+		    			    		
+		function resizeImg() {
 
-	// add methods
-	$.extend( $.fn[ pluginName ].prototype, aspectRatioMethods );*/
+			$theWindow.each(function() {
 
-	$( function(){
+				windowAspectRatio = $(this).width() / $(this).height()
 
-		var $canvas 		= $(".carousel"),
-	       $img 			= $(".carousel img");
+				$img = $(this).find("img");
 
-		$img.each(function(){
-			// Create new offscreen image to test
-			var theImage = new Image();
-			theImage.src = $(this).attr("src");
-			// Add a reference to the original.
-			$(theImage).data("original",this);
+				$img.each(function() {
 
-			// Get accurate measurements from that.
-			$(theImage).load(function(){
-				var imageWidth = this.width;
-				var imageHeight = this.height;
-				$($(this).data("original")).attr({"data-width":imageWidth,"data-height":imageHeight});
+					imageAspectRatio = $(this).width() / $(this).height();
+				
+					if ( windowAspectRatio < imageAspectRatio ) {
+					    $(this)
+					    	.removeClass('width height')
+					    	.addClass('height');
+					} else {
+					    $(this)
+					    	.removeClass('height width')
+					    	.addClass('width');
+					}
+				});
 			});
-		});
-	                      
-	   function resizeBg() {
+						
+		}
+		                   			
+		$theWindow.resize(resizeImg).trigger("resize");
 
-	   	var canvasWidth = $canvas.width();
-	   	var canvasHeight = $canvas.height();
-	   	var canvasAspectRatio = canvasWidth / canvasHeight;
-
-	   	$canvas.attr("data-aspect-ratio",canvasAspectRatio);
-
-	   	$img.each(function(){
-
-	   		var imageWidth = $(this).data("width");
-	   		var imageHeight = $(this).data("height");
-	   		var imageAspectRatio = imageWidth / imageHeight;
-
-		   	$(this).attr("data-aspect-ratio",canvasAspectRatio);
-
-	   		if (canvasAspectRatio > 1 ) {
-	   			if (imageWidth > 1) {
-	   				$removeClass();
-	   				$(this).addClass("landscape");
-	   			} else {
-	   				$removeClass();
-	   				$(this).addClass("portrait");	   				
-	   			}
-	   		} else {
-	   			if (imageWidth > 1) {
-	   				$removeClass();
-	   				$(this).addClass("landscape");
-	   			} else {
-	   				$removeClass();
-	   				$(this).addClass("portrait");	   				
-	   			}  			
-	   		}
-
-         });
-	            
-	   }
-	    
-	   $(window).resize(resizeBg).trigger("resize");
-
-	} );
-
-}(jQuery));
+});

@@ -23,6 +23,10 @@ get_header(); ?>
 
 					<?php echo _s_carousel(array('placeholder' => '1920x500')); ?>
 
+					<br />
+
+					<?php echo _s_carousel(array('placeholder' => '500x900')); ?>
+
 				</div>
 
 			</section>
