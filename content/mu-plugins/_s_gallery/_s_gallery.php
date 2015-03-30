@@ -114,7 +114,7 @@ function _s_gallery( $atts ) {
 			'ids' => null,
 			'limit' => 1,
 			'image_total' => 4,
-			'image_size' => 'thumbnail',
+			'image_size' => 'medium',
 			'columns' => 2,
 			'caption' => false,
 		), $atts )
@@ -159,7 +159,7 @@ function _s_gallery( $atts ) {
 							$return.= "<figure class='gallery-item'>";
 							$return.= 	"<div class='gallery-icon'>";
 							$return.= 		"<a href='" . $gallery_image_file_url . "'>";
-							$return.= 			"<img width='150' height='150' src='" . $gallery_image_thumb_url . "' class='attachment-thumbnail' alt='" . $gallery_image_caption . "'>";
+							$return.= 			"<img src='" . $gallery_image_thumb_url . "' class='attachment-thumbnail' alt='" . $gallery_image_caption . "'>";
 							$return.= 		"</a>";
 							$return.= 	"</div>";
 								if($caption):
