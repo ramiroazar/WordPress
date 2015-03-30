@@ -1209,35 +1209,27 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 5.2 Menus
 --------------------------------------------------------------*/
-/* line 3, sass/navigation/_menus.scss */
-.site-navigation.toggled .nav-menu {
+/* line 4, sass/navigation/_menus.scss */
+.site-navigation.toggled ul {
   display: block;
 }
-/* line 7, sass/navigation/_menus.scss */
+/* line 9, sass/navigation/_menus.scss */
 .site-navigation ul {
   display: none;
 }
-/* line 10, sass/navigation/_menus.scss */
-.site-navigation ul ul.sub-menu {
-  display: block;
-}
-/* line 15, sass/navigation/_menus.scss */
+/* line 13, sass/navigation/_menus.scss */
 .site-navigation .menu-toggle {
   display: block;
 }
 @media (min-width: 62em) {
-  /* line 1, sass/navigation/_menus.scss */
-  .site-navigation {
-    /* Small menu. */
-  }
-  /* line 21, sass/navigation/_menus.scss */
+  /* line 19, sass/navigation/_menus.scss */
   .site-navigation ul {
     display: block;
     list-style: none;
     margin: 0;
     padding-left: 0;
   }
-  /* line 27, sass/navigation/_menus.scss */
+  /* line 25, sass/navigation/_menus.scss */
   .site-navigation ul ul {
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
     float: left;
@@ -1246,54 +1238,54 @@ a:hover, a:active {
     left: -999em;
     z-index: 99999;
   }
-  /* line 35, sass/navigation/_menus.scss */
+  /* line 33, sass/navigation/_menus.scss */
   .site-navigation ul ul ul {
     left: -999em;
     top: 0;
   }
-  /* line 41, sass/navigation/_menus.scss */
+  /* line 39, sass/navigation/_menus.scss */
   .site-navigation ul ul li:hover > ul {
     left: 100%;
   }
-  /* line 46, sass/navigation/_menus.scss */
+  /* line 44, sass/navigation/_menus.scss */
   .site-navigation ul ul a {
     width: 200px;
   }
-  /* line 57, sass/navigation/_menus.scss */
+  /* line 55, sass/navigation/_menus.scss */
   .site-navigation ul li:hover > ul {
     left: auto;
   }
-  /* line 62, sass/navigation/_menus.scss */
+  /* line 60, sass/navigation/_menus.scss */
   .site-navigation li {
     display: inline-block;
     position: relative;
   }
-  /* line 70, sass/navigation/_menus.scss */
+  /* line 68, sass/navigation/_menus.scss */
   .site-navigation a {
     display: block;
     text-decoration: none;
   }
-  /* line 81, sass/navigation/_menus.scss */
+  /* line 78, sass/navigation/_menus.scss */
   .site-navigation .menu-toggle {
     display: none;
   }
 }
 
-/* line 91, sass/navigation/_menus.scss */
+/* line 88, sass/navigation/_menus.scss */
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
   margin: 0 0 1.5em;
   overflow: hidden;
 }
-/* line 96, sass/navigation/_menus.scss */
+/* line 93, sass/navigation/_menus.scss */
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
   float: left;
   width: 50%;
 }
-/* line 101, sass/navigation/_menus.scss */
+/* line 98, sass/navigation/_menus.scss */
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {

@@ -1,15 +1,13 @@
 .site-navigation {
 
-	&.toggled .nav-menu {
-		display: block;
+	&.toggled {
+		ul {
+			display: block;
+		}
 	}
 
 	ul {
 		display: none;
-
-		ul.sub-menu {
-			display: block;
-		}
 	}
 
 	.menu-toggle {
@@ -76,8 +74,7 @@
 		.current-menu-item > a,
 		.current_page_ancestor > a {
 		}
-
-		/* Small menu. */
+		
 		.menu-toggle {
 			display: none;
 		}
