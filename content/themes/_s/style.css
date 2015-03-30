@@ -2174,7 +2174,7 @@ img.mfp-img {
 .home .site-content .site-main > section#associations .carousel figure {
   position: relative;
 }
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 30em) and (max-width: 48em) {
   /* line 55, sass/media/_carousels.scss */
   .home .site-content .site-main > section#associations .carousel figure {
     width: 48.57143%;
@@ -2187,7 +2187,7 @@ img.mfp-img {
     margin-right: 0;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 48em) {
   /* line 55, sass/media/_carousels.scss */
   .home .site-content .site-main > section#associations .carousel figure {
     width: 22.85714%;
