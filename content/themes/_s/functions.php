@@ -126,6 +126,10 @@ function _s_scripts() {
 	// Load tabs
 	wp_enqueue_script('_s-tab', (get_template_directory_uri() . "/js/tab.js"), array('_s-jquery'), '', true);
 
+	// Load lightbox
+	wp_enqueue_script('_s-lightbox', (get_template_directory_uri() . "/js/jquery.magnific-popup.min.js"), array('_s-jquery'), '', true);
+	wp_enqueue_script('_s-lightbox.autoinit', (get_template_directory_uri() . "/js/jquery.magnific-popup.autoinit.js"), array('_s-jquery'), '', true);
+
 	// icon stylesheet
 	wp_enqueue_style( '_s-icon-stylesheet', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), null);
 }
