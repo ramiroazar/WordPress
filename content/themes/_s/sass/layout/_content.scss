@@ -1,0 +1,89 @@
+.site-content {
+	@include container;
+
+	.content-area {
+		@include susy-breakpoint($breakpoint__medium) {
+			@include span(8);			
+		}
+	}
+
+	.widget-area {
+		@include susy-breakpoint($breakpoint__medium) {
+			@include span(4 last);		
+		}
+
+		.sidebar-title {
+			@extend %sr-text;
+		}
+	}
+}
+
+.home {
+	
+	.site-content {
+		max-width: none;
+		margin: 0;	
+
+		.content-area {
+			@include susy-breakpoint($breakpoint__medium) {
+				float: none;
+				width: 100%;
+				margin: 0;	
+			}
+		}
+
+		.site-main {
+
+			> section {
+
+				> div {
+					@include container;
+				}
+
+				&#featured {
+					.carousel {
+						@include carousel-background;
+					}
+				}
+
+				#front-page {}
+
+				&#associations {
+					.carousel {
+						@include carousel-multiple;
+					}
+				}
+
+				#reviews {}
+
+				#galleries {}
+			}
+
+			.section {
+
+				> div {
+					@include container;
+				}
+
+				section {
+
+					&#reviews {
+						@include susy-breakpoint($breakpoint__medium) {
+							@include span(6);
+						}
+					}
+
+					&#galleries {
+						@include susy-breakpoint($breakpoint__medium) {
+							@include span(6 last);
+						}
+					}
+				}
+			}
+		}
+
+		.widget-area {
+			display: none;
+		}	
+	}
+}

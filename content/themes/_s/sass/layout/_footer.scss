@@ -1,0 +1,32 @@
+.site-footer {
+
+	> section {
+		&:first-child {
+			@include container;
+		}
+
+		.footer-title {
+			@extend %sr-text;
+		}
+	}
+
+	.site-sitemap, .site-sitemap-featured {
+		@include susy-breakpoint($breakpoint__medium) {
+			@include span(4);			
+		}
+	}
+
+	.site-contact {
+		@include susy-breakpoint($breakpoint__medium) {
+			@include span(4 last);			
+		}
+	}
+
+	#copyright {
+
+		> div {
+			@include container;
+		}
+
+	}
+}

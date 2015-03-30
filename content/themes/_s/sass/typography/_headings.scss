@@ -1,0 +1,29 @@
+@mixin heading($font-size) {
+	@include adjust-font-size-to($font-size);
+	margin: rhythm(1, $font-size) 0 rhythm(1, $font-size) 0;
+	font-weight: bold;
+}
+
+h1, %h1 {
+	@include heading(36px);
+}
+
+h2, %h2 {
+	@include heading(30px);
+}
+
+h3, %h3 {
+	@include heading(24px);
+}
+
+h4, %h4 {
+	@include heading(18px);
+}
+
+h5, %h5 {
+	@include heading(14px);
+}
+
+h6, %h6 {
+	@include heading(12px);
+}

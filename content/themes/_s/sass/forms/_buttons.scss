@@ -1,0 +1,21 @@
+%button {
+	padding: rhythm(.5);
+	border: 0;
+	@include border-radius;
+	@include adjust-font-size-to(16px);
+	background: $color__background-button;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	@extend %button;
+
+	&:hover {
+	}
+
+	&:active,
+	&:focus {
+	}
+}

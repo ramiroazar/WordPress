@@ -1,0 +1,45 @@
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+/*--------------------------------------------------------------
+11.1 Captions
+--------------------------------------------------------------*/
+@import "captions";
+
+/*--------------------------------------------------------------
+11.2 Galleries
+--------------------------------------------------------------*/
+@import "galleries";
+
+/*--------------------------------------------------------------
+11.3 Alignments
+--------------------------------------------------------------*/
+@import "alignments";
+
+/*--------------------------------------------------------------
+11.4 Carousels
+--------------------------------------------------------------*/
+@import "carousels";
+
+/*--------------------------------------------------------------
+11.5 Maps
+--------------------------------------------------------------*/
+@import "maps";
