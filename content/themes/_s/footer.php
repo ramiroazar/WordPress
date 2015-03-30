@@ -42,19 +42,13 @@
 					</span> 
 					<span itemprop="copyrightHolder" itemscope itemtype="http://schema.org/Organization">
 						<span itemprop="name">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url">
-								<?php bloginfo( 'name' ); ?>
-							</a>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><?php bloginfo( 'name' ); ?></a>.
 						</span>
-					</span>. 
+					</span>
 					<?php printf(
 						__( 'Website Designed & Developed by %2$s.', '_s' ), 
 						'_s', 
-						'<span itemscope itemtype="http://schema.org/Organization">
-							<span itemprop="name">
-								<a href="http://www.insightdigital.com.au" rel="designer" itemprop="url">Insight Digital</a>
-							</span>
-						</span>'
+						'<span itemscope itemtype="http://schema.org/Organization"><span itemprop="name"><a href="http://www.insightdigital.com.au" rel="designer" itemprop="url">Insight Digital</a></span></span>'
 					); ?>
 				</p>
 			</div>
