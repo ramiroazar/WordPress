@@ -46,7 +46,7 @@ function _s_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -275,4 +275,29 @@ require get_template_directory() . '/inc/_s_schema.org.php';
 			return $contact[$type];
 		else
 			return $contact;
+	}
+
+// Custom image sizes
+
+	// Device sizes
+
+	// add_image_size('xxlarge', 2560, 1440);
+	// add_image_size('xlarge', 1920, 1080);
+	// add_image_size('large', 1280, 1024);
+	// add_image_size('medium', 1024, 768);
+	// add_image_size('small', 768, 480);
+	// add_image_size('xsmall', 480, 320);
+
+	add_filter( 'image_size_names_choose', '_s_custom_image_sizes' );
+
+	function bones_custom_image_sizes( $sizes ) {
+		return array_merge( $sizes, array(
+			// Device sizes
+			// 'xxlarge' => __('Extra Extra Large Device'),
+			// 'xlarge' => __('Extra Large Device'),
+			// 'large' => __('Large Device'),
+			// 'medium' => __('Medium Device'),
+			// 'small' => __('Small Device'),
+			// 'xsmall' => __('Extra Small Device'),
+		) );
 	}
