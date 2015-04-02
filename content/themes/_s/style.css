@@ -500,32 +500,23 @@ hr {
 
 /* line 1, sass/elements/_lists.scss */
 ul, ol {
+  list-style-position: inside;
   margin: 0 0 1.5em 0;
 }
 
-/* line 5, sass/elements/_lists.scss */
-ul {
-  list-style: disc;
-}
-
-/* line 9, sass/elements/_lists.scss */
-ol {
-  list-style: decimal;
-}
-
-/* line 13, sass/elements/_lists.scss */
+/* line 12, sass/elements/_lists.scss */
 li > ul,
 li > ol {
   margin-bottom: 0;
   margin-left: 1.5em;
 }
 
-/* line 19, sass/elements/_lists.scss */
+/* line 18, sass/elements/_lists.scss */
 dt {
   font-weight: bold;
 }
 
-/* line 23, sass/elements/_lists.scss */
+/* line 22, sass/elements/_lists.scss */
 dd {
   margin: 0 0 1.5em 0;
 }

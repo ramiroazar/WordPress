@@ -1,13 +1,12 @@
 ul, ol {
+	list-style-position: inside;
 	margin: 0 0 rhythm() 0;
 }
 
 ul {
-	list-style: disc;
 }
 
 ol {
-	list-style: decimal;
 }
 
 li > ul,
