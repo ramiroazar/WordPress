@@ -11,6 +11,7 @@ if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
 	define( 'DB_USER', '%%DB_USER%%' );
 	define( 'DB_PASSWORD', '%%DB_PASSWORD%%' );
 	define( 'DB_HOST', '%%DB_HOST%%' ); // Probably 'localhost'
+	define( 'UPLOADS', '../shared/content/uploads' );
 }
 
 // ========================
