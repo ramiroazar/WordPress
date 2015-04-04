@@ -28,6 +28,13 @@
 				</li>
 			<?php endif; ?>
 
+			<?php if (get_bloginfo( 'admin_email' )) : ?>
+					<a href='mailto:<?php echo get_bloginfo( 'admin_email' ); ?>' itemprop="email">
+					<?php echo get_bloginfo( 'admin_email' ); ?>
+				</a>
+				<br />
+			<?php endif; ?>
+
 			<?php if (_s_contact(address)) : ?>
 				<li>
 					<a href="http://maps.google.com/?q=<?php echo _s_contact(address) ?>" target="_blank" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
