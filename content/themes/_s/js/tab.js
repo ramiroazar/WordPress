@@ -1,7 +1,11 @@
 +function ($) {
 	'use strict';
 
-	var $tabgroups   = $(".tabgroup");
+	var $tabgroups	= $(".tabgroup");
+	var $collapse	= false;
+		 $collapse	= $tabgroups.data('collapse');
+	var $hover		= false;
+		 $hover		= $tabgroups.data('hover');
 
 	$tabgroups.each(function(){
 
@@ -12,24 +16,60 @@
 
 			//e.preventDefault();
 
-         $tabs.attr('aria-selected', false);
-         $(this).attr('aria-selected', true);
+			var $clicked = $(this);
 
-			$tabs.removeClass('active');
-			$(this).addClass('active');
+			function _s_tab_disactivate() {
+	         $tabs.attr('aria-selected', false);
+				$tabs.removeClass('active');				
+			}
+
+			function _s_tab_activate() {
+	         $clicked.attr('aria-selected', true);
+				$clicked.addClass('active');				
+			}
+
+			// If collapse is enabled
+			if ($collapse === true) {
+
+				// If clicked tab is already active
+				if ($clicked.hasClass("active")) {
+		         _s_tab_disactivate();
+				} else {
+		         _s_tab_disactivate();
+		         _s_tab_activate();
+				}
+
+			} else {
+	         _s_tab_disactivate();
+	         _s_tab_activate();
+			}
 
 			var id = $(this).data('target');
 
-			$tabpanels.each(function(){
+			$tabpanels.each(function(index, element){
 
-				$(this).removeClass('active');
-            $(this).attr('aria-hidden', true);
+				function _s_tabpanel_disactivate() {
+	            $(element).attr('aria-hidden', true);
+					$(element).removeClass('active');			
+				}
 
-				if($(this).attr('id') === id) {
+				function _s_tabpanel_activate() {
+               $(element).attr('aria-hidden', false);
+					$(element).addClass('active');		
+				}
 
-					$(this).addClass('active');
-               $(this).attr('aria-hidden', false);
+				_s_tabpanel_disactivate();
 
+				if ($collapse === true) {
+					if ($clicked.hasClass("active")) {
+						if($(element).attr('id') === id) {
+		               _s_tabpanel_activate();
+						}
+					}
+				} else {
+					if($(element).attr('id') === id) {
+	               _s_tabpanel_activate();
+					}
 				}
 			});
 		});
