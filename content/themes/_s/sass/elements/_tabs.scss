@@ -1,7 +1,17 @@
-.tabpanel {
-	display: none;
+.tabgroup {
+	a[role=tab] {
+		cursor: pointer;
 
-	&.active {
-		display: block;
+		&.active {
+			font-weight: bold;
+		}
+	}
+
+	.tabpanel {
+		display: none;
+
+		&.active {
+			display: block;
+		}
 	}
 }

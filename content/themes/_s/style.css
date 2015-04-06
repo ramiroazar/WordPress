@@ -527,12 +527,20 @@ table {
   width: 100%;
 }
 
-/* line 1, sass/elements/_tabs.scss */
-.tabpanel {
+/* line 2, sass/elements/_tabs.scss */
+.tabgroup a[role=tab] {
+  cursor: pointer;
+}
+/* line 5, sass/elements/_tabs.scss */
+.tabgroup a[role=tab].active {
+  font-weight: bold;
+}
+/* line 10, sass/elements/_tabs.scss */
+.tabgroup .tabpanel {
   display: none;
 }
-/* line 4, sass/elements/_tabs.scss */
-.tabpanel.active {
+/* line 13, sass/elements/_tabs.scss */
+.tabgroup .tabpanel.active {
   display: block;
 }
 
