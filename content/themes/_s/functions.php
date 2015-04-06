@@ -222,6 +222,17 @@ require get_template_directory() . '/inc/_s_schema.org.php';
 
 // Query Shortcode
 
+   function _s_query_markup($markup, $context) {
+	   $context = $context;
+   	$query_markup = "";
+		ob_start();
+			//get_template_part($markup); 
+			include(locate_template($markup . '.php'));
+			$query_markup .= ob_get_contents();  
+		ob_end_clean();
+		return $query_markup;
+   }
+
 	function _s_query($atts) {
 
 	   // EXAMPLE USAGE:
@@ -231,11 +242,16 @@ require get_template_directory() . '/inc/_s_schema.org.php';
 	   extract(shortcode_atts(array(
 	      "arguements" => '',
 	      "markup" => '',
+	      "conditionals" => false,
 	   ), $atts));
 
 	   // de-funkify query
 	   $arguements = preg_replace('~&#x0*([0-9a-f]+);~ei', 'chr(hexdec("\\1"))', $arguements);
 	   $arguements = preg_replace('~&#0*([0-9]+);~e', 'chr(\\1)', $arguements);
+
+		global $post;
+	   $context = "";
+	   $context = get_the_ID();
 
 	   // query is made               
 	   query_posts($arguements);
@@ -243,10 +259,15 @@ require get_template_directory() . '/inc/_s_schema.org.php';
 	   // Reset and setup variables
 	   $output = '';
 
-		ob_start();  
-		get_template_part($markup);  
-		$output .= ob_get_contents();  
-		ob_end_clean();
+	   if ($conditionals == true) :
+			if (have_posts()) :
+				while(have_posts()) : the_post();
+					$output .= _s_query_markup($markup, $context);
+		   	endwhile;
+			endif;
+		else :
+			$output .= _s_query_markup($markup, $context);
+   	endif;
 	   
 	   wp_reset_query();
 	   return $output;
