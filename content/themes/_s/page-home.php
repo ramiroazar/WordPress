@@ -15,7 +15,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main" itemprop="mainContentOfPage">
 
-			<section id="featured">
+			<section id="featured" class="section">
 
 				<div>
 
@@ -25,11 +25,11 @@ get_header(); ?>
 
 				</div>
 
-			</section>
+			</section><!-- .section -->
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<section id="front-page">
+				<section id="front-page" class="section">
 
 					<div>
 
@@ -41,11 +41,11 @@ get_header(); ?>
 
 					</div>
 
-				</section>
+				</section><!-- .section -->
 				
 			<?php endwhile; // end of the loop. ?>
 
-			<section id="associations">
+			<section id="associations" class="section">
 
 				<div>
 
@@ -55,13 +55,13 @@ get_header(); ?>
 
 				</div>
 
-			</section>
+			</section><!-- .section -->
 
-			<div class="section">
+			<div class="section-group">
 
 				<div>
 
-					<section id="reviews">
+					<section id="reviews" class="section">
 
 						<div>
 
@@ -71,9 +71,9 @@ get_header(); ?>
 
 						</div>
 
-					</section>
+					</section><!-- .section -->
 
-					<section id="galleries">
+					<section id="galleries" class="section">
 
 						<div>
 
@@ -83,11 +83,11 @@ get_header(); ?>
 
 						</div>
 
-					</section>
+					</section><!-- .section -->
 
 				</div>
 
-			</div>
+			</div><!-- .section-group -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

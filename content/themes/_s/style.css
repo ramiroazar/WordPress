@@ -2109,23 +2109,23 @@ img.mfp-img {
   }
 }
 /* line 39, sass/layout/_content.scss */
-.home .site-content .site-main > section > div {
+.home .site-content .site-main > .section > div {
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
 }
 /* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-.home .site-content .site-main > section > div:after {
+.home .site-content .site-main > .section > div:after {
   content: " ";
   display: block;
   clear: both;
 }
 /* line 95, sass/media/_carousels.scss */
-.home .site-content .site-main > section#featured .carousel figure {
+.home .site-content .site-main > .section#featured .carousel figure {
   height: 30em;
 }
 /* line 99, sass/media/_carousels.scss */
-.home .site-content .site-main > section#featured .carousel img {
+.home .site-content .site-main > .section#featured .carousel img {
   position: absolute;
   top: -100%;
   bottom: -100%;
@@ -2140,7 +2140,7 @@ img.mfp-img {
   max-height: none;
 }
 /* line 120, sass/media/_carousels.scss */
-.home .site-content .site-main > section#featured .carousel figcaption {
+.home .site-content .site-main > .section#featured .carousel figcaption {
   position: relative;
   z-index: 2;
   max-width: 1140px;
@@ -2151,48 +2151,48 @@ img.mfp-img {
   height: 100%;
 }
 /* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-.home .site-content .site-main > section#featured .carousel figcaption:after {
+.home .site-content .site-main > .section#featured .carousel figcaption:after {
   content: " ";
   display: block;
   clear: both;
 }
 /* line 129, sass/media/_carousels.scss */
-.home .site-content .site-main > section#featured .carousel .caption {
+.home .site-content .site-main > .section#featured .carousel .caption {
   display: table-cell;
   vertical-align: middle;
 }
 /* line 55, sass/media/_carousels.scss */
-.home .site-content .site-main > section#associations .carousel figure {
+.home .site-content .site-main > .section#associations .carousel figure {
   position: relative;
 }
 @media (min-width: 30em) and (max-width: 48em) {
   /* line 55, sass/media/_carousels.scss */
-  .home .site-content .site-main > section#associations .carousel figure {
+  .home .site-content .site-main > .section#associations .carousel figure {
     width: 48.57143%;
     float: left;
     margin-right: 2.85714%;
   }
   /* line 21, sass/mixins/_mixins.scss */
-  .home .site-content .site-main > section#associations .carousel figure:nth-of-type(2n) {
+  .home .site-content .site-main > .section#associations .carousel figure:nth-of-type(2n) {
     float: right;
     margin-right: 0;
   }
 }
 @media (min-width: 48em) {
   /* line 55, sass/media/_carousels.scss */
-  .home .site-content .site-main > section#associations .carousel figure {
+  .home .site-content .site-main > .section#associations .carousel figure {
     width: 22.85714%;
     float: left;
     margin-right: 2.85714%;
   }
   /* line 21, sass/mixins/_mixins.scss */
-  .home .site-content .site-main > section#associations .carousel figure:nth-of-type(4n) {
+  .home .site-content .site-main > .section#associations .carousel figure:nth-of-type(4n) {
     float: right;
     margin-right: 0;
   }
 }
 /* line 68, sass/media/_carousels.scss */
-.home .site-content .site-main > section#associations .carousel figure:hover .caption .caption-link {
+.home .site-content .site-main > .section#associations .carousel figure:hover .caption .caption-link {
   position: absolute;
   top: 0;
   display: block;
@@ -2200,24 +2200,24 @@ img.mfp-img {
   height: 100%;
 }
 /* line 79, sass/media/_carousels.scss */
-.home .site-content .site-main > section#associations .carousel figure .caption .caption-link {
+.home .site-content .site-main > .section#associations .carousel figure .caption .caption-link {
   display: none;
 }
 /* line 64, sass/layout/_content.scss */
-.home .site-content .site-main .section > div {
+.home .site-content .site-main .section-group > div {
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
 }
 /* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-.home .site-content .site-main .section > div:after {
+.home .site-content .site-main .section-group > div:after {
   content: " ";
   display: block;
   clear: both;
 }
 @media (min-width: 62em) {
   /* line 70, sass/layout/_content.scss */
-  .home .site-content .site-main .section section#reviews {
+  .home .site-content .site-main .section-group .section#reviews {
     width: 48.57143%;
     float: left;
     margin-right: 2.85714%;
@@ -2225,7 +2225,7 @@ img.mfp-img {
 }
 @media (min-width: 62em) {
   /* line 76, sass/layout/_content.scss */
-  .home .site-content .site-main .section section#galleries {
+  .home .site-content .site-main .section-group .section#galleries {
     width: 48.57143%;
     float: right;
     margin-right: 0;

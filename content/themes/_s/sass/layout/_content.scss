@@ -34,7 +34,7 @@
 
 		.site-main {
 
-			> section {
+			> .section {
 
 				> div {
 					@include container;
@@ -59,13 +59,13 @@
 				#galleries {}
 			}
 
-			.section {
+			.section-group {
 
 				> div {
 					@include container;
 				}
 
-				section {
+				.section {
 
 					&#reviews {
 						@include susy-breakpoint($breakpoint__medium) {
