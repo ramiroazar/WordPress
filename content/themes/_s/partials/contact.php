@@ -29,10 +29,11 @@
 			<?php endif; ?>
 
 			<?php if (get_bloginfo( 'admin_email' )) : ?>
+				<li>
 					<a href='mailto:<?php echo get_bloginfo( 'admin_email' ); ?>' itemprop="email">
-					<?php echo get_bloginfo( 'admin_email' ); ?>
-				</a>
-				<br />
+						<?php echo get_bloginfo( 'admin_email' ); ?>
+					</a>
+				</li>
 			<?php endif; ?>
 
 			<?php if (_s_contact(address)) : ?>
