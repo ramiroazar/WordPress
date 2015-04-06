@@ -408,7 +408,7 @@ address {
   margin: 0 0 1.5em;
 }
 
-/* line 30, sass/typography/_copy.scss */
+/* line 36, sass/typography/_copy.scss */
 pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
@@ -419,24 +419,24 @@ pre {
   padding: 1.5em;
 }
 
-/* line 40, sass/typography/_copy.scss */
+/* line 46, sass/typography/_copy.scss */
 code, kbd, tt, var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 
-/* line 44, sass/typography/_copy.scss */
+/* line 50, sass/typography/_copy.scss */
 abbr, acronym {
   border-bottom: 1px dotted #666;
   cursor: help;
 }
 
-/* line 49, sass/typography/_copy.scss */
+/* line 55, sass/typography/_copy.scss */
 mark, ins {
   background: #fff9c0;
   text-decoration: none;
 }
 
-/* line 54, sass/typography/_copy.scss */
+/* line 60, sass/typography/_copy.scss */
 big {
   font-size: 125%;
 }
@@ -1195,6 +1195,18 @@ a:focus {
 /* line 15, sass/navigation/_links.scss */
 a:hover, a:active {
   outline: 0;
+}
+
+/* line 45, sass/navigation/_links.scss */
+address a[itemprop=email] {
+  -ms-word-break: break-all;
+  /* Be VERY careful with this, breaks normal words wh_erever */
+  word-break: break-all;
+  /* Non standard for webkit */
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
 }
 
 /*--------------------------------------------------------------

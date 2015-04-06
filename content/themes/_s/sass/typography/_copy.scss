@@ -25,6 +25,12 @@ blockquote {
 
 address {
 	margin: 0 0 rhythm();
+
+	a {
+		&[itemprop=email] {
+			@extend %word-wrap;
+		}
+	}
 }
 
 pre {
