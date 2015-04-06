@@ -217,10 +217,10 @@ require get_template_directory() . '/inc/_s_schema.org.php';
 		_e('<span id="footer-thankyou">Developed by <a href="http://insightdigital.com.au/" target="_blank">Insight Digital Marketing</a></span>. Built using <a href="http://underscores.me/" target="_blank">Underscores (_s)</a>.', '_s');
 	}
 
-// Query Shortcode
-
 	// adding it to the admin area
 	add_filter( 'admin_footer_text', '_s_custom_admin_footer' );
+
+// Query Shortcode
 
 	function _s_query($atts) {
 
