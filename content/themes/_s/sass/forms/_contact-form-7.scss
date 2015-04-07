@@ -13,21 +13,25 @@ div.wpcf7 {
 	}
 
 	div.wpcf7-mail-sent-ok {
+		margin: 0 0 rhythm() 0;
 		@extend %alert;
 		@extend %alert-success;
 	}
 
 	div.wpcf7-mail-sent-ng {
+		margin: 0 0 rhythm() 0;
 		@extend %alert;
 		@extend %alert-error;
 	}
 
 	div.wpcf7-spam-blocked {
+		margin: 0 0 rhythm() 0;
 		@extend %alert;
 		@extend %alert-info;
 	}
 
 	div.wpcf7-validation-errors {
+		margin: 0 0 rhythm() 0;
 		@extend %alert;
 		@extend %alert-error;
 	}
@@ -37,6 +41,7 @@ div.wpcf7 {
 	}
 
 	span.wpcf7-not-valid-tip {
+		display: block;
 	}
 
 	span.wpcf7-list-item {
@@ -73,6 +78,7 @@ div.wpcf7 {
 
 	.form-validation {
 		position: relative;
+		margin: rhythm() 0;
 		br {
 			display: none;
 		}
@@ -85,6 +91,7 @@ div.wpcf7 {
 			max-height: rhythm(2);
 			margin: 0;
 			padding: 1px;
+			@include border-radius;
 		}
 		input.wpcf7-captchar {
 			width: 100%;

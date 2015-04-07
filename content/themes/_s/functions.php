@@ -130,6 +130,9 @@ function _s_scripts() {
 	wp_enqueue_script('_s-lightbox', (get_template_directory_uri() . "/js/jquery.magnific-popup.min.js"), array('jquery'), '', true);
 	wp_enqueue_script('_s-lightbox.autoinit', (get_template_directory_uri() . "/js/jquery.magnific-popup.autoinit.js"), array('jquery'), '', true);
 
+	// Load lightbox toggle
+	wp_enqueue_script('_s-lightbox-toggle', (get_template_directory_uri() . "/js/lightbox-toggle.js"), array('jquery'), '', true);
+
 	// icon stylesheet
 	wp_enqueue_style( '_s-icon-stylesheet', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), null);
 }

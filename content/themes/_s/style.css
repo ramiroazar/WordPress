@@ -480,9 +480,10 @@ big {
 /* line 1, sass/elements/_elements.scss */
 html {
   box-sizing: border-box;
+  margin-right: 0 !important;
 }
 
-/* line 5, sass/elements/_elements.scss */
+/* line 6, sass/elements/_elements.scss */
 *,
 *:before,
 *:after {
@@ -490,7 +491,7 @@ html {
   box-sizing: inherit;
 }
 
-/* line 16, sass/elements/_elements.scss */
+/* line 17, sass/elements/_elements.scss */
 hr {
   background-color: #ccc;
   border: 0;
@@ -599,7 +600,7 @@ textarea {
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"], #form-contact-toggle {
   padding: 0.75em;
   border: 0;
   -moz-border-radius: 5px;
@@ -650,45 +651,66 @@ div.wpcf7 {
   margin: 0;
   padding: 0;
 }
-/* line 35, sass/forms/_contact-form-7.scss */
+/* line 15, sass/forms/_contact-form-7.scss */
+div.wpcf7 div.wpcf7-mail-sent-ok {
+  margin: 0 0 1.5em 0;
+}
+/* line 21, sass/forms/_contact-form-7.scss */
+div.wpcf7 div.wpcf7-mail-sent-ng {
+  margin: 0 0 1.5em 0;
+}
+/* line 27, sass/forms/_contact-form-7.scss */
+div.wpcf7 div.wpcf7-spam-blocked {
+  margin: 0 0 1.5em 0;
+}
+/* line 33, sass/forms/_contact-form-7.scss */
+div.wpcf7 div.wpcf7-validation-errors {
+  margin: 0 0 1.5em 0;
+}
+/* line 39, sass/forms/_contact-form-7.scss */
 div.wpcf7 span.wpcf7-form-control-wrap {
   position: relative;
 }
-/* line 42, sass/forms/_contact-form-7.scss */
+/* line 43, sass/forms/_contact-form-7.scss */
+div.wpcf7 span.wpcf7-not-valid-tip {
+  display: block;
+}
+/* line 47, sass/forms/_contact-form-7.scss */
 div.wpcf7 span.wpcf7-list-item {
   margin-left: 0.75em;
 }
-/* line 46, sass/forms/_contact-form-7.scss */
+/* line 51, sass/forms/_contact-form-7.scss */
 div.wpcf7 .wpcf7-display-none {
   display: none;
 }
-/* line 50, sass/forms/_contact-form-7.scss */
+/* line 55, sass/forms/_contact-form-7.scss */
 div.wpcf7 img.ajax-loader {
   border: none;
   vertical-align: middle;
   margin-left: 0.375em;
 }
-/* line 56, sass/forms/_contact-form-7.scss */
+/* line 61, sass/forms/_contact-form-7.scss */
 div.wpcf7 div.ajax-error {
   display: none;
 }
-/* line 60, sass/forms/_contact-form-7.scss */
+/* line 65, sass/forms/_contact-form-7.scss */
 div.wpcf7 .placeheld {
   color: #666;
 }
-/* line 66, sass/forms/_contact-form-7.scss */
+/* line 71, sass/forms/_contact-form-7.scss */
 div.wpcf7 br {
   display: none;
 }
-/* line 74, sass/forms/_contact-form-7.scss */
+/* line 79, sass/forms/_contact-form-7.scss */
 div.wpcf7 .form-validation {
   position: relative;
+  margin: 1.5em 0;
 }
-/* line 76, sass/forms/_contact-form-7.scss */
+/* line 82, sass/forms/_contact-form-7.scss */
 div.wpcf7 .form-validation br {
   display: none;
 }
-/* line 79, sass/forms/_contact-form-7.scss */
+/* line 85, sass/forms/_contact-form-7.scss */
 div.wpcf7 .form-validation img.wpcf7-captchac {
   position: absolute;
   z-index: 1;
@@ -698,11 +720,39 @@ div.wpcf7 .form-validation img.wpcf7-captchac {
   max-height: 3em;
   margin: 0;
   padding: 1px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
-/* line 89, sass/forms/_contact-form-7.scss */
+/* line 96, sass/forms/_contact-form-7.scss */
 div.wpcf7 .form-validation input.wpcf7-captchar {
   width: 100%;
   padding-right: 10em;
+}
+
+/* line 1, sass/forms/_dynamic.scss */
+#form-contact-toggle {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  margin: 0.75em;
+}
+
+/* line 10, sass/forms/_dynamic.scss */
+#form-contact {
+  position: relative;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5em;
+  background-color: white;
+}
+/* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
+#form-contact:after {
+  content: " ";
+  display: block;
+  clear: both;
 }
 
 /*--------------------------------------------------------------

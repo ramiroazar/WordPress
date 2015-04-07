@@ -28,7 +28,15 @@
 			<div class="site-contact">
 				<div>
 					<h3>Contact Details</h3>
+
 					<?php get_template_part( 'partials/contact' ); ?>
+					
+					<?php if (!is_page('contact')) : ?>
+						<a id="form-contact-toggle" class="toggle-lightbox" href="#form-contact">Contact</a>
+						<div id="form-contact" class="mfp-hide">
+							<?php echo do_shortcode("[contact-form-7 id='1']"); ?>
+						</div>
+					<?php endif; ?>
 				</div>
 			</div><!-- .site-contact -->
 		</section>

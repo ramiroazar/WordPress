@@ -1,0 +1,15 @@
+#form-contact-toggle {
+	position: fixed;
+	z-index: 1;
+	bottom: 0;
+	right: 0;
+	@extend %button;
+	margin: rhythm(.5);
+}
+
+#form-contact {
+	position: relative;
+	@include container;
+	padding: rhythm();
+	background-color: white;
+}
