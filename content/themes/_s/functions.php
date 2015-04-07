@@ -117,18 +117,18 @@ function _s_scripts() {
 	// 1) Deregister local copy of jQuery (wp_enqueue_script( 'jquery' );)
 	wp_deregister_script('jquery');
 	// 2) Replace with Google CDN
-	wp_enqueue_script('_s-jquery', ("//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"), false, '', true);
+	wp_enqueue_script('jquery', ("//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"), false, '', true);
 	// 3) Load at the end of page
-	wp_enqueue_script('_s-jquery');
+	wp_enqueue_script('jquery');
 	// 4) Load jQuery backup script (http://stackoverflow.com/a/1014251)
-	wp_enqueue_script('_s-jquery-backup', (get_template_directory_uri() . "/js/jquery-backup.js"), false, '', true);
+	wp_enqueue_script('jquery-backup', (get_template_directory_uri() . "/js/jquery-backup.js"), false, '', true);
 
 	// Load tabs
-	wp_enqueue_script('_s-tab', (get_template_directory_uri() . "/js/tab.js"), array('_s-jquery'), '', true);
+	wp_enqueue_script('_s-tab', (get_template_directory_uri() . "/js/tab.js"), array('jquery'), '', true);
 
 	// Load lightbox
-	wp_enqueue_script('_s-lightbox', (get_template_directory_uri() . "/js/jquery.magnific-popup.min.js"), array('_s-jquery'), '', true);
-	wp_enqueue_script('_s-lightbox.autoinit', (get_template_directory_uri() . "/js/jquery.magnific-popup.autoinit.js"), array('_s-jquery'), '', true);
+	wp_enqueue_script('_s-lightbox', (get_template_directory_uri() . "/js/jquery.magnific-popup.min.js"), array('jquery'), '', true);
+	wp_enqueue_script('_s-lightbox.autoinit', (get_template_directory_uri() . "/js/jquery.magnific-popup.autoinit.js"), array('jquery'), '', true);
 
 	// icon stylesheet
 	wp_enqueue_style( '_s-icon-stylesheet', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), null);

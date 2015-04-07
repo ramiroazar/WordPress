@@ -12,7 +12,7 @@ add_action('wp_print_styles', '_s_map_register_styles');
 function _s_map_register_scripts() {
     if (!is_admin()) {
 
-    	wp_enqueue_script('_s-map', plugins_url("js/_s_maps.js", __FILE__), array('_s-jquery'));
+    	wp_enqueue_script('_s-map', plugins_url("js/_s_maps.js", __FILE__), array('jquery'));
 
     }
 }

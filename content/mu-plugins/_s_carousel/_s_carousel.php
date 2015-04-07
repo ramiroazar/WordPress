@@ -13,12 +13,12 @@ add_action('wp_print_styles', '_s_carousel_register_styles');
 function _s_carousel_register_scripts() {
     if (!is_admin()) {
 
-    	wp_enqueue_script('_s-responsive-carousel.script', plugins_url("js/responsive-carousel.js", __FILE__), array('_s-jquery'));
-		wp_enqueue_script('_s-responsive-carousel.dynamic-containers', plugins_url("js/responsive-carousel.dynamic-containers.js", __FILE__), array('_s-jquery'));
-		wp_enqueue_script('_s-responsive-carousel.pagination', plugins_url("js/responsive-carousel.pagination.js", __FILE__), array('_s-jquery'));
-		wp_enqueue_script('_s-responsive-carousel.autoinit', plugins_url("js/responsive-carousel.autoinit.js", __FILE__), array('_s-jquery'));
-		wp_enqueue_script('_s-responsive-carousel.autoplay', plugins_url("js/responsive-carousel.autoplay.js", __FILE__), array('_s-jquery'));
-		wp_enqueue_script('_s-responsive-carousel.aspectratio', plugins_url("js/responsive-carousel.aspectratio.js", __FILE__), array('_s-jquery'));
+    	wp_enqueue_script('_s-responsive-carousel.script', plugins_url("js/responsive-carousel.js", __FILE__), array('jquery'));
+		wp_enqueue_script('_s-responsive-carousel.dynamic-containers', plugins_url("js/responsive-carousel.dynamic-containers.js", __FILE__), array('jquery'));
+		wp_enqueue_script('_s-responsive-carousel.pagination', plugins_url("js/responsive-carousel.pagination.js", __FILE__), array('jquery'));
+		wp_enqueue_script('_s-responsive-carousel.autoinit', plugins_url("js/responsive-carousel.autoinit.js", __FILE__), array('jquery'));
+		wp_enqueue_script('_s-responsive-carousel.autoplay', plugins_url("js/responsive-carousel.autoplay.js", __FILE__), array('jquery'));
+		wp_enqueue_script('_s-responsive-carousel.aspectratio', plugins_url("js/responsive-carousel.aspectratio.js", __FILE__), array('jquery'));
 
     }
 }
