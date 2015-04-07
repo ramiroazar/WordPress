@@ -55,7 +55,7 @@
 	figure {
 		position: relative;
 
-		@include susy-breakpoint($breakpoint__x-small $breakpoint__small) {
+		@include susy-breakpoint($breakpoint__xsmall $breakpoint__small) {
 			@include span-per-row(2);				
 		}
 
