@@ -164,7 +164,7 @@ function _s_carousel( $atts ) {
 			'transition' 	=> 'fade',
 			'prev' 			=> '<i class="fa fa-chevron-circle-left"></i>',
 			'next' 			=> '<i class="fa fa-chevron-circle-right"></i>',
-			'image_size' 	=> 'full',
+			'image_size' 	=> '1280',
 			'pagination'	=> false,
 			'autoplay'		=> true,
 			'interval'		=> 5000,
@@ -204,7 +204,15 @@ function _s_carousel( $atts ) {
 		foreach ( (array) $slides as $key => $slide ) :
 
 			if ( isset( $slide['slide_image'] ) )
-				$slide_img = wp_get_attachment_image( $slide['slide_image_id'], $image_size );
+				$slide_img = wp_get_attachment_image( 
+					$slide['slide_image_id'], 
+					$image_size, 
+					null, 
+					array(
+						"sizes" => tevkori_get_sizes( $slide['slide_image_id'], $image_size ),
+						"srcset" => implode( ', ', tevkori_get_srcset_array( $slide['slide_image_id'], $image_size ) ),
+					)
+				);
 			else
 				$slide_img = null;
 
@@ -235,35 +243,35 @@ function _s_carousel( $atts ) {
 
 		   // Do something with the data
 
-			$return.= "<figure>";
+			$return .= "<figure>";
 
-				if ( $slide_img )
-					$return.= $slide_img;
+				if( $slide_img )
+					$return .= $slide_img;
 				else
-					$return.= $placeholder_output;
+					$return .= $placeholder_output;
 
-				$return.= "<figcaption>";
+				$return .= "<figcaption>";
 
-					$return.= "<div class='caption'>";
+					$return .= "<div class='caption'>";
 
 					if ( $slide_caption_title )
-						$return.= "<p class='caption-title'>" . $slide_caption_title . "</p>";
+						$return .= "<p class='caption-title'>" . $slide_caption_title . "</p>";
 
 					if ( $slide_caption_content )
-						$return.= "<p class='caption-content'>" . $slide_caption_content . "</p>";
+						$return .= "<p class='caption-content'>" . $slide_caption_content . "</p>";
 
 					if ( $slide_caption_button_text || $slide_caption_button_link )
-						$return.= "<a class='caption-link' href='" . $slide_caption_button_link . "'>" . $slide_caption_button_text . "</a>";
+						$return .= "<a class='caption-link' href='" . $slide_caption_button_link . "'>" . $slide_caption_button_text . "</a>";
 
-					$return.= "</div>";
+					$return .= "</div>";
 
-				$return.= "</figcaption>";
+				$return .= "</figcaption>";
 
-			$return.= "</figure>";
+			$return .= "</figure>";
 
 		endforeach;
 
-		$return.= "</div>";
+		$return .= "</div>";
 
 	endwhile; endif; wp_reset_query();
 
