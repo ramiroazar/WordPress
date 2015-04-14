@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
+	$content_width =  null; // 640; /* pixels */
 }
 
 if ( ! function_exists( '_s_setup' ) ) :
@@ -122,17 +122,20 @@ function _s_scripts() {
 	wp_enqueue_script('jquery-backup', (get_template_directory_uri() . "/js/jquery-backup.js"), false, '', true);
 
 	// Load tabs
-	wp_enqueue_script('_s-tab', (get_template_directory_uri() . "/js/tab.js"), array('jquery'), '', true);
+	wp_enqueue_script('tab', (get_template_directory_uri() . "/js/tab.js"), array('jquery'), '', true);
 
 	// Load lightbox
-	wp_enqueue_script('_s-lightbox', (get_template_directory_uri() . "/js/jquery.magnific-popup.min.js"), array('jquery'), '', true);
-	wp_enqueue_script('_s-lightbox.autoinit', (get_template_directory_uri() . "/js/jquery.magnific-popup.autoinit.js"), array('jquery'), '', true);
+	wp_enqueue_script('lightbox', (get_template_directory_uri() . "/js/jquery.magnific-popup.min.js"), array('jquery'), '', true);
+	wp_enqueue_script('lightbox_adaptive', (get_template_directory_uri() . "/js/jquery.magnific-popup.adaptive.js"), array('jquery'), '', true);
+	wp_localize_script( 'lightbox_adaptive', 'lightbox_adaptive_ajax', array(
+		'ajax_url' => admin_url( 'admin-ajax.php' )
+	));
 
 	// Load lightbox toggle
-	wp_enqueue_script('_s-lightbox-toggle', (get_template_directory_uri() . "/js/lightbox-toggle.js"), array('jquery'), '', true);
+	wp_enqueue_script('lightbox-toggle', (get_template_directory_uri() . "/js/lightbox-toggle.js"), array('jquery'), '', true);
 
 	// icon stylesheet
-	wp_enqueue_style( '_s-icon-stylesheet', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), null);
+	wp_enqueue_style( 'icon-stylesheet', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), null);
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
@@ -167,7 +170,33 @@ require get_template_directory() . '/inc/jetpack.php';
 
 // Load Schema.org
 
-require get_template_directory() . '/inc/_s_schema.org.php';
+	require get_template_directory() . '/inc/_s_schema.org.php';
+
+// Define custom image sizes
+
+	// Resolution sizes
+	add_image_size('2560', 2560);
+	add_image_size('1920', 1920);
+	add_image_size('1280', 1280);
+	add_image_size('1024', 1024);
+	add_image_size('768', 768);
+	add_image_size('480', 480);
+	add_image_size('320', 320);
+
+	// Make custom image sizes accessible via dashboard
+	function _s_insert_custom_image_sizes( $sizes ) {
+		global $_wp_additional_image_sizes;
+		if ( empty($_wp_additional_image_sizes) )
+		return $sizes;
+
+		foreach ( $_wp_additional_image_sizes as $id => $data ) {
+			if ( !isset($sizes[$id]) )
+			$sizes[$id] = ucfirst( str_replace( '-', ' ', $id ) );
+		}
+
+		return $sizes;
+	}
+	add_filter( 'image_size_names_choose', 'my_insert_custom_image_sizes' );
 
 // Excerpt
 
@@ -176,7 +205,7 @@ require get_template_directory() . '/inc/_s_schema.org.php';
 		return '<a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', '_s') . '</a>';
 	}
 
-	// Replace [...] with Read More link
+	// Replace [...] with ...
 	function _s_excerpt_more( $more ) {
 		return '...';
 	}
@@ -299,27 +328,88 @@ require get_template_directory() . '/inc/_s_schema.org.php';
 			return $contact;
 	}
 
-// Custom image sizes
+/*
+ * Get image id from url 
+ *
+ * @link https://developer.wordpress.org/reference/functions/attachment_url_to_postid/
+ * @link https://pippinsplugins.com/retrieve-attachment-id-from-image-url/
+ * @link https://philipnewcomer.net/2012/11/get-the-attachment-id-from-an-image-url-in-wordpress/
+ */
 
-	// Device sizes
+	function _s_get_attachment_id_from_url( $attachment_url = '' ) {
+ 
+		global $wpdb;
+		$attachment_id = false;
+	 
+		// If there is no url, return.
+		if ( '' == $attachment_url )
+			return;
+	 
+		// Get the upload directory paths
+		$upload_dir_paths = wp_upload_dir();
+	 
+		// Make sure the upload path base directory exists in the attachment URL, to verify that we're working with a media library image
+		if ( false !== strpos( $attachment_url, $upload_dir_paths['baseurl'] ) ) {
+	 
+			// If this is the URL of an auto-generated thumbnail, get the URL of the original image
+			$attachment_url = preg_replace( '/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $attachment_url );
+	 
+			// Remove the upload path base directory from the attachment URL
+			$attachment_url = str_replace( $upload_dir_paths['baseurl'] . '/', '', $attachment_url );
+	 
+			// Finally, run a custom database query to get the attachment ID from the modified attachment URL
+			$attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url ) );
+	 
+		}
+	 
+		return $attachment_id;
+	}
 
-	// add_image_size('xxlarge', 2560, 1440);
-	// add_image_size('xlarge', 1920, 1080);
-	// add_image_size('large', 1280, 1024);
-	// add_image_size('medium', 1024, 768);
-	// add_image_size('small', 768, 480);
-	// add_image_size('xsmall', 480, 320);
+// Magnific Popup ajax function for adaptive images
 
-	add_filter( 'image_size_names_choose', '_s_custom_image_sizes' );
+	add_action('wp_ajax_nopriv_lightbox_adaptive_ajax', 'lightbox_adaptive_ajax');
+	add_action('wp_ajax_lightbox_adaptive_ajax', 'lightbox_adaptive_ajax');
 
-	function bones_custom_image_sizes( $sizes ) {
-		return array_merge( $sizes, array(
-			// Device sizes
-			// 'xxlarge' => __('Extra Extra Large Device'),
-			// 'xlarge' => __('Extra Large Device'),
-			// 'large' => __('Large Device'),
-			// 'medium' => __('Medium Device'),
-			// 'small' => __('Small Device'),
-			// 'xsmall' => __('Extra Small Device'),
-		) );
+	function lightbox_adaptive_ajax() {
+
+		// Get ajax data
+		$img_src = $_POST['img_src'];
+		// Get id
+		$img_id = _s_get_attachment_id_from_url($img_src);
+		// Get metadata
+		$img_meta = wp_get_attachment($img_id);
+		// Get element
+		$img = wp_get_attachment_image( 
+					$img_id, 
+					null, 
+					null, 
+					array(
+						"class" => "mfp-img",
+						"sizes" => tevkori_get_sizes( $img_id, null ),
+						"srcset" => implode( ', ', tevkori_get_srcset_array( $img_id, null ) ),
+					)
+				);
+
+		// Build markup
+		$img_markup = "";
+		$img_markup .= "<div class='mfp-figure'>";
+      $img_markup .=    "<figure>";
+      $img_markup .=    	$img;
+      $img_markup .=    	"<figcaption>";
+      $img_markup .=    		"<div class='mfp-bottom-bar'>";
+		if ($img_meta["caption"]) :
+	      $img_markup .=      		"<div class='mfp-title'>";
+		   $img_markup .=      			$img_meta["caption"];
+	      $img_markup .=      		"</div>";
+		endif;
+      $img_markup .=      			"<div class='mfp-counter'></div>";
+      $img_markup .=    		"</div>";
+      $img_markup .=    	"</figure>";
+      $img_markup .=    "</figure>";
+		$img_markup .= "</div>";
+
+		// Output markup
+		echo $img_markup;
+
+		die(); // this is required to return a proper result
 	}
