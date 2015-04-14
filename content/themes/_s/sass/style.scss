@@ -22,7 +22,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-1.0 Normalize
+1.0 Modules
+	0.1 Normalize Style Sheet
+	0.2 Print Style Sheet
+	0.3 Lightbox Style Sheet
 2.0 Typography
 3.0 Elements
 4.0 Forms
@@ -40,19 +43,18 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	7.2 Asides
 	7.3 Comments
 	7.4 Widgets
-8.0 Modules
 	8.1 Print Style Sheet
-9.0 Layout
-10.0 Breakpoints
+8.0 Layout
+9.0 Breakpoints
 --------------------------------------------------------------*/
 @import "variables/variables";
 @import "imports/imports";
 @import "mixins/mixins";
 
 /*--------------------------------------------------------------
-1.0 Normalize
+1.0 Modules
 --------------------------------------------------------------*/
-@import "normalize";
+@import "modules/modules";
 
 /*--------------------------------------------------------------
 2.0 Typography
@@ -85,16 +87,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "site/site";
 
 /*--------------------------------------------------------------
-8.0 Modules
---------------------------------------------------------------*/
-@import "modules/modules";
-
-/*--------------------------------------------------------------
-9.0 Layout
+8.0 Layout
 --------------------------------------------------------------*/
 @import "layout/layout";
 
 /*--------------------------------------------------------------
-10.0 Breakpoints
+9.0 Breakpoints
 --------------------------------------------------------------*/
 @import "breakpoints/breakpoints";

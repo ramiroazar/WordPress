@@ -8,8 +8,8 @@ $mfp-overlay-opacity:                 0.8;                        // Opacity of 
 $mfp-shadow:                          0 0 8px rgba(0, 0, 0, 0.6); // Shadow on image or iframe
 
 // spacing
-$mfp-popup-padding-left:              8px;                        // Padding from left and from right side
-$mfp-popup-padding-left-mobile:       6px;                        // Same as above, but is applied when width of window is less than 800px
+$mfp-popup-padding-left:              false;                        // Padding from left and from right side
+$mfp-popup-padding-left-mobile:       false;                        // Same as above, but is applied when width of window is less than 800px
 
 $mfp-z-index-base:                    1040;                        // Base z-index of popup
 

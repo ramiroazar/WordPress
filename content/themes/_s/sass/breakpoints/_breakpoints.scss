@@ -1,26 +1,26 @@
 /*--------------------------------------------------------------
-10.1 Breakpoint xsmall
+9.1 Breakpoint xsmall
 --------------------------------------------------------------*/
 @media (min-width: $breakpoint__xsmall) {
 	@import "xsmall";
 }
 
 /*--------------------------------------------------------------
-10.2 Breakpoint small
+9.2 Breakpoint small
 --------------------------------------------------------------*/
 @media (min-width: $breakpoint__small) {
 	@import "small";
 }
 
 /*--------------------------------------------------------------
-10.3 Breakpoint medium
+9.3 Breakpoint medium
 --------------------------------------------------------------*/
 @media (min-width: $breakpoint__medium) {
 	@import "medium";
 }
 
 /*--------------------------------------------------------------
-10.4 Breakpoint large
+9.4 Breakpoint large
 --------------------------------------------------------------*/
 @media (min-width: $breakpoint__large) {
 	@import "large";
