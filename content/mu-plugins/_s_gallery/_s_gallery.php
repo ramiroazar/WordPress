@@ -115,6 +115,7 @@ function _s_gallery( $atts ) {
 			'limit' => 1,
 			'image_total' => 4,
 			'image_size' => 'medium',
+			'thumbnail_size' => 'thumbnail',
 			'columns' => 2,
 			'caption' => false,
 		), $atts )
@@ -137,7 +138,7 @@ function _s_gallery( $atts ) {
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) : 
 
-		$return = "<div class='gallery gallery-columns-" . $columns . " gallery-size-" . $image_size . "'>";
+		$return = "<div class='gallery gallery-columns-" . $columns . " gallery-size-" . $thumbnail_size . "'>";
 
 		while ($the_query->have_posts()) : $the_query->the_post();
 
@@ -149,17 +150,25 @@ function _s_gallery( $atts ) {
 
 					$c = 0; foreach( $gallery_images AS $gallery_image ) : $c++;		         
 
-			         $gallery_image_meta 			= wp_get_attachment($gallery_image);
-			         $gallery_image_file_url		= $gallery_image_meta['src'];
-			         $gallery_image_thumb_url	= wp_get_attachment_image_src( $gallery_image, $image_size )[0];
-			         $gallery_image_caption 		= $gallery_image_meta['caption'];
+						$gallery_image_markup = wp_get_attachment_image( 
+							$gallery_image, 
+							$thumbnail_size, 
+							null, 
+							array(
+								"sizes" => tevkori_get_sizes( $gallery_image, $thumbnail_size ),
+								"srcset" => implode( ', ', tevkori_get_srcset_array( $gallery_image, $thumbnail_size ) ),
+							)
+						);
+			         $gallery_image_meta = wp_get_attachment($gallery_image);
+			         $gallery_image_src = wp_get_attachment_image_src($gallery_image, $image_size)[0];
+			         $gallery_image_caption = $gallery_image_meta['caption'];
 
 					   if ( $c <= $image_total ) :
 
 							$return.= "<figure class='gallery-item'>";
 							$return.= 	"<div class='gallery-icon'>";
-							$return.= 		"<a href='" . $gallery_image_file_url . "'>";
-							$return.= 			"<img src='" . $gallery_image_thumb_url . "' class='attachment-thumbnail' alt='" . $gallery_image_caption . "'>";
+							$return.= 		"<a href='" . $gallery_image_src . "' target='_blank'>";
+							$return.= 			$gallery_image_markup;
 							$return.= 		"</a>";
 							$return.= 	"</div>";
 								if($caption):
