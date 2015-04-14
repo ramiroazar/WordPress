@@ -9,6 +9,11 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/Article">
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' ); ?>
+		<?php
+			if ( has_post_thumbnail() ) :
+				the_post_thumbnail('large', array('itemprop' => 'primaryImageOfPage'));
+			endif;
+		?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content" itemprop="articleBody">
