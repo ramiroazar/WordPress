@@ -196,7 +196,7 @@ require get_template_directory() . '/inc/jetpack.php';
 
 		return $sizes;
 	}
-	add_filter( 'image_size_names_choose', 'my_insert_custom_image_sizes' );
+	add_filter( 'image_size_names_choose', '_s_insert_custom_image_sizes' );
 
 // Excerpt
 
