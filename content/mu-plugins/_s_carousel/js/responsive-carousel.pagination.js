@@ -80,14 +80,19 @@
 	$.extend( $.fn[ pluginName ].prototype, paginationMethods );
 
 	// create pagination on create and update
-	$( initSelector )
+	$( document )
 		.bind( "create." + pluginName, function( e ){
-			$( e.target )
-				[ pluginName ]( "_createPagination" )
-				[ pluginName ]( "_bindPaginationEvents" );
+			if(e.target.hasAttribute("data-paginate")) {
+				$( e.target )
+					[ pluginName ]( "_createPagination" )
+					[ pluginName ]( "_bindPaginationEvents" );
+			}
 		} )
 		.bind( "update." + pluginName, function( e ){
-			$( e.target )[ pluginName ]( "_createPagination" );
+			if(e.target.hasAttribute("data-paginate")) {
+				$( e.target )
+					[ pluginName ]( "_createPagination" )
+			}
 		} );
 
 }(jQuery));
