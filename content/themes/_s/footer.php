@@ -11,7 +11,7 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
-		<section>
+		<section class="section">
 			<h2 class="footer-title">Footer</h2>
 			<nav id="site-sitemap" class="site-sitemap" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 				<div>
