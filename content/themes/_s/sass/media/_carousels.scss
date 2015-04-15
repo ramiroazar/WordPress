@@ -28,22 +28,22 @@
 			position: absolute;
 			z-index: 1;
 			top: 50%;
-			width: rhythm(1);
-			height: rhythm(1);
-			margin-top: rhythm(-.5);
+			width: rhythm(2);
+			height: rhythm(2);
+			margin-top: rhythm(-1);
 			text-align: center;
 
 			i {
-				font-size: rhythm(1);				
+				font-size: rhythm(2);				
 			}
 		}
 
 		.prev {
-			left: rhythm(.25);
+			left: 0;
 		}
 
 		.next {
-			right: rhythm(.25);
+			right: 0;
 		}
 	}
 }
