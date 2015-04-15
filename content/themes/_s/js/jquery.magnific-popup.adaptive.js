@@ -21,7 +21,7 @@ $(document).ready(function() {
 	$('.gallery').each(function() { // the containers for all your galleries
 		$(this).magnificPopup({
 			type: 'ajax', 
-			delegate: 'a', // the selector for gallery item
+			delegate: '.gallery-icon a', // the selector for gallery item
 			ajax: {
 				settings: { 
 					type: "post", 
