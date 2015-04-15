@@ -41,6 +41,9 @@
 				}
 
 				&#featured {
+					h2 {
+						@extend %sr-text;
+					}
 					.carousel {
 						@include carousel-background;
 					}
