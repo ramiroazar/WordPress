@@ -1,3 +1,10 @@
+form {
+	margin: rhythm() 0;
+	fieldset {
+		legend {}
+	}
+}
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
