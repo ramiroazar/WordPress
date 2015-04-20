@@ -21,8 +21,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-0.0 Modules
-1.0 Normalize
+1.0 Modules
+	0.1 Normalize Style Sheet
+	0.2 Print Style Sheet
+	0.3 Lightbox Style Sheet
 2.0 Typography
 3.0 Elements
 4.0 Forms
@@ -60,10 +62,269 @@ body {
 }
 
 /*--------------------------------------------------------------
-0.0 Modules
+1.0 Modules
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-0.1 Print Style Sheet
+1.1 Normalize Style Sheet
+--------------------------------------------------------------*/
+/* line 1, sass/modules/_normalize.scss */
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 7, sass/modules/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/* line 11, sass/modules/_normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* line 26, sass/modules/_normalize.scss */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/* line 34, sass/modules/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* line 39, sass/modules/_normalize.scss */
+[hidden],
+template {
+  display: none;
+}
+
+/* line 44, sass/modules/_normalize.scss */
+a {
+  background-color: transparent;
+}
+
+/* line 48, sass/modules/_normalize.scss */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* line 53, sass/modules/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 57, sass/modules/_normalize.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* line 62, sass/modules/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/* line 66, sass/modules/_normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* line 71, sass/modules/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/* line 76, sass/modules/_normalize.scss */
+small {
+  font-size: 80%;
+}
+
+/* line 80, sass/modules/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 88, sass/modules/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 92, sass/modules/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 96, sass/modules/_normalize.scss */
+img {
+  border: 0;
+}
+
+/* line 100, sass/modules/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* line 104, sass/modules/_normalize.scss */
+figure {
+  margin: 1em 40px;
+}
+
+/* line 108, sass/modules/_normalize.scss */
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+/* line 113, sass/modules/_normalize.scss */
+pre {
+  overflow: auto;
+}
+
+/* line 117, sass/modules/_normalize.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* line 125, sass/modules/_normalize.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+/* line 135, sass/modules/_normalize.scss */
+button {
+  overflow: visible;
+}
+
+/* line 139, sass/modules/_normalize.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/* line 144, sass/modules/_normalize.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+/* line 152, sass/modules/_normalize.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/* line 157, sass/modules/_normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 163, sass/modules/_normalize.scss */
+input {
+  line-height: normal;
+}
+
+/* line 167, sass/modules/_normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* line 173, sass/modules/_normalize.scss */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* line 178, sass/modules/_normalize.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+
+/* line 183, sass/modules/_normalize.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* line 188, sass/modules/_normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/* line 194, sass/modules/_normalize.scss */
+legend {
+  border: 0;
+  padding: 0;
+}
+
+/* line 199, sass/modules/_normalize.scss */
+textarea {
+  overflow: auto;
+}
+
+/* line 203, sass/modules/_normalize.scss */
+optgroup {
+  font-weight: bold;
+}
+
+/* line 207, sass/modules/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 212, sass/modules/_normalize.scss */
+td,
+th {
+  padding: 0;
+}
+
+/*--------------------------------------------------------------
+1.2 Print Style Sheet
 --------------------------------------------------------------*/
 /* ==========================================================================
    Print styles.
@@ -152,7 +413,7 @@ body {
   }
 }
 /*--------------------------------------------------------------
-0.2 Lightbox Style Sheet
+1.3 Lightbox Style Sheet
 --------------------------------------------------------------*/
 /* Magnific Popup CSS */
 /* line 78, sass/modules/_lightbox.scss */
@@ -681,265 +942,6 @@ img.mfp-img {
 }
 
 /*--------------------------------------------------------------
-1.0 Normalize
---------------------------------------------------------------*/
-/* line 1, sass/_normalize.scss */
-html {
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
-
-/* line 7, sass/_normalize.scss */
-body {
-  margin: 0;
-}
-
-/* line 11, sass/_normalize.scss */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
-  display: block;
-}
-
-/* line 26, sass/_normalize.scss */
-audio,
-canvas,
-progress,
-video {
-  display: inline-block;
-  vertical-align: baseline;
-}
-
-/* line 34, sass/_normalize.scss */
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-/* line 39, sass/_normalize.scss */
-[hidden],
-template {
-  display: none;
-}
-
-/* line 44, sass/_normalize.scss */
-a {
-  background-color: transparent;
-}
-
-/* line 48, sass/_normalize.scss */
-a:active,
-a:hover {
-  outline: 0;
-}
-
-/* line 53, sass/_normalize.scss */
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-
-/* line 57, sass/_normalize.scss */
-b,
-strong {
-  font-weight: bold;
-}
-
-/* line 62, sass/_normalize.scss */
-dfn {
-  font-style: italic;
-}
-
-/* line 66, sass/_normalize.scss */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-/* line 71, sass/_normalize.scss */
-mark {
-  background: #ff0;
-  color: #000;
-}
-
-/* line 76, sass/_normalize.scss */
-small {
-  font-size: 80%;
-}
-
-/* line 80, sass/_normalize.scss */
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-/* line 88, sass/_normalize.scss */
-sup {
-  top: -0.5em;
-}
-
-/* line 92, sass/_normalize.scss */
-sub {
-  bottom: -0.25em;
-}
-
-/* line 96, sass/_normalize.scss */
-img {
-  border: 0;
-}
-
-/* line 100, sass/_normalize.scss */
-svg:not(:root) {
-  overflow: hidden;
-}
-
-/* line 104, sass/_normalize.scss */
-figure {
-  margin: 1em 40px;
-}
-
-/* line 108, sass/_normalize.scss */
-hr {
-  box-sizing: content-box;
-  height: 0;
-}
-
-/* line 113, sass/_normalize.scss */
-pre {
-  overflow: auto;
-}
-
-/* line 117, sass/_normalize.scss */
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-/* line 125, sass/_normalize.scss */
-button,
-input,
-optgroup,
-select,
-textarea {
-  color: inherit;
-  font: inherit;
-  margin: 0;
-}
-
-/* line 135, sass/_normalize.scss */
-button {
-  overflow: visible;
-}
-
-/* line 139, sass/_normalize.scss */
-button,
-select {
-  text-transform: none;
-}
-
-/* line 144, sass/_normalize.scss */
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button;
-  cursor: pointer;
-}
-
-/* line 152, sass/_normalize.scss */
-button[disabled],
-html input[disabled] {
-  cursor: default;
-}
-
-/* line 157, sass/_normalize.scss */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-/* line 163, sass/_normalize.scss */
-input {
-  line-height: normal;
-}
-
-/* line 167, sass/_normalize.scss */
-input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box;
-  padding: 0;
-}
-
-/* line 173, sass/_normalize.scss */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/* line 178, sass/_normalize.scss */
-input[type="search"] {
-  -webkit-appearance: textfield;
-  box-sizing: content-box;
-}
-
-/* line 183, sass/_normalize.scss */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/* line 188, sass/_normalize.scss */
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
-
-/* line 194, sass/_normalize.scss */
-legend {
-  border: 0;
-  padding: 0;
-}
-
-/* line 199, sass/_normalize.scss */
-textarea {
-  overflow: auto;
-}
-
-/* line 203, sass/_normalize.scss */
-optgroup {
-  font-weight: bold;
-}
-
-/* line 207, sass/_normalize.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* line 212, sass/_normalize.scss */
-td,
-th {
-  padding: 0;
-}
-
-/*--------------------------------------------------------------
 2.0 Typography
 --------------------------------------------------------------*/
 /* line 106, C:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
@@ -1064,7 +1066,7 @@ big {
 
 /* Text meant only for screen readers. */
 /* line 3, sass/typography/_accessibility.scss */
-.screen-reader-text, div.wpcf7 .screen-reader-response, div.wpcf7 label, .site-header .site-branding .site-brand .site-title, .site-header .site-branding .site-brand .site-description, .site-content .widget-area .sidebar-title, .site-footer > section .footer-title {
+.screen-reader-text, div.wpcf7 .screen-reader-response, div.wpcf7 label, .site-header .site-branding .site-brand .site-title, .site-header .site-branding .site-brand .site-description, .site-content .widget-area .sidebar-title, .home .site-content .site-main > .section#featured h2, .site-footer > .section .footer-title {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
   height: 1px;
@@ -1072,7 +1074,7 @@ big {
   overflow: hidden;
 }
 /* line 10, sass/typography/_accessibility.scss */
-.screen-reader-text:hover, div.wpcf7 .screen-reader-response:hover, div.wpcf7 label:hover, .site-header .site-branding .site-brand .site-title:hover, .site-header .site-branding .site-brand .site-description:hover, .site-content .widget-area .sidebar-title:hover, .site-footer > section .footer-title:hover, .screen-reader-text:active, div.wpcf7 .screen-reader-response:active, div.wpcf7 label:active, .site-header .site-branding .site-brand .site-title:active, .site-header .site-branding .site-brand .site-description:active, .site-content .widget-area .sidebar-title:active, .site-footer > section .footer-title:active, .screen-reader-text:focus, div.wpcf7 .screen-reader-response:focus, div.wpcf7 label:focus, .site-header .site-branding .site-brand .site-title:focus, .site-header .site-branding .site-brand .site-description:focus, .site-content .widget-area .sidebar-title:focus, .site-footer > section .footer-title:focus {
+.screen-reader-text:hover, div.wpcf7 .screen-reader-response:hover, div.wpcf7 label:hover, .site-header .site-branding .site-brand .site-title:hover, .site-header .site-branding .site-brand .site-description:hover, .site-content .widget-area .sidebar-title:hover, .home .site-content .site-main > .section#featured h2:hover, .site-footer > .section .footer-title:hover, .screen-reader-text:active, div.wpcf7 .screen-reader-response:active, div.wpcf7 label:active, .site-header .site-branding .site-brand .site-title:active, .site-header .site-branding .site-brand .site-description:active, .site-content .widget-area .sidebar-title:active, .home .site-content .site-main > .section#featured h2:active, .site-footer > .section .footer-title:active, .screen-reader-text:focus, div.wpcf7 .screen-reader-response:focus, div.wpcf7 label:focus, .site-header .site-branding .site-brand .site-title:focus, .site-header .site-branding .site-brand .site-description:focus, .site-content .widget-area .sidebar-title:focus, .home .site-content .site-main > .section#featured h2:focus, .site-footer > .section .footer-title:focus {
   background-color: #f1f1f1;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -1170,6 +1172,11 @@ table {
 4.0 Forms
 --------------------------------------------------------------*/
 /* line 1, sass/forms/_fields.scss */
+form {
+  margin: 1.5em 0;
+}
+
+/* line 8, sass/forms/_fields.scss */
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -1187,7 +1194,7 @@ textarea {
   line-height: 1.5em;
   color: #666;
 }
-/* line 15, sass/forms/_fields.scss */
+/* line 22, sass/forms/_fields.scss */
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -1199,7 +1206,7 @@ textarea:focus {
   color: #111;
 }
 
-/* line 20, sass/forms/_fields.scss */
+/* line 27, sass/forms/_fields.scss */
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -1211,7 +1218,7 @@ textarea {
   padding: 0.6875em;
 }
 
-/* line 31, sass/forms/_fields.scss */
+/* line 38, sass/forms/_fields.scss */
 textarea {
   display: block;
   width: 100%;
@@ -1823,35 +1830,36 @@ img {
   position: absolute;
   z-index: 1;
   top: 50%;
-  width: 1.5em;
-  height: 1.5em;
-  margin-top: -0.75em;
+  width: 3em;
+  height: 3em;
+  margin-top: -1.5em;
   text-align: center;
 }
 /* line 36, sass/media/_carousels.scss */
 .carousel .carousel-nav .prev i, .carousel .carousel-nav .next i {
-  font-size: 1.5em;
+  font-size: 3em;
 }
 /* line 41, sass/media/_carousels.scss */
 .carousel .carousel-nav .prev {
-  left: 0.375em;
+  left: 0;
 }
 /* line 45, sass/media/_carousels.scss */
 .carousel .carousel-nav .next {
-  right: 0.375em;
+  right: 0;
 }
 
 /*--------------------------------------------------------------
 11.5 Maps
 --------------------------------------------------------------*/
-/* line 2, sass/media/_maps.scss */
+/* line 1, sass/media/_maps.scss */
+.map-canvas {
+  margin: 1.5em 0;
+}
+/* line 3, sass/media/_maps.scss */
 .map-canvas img {
   max-width: none;
 }
 
-/*--------------------------------------------------------------
-11.6 Modals
---------------------------------------------------------------*/
 /*--------------------------------------------------------------
 6.0 Navigation
 --------------------------------------------------------------*/
@@ -1995,31 +2003,26 @@ address a[itemprop=email] {
   margin: 0 0 1.5em;
 }
 
-/* line 10, sass/site/primary/_posts-and-pages.scss */
-.entry-header img[itemprop=primaryImageOfPage] {
-  width: 100%;
-}
-
-/* line 15, sass/site/primary/_posts-and-pages.scss */
+/* line 9, sass/site/primary/_posts-and-pages.scss */
 .byline,
 .updated:not(.published) {
   display: none;
 }
 
-/* line 20, sass/site/primary/_posts-and-pages.scss */
+/* line 14, sass/site/primary/_posts-and-pages.scss */
 .single .byline,
 .group-blog .byline {
   display: inline;
 }
 
-/* line 25, sass/site/primary/_posts-and-pages.scss */
+/* line 19, sass/site/primary/_posts-and-pages.scss */
 .page-content,
 .entry-content,
 .entry-summary {
   margin: 1.5em 0 0;
 }
 
-/* line 31, sass/site/primary/_posts-and-pages.scss */
+/* line 25, sass/site/primary/_posts-and-pages.scss */
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
@@ -2281,7 +2284,7 @@ address a[itemprop=email] {
 .home .site-content .site-main > .section#associations .carousel figure .caption .caption-link {
   display: none;
 }
-/* line 64, sass/layout/_content.scss */
+/* line 67, sass/layout/_content.scss */
 .home .site-content .site-main .section-group > div {
   max-width: 1140px;
   margin-left: auto;
@@ -2294,7 +2297,7 @@ address a[itemprop=email] {
   clear: both;
 }
 @media (min-width: 62em) {
-  /* line 70, sass/layout/_content.scss */
+  /* line 73, sass/layout/_content.scss */
   .home .site-content .site-main .section-group .section#reviews {
     width: 48.57143%;
     float: left;
@@ -2302,14 +2305,14 @@ address a[itemprop=email] {
   }
 }
 @media (min-width: 62em) {
-  /* line 76, sass/layout/_content.scss */
+  /* line 79, sass/layout/_content.scss */
   .home .site-content .site-main .section-group .section#galleries {
     width: 48.57143%;
     float: right;
     margin-right: 0;
   }
 }
-/* line 85, sass/layout/_content.scss */
+/* line 88, sass/layout/_content.scss */
 .home .site-content .widget-area {
   display: none;
 }
@@ -2318,13 +2321,13 @@ address a[itemprop=email] {
 8.3 Footer
 --------------------------------------------------------------*/
 /* line 4, sass/layout/_footer.scss */
-.site-footer > section:first-child {
+.site-footer > .section:first-child {
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
 }
 /* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-.site-footer > section:first-child:after {
+.site-footer > .section:first-child:after {
   content: " ";
   display: block;
   clear: both;
