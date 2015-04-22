@@ -14,36 +14,15 @@
 		vertical-align: top;
 	}
 
-	.gallery-columns-2 & {
-		@include gallery(12/2);
-	}
-
-	.gallery-columns-3 & {
-		@include gallery(12/3);
-	}
-
-	.gallery-columns-4 & {
-		@include gallery(12/4);
-	}
-
-	.gallery-columns-5 & {
-		@include gallery(12/5);
-	}
-
-	.gallery-columns-6 & {
-		@include gallery(12/6);
-	}
-
-	.gallery-columns-7 & {
-		@include gallery(12/7);
-	}
-
-	.gallery-columns-8 & {
-		@include gallery(12/8);
-	}
-
-	.gallery-columns-9 & {
-		@include gallery(12/9);
+	@for $i from 2 through 9 {
+		.gallery-columns-#{$i} & {
+			@include susy-breakpoint(max-width $breakpoint__medium) {
+				@include gallery(12/$i);
+			}
+			@include susy-breakpoint($breakpoint__medium) {
+				@include gallery(8/$i of 8);
+			}
+		}
 	}
 }
 

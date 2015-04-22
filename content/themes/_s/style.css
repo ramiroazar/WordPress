@@ -1570,320 +1570,665 @@ figure {
   display: inline-block;
   vertical-align: top;
 }
-/* line 17, sass/media/_galleries.scss */
-.gallery-columns-2 .gallery-item {
-  width: 48.57143%;
-  float: left;
+@media (max-width: 62em) {
+  /* line 18, sass/media/_galleries.scss */
+  .gallery-columns-2 .gallery-item {
+    width: 48.57143%;
+    float: left;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-2 .gallery-item:nth-child(2n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-2 .gallery-item:nth-child(2n + 2) {
+    margin-left: 51.42857%;
+    margin-right: -100%;
+    clear: none;
+  }
 }
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-2 .gallery-item:nth-child(2n + 1) {
-  margin-left: 0;
-  margin-right: -100%;
-  clear: both;
-  margin-left: 0;
+@media (min-width: 62em) {
+  /* line 18, sass/media/_galleries.scss */
+  .gallery-columns-2 .gallery-item {
+    width: 47.82609%;
+    float: left;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-2 .gallery-item:nth-child(2n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-2 .gallery-item:nth-child(2n + 2) {
+    margin-left: 52.17391%;
+    margin-right: -100%;
+    clear: none;
+  }
 }
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-2 .gallery-item:nth-child(2n + 2) {
-  margin-left: 51.42857%;
-  margin-right: -100%;
-  clear: none;
+@media (max-width: 62em) {
+  /* line 18, sass/media/_galleries.scss */
+  .gallery-columns-3 .gallery-item {
+    width: 31.42857%;
+    float: left;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-3 .gallery-item:nth-child(3n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-3 .gallery-item:nth-child(3n + 2) {
+    margin-left: 34.28571%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-3 .gallery-item:nth-child(3n + 3) {
+    margin-left: 68.57143%;
+    margin-right: -100%;
+    clear: none;
+  }
 }
-/* line 21, sass/media/_galleries.scss */
-.gallery-columns-3 .gallery-item {
-  width: 31.42857%;
-  float: left;
+@media (min-width: 62em) {
+  /* line 18, sass/media/_galleries.scss */
+  .gallery-columns-3 .gallery-item {
+    width: 30.43478%;
+    float: left;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-3 .gallery-item:nth-child(3n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-3 .gallery-item:nth-child(3n + 2) {
+    margin-left: 34.78261%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-3 .gallery-item:nth-child(3n + 3) {
+    margin-left: 69.56522%;
+    margin-right: -100%;
+    clear: none;
+  }
 }
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-3 .gallery-item:nth-child(3n + 1) {
-  margin-left: 0;
-  margin-right: -100%;
-  clear: both;
-  margin-left: 0;
+@media (max-width: 62em) {
+  /* line 18, sass/media/_galleries.scss */
+  .gallery-columns-4 .gallery-item {
+    width: 22.85714%;
+    float: left;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-4 .gallery-item:nth-child(4n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-4 .gallery-item:nth-child(4n + 2) {
+    margin-left: 25.71429%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-4 .gallery-item:nth-child(4n + 3) {
+    margin-left: 51.42857%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-4 .gallery-item:nth-child(4n + 4) {
+    margin-left: 77.14286%;
+    margin-right: -100%;
+    clear: none;
+  }
 }
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-3 .gallery-item:nth-child(3n + 2) {
-  margin-left: 34.28571%;
-  margin-right: -100%;
-  clear: none;
+@media (min-width: 62em) {
+  /* line 18, sass/media/_galleries.scss */
+  .gallery-columns-4 .gallery-item {
+    width: 21.73913%;
+    float: left;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-4 .gallery-item:nth-child(4n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-4 .gallery-item:nth-child(4n + 2) {
+    margin-left: 26.08696%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-4 .gallery-item:nth-child(4n + 3) {
+    margin-left: 52.17391%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-4 .gallery-item:nth-child(4n + 4) {
+    margin-left: 78.26087%;
+    margin-right: -100%;
+    clear: none;
+  }
 }
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-3 .gallery-item:nth-child(3n + 3) {
-  margin-left: 68.57143%;
-  margin-right: -100%;
-  clear: none;
+@media (max-width: 62em) {
+  /* line 18, sass/media/_galleries.scss */
+  .gallery-columns-5 .gallery-item {
+    width: 17.71429%;
+    float: left;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-5 .gallery-item:nth-child(5n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-5 .gallery-item:nth-child(5n + 2) {
+    margin-left: 20.57143%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-5 .gallery-item:nth-child(5n + 3) {
+    margin-left: 41.14286%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-5 .gallery-item:nth-child(5n + 4) {
+    margin-left: 61.71429%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-5 .gallery-item:nth-child(5n + 5) {
+    margin-left: 82.28571%;
+    margin-right: -100%;
+    clear: none;
+  }
 }
-/* line 25, sass/media/_galleries.scss */
-.gallery-columns-4 .gallery-item {
-  width: 22.85714%;
-  float: left;
+@media (min-width: 62em) {
+  /* line 18, sass/media/_galleries.scss */
+  .gallery-columns-5 .gallery-item {
+    width: 16.52174%;
+    float: left;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-5 .gallery-item:nth-child(5n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-5 .gallery-item:nth-child(5n + 2) {
+    margin-left: 20.86957%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-5 .gallery-item:nth-child(5n + 3) {
+    margin-left: 41.73913%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-5 .gallery-item:nth-child(5n + 4) {
+    margin-left: 62.6087%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-5 .gallery-item:nth-child(5n + 5) {
+    margin-left: 83.47826%;
+    margin-right: -100%;
+    clear: none;
+  }
 }
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-4 .gallery-item:nth-child(4n + 1) {
-  margin-left: 0;
-  margin-right: -100%;
-  clear: both;
-  margin-left: 0;
+@media (max-width: 62em) {
+  /* line 18, sass/media/_galleries.scss */
+  .gallery-columns-6 .gallery-item {
+    width: 14.28571%;
+    float: left;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-6 .gallery-item:nth-child(6n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-6 .gallery-item:nth-child(6n + 2) {
+    margin-left: 17.14286%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-6 .gallery-item:nth-child(6n + 3) {
+    margin-left: 34.28571%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-6 .gallery-item:nth-child(6n + 4) {
+    margin-left: 51.42857%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-6 .gallery-item:nth-child(6n + 5) {
+    margin-left: 68.57143%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-6 .gallery-item:nth-child(6n + 6) {
+    margin-left: 85.71429%;
+    margin-right: -100%;
+    clear: none;
+  }
 }
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-4 .gallery-item:nth-child(4n + 2) {
-  margin-left: 25.71429%;
-  margin-right: -100%;
-  clear: none;
+@media (min-width: 62em) {
+  /* line 18, sass/media/_galleries.scss */
+  .gallery-columns-6 .gallery-item {
+    width: 13.04348%;
+    float: left;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-6 .gallery-item:nth-child(6n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-6 .gallery-item:nth-child(6n + 2) {
+    margin-left: 17.3913%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-6 .gallery-item:nth-child(6n + 3) {
+    margin-left: 34.78261%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-6 .gallery-item:nth-child(6n + 4) {
+    margin-left: 52.17391%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-6 .gallery-item:nth-child(6n + 5) {
+    margin-left: 69.56522%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-6 .gallery-item:nth-child(6n + 6) {
+    margin-left: 86.95652%;
+    margin-right: -100%;
+    clear: none;
+  }
 }
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-4 .gallery-item:nth-child(4n + 3) {
-  margin-left: 51.42857%;
-  margin-right: -100%;
-  clear: none;
+@media (max-width: 62em) {
+  /* line 18, sass/media/_galleries.scss */
+  .gallery-columns-7 .gallery-item {
+    width: 11.83673%;
+    float: left;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-7 .gallery-item:nth-child(7n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-7 .gallery-item:nth-child(7n + 2) {
+    margin-left: 14.69388%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-7 .gallery-item:nth-child(7n + 3) {
+    margin-left: 29.38776%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-7 .gallery-item:nth-child(7n + 4) {
+    margin-left: 44.08163%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-7 .gallery-item:nth-child(7n + 5) {
+    margin-left: 58.77551%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-7 .gallery-item:nth-child(7n + 6) {
+    margin-left: 73.46939%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-7 .gallery-item:nth-child(7n + 7) {
+    margin-left: 88.16327%;
+    margin-right: -100%;
+    clear: none;
+  }
 }
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-4 .gallery-item:nth-child(4n + 4) {
-  margin-left: 77.14286%;
-  margin-right: -100%;
-  clear: none;
+@media (min-width: 62em) {
+  /* line 18, sass/media/_galleries.scss */
+  .gallery-columns-7 .gallery-item {
+    width: 10.55901%;
+    float: left;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-7 .gallery-item:nth-child(7n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-7 .gallery-item:nth-child(7n + 2) {
+    margin-left: 14.90683%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-7 .gallery-item:nth-child(7n + 3) {
+    margin-left: 29.81366%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-7 .gallery-item:nth-child(7n + 4) {
+    margin-left: 44.7205%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-7 .gallery-item:nth-child(7n + 5) {
+    margin-left: 59.62733%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-7 .gallery-item:nth-child(7n + 6) {
+    margin-left: 74.53416%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-7 .gallery-item:nth-child(7n + 7) {
+    margin-left: 89.44099%;
+    margin-right: -100%;
+    clear: none;
+  }
 }
-/* line 29, sass/media/_galleries.scss */
-.gallery-columns-5 .gallery-item {
-  width: 17.71429%;
-  float: left;
+@media (max-width: 62em) {
+  /* line 18, sass/media/_galleries.scss */
+  .gallery-columns-8 .gallery-item {
+    width: 10%;
+    float: left;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-8 .gallery-item:nth-child(8n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-8 .gallery-item:nth-child(8n + 2) {
+    margin-left: 12.85714%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-8 .gallery-item:nth-child(8n + 3) {
+    margin-left: 25.71429%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-8 .gallery-item:nth-child(8n + 4) {
+    margin-left: 38.57143%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-8 .gallery-item:nth-child(8n + 5) {
+    margin-left: 51.42857%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-8 .gallery-item:nth-child(8n + 6) {
+    margin-left: 64.28571%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-8 .gallery-item:nth-child(8n + 7) {
+    margin-left: 77.14286%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-8 .gallery-item:nth-child(8n + 8) {
+    margin-left: 90%;
+    margin-right: -100%;
+    clear: none;
+  }
 }
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-5 .gallery-item:nth-child(5n + 1) {
-  margin-left: 0;
-  margin-right: -100%;
-  clear: both;
-  margin-left: 0;
+@media (min-width: 62em) {
+  /* line 18, sass/media/_galleries.scss */
+  .gallery-columns-8 .gallery-item {
+    width: 8.69565%;
+    float: left;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-8 .gallery-item:nth-child(8n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-8 .gallery-item:nth-child(8n + 2) {
+    margin-left: 13.04348%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-8 .gallery-item:nth-child(8n + 3) {
+    margin-left: 26.08696%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-8 .gallery-item:nth-child(8n + 4) {
+    margin-left: 39.13043%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-8 .gallery-item:nth-child(8n + 5) {
+    margin-left: 52.17391%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-8 .gallery-item:nth-child(8n + 6) {
+    margin-left: 65.21739%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-8 .gallery-item:nth-child(8n + 7) {
+    margin-left: 78.26087%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-8 .gallery-item:nth-child(8n + 8) {
+    margin-left: 91.30435%;
+    margin-right: -100%;
+    clear: none;
+  }
 }
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-5 .gallery-item:nth-child(5n + 2) {
-  margin-left: 20.57143%;
-  margin-right: -100%;
-  clear: none;
+@media (max-width: 62em) {
+  /* line 18, sass/media/_galleries.scss */
+  .gallery-columns-9 .gallery-item {
+    width: 8.57143%;
+    float: left;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-9 .gallery-item:nth-child(9n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-9 .gallery-item:nth-child(9n + 2) {
+    margin-left: 11.42857%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-9 .gallery-item:nth-child(9n + 3) {
+    margin-left: 22.85714%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-9 .gallery-item:nth-child(9n + 4) {
+    margin-left: 34.28571%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-9 .gallery-item:nth-child(9n + 5) {
+    margin-left: 45.71429%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-9 .gallery-item:nth-child(9n + 6) {
+    margin-left: 57.14286%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-9 .gallery-item:nth-child(9n + 7) {
+    margin-left: 68.57143%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-9 .gallery-item:nth-child(9n + 8) {
+    margin-left: 80%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-9 .gallery-item:nth-child(9n + 9) {
+    margin-left: 91.42857%;
+    margin-right: -100%;
+    clear: none;
+  }
 }
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-5 .gallery-item:nth-child(5n + 3) {
-  margin-left: 41.14286%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-5 .gallery-item:nth-child(5n + 4) {
-  margin-left: 61.71429%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-5 .gallery-item:nth-child(5n + 5) {
-  margin-left: 82.28571%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 33, sass/media/_galleries.scss */
-.gallery-columns-6 .gallery-item {
-  width: 14.28571%;
-  float: left;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-6 .gallery-item:nth-child(6n + 1) {
-  margin-left: 0;
-  margin-right: -100%;
-  clear: both;
-  margin-left: 0;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-6 .gallery-item:nth-child(6n + 2) {
-  margin-left: 17.14286%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-6 .gallery-item:nth-child(6n + 3) {
-  margin-left: 34.28571%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-6 .gallery-item:nth-child(6n + 4) {
-  margin-left: 51.42857%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-6 .gallery-item:nth-child(6n + 5) {
-  margin-left: 68.57143%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-6 .gallery-item:nth-child(6n + 6) {
-  margin-left: 85.71429%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 37, sass/media/_galleries.scss */
-.gallery-columns-7 .gallery-item {
-  width: 11.83673%;
-  float: left;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-7 .gallery-item:nth-child(7n + 1) {
-  margin-left: 0;
-  margin-right: -100%;
-  clear: both;
-  margin-left: 0;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-7 .gallery-item:nth-child(7n + 2) {
-  margin-left: 14.69388%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-7 .gallery-item:nth-child(7n + 3) {
-  margin-left: 29.38776%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-7 .gallery-item:nth-child(7n + 4) {
-  margin-left: 44.08163%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-7 .gallery-item:nth-child(7n + 5) {
-  margin-left: 58.77551%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-7 .gallery-item:nth-child(7n + 6) {
-  margin-left: 73.46939%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-7 .gallery-item:nth-child(7n + 7) {
-  margin-left: 88.16327%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 41, sass/media/_galleries.scss */
-.gallery-columns-8 .gallery-item {
-  width: 10%;
-  float: left;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-8 .gallery-item:nth-child(8n + 1) {
-  margin-left: 0;
-  margin-right: -100%;
-  clear: both;
-  margin-left: 0;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-8 .gallery-item:nth-child(8n + 2) {
-  margin-left: 12.85714%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-8 .gallery-item:nth-child(8n + 3) {
-  margin-left: 25.71429%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-8 .gallery-item:nth-child(8n + 4) {
-  margin-left: 38.57143%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-8 .gallery-item:nth-child(8n + 5) {
-  margin-left: 51.42857%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-8 .gallery-item:nth-child(8n + 6) {
-  margin-left: 64.28571%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-8 .gallery-item:nth-child(8n + 7) {
-  margin-left: 77.14286%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-8 .gallery-item:nth-child(8n + 8) {
-  margin-left: 90%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 45, sass/media/_galleries.scss */
-.gallery-columns-9 .gallery-item {
-  width: 8.57143%;
-  float: left;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-9 .gallery-item:nth-child(9n + 1) {
-  margin-left: 0;
-  margin-right: -100%;
-  clear: both;
-  margin-left: 0;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-9 .gallery-item:nth-child(9n + 2) {
-  margin-left: 11.42857%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-9 .gallery-item:nth-child(9n + 3) {
-  margin-left: 22.85714%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-9 .gallery-item:nth-child(9n + 4) {
-  margin-left: 34.28571%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-9 .gallery-item:nth-child(9n + 5) {
-  margin-left: 45.71429%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-9 .gallery-item:nth-child(9n + 6) {
-  margin-left: 57.14286%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-9 .gallery-item:nth-child(9n + 7) {
-  margin-left: 68.57143%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-9 .gallery-item:nth-child(9n + 8) {
-  margin-left: 80%;
-  margin-right: -100%;
-  clear: none;
-}
-/* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.gallery-columns-9 .gallery-item:nth-child(9n + 9) {
-  margin-left: 91.42857%;
-  margin-right: -100%;
-  clear: none;
+@media (min-width: 62em) {
+  /* line 18, sass/media/_galleries.scss */
+  .gallery-columns-9 .gallery-item {
+    width: 7.24638%;
+    float: left;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-9 .gallery-item:nth-child(9n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-9 .gallery-item:nth-child(9n + 2) {
+    margin-left: 11.5942%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-9 .gallery-item:nth-child(9n + 3) {
+    margin-left: 23.18841%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-9 .gallery-item:nth-child(9n + 4) {
+    margin-left: 34.78261%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-9 .gallery-item:nth-child(9n + 5) {
+    margin-left: 46.37681%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-9 .gallery-item:nth-child(9n + 6) {
+    margin-left: 57.97101%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-9 .gallery-item:nth-child(9n + 7) {
+    margin-left: 69.56522%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-9 .gallery-item:nth-child(9n + 8) {
+    margin-left: 81.15942%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 66, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .gallery-columns-9 .gallery-item:nth-child(9n + 9) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
 }
 
-/* line 50, sass/media/_galleries.scss */
+/* line 29, sass/media/_galleries.scss */
 .gallery-caption {
   display: block;
 }
