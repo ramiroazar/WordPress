@@ -5,7 +5,10 @@
  * @package _s
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( 
+	//! is_active_sidebar( 'sidebar-1' ) ||
+	wp_is_mobile()
+) {
 	return;
 }
 ?>
