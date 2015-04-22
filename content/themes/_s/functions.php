@@ -126,10 +126,7 @@ function _s_scripts() {
 
 	// Load lightbox
 	wp_enqueue_script('lightbox', (get_template_directory_uri() . "/js/jquery.magnific-popup.min.js"), array('jquery'), '', true);
-	wp_enqueue_script('lightbox_adaptive', (get_template_directory_uri() . "/js/jquery.magnific-popup.adaptive.js"), array('jquery'), '', true);
-	wp_localize_script( 'lightbox_adaptive', 'lightbox_adaptive_ajax', array(
-		'ajax_url' => admin_url( 'admin-ajax.php' )
-	));
+	wp_enqueue_script('lightbox_gallery', (get_template_directory_uri() . "/js/jquery.magnific-popup.gallery.js"), array('jquery'), '', true);
 
 	// Load lightbox toggle
 	wp_enqueue_script('lightbox-toggle', (get_template_directory_uri() . "/js/lightbox-toggle.js"), array('jquery'), '', true);

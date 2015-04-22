@@ -114,7 +114,7 @@ function _s_gallery( $atts ) {
 			'ids' => null,
 			'limit' => 1,
 			'image_total' => 4,
-			'image_size' => 'medium',
+			'image_size' => 'large',
 			'thumbnail_size' => 'thumbnail',
 			'columns' => 2,
 			'caption' => false,
