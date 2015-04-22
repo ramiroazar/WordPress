@@ -1,36 +1,7 @@
 .site-footer {
 
-	> .section {
-
-		> div {
-			@include container;
-			width: 96%;
-		}
-	}
-
-	> .section-group {
-
-		> div {
-			@include susy-breakpoint($breakpoint__medium) {
-				@include container;
-				width: 96%;
-			}
-		}
-
-		.section {
-
-			> div {
-				@include susy-breakpoint(max-width $breakpoint__medium) {
-					@include container;
-					width: 96%;
-				}
-			}
-
-		}
-
-		.footer-title {
-			@extend %sr-text;
-		}
+	.footer-title {
+		@extend %sr-text;
 	}
 
 	.site-sitemap, .site-sitemap-featured {

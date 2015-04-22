@@ -20,7 +20,7 @@ html {
 body {
 	// background: $color__background-body; /* Fallback for when there is no custom background color defined. */
 	@include baseline-grid-background();
-	@include horizontal-grid-background();
+	@include column-grid-background();
 }
 
 hr {
@@ -36,11 +36,11 @@ hr {
 @import "lists";
 
 /*--------------------------------------------------------------
-3.2 Tables
+3.3 Tables
 --------------------------------------------------------------*/
 @import "tables";
 
 /*--------------------------------------------------------------
-3.2 Tabs
+3.4 Tabs
 --------------------------------------------------------------*/
 @import "tabs";

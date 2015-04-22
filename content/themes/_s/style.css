@@ -65,6 +65,31 @@ Box Shadow
 Border Radius
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
+Center block
+Centers element horizontally
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+Span Per Row
+Spans columns accordiong to total columns per row
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+Padding Center
+Centers element content with padding
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+Grid Background
+Generates pseudo element with gradient background
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+Triangles
+Generates CSS triangles in 8 directions
+--------------------------------------------------------------*/
+/*
+ * Triangles
+ *
+ * @link https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_triangle.scss
+ */
+/*--------------------------------------------------------------
 1.0 Modules
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -1071,8 +1096,8 @@ big {
 2.2 Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
-/* line 3, sass/typography/_accessibility.scss */
-.screen-reader-text, div.wpcf7 .screen-reader-response, div.wpcf7 label, .site-header .site-branding .site-brand .site-title, .site-header .site-branding .site-brand .site-description, .site-content .widget-area .sidebar-title, .home .site-content .site-main > .section#featured h2, .site-footer > .section-group .footer-title {
+/* line 31, sass/typography/_accessibility.scss */
+.screen-reader-text, div.wpcf7 .screen-reader-response, div.wpcf7 label, .site-header .site-branding .site-brand .site-title, .site-header .site-branding .site-brand .site-description, .home .site-content .site-main #featured h2, .site-footer .footer-title {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
   height: 1px;
@@ -1080,7 +1105,7 @@ big {
   overflow: hidden;
 }
 /* line 10, sass/typography/_accessibility.scss */
-.screen-reader-text:hover, div.wpcf7 .screen-reader-response:hover, div.wpcf7 label:hover, .site-header .site-branding .site-brand .site-title:hover, .site-header .site-branding .site-brand .site-description:hover, .site-content .widget-area .sidebar-title:hover, .home .site-content .site-main > .section#featured h2:hover, .site-footer > .section-group .footer-title:hover, .screen-reader-text:active, div.wpcf7 .screen-reader-response:active, div.wpcf7 label:active, .site-header .site-branding .site-brand .site-title:active, .site-header .site-branding .site-brand .site-description:active, .site-content .widget-area .sidebar-title:active, .home .site-content .site-main > .section#featured h2:active, .site-footer > .section-group .footer-title:active, .screen-reader-text:focus, div.wpcf7 .screen-reader-response:focus, div.wpcf7 label:focus, .site-header .site-branding .site-brand .site-title:focus, .site-header .site-branding .site-brand .site-description:focus, .site-content .widget-area .sidebar-title:focus, .home .site-content .site-main > .section#featured h2:focus, .site-footer > .section-group .footer-title:focus {
+.screen-reader-text:hover, div.wpcf7 .screen-reader-response:hover, div.wpcf7 label:hover, .site-header .site-branding .site-brand .site-title:hover, .site-header .site-branding .site-brand .site-description:hover, .home .site-content .site-main #featured h2:hover, .site-footer .footer-title:hover, .screen-reader-text:active, div.wpcf7 .screen-reader-response:active, div.wpcf7 label:active, .site-header .site-branding .site-brand .site-title:active, .site-header .site-branding .site-brand .site-description:active, .home .site-content .site-main #featured h2:active, .site-footer .footer-title:active, .screen-reader-text:focus, div.wpcf7 .screen-reader-response:focus, div.wpcf7 label:focus, .site-header .site-branding .site-brand .site-title:focus, .site-header .site-branding .site-brand .site-description:focus, .home .site-content .site-main #featured h2:focus, .site-footer .footer-title:focus {
   background-color: #f1f1f1;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -1143,7 +1168,7 @@ body {
   background-size: 100% 1.5em;
   background-position: left top;
 }
-/* line 41, sass/mixins/_mixins.scss */
+/* line 46, sass/mixins/_mixins.scss */
 body:before {
   content: "";
   position: fixed;
@@ -1208,7 +1233,7 @@ dd {
 }
 
 /*--------------------------------------------------------------
-3.2 Tables
+3.3 Tables
 --------------------------------------------------------------*/
 /* line 1, sass/elements/_tables.scss */
 table {
@@ -1217,7 +1242,7 @@ table {
 }
 
 /*--------------------------------------------------------------
-3.2 Tabs
+3.4 Tabs
 --------------------------------------------------------------*/
 /* line 2, sass/elements/_tabs.scss */
 .tabgroup a[role=tab] {
@@ -1493,6 +1518,11 @@ img {
   /* Make sure images are scaled correctly. */
   max-width: 100%;
   /* Adhere to container width. */
+}
+
+/* line 22, sass/media/_media.scss */
+figure {
+  margin: 0;
 }
 
 /*--------------------------------------------------------------
@@ -2156,9 +2186,49 @@ address a[itemprop=email] {
 8.0 Layout
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-8.1 Header
+8.1 Global
 --------------------------------------------------------------*/
-/* line 4, sass/layout/_header.scss */
+/* line 3, sass/layout/_global.scss */
+.section > div {
+  max-width: 62em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 96%;
+}
+/* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
+.section > div:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+@media (min-width: 62em) {
+  /* line 11, sass/layout/_global.scss */
+  .section-group > div {
+    max-width: 62em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 96%;
+  }
+  /* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
+  .section-group > div:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+@media (min-width: 62em) {
+  /* line 19, sass/layout/_global.scss */
+  .section-group > div .section > div {
+    max-width: none;
+    width: auto;
+  }
+}
+
+/*--------------------------------------------------------------
+8.2 Header
+--------------------------------------------------------------*/
+/* line 5, sass/layout/_header.scss */
 .site-header .site-branding > div {
   max-width: 62em;
   margin-left: auto;
@@ -2177,36 +2247,36 @@ address a[itemprop=email] {
   clear: both;
 }
 @media (min-width: 62em) {
-  /* line 4, sass/layout/_header.scss */
+  /* line 5, sass/layout/_header.scss */
   .site-header .site-branding > div {
     display: table;
-    width: 100%;
+    width: 96%;
   }
 }
 @media (min-width: 62em) {
-  /* line 13, sass/layout/_header.scss */
+  /* line 14, sass/layout/_header.scss */
   .site-header .site-branding .site-brand {
     display: table-cell;
     width: 51.42857%;
   }
 }
-/* line 19, sass/layout/_header.scss */
+/* line 20, sass/layout/_header.scss */
 .site-header .site-branding .site-brand .site-logo {
   display: inline-block;
 }
-/* line 21, sass/layout/_header.scss */
+/* line 22, sass/layout/_header.scss */
 .site-header .site-branding .site-brand .site-logo img {
   width: auto;
   max-height: 6em;
   display: inline-block;
   vertical-align: bottom;
 }
-/* line 34, sass/layout/_header.scss */
+/* line 35, sass/layout/_header.scss */
 .site-header .site-branding .site-brand .site-description {
   margin: 0;
 }
 @media (min-width: 62em) {
-  /* line 40, sass/layout/_header.scss */
+  /* line 41, sass/layout/_header.scss */
   .site-header .site-branding .site-contact {
     display: table-cell;
     width: 48.57143%;
@@ -2214,27 +2284,16 @@ address a[itemprop=email] {
     text-align: right;
   }
 }
-/* line 56, sass/layout/_header.scss */
-.site-header .site-navigation > div {
-  max-width: 62em;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-.site-header .site-navigation > div:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
 
 /*--------------------------------------------------------------
-8.2 Content
+8.3 Content
 --------------------------------------------------------------*/
 /* line 1, sass/layout/_content.scss */
 .site-content {
   max-width: 62em;
   margin-left: auto;
   margin-right: auto;
+  width: 96%;
 }
 /* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
 .site-content:after {
@@ -2243,54 +2302,81 @@ address a[itemprop=email] {
   clear: both;
 }
 @media (min-width: 62em) {
-  /* line 4, sass/layout/_content.scss */
+  /* line 5, sass/layout/_content.scss */
   .site-content .content-area {
     width: 65.71429%;
     float: left;
     margin-right: 2.85714%;
   }
 }
+/* line 11, sass/layout/_content.scss */
+.site-content .widget-area {
+  display: none;
+}
 @media (min-width: 62em) {
-  /* line 10, sass/layout/_content.scss */
+  /* line 11, sass/layout/_content.scss */
   .site-content .widget-area {
+    display: block;
     width: 31.42857%;
     float: right;
     margin-right: 0;
   }
+  /* line 17, sass/layout/_content.scss */
+  .site-content .widget-area .sidebar-title {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+  /* line 10, sass/typography/_accessibility.scss */
+  .site-content .widget-area .sidebar-title:hover, .site-content .widget-area .sidebar-title:active, .site-content .widget-area .sidebar-title:focus {
+    background-color: #f1f1f1;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0px 0px 5px #333333;
+    -webkit-box-shadow: 0px 0px 5px #333333;
+    box-shadow: 0px 0px 5px #333333;
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-weight: bold;
+    height: auto;
+    left: 0.375em;
+    line-height: normal;
+    padding: 0.75em 1.5em;
+    text-decoration: none;
+    top: 0.375em;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */
+  }
 }
 
-/* line 23, sass/layout/_content.scss */
+/*--------------------------------------------------------------
+8.4 Content Home
+--------------------------------------------------------------*/
+/* line 3, sass/layout/_content-home.scss */
 .home .site-content {
+  width: auto;
   max-width: none;
   margin: 0;
 }
 @media (min-width: 62em) {
-  /* line 27, sass/layout/_content.scss */
+  /* line 8, sass/layout/_content-home.scss */
   .home .site-content .content-area {
     float: none;
     width: 100%;
     margin: 0;
   }
 }
-/* line 39, sass/layout/_content.scss */
-.home .site-content .site-main > .section > div {
-  max-width: 62em;
-  margin-left: auto;
-  margin-right: auto;
-  width: 96%;
-}
-/* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-.home .site-content .site-main > .section > div:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
 /* line 95, sass/media/_carousels.scss */
-.home .site-content .site-main > .section#featured .carousel figure {
+.home .site-content .site-main #featured .carousel figure {
   height: 30em;
 }
 /* line 99, sass/media/_carousels.scss */
-.home .site-content .site-main > .section#featured .carousel img {
+.home .site-content .site-main #featured .carousel img {
   position: absolute;
   top: -100%;
   bottom: -100%;
@@ -2305,7 +2391,7 @@ address a[itemprop=email] {
   max-height: none;
 }
 /* line 120, sass/media/_carousels.scss */
-.home .site-content .site-main > .section#featured .carousel figcaption {
+.home .site-content .site-main #featured .carousel figcaption {
   position: relative;
   z-index: 2;
   max-width: 62em;
@@ -2316,19 +2402,19 @@ address a[itemprop=email] {
   height: 100%;
 }
 /* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-.home .site-content .site-main > .section#featured .carousel figcaption:after {
+.home .site-content .site-main #featured .carousel figcaption:after {
   content: " ";
   display: block;
   clear: both;
 }
 /* line 129, sass/media/_carousels.scss */
-.home .site-content .site-main > .section#featured .carousel .caption {
+.home .site-content .site-main #featured .carousel .caption {
   display: table-cell;
   vertical-align: middle;
 }
 @media (max-width: 62em) {
-  /* line 48, sass/layout/_content.scss */
-  .home .site-content .site-main > .section#featured .carousel {
+  /* line 22, sass/layout/_content-home.scss */
+  .home .site-content .site-main #featured .carousel {
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
@@ -2339,37 +2425,37 @@ address a[itemprop=email] {
   }
 }
 /* line 55, sass/media/_carousels.scss */
-.home .site-content .site-main > .section#associations .carousel figure {
+.home .site-content .site-main #associations .carousel figure {
   position: relative;
 }
 @media (min-width: 30em) and (max-width: 48em) {
   /* line 55, sass/media/_carousels.scss */
-  .home .site-content .site-main > .section#associations .carousel figure {
+  .home .site-content .site-main #associations .carousel figure {
     width: 48.57143%;
     float: left;
     margin-right: 2.85714%;
   }
-  /* line 21, sass/mixins/_mixins.scss */
-  .home .site-content .site-main > .section#associations .carousel figure:nth-of-type(2n) {
+  /* line 27, sass/mixins/_mixins.scss */
+  .home .site-content .site-main #associations .carousel figure:nth-of-type(2n) {
     float: right;
     margin-right: 0;
   }
 }
 @media (min-width: 48em) {
   /* line 55, sass/media/_carousels.scss */
-  .home .site-content .site-main > .section#associations .carousel figure {
+  .home .site-content .site-main #associations .carousel figure {
     width: 22.85714%;
     float: left;
     margin-right: 2.85714%;
   }
-  /* line 21, sass/mixins/_mixins.scss */
-  .home .site-content .site-main > .section#associations .carousel figure:nth-of-type(4n) {
+  /* line 27, sass/mixins/_mixins.scss */
+  .home .site-content .site-main #associations .carousel figure:nth-of-type(4n) {
     float: right;
     margin-right: 0;
   }
 }
 /* line 68, sass/media/_carousels.scss */
-.home .site-content .site-main > .section#associations .carousel figure:hover .caption .caption-link {
+.home .site-content .site-main #associations .carousel figure:hover .caption .caption-link {
   position: absolute;
   top: 0;
   display: block;
@@ -2377,108 +2463,35 @@ address a[itemprop=email] {
   height: 100%;
 }
 /* line 79, sass/media/_carousels.scss */
-.home .site-content .site-main > .section#associations .carousel figure .caption .caption-link {
+.home .site-content .site-main #associations .carousel figure .caption .caption-link {
   display: none;
 }
 @media (min-width: 62em) {
-  /* line 71, sass/layout/_content.scss */
-  .home .site-content .site-main .section-group > div {
-    max-width: 62em;
-    margin-left: auto;
-    margin-right: auto;
-    width: 96%;
-  }
-  /* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-  .home .site-content .site-main .section-group > div:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-}
-@media (max-width: 62em) {
-  /* line 80, sass/layout/_content.scss */
-  .home .site-content .site-main .section-group .section > div {
-    max-width: 62em;
-    margin-left: auto;
-    margin-right: auto;
-    width: 96%;
-  }
-  /* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-  .home .site-content .site-main .section-group .section > div:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-}
-@media (min-width: 62em) {
-  /* line 87, sass/layout/_content.scss */
-  .home .site-content .site-main .section-group .section#reviews {
+  /* line 42, sass/layout/_content-home.scss */
+  .home .site-content .site-main #reviews {
     width: 48.57143%;
     float: left;
     margin-right: 2.85714%;
   }
 }
 @media (min-width: 62em) {
-  /* line 93, sass/layout/_content.scss */
-  .home .site-content .site-main .section-group .section#galleries {
+  /* line 48, sass/layout/_content-home.scss */
+  .home .site-content .site-main #galleries {
     width: 48.57143%;
     float: right;
     margin-right: 0;
   }
 }
-/* line 102, sass/layout/_content.scss */
+/* line 55, sass/layout/_content-home.scss */
 .home .site-content .widget-area {
   display: none;
 }
 
 /*--------------------------------------------------------------
-8.3 Footer
+8.5 Footer
 --------------------------------------------------------------*/
-/* line 5, sass/layout/_footer.scss */
-.site-footer > .section > div {
-  max-width: 62em;
-  margin-left: auto;
-  margin-right: auto;
-  width: 96%;
-}
-/* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-.site-footer > .section > div:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
 @media (min-width: 62em) {
-  /* line 13, sass/layout/_footer.scss */
-  .site-footer > .section-group > div {
-    max-width: 62em;
-    margin-left: auto;
-    margin-right: auto;
-    width: 96%;
-  }
-  /* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-  .site-footer > .section-group > div:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-}
-@media (max-width: 62em) {
-  /* line 22, sass/layout/_footer.scss */
-  .site-footer > .section-group .section > div {
-    max-width: 62em;
-    margin-left: auto;
-    margin-right: auto;
-    width: 96%;
-  }
-  /* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-  .site-footer > .section-group .section > div:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-}
-@media (min-width: 62em) {
-  /* line 36, sass/layout/_footer.scss */
+  /* line 7, sass/layout/_footer.scss */
   .site-footer .site-sitemap, .site-footer .site-sitemap-featured {
     width: 31.42857%;
     float: left;
@@ -2486,7 +2499,7 @@ address a[itemprop=email] {
   }
 }
 @media (min-width: 62em) {
-  /* line 42, sass/layout/_footer.scss */
+  /* line 13, sass/layout/_footer.scss */
   .site-footer .site-contact {
     width: 31.42857%;
     float: right;

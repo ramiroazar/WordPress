@@ -1,6 +1,6 @@
 /* Text meant only for screen readers. */
 
-%sr-text {
+@mixin sr-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
 	height: 1px;
@@ -25,7 +25,11 @@
 		top: rhythm(.25);
 		width: auto;
 		z-index: 100000; /* Above WP toolbar. */
-	}
+	}	
+}
+
+%sr-text {
+	@include sr-text;
 }
 
 .screen-reader-text {

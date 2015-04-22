@@ -1,4 +1,5 @@
 .site-header {
+
 	.site-branding {
 
 		> div {
@@ -6,7 +7,7 @@
 			@include susy-clearfix;
 			@include susy-breakpoint($breakpoint__medium) {
 				display: table;	
-				width: 100%;
+				width: 96%;
 			}
 		}
 
@@ -52,9 +53,5 @@
 	}
 
 	.site-navigation {
-
-		> div {
-			@include container;
-		}
 	}
 }

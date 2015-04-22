@@ -1,5 +1,6 @@
 .site-content {
 	@include container;
+	width: 96%;
 
 	.content-area {
 		@include susy-breakpoint($breakpoint__medium) {
@@ -8,99 +9,14 @@
 	}
 
 	.widget-area {
+		display: none;
 		@include susy-breakpoint($breakpoint__medium) {
-			@include span(4 last);		
+			display: block;
+			@include span(4 last);	
+
+			.sidebar-title {
+				@include sr-text;
+			}	
 		}
-
-		.sidebar-title {
-			@extend %sr-text;
-		}
-	}
-}
-
-.home {
-	
-	.site-content {
-		max-width: none;
-		margin: 0;	
-
-		.content-area {
-			@include susy-breakpoint($breakpoint__medium) {
-				float: none;
-				width: 100%;
-				margin: 0;	
-			}
-		}
-
-		.site-main {
-
-			> .section {
-
-				> div {
-					@include container;
-					width: 96%;
-				}
-
-				&#featured {
-					h2 {
-						@extend %sr-text;
-					}
-					.carousel {
-						@include carousel-background;
-						@include susy-breakpoint(max-width $breakpoint__medium) {
-							@include bleed-x(2%);
-						}
-					}
-				}
-
-				#front-page {}
-
-				&#associations {
-					.carousel {
-						@include carousel-multiple;
-					}
-				}
-
-				#reviews {}
-
-				#galleries {}
-			}
-
-			.section-group {
-
-				> div {
-					@include susy-breakpoint($breakpoint__medium) {
-						@include container;
-						width: 96%;
-					}
-				}
-
-				.section {
-
-					> div {
-						@include susy-breakpoint(max-width $breakpoint__medium) {
-							@include container;
-							width: 96%;
-						}
-					}
-
-					&#reviews {
-						@include susy-breakpoint($breakpoint__medium) {
-							@include span(6);
-						}
-					}
-
-					&#galleries {
-						@include susy-breakpoint($breakpoint__medium) {
-							@include span(6 last);
-						}
-					}
-				}
-			}
-		}
-
-		.widget-area {
-			display: none;
-		}	
 	}
 }
