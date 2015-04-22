@@ -36,3 +36,16 @@
 	width: 100%;
 	padding: 0 calc(50% - (#{susy-get(container)} / 2));	
 }
+
+@mixin horizontal-grid-background {
+	&:before {  
+		content: "";
+		position: fixed;
+		z-index: -1;
+		left: 0;
+		right: 0;
+		width: 96%;
+		height: 100%;
+		@include container(show-columns);
+	}
+}

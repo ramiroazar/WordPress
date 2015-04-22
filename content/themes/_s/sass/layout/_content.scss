@@ -38,6 +38,7 @@
 
 				> div {
 					@include container;
+					width: 96%;
 				}
 
 				&#featured {
@@ -46,6 +47,9 @@
 					}
 					.carousel {
 						@include carousel-background;
+						@include susy-breakpoint(max-width $breakpoint__medium) {
+							@include bleed-x(2%);
+						}
 					}
 				}
 
@@ -65,10 +69,20 @@
 			.section-group {
 
 				> div {
-					@include container;
+					@include susy-breakpoint($breakpoint__medium) {
+						@include container;
+						width: 96%;
+					}
 				}
 
 				.section {
+
+					> div {
+						@include susy-breakpoint(max-width $breakpoint__medium) {
+							@include container;
+							width: 96%;
+						}
+					}
 
 					&#reviews {
 						@include susy-breakpoint($breakpoint__medium) {

@@ -32,13 +32,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 5.0 Media
 	5.1 Captions
 	5.2 Galleries
-	5.2 Alignments
-	5.2 Carousels
-	5.2 Maps
+	5.3 Alignments
+	5.4 Carousels
+	5.5 Maps
 6.0 Navigation
 	6.1 Links
 	6.2 Menus
-7.0 Content
+7.0 Site
 	7.1 Posts and pages
 	7.2 Asides
 	7.3 Comments
@@ -47,6 +47,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 8.0 Layout
 9.0 Breakpoints
 --------------------------------------------------------------*/
+
 @import "variables/variables";
 @import "imports/imports";
 @import "mixins/mixins";
@@ -82,7 +83,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "navigation/navigation";
 
 /*--------------------------------------------------------------
-7.0 Content
+7.0 Site
 --------------------------------------------------------------*/
 @import "site/site";
 

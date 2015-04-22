@@ -1,8 +1,31 @@
 .site-footer {
 
 	> .section {
-		&:first-child {
+
+		> div {
 			@include container;
+			width: 96%;
+		}
+	}
+
+	> .section-group {
+
+		> div {
+			@include susy-breakpoint($breakpoint__medium) {
+				@include container;
+				width: 96%;
+			}
+		}
+
+		.section {
+
+			> div {
+				@include susy-breakpoint(max-width $breakpoint__medium) {
+					@include container;
+					width: 96%;
+				}
+			}
+
 		}
 
 		.footer-title {
@@ -20,13 +43,5 @@
 		@include susy-breakpoint($breakpoint__medium) {
 			@include span(4 last);			
 		}
-	}
-
-	#copyright {
-
-		> div {
-			@include container;
-		}
-
 	}
 }

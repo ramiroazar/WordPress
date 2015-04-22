@@ -11,37 +11,39 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
-		<section class="section">
-			<h2 class="footer-title">Footer</h2>
-			<nav id="site-sitemap" class="site-sitemap" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-				<div>
-					<h3>Sitemap</h3>
-					<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'secondary-menu' ) ); ?>
-				</div>
-			</nav><!-- .site-sitemap -->
-			<nav id="site-sitemap-featured" class="site-sitemap-featured" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-				<div>
-					<h3>Sitemap Featured</h3>
-					<?php wp_nav_menu( array( 'theme_location' => 'tertiary', 'menu_id' => 'tertiary-menu' ) ); ?>
-				</div>
-			</nav><!-- .site-sitemap-featured -->
-			<div class="site-contact">
-				<div>
-					<h3>Contact Details</h3>
+		<section class="section-group">
+			<div>
+				<h2 class="footer-title">Footer</h2>
+				<nav id="site-sitemap" class="site-sitemap section" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<div>
+						<h3>Sitemap</h3>
+						<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'secondary-menu' ) ); ?>
+					</div>
+				</nav><!-- .site-sitemap -->
+				<nav id="site-sitemap-featured" class="site-sitemap-featured section" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<div>
+						<h3>Sitemap Featured</h3>
+						<?php wp_nav_menu( array( 'theme_location' => 'tertiary', 'menu_id' => 'tertiary-menu' ) ); ?>
+					</div>
+				</nav><!-- .site-sitemap-featured -->
+				<div class="site-contact section">
+					<div>
+						<h3>Contact Details</h3>
 
-					<?php get_template_part( 'partials/contact' ); ?>
-					
-					<?php if (!is_page('contact')) : ?>
-						<a id="form-contact-toggle" class="toggle-lightbox" href="#form-contact">Contact</a>
-						<div id="form-contact" class="mfp-hide">
-							<?php echo do_shortcode("[contact-form-7 id='1']"); ?>
-						</div>
-					<?php endif; ?>
-				</div>
-			</div><!-- .site-contact -->
+						<?php get_template_part( 'partials/contact' ); ?>
+						
+						<?php if (!is_page('contact')) : ?>
+							<a id="form-contact-toggle" class="toggle-lightbox" href="#form-contact">Contact</a>
+							<div id="form-contact" class="mfp-hide">
+								<?php echo do_shortcode("[contact-form-7 id='1']"); ?>
+							</div>
+						<?php endif; ?>
+					</div>
+				</div><!-- .site-contact -->
+			</div><!-- .section-group -->
 		</section>
 
-		<div id="copyright">
+		<div id="copyright" class="section">
 			<div>
 				<p class="source-org copyright">
 					&copy; 

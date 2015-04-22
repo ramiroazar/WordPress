@@ -1,5 +1,13 @@
+/*--------------------------------------------------------------
+3.1 General Elements
+--------------------------------------------------------------*/
+
+// Set html { font-size: 100%; line-height: 1.5em; }
+@include establish-baseline;
+
 html {
 	box-sizing: border-box;
+	// Remove margin added by lightbox when enabled
 	margin-right: 0 !important;
 }
 
@@ -11,7 +19,8 @@ html {
 
 body {
 	// background: $color__background-body; /* Fallback for when there is no custom background color defined. */
-	// overflow-x: hidden;
+	@include baseline-grid-background();
+	@include horizontal-grid-background();
 }
 
 hr {
@@ -21,8 +30,17 @@ hr {
 	margin-bottom: rhythm();
 }
 
+/*--------------------------------------------------------------
+3.2 Lists
+--------------------------------------------------------------*/
 @import "lists";
 
+/*--------------------------------------------------------------
+3.2 Tables
+--------------------------------------------------------------*/
 @import "tables";
 
+/*--------------------------------------------------------------
+3.2 Tabs
+--------------------------------------------------------------*/
 @import "tabs";

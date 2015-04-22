@@ -1,7 +1,49 @@
-@import "grid";
-@import "grid-vertical";
+/*--------------------------------------------------------------
+Susy
+--------------------------------------------------------------*/
+@import "susy";
 
+$susy: (
+	container: $breakpoint__medium,
+	container-position: center,
+	columns: 12,
+	gutters: 1/2,
+	output: float,
+	global-box-sizing: border-box,
+	debug: (
+		color: $color__debugging,
+		output: background,
+	),
+);
+
+/*--------------------------------------------------------------
+Vertical Rhythm
+--------------------------------------------------------------*/
+@import "compass/typography/vertical_rhythm";
+ 
+// $base-font-size: 16px;
+// $base-line-height: 24px;
+$round-to-nearest-half-line: true;
+$grid-background-baseline-color: $color__debugging;
+
+/*--------------------------------------------------------------
+Background Size
+--------------------------------------------------------------*/
 @import "compass/css3/background-size";
+
+/*--------------------------------------------------------------
+Text Shadow
+--------------------------------------------------------------*/
 @import "compass/css3/text-shadow";
+
+/*--------------------------------------------------------------
+Box Shadow
+--------------------------------------------------------------*/
 @import "compass/css3/box-shadow";
+
+/*--------------------------------------------------------------
+Border Radius
+--------------------------------------------------------------*/
 @import "compass/css3/border-radius";
+
+// $default-border-radius: 5px;
