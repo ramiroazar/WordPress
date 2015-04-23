@@ -74,19 +74,30 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 --
 
 UPDATE wp_options
-    SET option_value = CASE option_name
-        WHEN 'siteurl' THEN 'http://[{_s_url}]/wp'
-        WHEN 'home' THEN 'http://[{_s_url}]'
-        WHEN 'default_comment_status' THEN 'closed'
-        WHEN 'permalink_structure' THEN '/%postname%/'
-        WHEN 'active_plugins' THEN 'a:8:{i:0;s:32:"cmb2-map-field/cmb-field-map.php";i:1;s:13:"cmb2/init.php";i:2;s:36:"contact-form-7-honeypot/honeypot.php";i:3;s:36:"contact-form-7/wp-contact-form-7.php";i:4;s:36:"google-sitemap-generator/sitemap.php";i:5;s:47:"really-simple-captcha/really-simple-captcha.php";i:6;s:53:"ricg-responsive-images/wp-tevko-responsive-images.php";i:7;s:24:"wordpress-seo/wp-seo.php";}'
-        WHEN 'template' THEN '[{_s_theme}]'
-        WHEN 'stylesheet' THEN '[{_s_theme}]'
-        WHEN 'uploads_use_yearmonth_folders' THEN 'no'
-        WHEN 'show_on_front' THEN 'page'
-        WHEN 'page_on_front' THEN 2
-    END
-WHERE option_name IN ('siteurl','home','default_comment_status','permalink_structure','active_plugins','template','stylesheet','uploads_use_yearmonth_folders','show_on_front','page_on_front')
+SET option_value = CASE option_name
+	WHEN 'siteurl' THEN 'http://[{_s_url}]/wp'
+	WHEN 'home' THEN 'http://[{_s_url}]'
+	WHEN 'default_comment_status' THEN 'closed'
+	WHEN 'permalink_structure' THEN '/%postname%/'
+	WHEN 'active_plugins' THEN 'a:8:{i:0;s:32:"cmb2-map-field/cmb-field-map.php";i:1;s:13:"cmb2/init.php";i:2;s:36:"contact-form-7-honeypot/honeypot.php";i:3;s:36:"contact-form-7/wp-contact-form-7.php";i:4;s:36:"google-sitemap-generator/sitemap.php";i:5;s:47:"really-simple-captcha/really-simple-captcha.php";i:6;s:53:"ricg-responsive-images/wp-tevko-responsive-images.php";i:7;s:24:"wordpress-seo/wp-seo.php";}'
+	WHEN 'template' THEN '[{_s_theme}]'
+	WHEN 'stylesheet' THEN '[{_s_theme}]'
+	WHEN 'uploads_use_yearmonth_folders' THEN 'no'
+	WHEN 'show_on_front' THEN 'page'
+	WHEN 'page_on_front' THEN 2
+END
+WHERE option_name IN (
+	'siteurl',
+	'home',
+	'default_comment_status',
+	'permalink_structure',
+	'active_plugins',
+	'template',
+	'stylesheet',
+	'uploads_use_yearmonth_folders',
+	'show_on_front',
+	'page_on_front'
+)
 
 /*INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
 (18, 'default_comment_status', 'closed', 'yes'),
