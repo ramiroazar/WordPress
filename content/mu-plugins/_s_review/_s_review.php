@@ -66,6 +66,15 @@ function _s_review( $atts ) {
 			'order' => 'rand',
 			'words' => 25,
 			'link' => null,
+			'columns' 			=> 2,
+			'caption' 			=> false,
+			'carousel' 			=> false,
+			"autoplay"			=> true,
+			"pagination"		=> false,
+			"transition" 		=> "fade",
+			"prev" 				=> "<i class=\"fa fa-angle-left\"></i>",
+			"next" 				=> "<i class=\"fa fa-angle-right\"></i>",
+			"interval"			=> 5000,
 		), $atts )
 	);
 
@@ -87,6 +96,30 @@ function _s_review( $atts ) {
 	if ( $the_query->have_posts() ) :
 
 		$return = '';
+
+		if ($carousel) : 
+
+			if ( $autoplay == true )
+				$autoplay = "data-autoplay ";
+
+			if ( $pagination == true )
+				$pagination = "data-paginate ";
+
+			if ( $transition == true )
+				$transition = "data-transition='" . $transition . "' ";
+
+			if ( $prev == true )
+				$prev = "data-prev='" . $prev . "' ";
+
+			if ( $next == true )
+				$next = "data-next='" . $next . "' ";
+
+			if ( $interval == true )
+				$interval = "data-interval='" . $interval . "' ";
+
+			$return.= "<div class='carousel' " . $pagination . $autoplay . $transition . $prev . $next . $interval . ">"; 
+
+		endif;
 
 		while ($the_query->have_posts()) : $the_query->the_post();
 
@@ -112,7 +145,11 @@ function _s_review( $atts ) {
 
 		endwhile;
 
-	endif; wp_reset_query();
+		if ($carousel) : $return.= "</div>"; endif;
+
+	endif; 
+
+	wp_reset_postdata();
 
 	return $return;
 }
