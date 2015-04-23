@@ -159,121 +159,144 @@ function _s_carousel( $atts ) {
 	
 	extract( shortcode_atts(
 		array(
-			'ids' 			=> null,
-			'limit' 			=> 1,
-			'transition' 	=> 'fade',
-			'prev' 			=> '<i class="fa fa-chevron-circle-left"></i>',
-			'next' 			=> '<i class="fa fa-chevron-circle-right"></i>',
-			'image_size' 	=> '1280',
-			'pagination'	=> false,
-			'autoplay'		=> true,
-			'interval'		=> 5000,
-			'placeholder'	=> null,
+			"id" 			=> null,
+			"limit" 			=> 1,
+			'heading' 		=> false,
+			"autoplay"		=> true,
+			"pagination"	=> false,
+			"transition" 	=> "fade",
+			"prev" 			=> "<i class=\"fa fa-angle-left\"></i>",
+			"next" 			=> "<i class=\"fa fa-angle-right\"></i>",
+			"interval"		=> 5000,
+			"image_size" 	=> "1280",
+			"placeholder"	=> null,
 		), $atts )
 	);
 
 	$args = array(
-		'post_type' => 'carousel',
-		'posts_per_page' => $limit,
+		"post_type" => "carousel",
+		"posts_per_page" => $limit,
 	);
 
-	if (isset($ids)) :
-		$ids_array = explode(',', $ids);
+	if (isset($id)) :
+		$id_array = explode(",", $id);
 
-		if (isset($ids_array)) :
-			$args['post__in'] = $ids_array;
+		if (isset($id_array)) :
+			$args["post__in"] = $id_array;
 		endif;
 	endif;
 
+	$the_query = "";
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) :
-	while ($the_query->have_posts()) : $the_query->the_post();
+		while ($the_query->have_posts()) : $the_query->the_post();
 
-		$prefix = '_cmb2_';
+			$return = "";
 
-		$slides = get_post_meta( get_the_ID(), $prefix . 'slides', true );
+			$prefix = "_cmb2_";
 
-		if ( $pagination === true )
-			$pagination_output = 'data-paginate';
+			$slides = get_post_meta( get_the_ID(), $prefix . "slides", true );
 
-		if ( $autoplay === true )
-			$autoplay_output = 'data-autoplay';
+			if ( $autoplay == true )
+				$autoplay = "data-autoplay ";
 
-		$return = "<div class='carousel' " . $pagination_output . " " . $autoplay_output . " data-transition='" . $transition . "' data-prev='" . $prev . "' data-next='" . $next . "' data-interval='" . $interval . "'>";
+			if ( $pagination == true )
+				$pagination = "data-paginate ";
 
-		foreach ( (array) $slides as $key => $slide ) :
+			if ( $transition == true )
+				$transition = "data-transition='" . $transition . "' ";
 
-			if ( isset( $slide['slide_image'] ) )
-				$slide_img = wp_get_attachment_image( 
-					$slide['slide_image_id'], 
-					$image_size, 
-					null, 
-					array(
-						"sizes" => tevkori_get_sizes( $slide['slide_image_id'], $image_size ),
-						"srcset" => implode( ', ', tevkori_get_srcset_array( $slide['slide_image_id'], $image_size ) ),
-					)
-				);
-			else
-				$slide_img = null;
+			if ( $prev == true )
+				$prev = "data-prev='" . $prev . "' ";
 
-			if ( isset( $slide['slide_caption_title'] ) )
-				$slide_caption_title = $slide['slide_caption_title'];
-			else
-				$slide_caption_title = null;
+			if ( $next == true )
+				$next = "data-next='" . $next . "' ";
 
-			if ( isset( $slide['slide_caption_content'] ) )
-				$slide_caption_content =$slide['slide_caption_content'];
-			else
-				$slide_caption_content = null;
+			if ( $interval == true )
+				$interval = "data-interval='" . $interval . "' ";
 
-			if ( isset( $slide['slide_caption_button_text'] ) )
-				$slide_caption_button_text = $slide['slide_caption_button_text'];
-			else
-				$slide_caption_button_text = null;
+			if ($heading == true)
+				$return .= "<h3>" . get_the_title() . "</h3>";
 
-			if ( isset( $slide['slide_caption_button_link'] ) )
-				$slide_caption_button_link = $slide['slide_caption_button_link'];
-			else
-				$slide_caption_button_link = null;
+			$return .= "<div class='carousel' " . $pagination . $autoplay . $transition . $prev . $next . $interval . ">";
 
-			if ( isset( $placeholder ) )
-				$placeholder_output = "<img src='http://placehold.it/" . $placeholder . "' />";
-			else
-				$placeholder_output = null;
+			foreach ( (array) $slides as $key => $slide ) :
 
-		   // Do something with the data
-
-			$return .= "<figure>";
-
-				if( $slide_img )
-					$return .= $slide_img;
+				if ( isset( $slide['slide_image'] ) )
+					$slide_img = wp_get_attachment_image( 
+						$slide['slide_image_id'], 
+						$image_size, 
+						null, 
+						array(
+							"sizes" => tevkori_get_sizes( $slide['slide_image_id'], $image_size ),
+							"srcset" => implode( ', ', tevkori_get_srcset_array( $slide['slide_image_id'], $image_size ) ),
+						)
+					);
 				else
-					$return .= $placeholder_output;
+					$slide_img = null;
 
-				$return .= "<figcaption>";
+				if ( isset( $slide['slide_caption_title'] ) )
+					$slide_caption_title = $slide['slide_caption_title'];
+				else
+					$slide_caption_title = null;
 
-					$return .= "<div class='caption'>";
+				if ( isset( $slide['slide_caption_content'] ) )
+					$slide_caption_content =$slide['slide_caption_content'];
+				else
+					$slide_caption_content = null;
 
-					if ( $slide_caption_title )
-						$return .= "<p class='caption-title'>" . $slide_caption_title . "</p>";
+				if ( isset( $slide['slide_caption_button_text'] ) )
+					$slide_caption_button_text = $slide['slide_caption_button_text'];
+				else
+					$slide_caption_button_text = null;
 
-					if ( $slide_caption_content )
-						$return .= "<p class='caption-content'>" . $slide_caption_content . "</p>";
+				if ( isset( $slide['slide_caption_button_link'] ) )
+					$slide_caption_button_link = $slide['slide_caption_button_link'];
+				else
+					$slide_caption_button_link = null;
 
-					if ( $slide_caption_button_text || $slide_caption_button_link )
-						$return .= "<a class='caption-link' href='" . $slide_caption_button_link . "'>" . $slide_caption_button_text . "</a>";
+				if ( isset( $placeholder ) )
+					$placeholder_output = "<img src='http://placehold.it/" . $placeholder . "' />";
+				else
+					$placeholder_output = null;
 
-					$return .= "</div>";
+			   // Do something with the data
 
-				$return .= "</figcaption>";
+				$return .= "<figure>";
 
-			$return .= "</figure>";
+					if( $slide_img )
+						$return .= $slide_img;
+					else
+						$return .= $placeholder_output;
 
-		endforeach;
+					$return .= "<figcaption>";
 
-		$return .= "</div>";
+						$return .= "<div class='caption'>";
 
-	endwhile; endif; wp_reset_query();
+						if ( $slide_caption_title )
+							$return .= "<p class='caption-title'>" . $slide_caption_title . "</p>";
+
+						if ( $slide_caption_content )
+							$return .= "<p class='caption-content'>" . $slide_caption_content . "</p>";
+
+						if ( $slide_caption_button_text || $slide_caption_button_link )
+							$return .= "<a class='caption-link' href='" . $slide_caption_button_link . "'>" . $slide_caption_button_text . "</a>";
+
+						$return .= "</div>";
+
+					$return .= "</figcaption>";
+
+				$return .= "</figure>";
+
+			endforeach;
+
+			$return .= "</div>";
+
+		endwhile; 
+
+	endif;
+
+	wp_reset_postdata();
 
 	return $return;
 }
