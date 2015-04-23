@@ -46,7 +46,9 @@
 		<div id="copyright" class="section">
 			<div>
 				<p class="source-org copyright">
-					&copy; 
+					<span itemprop="copyright-mark">
+						&copy; 
+					</span> 
 					<span itemprop="copyrightYear">
 						<?php echo date('Y'); ?>
 					</span> 
@@ -58,7 +60,7 @@
 					<?php printf(
 						__( 'Website Designed & Developed by %2$s.', '_s' ), 
 						'_s', 
-						'<span itemscope itemtype="http://schema.org/Organization"><span itemprop="name"><a href="http://www.insightdigital.com.au" rel="designer" itemprop="url">Insight Digital</a></span></span>'
+						'<span itemscope itemtype="http://schema.org/Organization"><span itemprop="name"><a href="http://www.insightdigital.com.au" rel="designer" itemprop="url">Insight Digital Marketing</a></span></span>'
 					); ?>
 				</p>
 			</div>
