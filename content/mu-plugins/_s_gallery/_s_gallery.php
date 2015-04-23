@@ -111,13 +111,21 @@ function _s_gallery( $atts ) {
 	
 	extract( shortcode_atts(
 		array(
-			'ids' => null,
-			'limit' => 1,
-			'image_total' => 4,
-			'image_size' => 'large',
-			'thumbnail_size' => 'thumbnail',
-			'columns' => 2,
-			'caption' => false,
+			'id' 					=> null,
+			'limit' 				=> 1,
+			'heading' 			=> false,
+			'image_total' 		=> 4,
+			'image_size' 		=> 'large',
+			'thumbnail_size' 	=> 'thumbnail',
+			'columns' 			=> 2,
+			'caption' 			=> false,
+			'carousel' 			=> false,
+			"autoplay"			=> true,
+			"pagination"		=> false,
+			"transition" 		=> "fade",
+			"prev" 				=> "<i class=\"fa fa-angle-left\"></i>",
+			"next" 				=> "<i class=\"fa fa-angle-right\"></i>",
+			"interval"			=> 5000,
 		), $atts )
 	);
 
@@ -127,20 +135,50 @@ function _s_gallery( $atts ) {
 		'orderby' => 'rand', 
 	);
 
-	if (isset($ids)) :
-		$ids_array = explode(',', $ids);
+	if (isset($id)) :
+		$id_array = explode(',', $id);
 
-		if (isset($ids_array)) :
-			$args['post__in'] = $ids_array;
+		if (isset($id_array)) :
+			$args['post__in'] = $id_array;
 		endif;
 	endif;
 
+	$the_query = "";
 	$the_query = new WP_Query( $args );
-	if ( $the_query->have_posts() ) : 
+	if ( $the_query->have_posts() ) :
 
-		$return = "<div class='gallery gallery-columns-" . $columns . " gallery-size-" . $thumbnail_size . "'>";
+		while ($the_query->have_posts()) : $the_query->the_post(); 
 
-		while ($the_query->have_posts()) : $the_query->the_post();
+			$return = "";
+
+			if ($heading == true)
+				$return .= "<h3>" . get_the_title() . "</h3>";
+
+			$return .= "<div class='gallery gallery-columns-" . $columns . " gallery-size-" . $thumbnail_size . "'>";
+
+			if ($carousel) : 
+
+				if ( $autoplay == true )
+					$autoplay = "data-autoplay ";
+
+				if ( $pagination == true )
+					$pagination = "data-paginate ";
+
+				if ( $transition == true )
+					$transition = "data-transition='" . $transition . "' ";
+
+				if ( $prev == true )
+					$prev = "data-prev='" . $prev . "' ";
+
+				if ( $next == true )
+					$next = "data-next='" . $next . "' ";
+
+				if ( $interval == true )
+					$interval = "data-interval='" . $interval . "' ";
+
+				$return.= "<div class='carousel' " . $pagination . $autoplay . $transition . $prev . $next . $interval . ">"; 
+
+			endif;
 
 	         $gallery = get_post_gallery( get_the_ID(), false );
 
@@ -171,9 +209,9 @@ function _s_gallery( $atts ) {
 							$return.= 			$gallery_image_markup;
 							$return.= 		"</a>";
 							$return.= 	"</div>";
-								if($caption):
+								if($caption) :
 									if ( $gallery_image_caption ) :
-										$return.= "<figcaption class='wp-caption-text gallery-caption' id='gallery-1-21'>";
+										$return.= "<figcaption class='wp-caption-text gallery-caption'>";
 										$return.= 	$gallery_image_caption;
 										$return.= "</figcaption>";
 									endif;
@@ -183,11 +221,15 @@ function _s_gallery( $atts ) {
 				   endforeach;
 			   endif;
 
+			if ($carousel) : $return.= "</div>"; endif;
+
+			$return.= "</div>";
+
 		endwhile; 
 
-		$return.= "</div>";
+	endif; 
 
-	endif; wp_reset_query();
+	wp_reset_postdata();
 
 	return $return;
 }
