@@ -180,6 +180,8 @@ require get_template_directory() . '/inc/jetpack.php';
 	add_image_size('480', 480);
 	add_image_size('320', 320);
 
+	add_image_size('thumbnail-large', 250, 250, true);
+
 	// Make custom image sizes accessible via dashboard
 	function _s_insert_custom_image_sizes( $sizes ) {
 		global $_wp_additional_image_sizes;
