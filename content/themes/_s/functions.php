@@ -133,6 +133,9 @@ function _s_scripts() {
 
 	// icon stylesheet
 	wp_enqueue_style( 'icon-stylesheet', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), null);
+
+	// font stylesheet
+	wp_enqueue_style( 'font-stylesheet', '//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700', array(), null);
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
@@ -196,6 +199,10 @@ require get_template_directory() . '/inc/jetpack.php';
 		return $sizes;
 	}
 	add_filter( 'image_size_names_choose', '_s_insert_custom_image_sizes' );
+
+// Add excerpt support to page
+
+	add_post_type_support( "page", "excerpt" );
 
 // Excerpt
 
