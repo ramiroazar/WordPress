@@ -1,9 +1,14 @@
-%button {
+@mixin button {
 	padding: rhythm(.5);
 	border: 0;
 	@include border-radius;
 	@include adjust-font-size-to(16px);
+	text-align: center;
 	background: $color__background-button;
+}
+
+%button {
+	@include button;
 }
 
 button,
