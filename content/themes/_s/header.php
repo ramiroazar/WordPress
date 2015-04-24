@@ -78,7 +78,7 @@
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Primary Menu', '_s' ); ?></button>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 			</div>
-		</div><!-- .main-navigation -->
+		</div><!-- .site-navigation -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
