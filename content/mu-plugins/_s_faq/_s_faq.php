@@ -104,6 +104,8 @@ function _s_faq( $atts ) {
 
 			while ($the_query->have_posts()) : $the_query->the_post();
 
+				$faq_link = preg_replace('/\s+/', '_', get_the_title());
+
 				$return .= "<dt>";
 				$return .= "<a href='#" . $faq_link . "'>";
 				$return .= get_the_title();
