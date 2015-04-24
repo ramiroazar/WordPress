@@ -311,13 +311,22 @@ require get_template_directory() . '/inc/jetpack.php';
 	}
 	add_shortcode("_s_query", "_s_query");
 
-// Contact information
+// Contact Details Shortcode
 
 	function _s_contact($type) {
+	   
+	   // Defaults
+	   extract(shortcode_atts(
+	   	$type, 
+	   	$atts
+	   ));
+
+	   // Build array of contact theme mods
 		$contact = array();
 		$contact[phone]		= get_theme_mod( 'phone' );
 		$contact[mobile]		= get_theme_mod( 'mobile' );
 		$contact[fax]			= get_theme_mod( 'fax' );
+		$contact[email]		= get_bloginfo( 'admin_email' );
 		$contact[address]		= get_theme_mod( 'address' );
 		$contact[facebook]	= get_theme_mod( 'facebook' );
 		$contact[googleplus]	= get_theme_mod( 'googleplus' );
@@ -327,12 +336,20 @@ require get_template_directory() . '/inc/jetpack.php';
 		$contact[youtube]		= get_theme_mod( 'youtube' );
 		$contact[linkedin]	= get_theme_mod( 'linkedin' );
 		$contact = array_filter($contact);
+	   
+	   // Reset and setup variables
+	   $output = '';
 
 		if ($type)
-			return $contact[$type];
-		else
-			return $contact;
+			if ($type == "all")
+				return $contact;
+			else
+				$output .= $contact[$type];
+
+	   return $output;
+	   
 	}
+	add_shortcode("_s_contact", "_s_contact");
 
 /*
  * Get image id from url 

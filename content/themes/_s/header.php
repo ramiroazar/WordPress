@@ -61,7 +61,7 @@
 						<p class="site-description" itemprop="description"><?php bloginfo( 'description' ); ?></p>
 					</div>
 				</div>
-				<?php if (_s_contact()) : ?>
+				<?php if (_s_contact(phone)) : ?>
 					<div class="site-contact section">
 						<div>
 							<a href="tel:<?php echo _s_contact(phone) ?>" class="phone" itemprop="telephone">
