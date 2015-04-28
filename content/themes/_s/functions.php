@@ -347,53 +347,53 @@ require get_template_directory() . '/inc/jetpack.php';
 			// If declared type is set
 			if (isset($contact[$atts[type]])) :
 				// If markup is true
-				if ($atts[markup] == "true") :
+				if ($atts[markup] === true) :
 					// Output value with markup
-					if ($atts[type] == phone) :
+					if ($atts[type] === phone) :
 						$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' itemprop='telephone'>";
 							$output .= $contact[$atts[type]];
 						$output .= "</a>";
-					elseif ($atts[type] == mobile) :
+					elseif ($atts[type] === mobile) :
 						$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' itemprop='telephone'>";
 							$output .= $contact[$atts[type]];
 						$output .= "</a>";
-					elseif ($atts[type] == fax) :
+					elseif ($atts[type] === fax) :
 						$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' itemprop='telephone'>";
 							$output .= $contact[$atts[type]];
 						$output .= "</a>";
-					elseif ($atts[type] == email) :
+					elseif ($atts[type] === email) :
 						$output .= "<a class='" . $atts[type] . "' href='mailto:" . $contact[$atts[type]] . "' itemprop='email'>";
 							$output .= $contact[$atts[type]];
 						$output .= "</a>";
-					elseif ($atts[type] == address) :
+					elseif ($atts[type] === address) :
 						$output .= "<a class='" . $atts[type] . "' href='http://maps.google.com/?q=" . $contact[$atts[type]] . "' target='_blank' itemprop='address' itemscope itemtype='http://schema.org/PostalAddress'>";
 							$output .= $contact[$atts[type]];
 						$output .= "</a>";
-					elseif ($atts[type] == facebook) :
+					elseif ($atts[type] === facebook) :
 						$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' target='_blank'>";
 							$output .= $contact[$atts[type]];
 						$output .= "</a>";
-					elseif ($atts[type] == googleplus) :
+					elseif ($atts[type] === googleplus) :
 						$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' target='_blank'>";
 							$output .= $contact[$atts[type]];
 						$output .= "</a>";
-					elseif ($atts[type] == twitter) :
+					elseif ($atts[type] === twitter) :
 						$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' target='_blank'>";
 							$output .= $contact[$atts[type]];
 						$output .= "</a>";
-					elseif ($atts[type] == instagram) :
+					elseif ($atts[type] === instagram) :
 						$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' target='_blank'>";
 							$output .= $contact[$atts[type]];
 						$output .= "</a>";
-					elseif ($atts[type] == pinterest) :
+					elseif ($atts[type] === pinterest) :
 						$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' target='_blank'>";
 							$output .= $contact[$atts[type]];
 						$output .= "</a>";
-					elseif ($atts[type] == youtube) :
+					elseif ($atts[type] === youtube) :
 						$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' target='_blank'>";
 							$output .= $contact[$atts[type]];
 						$output .= "</a>";
-					elseif ($atts[type] == linkedin) :
+					elseif ($atts[type] === linkedin) :
 						$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' target='_blank'>";
 							$output .= $contact[$atts[type]];
 						$output .= "</a>";
