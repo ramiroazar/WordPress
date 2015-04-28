@@ -151,23 +151,24 @@ function _s_cmb2_map( array $meta_boxes ) {
  */
 
 function _s_map( $atts ) {
-	
-	extract( shortcode_atts(
+
+	$atts = shortcode_atts( 
 		array(
 			'id' 				=> null,
 			'zoom'			=> 10,
 			'scrollwheel'	=> false,
 			'width'	=> '320px',
 			'height'	=> '320px',
-		), $atts )
+		), 
+		$atts
 	);
 
-	if ($id) :
+	if ($atts[id]) :
 
 		$args = array(
 			'post_type' => 'map',
 			'posts_per_page' => 1,
-			'p' => $id,
+			'p' => $atts[id],
 		);
 
 		$the_query = new WP_Query( $args );
@@ -182,7 +183,7 @@ function _s_map( $atts ) {
 
 				if ($locations) :
 
-					$return = "<div id='map-" . get_the_ID() . "' data-zoom='" . $zoom . "' data-scrollwheel='" . ($scrollwheel ? 'true' : 'false') . "' data-width='" . $width . "' data-height='" . $height . "' class='map-canvas'>";
+					$return = "<div id='map-" . get_the_ID() . "' data-zoom='" . $atts[zoom] . "' data-scrollwheel='" . ($atts[scrollwheel] ? 'true' : 'false') . "' data-width='" . $atts[width] . "' data-height='" . $atts[height] . "' class='map-canvas'>";
 
 					// Create empty array
 					$location_array = array();
