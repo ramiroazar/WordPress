@@ -56,6 +56,19 @@ Generates pseudo element with gradient background
 }
 
 /*--------------------------------------------------------------
+FontAwesome
+FontAwesome fixed width
+--------------------------------------------------------------*/
+
+@mixin fontawesome-fixed-width($size: 1em, $margin: 0) {
+  display: inline-block;
+  width: rhythm();
+  margin: $margin;
+  font: normal normal normal $size/1 $font__icon;
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
 Triangles
 Generates CSS triangles in 8 directions
 --------------------------------------------------------------*/

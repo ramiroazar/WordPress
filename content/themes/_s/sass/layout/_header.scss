@@ -47,7 +47,11 @@
 			}
 
 			.phone {
-				@extend %h3;				
+				@extend %h3;
+				&:before {
+					@include fontawesome-fixed-width;
+					content:"\f095";
+				}				
 			}
 		}
 	}

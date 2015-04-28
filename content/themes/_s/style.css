@@ -1,9 +1,9 @@
 /*
 Theme Name: _s
 Theme URI: http://underscores.me/
-Author: Automattic
-Author URI: http://automattic.com/
-Description: Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Author: Insight Digital Marketing
+Author URI: http://insightdigital.com.au/
+Description: This theme was developed for <em>_s</em>, by <a href="http://insightdigital.com.au/" target="_blank">Insight Digital Marketing</a>, using <a href="http://underscores.me/" target="_blank">Underscores (_s)</a>.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -79,6 +79,10 @@ Centers element content with padding
 /*--------------------------------------------------------------
 Grid Background
 Generates pseudo element with gradient background
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+FontAwesome
+FontAwesome fixed width
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 Triangles
@@ -1058,8 +1062,69 @@ blockquote {
 address {
   margin: 0 0 1.5em;
 }
+/* line 31, sass/typography/_copy.scss */
+address.contact ul {
+  padding: 0;
+  list-style-type: none;
+}
+/* line 37, sass/typography/_copy.scss */
+address.contact a:before {
+  display: inline-block;
+  width: 1.5em;
+  margin: 0;
+  font: normal normal normal 1em FontAwesome;
+  text-align: center;
+}
+/* line 41, sass/typography/_copy.scss */
+address.contact a.phone:before {
+  content: "\f095";
+}
+/* line 46, sass/typography/_copy.scss */
+address.contact a.mobile:before {
+  content: "\f10b";
+}
+/* line 51, sass/typography/_copy.scss */
+address.contact a.fax:before {
+  content: "\f1ac";
+}
+/* line 57, sass/typography/_copy.scss */
+address.contact a.email:before {
+  content: "\f0e0";
+}
+/* line 65, sass/typography/_copy.scss */
+address.contact a.address:before {
+  content: "\f041";
+}
+/* line 70, sass/typography/_copy.scss */
+address.contact a.facebook:before {
+  content: "\f09a";
+}
+/* line 75, sass/typography/_copy.scss */
+address.contact a.googleplus:before {
+  content: "\f0d5";
+}
+/* line 80, sass/typography/_copy.scss */
+address.contact a.twitter:before {
+  content: "\f099";
+}
+/* line 85, sass/typography/_copy.scss */
+address.contact a.instagram:before {
+  content: "\f16d";
+}
+/* line 90, sass/typography/_copy.scss */
+address.contact a.pinterest:before {
+  content: "\f231";
+}
+/* line 95, sass/typography/_copy.scss */
+address.contact a.youtube:before {
+  content: "\f167";
+}
+/* line 100, sass/typography/_copy.scss */
+address.contact a.linkedin:before {
+  content: "\f0e1";
+}
 
-/* line 36, sass/typography/_copy.scss */
+/* line 108, sass/typography/_copy.scss */
 pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
@@ -1070,24 +1135,24 @@ pre {
   padding: 1.5em;
 }
 
-/* line 46, sass/typography/_copy.scss */
+/* line 118, sass/typography/_copy.scss */
 code, kbd, tt, var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 
-/* line 50, sass/typography/_copy.scss */
+/* line 122, sass/typography/_copy.scss */
 abbr, acronym {
   border-bottom: 1px dotted #666;
   cursor: help;
 }
 
-/* line 55, sass/typography/_copy.scss */
+/* line 127, sass/typography/_copy.scss */
 mark, ins {
   background: #fff9c0;
   text-decoration: none;
 }
 
-/* line 60, sass/typography/_copy.scss */
+/* line 132, sass/typography/_copy.scss */
 big {
   font-size: 125%;
 }
@@ -1323,7 +1388,7 @@ textarea {
 /*--------------------------------------------------------------
 4.2 Button
 --------------------------------------------------------------*/
-/* line 1, sass/forms/_buttons.scss */
+/* line 10, sass/forms/_buttons.scss */
 button,
 input[type="button"],
 input[type="reset"],
@@ -1335,6 +1400,7 @@ input[type="submit"], #form-contact-toggle {
   border-radius: 5px;
   font-size: 1em;
   line-height: 1.5em;
+  text-align: center;
   background: #e6e6e6;
 }
 
@@ -2346,7 +2412,7 @@ a:hover, a:active {
 }
 
 /* line 45, sass/navigation/_links.scss */
-address a[itemprop=email] {
+address.contact a.email {
   -ms-word-break: break-all;
   /* Be VERY careful with this, breaks normal words wh_erever */
   word-break: break-all;
@@ -2646,6 +2712,15 @@ address a[itemprop=email] {
     vertical-align: middle;
     text-align: right;
   }
+}
+/* line 51, sass/layout/_header.scss */
+.site-header .site-branding .site-contact .phone:before {
+  display: inline-block;
+  width: 1.5em;
+  margin: 0;
+  font: normal normal normal 1em FontAwesome;
+  text-align: center;
+  content: "\f095";
 }
 
 /*--------------------------------------------------------------

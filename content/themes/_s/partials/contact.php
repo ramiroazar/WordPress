@@ -1,6 +1,6 @@
 <?php if (_s_contact()) : ?>
 
-	<address itemscope itemtype="http://schema.org/Organization">
+	<address class="contact" itemscope itemtype="http://schema.org/Organization">
 
 		<ul>
 
