@@ -156,10 +156,10 @@ function _s_cmb2_carousel( array $meta_boxes ) {
  */
 
 function _s_carousel( $atts ) {
-	
-	extract( shortcode_atts(
+
+	$atts = shortcode_atts( 
 		array(
-			"id" 			=> null,
+			"id" 				=> null,
 			"limit" 			=> 1,
 			'heading' 		=> false,
 			"autoplay"		=> true,
@@ -170,16 +170,17 @@ function _s_carousel( $atts ) {
 			"interval"		=> 5000,
 			"image_size" 	=> "1280",
 			"placeholder"	=> null,
-		), $atts )
+		), 
+		$atts
 	);
 
 	$args = array(
 		"post_type" => "carousel",
-		"posts_per_page" => $limit,
+		"posts_per_page" => $atts[limit],
 	);
 
-	if (isset($id)) :
-		$id_array = explode(",", $id);
+	if (isset($atts[id])) :
+		$id_array = explode(",", $atts[id]);
 
 		if (isset($id_array)) :
 			$args["post__in"] = $id_array;
@@ -197,25 +198,25 @@ function _s_carousel( $atts ) {
 
 			$slides = get_post_meta( get_the_ID(), $prefix . "slides", true );
 
-			if ( $autoplay == true )
+			if ( $atts[autoplay] == true )
 				$autoplay = "data-autoplay ";
 
-			if ( $pagination == true )
+			if ( $atts[pagination] == true )
 				$pagination = "data-paginate ";
 
-			if ( $transition == true )
-				$transition = "data-transition='" . $transition . "' ";
+			if ( $atts[transition] == true )
+				$transition = "data-transition='" . $atts[transition] . "' ";
 
-			if ( $prev == true )
-				$prev = "data-prev='" . $prev . "' ";
+			if ( $atts[prev] == true )
+				$prev = "data-prev='" . $atts[prev] . "' ";
 
-			if ( $next == true )
-				$next = "data-next='" . $next . "' ";
+			if ( $atts[next] == true )
+				$next = "data-next='" . $atts[next] . "' ";
 
-			if ( $interval == true )
-				$interval = "data-interval='" . $interval . "' ";
+			if ( $atts[interval] == true )
+				$interval = "data-interval='" . $atts[interval] . "' ";
 
-			if ($heading == true)
+			if ($atts[heading] == true)
 				$return .= "<h3>" . get_the_title() . "</h3>";
 
 			$return .= "<div class='carousel' " . $pagination . $autoplay . $transition . $prev . $next . $interval . ">";
@@ -225,11 +226,11 @@ function _s_carousel( $atts ) {
 				if ( isset( $slide['slide_image'] ) )
 					$slide_img = wp_get_attachment_image( 
 						$slide['slide_image_id'], 
-						$image_size, 
+						$atts[image_size], 
 						null, 
 						array(
-							"sizes" => tevkori_get_sizes( $slide['slide_image_id'], $image_size ),
-							"srcset" => implode( ', ', tevkori_get_srcset_array( $slide['slide_image_id'], $image_size ) ),
+							"sizes" => tevkori_get_sizes( $slide['slide_image_id'], $atts[image_size] ),
+							"srcset" => implode( ', ', tevkori_get_srcset_array( $slide['slide_image_id'], $atts[image_size] ) ),
 						)
 					);
 				else
@@ -255,8 +256,8 @@ function _s_carousel( $atts ) {
 				else
 					$slide_caption_button_link = null;
 
-				if ( isset( $placeholder ) )
-					$placeholder_output = "<img src='http://placehold.it/" . $placeholder . "' />";
+				if ( isset( $atts[placeholder] ) )
+					$placeholder_output = "<img src='http://placehold.it/" . $atts[placeholder] . "' />";
 				else
 					$placeholder_output = null;
 
