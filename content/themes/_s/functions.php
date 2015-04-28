@@ -313,43 +313,108 @@ require get_template_directory() . '/inc/jetpack.php';
 
 // Contact Details Shortcode
 
-	function _s_contact($type) {
-	   
-	   // Defaults
-	   extract(shortcode_atts(
-	   	$type, 
-	   	$atts
-	   ));
+	function _s_contact($atts) {
 
-	   // Build array of contact theme mods
+		$args = shortcode_atts( 
+			array(
+			'type' => false,
+			'markup' => true,
+			), 
+			$atts
+		);
+
+	   // Build array of contact details stored in database
 		$contact = array();
-		$contact[phone]		= get_theme_mod( 'phone' );
-		$contact[mobile]		= get_theme_mod( 'mobile' );
-		$contact[fax]			= get_theme_mod( 'fax' );
-		$contact[email]		= get_bloginfo( 'admin_email' );
-		$contact[address]		= get_theme_mod( 'address' );
-		$contact[facebook]	= get_theme_mod( 'facebook' );
-		$contact[googleplus]	= get_theme_mod( 'googleplus' );
-		$contact[twitter]		= get_theme_mod( 'twitter' );
-		$contact[instagram]	= get_theme_mod( 'instagram' );
-		$contact[pinterest]	= get_theme_mod( 'pinterest' );
-		$contact[youtube]		= get_theme_mod( 'youtube' );
-		$contact[linkedin]	= get_theme_mod( 'linkedin' );
+		$contact[phone]		= get_theme_mod('phone');
+		$contact[mobile]		= get_theme_mod('mobile');
+		$contact[fax]			= get_theme_mod('fax');
+		$contact[email]		= get_bloginfo('admin_email');
+		$contact[address]		= get_theme_mod('address');
+		$contact[facebook]	= get_theme_mod('facebook');
+		$contact[googleplus]	= get_theme_mod('googleplus');
+		$contact[twitter]		= get_theme_mod('twitter');
+		$contact[instagram]	= get_theme_mod('instagram');
+		$contact[pinterest]	= get_theme_mod('pinterest');
+		$contact[youtube]		= get_theme_mod('youtube');
+		$contact[linkedin]	= get_theme_mod('linkedin');
 		$contact = array_filter($contact);
 	   
 	   // Reset and setup variables
 	   $output = '';
 
-		if ($type)
-			if ($type == "all")
-				return $contact;
-			else
-				$output .= $contact[$type];
+	   // If type declared
+		if ($args[type]) :
+			// If declared type is set
+			if (isset($contact[$args[type]])) :
+				// If markup is true
+				if ($args[markup] == "true") :
+					// Output value with markup
+					if ($args[type] == phone) :
+						$output .= "<a class='" . $args[type] . "' href='tel:" . $contact[$args[type]] . "' itemprop='telephone'>";
+							$output .= $contact[$args[type]];
+						$output .= "</a>";
+					elseif ($args[type] == mobile) :
+						$output .= "<a class='" . $args[type] . "' href='tel:" . $contact[$args[type]] . "' itemprop='telephone'>";
+							$output .= $contact[$args[type]];
+						$output .= "</a>";
+					elseif ($args[type] == fax) :
+						$output .= "<a class='" . $args[type] . "' href='tel:" . $contact[$args[type]] . "' itemprop='telephone'>";
+							$output .= $contact[$args[type]];
+						$output .= "</a>";
+					elseif ($args[type] == email) :
+						$output .= "<a class='" . $args[type] . "' href='mailto:" . $contact[$args[type]] . "' itemprop='email'>";
+							$output .= $contact[$args[type]];
+						$output .= "</a>";
+					elseif ($args[type] == address) :
+						$output .= "<a class='" . $args[type] . "' href='http://maps.google.com/?q=" . $contact[$args[type]] . "' target='_blank' itemprop='address' itemscope itemtype='http://schema.org/PostalAddress'>";
+							$output .= $contact[$args[type]];
+						$output .= "</a>";
+					elseif ($args[type] == facebook) :
+						$output .= "<a class='" . $args[type] . "' href='tel:" . $contact[$args[type]] . "' target='_blank'>";
+							$output .= $contact[$args[type]];
+						$output .= "</a>";
+					elseif ($args[type] == googleplus) :
+						$output .= "<a class='" . $args[type] . "' href='tel:" . $contact[$args[type]] . "' target='_blank'>";
+							$output .= $contact[$args[type]];
+						$output .= "</a>";
+					elseif ($args[type] == twitter) :
+						$output .= "<a class='" . $args[type] . "' href='tel:" . $contact[$args[type]] . "' target='_blank'>";
+							$output .= $contact[$args[type]];
+						$output .= "</a>";
+					elseif ($args[type] == instagram) :
+						$output .= "<a class='" . $args[type] . "' href='tel:" . $contact[$args[type]] . "' target='_blank'>";
+							$output .= $contact[$args[type]];
+						$output .= "</a>";
+					elseif ($args[type] == pinterest) :
+						$output .= "<a class='" . $args[type] . "' href='tel:" . $contact[$args[type]] . "' target='_blank'>";
+							$output .= $contact[$args[type]];
+						$output .= "</a>";
+					elseif ($args[type] == youtube) :
+						$output .= "<a class='" . $args[type] . "' href='tel:" . $contact[$args[type]] . "' target='_blank'>";
+							$output .= $contact[$args[type]];
+						$output .= "</a>";
+					elseif ($args[type] == linkedin) :
+						$output .= "<a class='" . $args[type] . "' href='tel:" . $contact[$args[type]] . "' target='_blank'>";
+							$output .= $contact[$args[type]];
+						$output .= "</a>";
+					endif;
+				// Else if markup is false
+				else :
+					// Output value without markup
+					$output .= $contact[$args[type]];
+				endif;
+			endif;
+		// Else if type not declared
+		else:
+			// Output array
+			$output .= $contact;
+		endif;
 
+		// Return output
 	   return $output;
 	   
 	}
-	add_shortcode("_s_contact", "_s_contact");
+	add_shortcode("contact", "_s_contact");
 
 /*
  * Get image id from url 

@@ -61,12 +61,10 @@
 						<p class="site-description" itemprop="description"><?php bloginfo( 'description' ); ?></p>
 					</div>
 				</div>
-				<?php if (_s_contact(phone)) : ?>
+				<?php if (_s_contact(array("type" => phone))) : ?>
 					<div class="site-contact section">
 						<div>
-							<a href="tel:<?php echo _s_contact(phone) ?>" class="phone" itemprop="telephone">
-								<?php echo _s_contact(phone) ?>
-							</a>
+							<?php echo _s_contact(array("type" => phone)); ?>
 						</div>
 					</div>
 				<?php endif; ?>

@@ -1,88 +1,78 @@
-<?php if (_s_contact(all)) : ?>
+<?php if (_s_contact()) : ?>
 
 	<address itemscope itemtype="http://schema.org/Organization">
 
 		<ul>
 
-			<?php if (_s_contact(phone)) : ?>
+			<?php if (_s_contact(array("type" => phone))) : ?>
 				<li>
-					<a class="phone" href="tel:<?php echo _s_contact(phone) ?>" itemprop="telephone">
-						<?php echo _s_contact(phone) ?>
-					</a>
+					<?php echo _s_contact(array("type" => phone)); ?>
 				</li>
 			<?php endif; ?>
 
-			<?php if (_s_contact(mobile)) : ?>
+			<?php if (_s_contact(array("type" => mobile))) : ?>
 				<li>
-					<a class="mobile" href="tel:<?php echo _s_contact(mobile) ?>" itemprop="telephone">
-						<?php echo _s_contact(mobile) ?>
-					</a>
+					<?php echo _s_contact(array("type" => mobile)) ?>
 				</li>
 			<?php endif; ?>
 
-			<?php if (_s_contact(fax)) : ?>
+			<?php if (_s_contact(array("type" => fax))) : ?>
 				<li>
-					<a class="fax" href="tel:<?php echo _s_contact(fax) ?>" itemprop="telephone">
-						<?php echo _s_contact(fax) ?>
-					</a>
+					<?php echo _s_contact(array("type" => fax)) ?>
 				</li>
 			<?php endif; ?>
 
-			<?php if (_s_contact(email)) : ?>
+			<?php if (_s_contact(array("type" => email))) : ?>
 				<li>
-					<a class="email" href='mailto:<?php echo _s_contact(email); ?>' itemprop="email">
-						<?php echo _s_contact(email); ?>
-					</a>
+					<?php echo _s_contact(array("type" => email)) ?>
 				</li>
 			<?php endif; ?>
 
-			<?php if (_s_contact(address)) : ?>
+			<?php if (_s_contact(array("type" => address))) : ?>
 				<li>
-					<a class="address" href="http://maps.google.com/?q=<?php echo _s_contact(address) ?>" target="_blank" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-						<?php echo _s_contact(address) ?>
-					</a>
+					<?php echo _s_contact(array("type" => address)) ?>
 				</li>
 			<?php endif; ?>
 
-			<?php if (_s_contact(facebook)) : ?>
+			<?php if (_s_contact(array("type" => facebook))) : ?>
 				<li>
-					<a class="facebook" href='<?php echo _s_contact(facebook) ?>' target="_blank">Facebook</a>
+					<?php echo _s_contact(array("type" => facebook)) ?>
 				</li>
 			<?php endif; ?>
 
-			<?php if (_s_contact(googleplus)) : ?>
+			<?php if (_s_contact(array("type" => googleplus))) : ?>
 				<li>
-					<a class="googleplus" href='<?php echo _s_contact(googleplus) ?>' target="_blank">Google Plus</a>
+					<?php echo _s_contact(array("type" => googleplus)) ?>
 				</li>
 			<?php endif; ?>
 
-			<?php if (_s_contact(twitter)) : ?>
+			<?php if (_s_contact(array("type" => twitter))) : ?>
 				<li>
-					<a class="twitter" href='<?php echo _s_contact(twitter) ?>' target="_blank">Twitter</a>
+					<?php echo _s_contact(array("type" => twitter)) ?>
 				</li>
 			<?php endif; ?>
 
-			<?php if (_s_contact(instagram)) : ?>
+			<?php if (_s_contact(array("type" => instagram))) : ?>
 				<li>
-					<a class="instagram" href='<?php echo _s_contact(instagram) ?>' target="_blank">Instagram</a>
+					<?php echo _s_contact(array("type" => instagram)) ?>
 				</li>
 			<?php endif; ?>
 
-			<?php if (_s_contact(pinterest)) : ?>
+			<?php if (_s_contact(array("type" => pinterest))) : ?>
 				<li>
-					<a class="pinterest" href='<?php echo _s_contact(pinterest) ?>' target="_blank">Pinterest</a>
+					<?php echo _s_contact(array("type" => pinterest)) ?>
 				</li>
 			<?php endif; ?>
 
-			<?php if (_s_contact(youtube)) : ?>
+			<?php if (_s_contact(array("type" => youtube))) : ?>
 				<li>
-					<a class="youtube" href='<?php echo _s_contact(youtube) ?>' target="_blank">YouTube</a>
+					<?php echo _s_contact(array("type" => youtube)) ?>
 				</li>
 			<?php endif; ?>
 
-			<?php if (_s_contact(linkedin)) : ?>
+			<?php if (_s_contact(array("type" => linkedin))) : ?>
 				<li>
-					<a class="linkedin" href='<?php echo _s_contact(linkedin) ?>' target="_blank">LinkedIn</a>
+					<?php echo _s_contact(array("type" => linkedin)) ?>
 				</li>
 			<?php endif; ?>
 
