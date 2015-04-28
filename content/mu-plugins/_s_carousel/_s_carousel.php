@@ -302,4 +302,4 @@ function _s_carousel( $atts ) {
 	return $return;
 }
 
-add_shortcode( 'carousel', '_s_carousel' );
+add_shortcode( '_s_carousel', '_s_carousel' );

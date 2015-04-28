@@ -414,7 +414,7 @@ require get_template_directory() . '/inc/jetpack.php';
 	   return $output;
 	   
 	}
-	add_shortcode("contact", "_s_contact");
+	add_shortcode("_s_contact", "_s_contact");
 
 /*
  * Get image id from url 
