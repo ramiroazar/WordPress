@@ -58,37 +58,38 @@ function _s_post_type_review_init() {
  */
 
 function _s_review( $atts ) {
-	
-	extract( shortcode_atts(
+
+	$atts = shortcode_atts( 
 		array(
-			'ids' => null,
-			'limit' 		=> -1,
-			'order' => 'rand',
-			'words' => 25,
-			'link' => null,
-			'columns' 			=> 2,
-			'caption' 			=> false,
-			'carousel' 			=> false,
-			"autoplay"			=> true,
-			"pagination"		=> false,
-			"transition" 		=> "fade",
-			"prev" 				=> "<i class=\"fa fa-angle-left\"></i>",
-			"next" 				=> "<i class=\"fa fa-angle-right\"></i>",
-			"interval"			=> 5000,
-		), $atts )
+			'id' 				=> null,
+			'limit' 			=> -1,
+			'order' 			=> 'rand',
+			'words' 			=> 25,
+			'link' 			=> null,
+			'columns' 		=> 2,
+			'caption' 		=> false,
+			'carousel' 		=> false,
+			'autoplay'		=> true,
+			'pagination'	=> false,
+			'transition' 	=> 'fade',
+			'prev' 			=> '<i class="fa fa-angle-left"></i>',
+			'next' 			=> '<i class="fa fa-angle-right"></i>',
+			'interval'		=> 5000,
+		), 
+		$atts
 	);
 
 	$args = array(
 		'post_type' => 'review', 
-		'posts_per_page' => $limit,
-		'orderby' => $order,
+		'posts_per_page' => $atts[limit], 
+		'orderby' => $atts[order], 
 	);
 
-	if (isset($ids)) :
-		$ids_array = explode(',', $ids);
+	if (isset($atts[id])) :
+		$id_array = explode(',', $atts[id]);
 
-		if (isset($ids_array)) :
-			$args['post__in'] = $ids_array;
+		if (isset($id_array)) :
+			$args['post__in'] = $id_array;
 		endif;
 	endif;
 
@@ -97,25 +98,25 @@ function _s_review( $atts ) {
 
 		$return = '';
 
-		if ($carousel) : 
+		if ($atts[carousel]) : 
 
-			if ( $autoplay == true )
+			if ( $atts[autoplay] === true )
 				$autoplay = "data-autoplay ";
 
-			if ( $pagination == true )
+			if ( $atts[pagination] === true )
 				$pagination = "data-paginate ";
 
-			if ( $transition == true )
-				$transition = "data-transition='" . $transition . "' ";
+			if ( $atts[transition] == true )
+				$transition = "data-transition='" . $atts[transition] . "' ";
 
-			if ( $prev == true )
-				$prev = "data-prev='" . $prev . "' ";
+			if ( $atts[prev] == true )
+				$prev = "data-prev='" . $atts[prev] . "' ";
 
-			if ( $next == true )
-				$next = "data-next='" . $next . "' ";
+			if ( $atts[next] == true )
+				$next = "data-next='" . $atts[next] . "' ";
 
-			if ( $interval == true )
-				$interval = "data-interval='" . $interval . "' ";
+			if ( $atts[interval] == true )
+				$interval = "data-interval='" . $atts[interval] . "' ";
 
 			$return.= "<div class='carousel' " . $pagination . $autoplay . $transition . $prev . $next . $interval . ">"; 
 
@@ -128,10 +129,10 @@ function _s_review( $atts ) {
 					if (in_the_loop()) :
 						$return .= wpautop(get_the_content());
 					else :
-						$return .= _s_excerpt($words);	
-						if ($link) :
-							$return .= " <a href='" . $link . "'>";
-							$return .= "Read More";
+						$return .= _s_excerpt($atts[words]);	
+						if ($atts[link]) :
+							$return .= "<a href='" . $atts[link] . "'>";
+								$return .= "Read More";
 							$return .= "</a>";
 						endif;		
 					endif;
