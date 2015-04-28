@@ -108,8 +108,8 @@ function wp_get_attachment( $attachment_id ) {
 }
 
 function _s_gallery( $atts ) {
-	
-	extract( shortcode_atts(
+
+	$atts = shortcode_atts( 
 		array(
 			'id' 					=> null,
 			'limit' 				=> 1,
@@ -120,23 +120,24 @@ function _s_gallery( $atts ) {
 			'columns' 			=> 2,
 			'caption' 			=> false,
 			'carousel' 			=> false,
-			"autoplay"			=> true,
-			"pagination"		=> false,
-			"transition" 		=> "fade",
-			"prev" 				=> "<i class=\"fa fa-angle-left\"></i>",
-			"next" 				=> "<i class=\"fa fa-angle-right\"></i>",
-			"interval"			=> 5000,
-		), $atts )
+			'autoplay'			=> true,
+			'pagination'		=> false,
+			'transition' 		=> 'fade',
+			'prev' 				=> '<i class="fa fa-angle-left"></i>',
+			'next' 				=> '<i class="fa fa-angle-right"></i>',
+			'interval'			=> 5000,
+		), 
+		$atts
 	);
 
 	$args = array(
 		'post_type' => 'gallery', 
-		'posts_per_page' => $limit, 
+		'posts_per_page' => $atts[limit], 
 		'orderby' => 'rand', 
 	);
 
-	if (isset($id)) :
-		$id_array = explode(',', $id);
+	if (isset($atts[id])) :
+		$id_array = explode(',', $atts[id]);
 
 		if (isset($id_array)) :
 			$args['post__in'] = $id_array;
@@ -151,30 +152,30 @@ function _s_gallery( $atts ) {
 
 			$return = "";
 
-			if ($heading == true)
+			if ($atts[heading] === true)
 				$return .= "<h3>" . get_the_title() . "</h3>";
 
-			$return .= "<div class='gallery gallery-columns-" . $columns . " gallery-size-" . $thumbnail_size . "'>";
+			$return .= "<div class='gallery gallery-columns-" . $atts[columns] . " gallery-size-" . $atts[thumbnail_size] . "'>";
 
-			if ($carousel) : 
+			if ($atts[carousel]) : 
 
-				if ( $autoplay == true )
+				if ( $atts[autoplay] === true )
 					$autoplay = "data-autoplay ";
 
-				if ( $pagination == true )
+				if ( $atts[pagination] === true )
 					$pagination = "data-paginate ";
 
-				if ( $transition == true )
-					$transition = "data-transition='" . $transition . "' ";
+				if ( $atts[transition] == true )
+					$transition = "data-transition='" . $atts[transition] . "' ";
 
-				if ( $prev == true )
-					$prev = "data-prev='" . $prev . "' ";
+				if ( $atts[prev] == true )
+					$prev = "data-prev='" . $atts[prev] . "' ";
 
-				if ( $next == true )
-					$next = "data-next='" . $next . "' ";
+				if ( $atts[next] == true )
+					$next = "data-next='" . $atts[next] . "' ";
 
-				if ( $interval == true )
-					$interval = "data-interval='" . $interval . "' ";
+				if ( $atts[interval] == true )
+					$interval = "data-interval='" . $atts[interval] . "' ";
 
 				$return.= "<div class='carousel' " . $pagination . $autoplay . $transition . $prev . $next . $interval . ">"; 
 
@@ -190,18 +191,18 @@ function _s_gallery( $atts ) {
 
 						$gallery_image_markup = wp_get_attachment_image( 
 							$gallery_image, 
-							$thumbnail_size, 
+							$atts[thumbnail_size], 
 							null, 
 							array(
-								"sizes" => tevkori_get_sizes( $gallery_image, $thumbnail_size ),
-								"srcset" => implode( ', ', tevkori_get_srcset_array( $gallery_image, $thumbnail_size ) ),
+								"sizes" => tevkori_get_sizes( $gallery_image, $atts[thumbnail_size] ),
+								"srcset" => implode( ', ', tevkori_get_srcset_array( $gallery_image, $atts[thumbnail_size] ) ),
 							)
 						);
 			         $gallery_image_meta = wp_get_attachment($gallery_image);
-			         $gallery_image_src = wp_get_attachment_image_src($gallery_image, $image_size)[0];
+			         $gallery_image_src = wp_get_attachment_image_src($gallery_image, $atts[image_size])[0];
 			         $gallery_image_caption = $gallery_image_meta['caption'];
 
-					   if ( $c <= $image_total ) :
+					   if ( $c <= $atts[image_total] ) :
 
 							$return.= "<figure class='gallery-item'>";
 							$return.= 	"<div class='gallery-icon'>";
@@ -209,7 +210,7 @@ function _s_gallery( $atts ) {
 							$return.= 			$gallery_image_markup;
 							$return.= 		"</a>";
 							$return.= 	"</div>";
-								if($caption) :
+								if($atss[caption]) :
 									if ( $gallery_image_caption ) :
 										$return.= "<figcaption class='wp-caption-text gallery-caption'>";
 										$return.= 	$gallery_image_caption;
@@ -221,7 +222,7 @@ function _s_gallery( $atts ) {
 				   endforeach;
 			   endif;
 
-			if ($carousel) : $return.= "</div>"; endif;
+			if ($atts[carousel]) : $return.= "</div>"; endif;
 
 			$return.= "</div>";
 
