@@ -58,18 +58,19 @@ function _s_post_type_faq_init() {
  */
 
 function _s_faq( $atts ) {
-	
-	extract( shortcode_atts(
+
+	$atts = shortcode_atts( 
 		array(
 			'limit' 		=> -1,
 			'questions'	=> true,
 			'answers'	=> true,
-		), $atts )
+		), 
+		$atts
 	);
 
 	$args = array(
 		'post_type' => 'faq', 
-		'posts_per_page' => $limit,
+		'posts_per_page' => $atts[limit],
 		'orderby' => 'rand',
 	);
 
@@ -78,7 +79,7 @@ function _s_faq( $atts ) {
 
 		$return = '';
 
-		if ($questions === true) :
+		if ($atts[questions] === true) :
 
 			$return .= "<ol class='faq'>";
 
@@ -98,7 +99,7 @@ function _s_faq( $atts ) {
 
 		endif;
 
-		if ($answers === true) :
+		if ($atts[answers] === true) :
 
 			$return .= "<dl class='faq'>";
 
