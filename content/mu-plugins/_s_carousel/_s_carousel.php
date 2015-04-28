@@ -13,22 +13,22 @@ add_action('wp_print_styles', '_s_carousel_register_styles');
 function _s_carousel_register_scripts() {
     if (!is_admin()) {
 
-    	wp_enqueue_script('_s-responsive-carousel.script', plugins_url("js/responsive-carousel.js", __FILE__), array('jquery'));
-		wp_enqueue_script('_s-responsive-carousel.dynamic-containers', plugins_url("js/responsive-carousel.dynamic-containers.js", __FILE__), array('jquery'));
-		wp_enqueue_script('_s-responsive-carousel.pagination', plugins_url("js/responsive-carousel.pagination.js", __FILE__), array('jquery'));
-		wp_enqueue_script('_s-responsive-carousel.autoinit', plugins_url("js/responsive-carousel.autoinit.js", __FILE__), array('jquery'));
-		wp_enqueue_script('_s-responsive-carousel.autoplay', plugins_url("js/responsive-carousel.autoplay.js", __FILE__), array('jquery'));
-		wp_enqueue_script('_s-responsive-carousel.aspectratio', plugins_url("js/responsive-carousel.aspectratio.js", __FILE__), array('jquery'));
+    	wp_enqueue_script('responsive-carousel.script', plugins_url("js/responsive-carousel.js", __FILE__), array('jquery'));
+		wp_enqueue_script('responsive-carousel.dynamic-containers', plugins_url("js/responsive-carousel.dynamic-containers.js", __FILE__), array('jquery'));
+		wp_enqueue_script('responsive-carousel.pagination', plugins_url("js/responsive-carousel.pagination.js", __FILE__), array('jquery'));
+		wp_enqueue_script('responsive-carousel.autoinit', plugins_url("js/responsive-carousel.autoinit.js", __FILE__), array('jquery'));
+		wp_enqueue_script('responsive-carousel.autoplay', plugins_url("js/responsive-carousel.autoplay.js", __FILE__), array('jquery'));
+		wp_enqueue_script('responsive-carousel.aspectratio', plugins_url("js/responsive-carousel.aspectratio.js", __FILE__), array('jquery'));
 
     }
 }
  
 function _s_carousel_register_styles() {
 
-	wp_enqueue_style('_s-responsive-carousel.style', plugins_url("css/responsive-carousel.css", __FILE__));
-	wp_enqueue_style('_s-responsive-carousel.fade', plugins_url("css/responsive-carousel.fade.css", __FILE__));
-	wp_enqueue_style('_s-responsive-carousel.slide', plugins_url("css/responsive-carousel.slide.css", __FILE__));
-	wp_enqueue_style('_s-responsive-carousel.pagination', plugins_url("css/responsive-carousel.pagination.css", __FILE__));
+	wp_enqueue_style('responsive-carousel.style', plugins_url("css/responsive-carousel.css", __FILE__));
+	wp_enqueue_style('responsive-carousel.fade', plugins_url("css/responsive-carousel.fade.css", __FILE__));
+	wp_enqueue_style('responsive-carousel.slide', plugins_url("css/responsive-carousel.slide.css", __FILE__));
+	wp_enqueue_style('responsive-carousel.pagination', plugins_url("css/responsive-carousel.pagination.css", __FILE__));
 
 }
 
@@ -162,12 +162,12 @@ function _s_carousel( $atts ) {
 			"id" 				=> null,
 			"limit" 			=> 1,
 			'heading' 		=> false,
-			"autoplay"		=> true,
-			"pagination"	=> false,
-			"transition" 	=> "fade",
-			"prev" 			=> "<i class=\"fa fa-angle-left\"></i>",
-			"next" 			=> "<i class=\"fa fa-angle-right\"></i>",
-			"interval"		=> 5000,
+			'autoplay'		=> true,
+			'pagination'	=> false,
+			'transition' 	=> 'fade',
+			'prev' 			=> '<i class="fa fa-angle-left"></i>',
+			'next' 			=> '<i class="fa fa-angle-right"></i>',
+			'interval'		=> 5000,
 			"image_size" 	=> "1280",
 			"placeholder"	=> null,
 		), 
@@ -242,7 +242,7 @@ function _s_carousel( $atts ) {
 					$slide_caption_title = null;
 
 				if ( isset( $slide['slide_caption_content'] ) )
-					$slide_caption_content =$slide['slide_caption_content'];
+					$slide_caption_content = $slide['slide_caption_content'];
 				else
 					$slide_caption_content = null;
 
@@ -302,4 +302,4 @@ function _s_carousel( $atts ) {
 	return $return;
 }
 
-add_shortcode( '_s_carousel', '_s_carousel' );
+add_shortcode( 'carousel', '_s_carousel' );
