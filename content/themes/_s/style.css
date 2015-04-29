@@ -1162,7 +1162,7 @@ big {
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
 /* line 31, sass/typography/_accessibility.scss */
-.screen-reader-text, div.wpcf7 .screen-reader-response, div.wpcf7 label, .site-header .site-branding .site-brand .site-title, .site-header .site-branding .site-brand .site-description, .home .site-content .site-main #featured h2, .site-footer .footer-title {
+.screen-reader-text, div.wpcf7 .screen-reader-response, div.wpcf7 label, .site-header .site-branding .site-brand .site-title, .site-header .site-branding .site-brand .site-description, body.home #featured h2, .site-footer .footer-title {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
   height: 1px;
@@ -1170,7 +1170,7 @@ big {
   overflow: hidden;
 }
 /* line 10, sass/typography/_accessibility.scss */
-.screen-reader-text:hover, div.wpcf7 .screen-reader-response:hover, div.wpcf7 label:hover, .site-header .site-branding .site-brand .site-title:hover, .site-header .site-branding .site-brand .site-description:hover, .home .site-content .site-main #featured h2:hover, .site-footer .footer-title:hover, .screen-reader-text:active, div.wpcf7 .screen-reader-response:active, div.wpcf7 label:active, .site-header .site-branding .site-brand .site-title:active, .site-header .site-branding .site-brand .site-description:active, .home .site-content .site-main #featured h2:active, .site-footer .footer-title:active, .screen-reader-text:focus, div.wpcf7 .screen-reader-response:focus, div.wpcf7 label:focus, .site-header .site-branding .site-brand .site-title:focus, .site-header .site-branding .site-brand .site-description:focus, .home .site-content .site-main #featured h2:focus, .site-footer .footer-title:focus {
+.screen-reader-text:hover, div.wpcf7 .screen-reader-response:hover, div.wpcf7 label:hover, .site-header .site-branding .site-brand .site-title:hover, .site-header .site-branding .site-brand .site-description:hover, body.home #featured h2:hover, .site-footer .footer-title:hover, .screen-reader-text:active, div.wpcf7 .screen-reader-response:active, div.wpcf7 label:active, .site-header .site-branding .site-brand .site-title:active, .site-header .site-branding .site-brand .site-description:active, body.home #featured h2:active, .site-footer .footer-title:active, .screen-reader-text:focus, div.wpcf7 .screen-reader-response:focus, div.wpcf7 label:focus, .site-header .site-branding .site-brand .site-title:focus, .site-header .site-branding .site-brand .site-description:focus, body.home #featured h2:focus, .site-footer .footer-title:focus {
   background-color: #f1f1f1;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -2726,40 +2726,42 @@ address.contact a.email {
 /*--------------------------------------------------------------
 8.3 Content
 --------------------------------------------------------------*/
-/* line 1, sass/layout/_content.scss */
-.site-content {
+/* line 2, sass/layout/_content.scss */
+body:not(.home) .site-content {
   max-width: 62em;
   margin-left: auto;
   margin-right: auto;
   width: 96%;
 }
 /* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-.site-content:after {
+body:not(.home) .site-content:after {
   content: " ";
   display: block;
   clear: both;
 }
 @media (min-width: 62em) {
-  /* line 5, sass/layout/_content.scss */
-  .site-content .content-area {
+  /* line 8, sass/layout/_content.scss */
+  body:not(.home) .site-content .content-area {
     width: 65.71429%;
     float: left;
     margin-right: 2.85714%;
   }
 }
-/* line 11, sass/layout/_content.scss */
+/* line 15, sass/layout/_content.scss */
 .site-content .widget-area {
   display: none;
 }
 @media (min-width: 62em) {
-  /* line 11, sass/layout/_content.scss */
-  .site-content .widget-area {
+  /* line 18, sass/layout/_content.scss */
+  body:not(.home) .site-content .widget-area {
     display: block;
     width: 31.42857%;
     float: right;
     margin-right: 0;
   }
-  /* line 17, sass/layout/_content.scss */
+}
+@media (min-width: 62em) {
+  /* line 25, sass/layout/_content.scss */
   .site-content .widget-area .sidebar-title {
     clip: rect(1px, 1px, 1px, 1px);
     position: absolute !important;
@@ -2793,28 +2795,14 @@ address.contact a.email {
 }
 
 /*--------------------------------------------------------------
-8.4 Content Home
+8.4 Section
 --------------------------------------------------------------*/
-/* line 3, sass/layout/_content-home.scss */
-.home .site-content {
-  width: auto;
-  max-width: none;
-  margin: 0;
-}
-@media (min-width: 62em) {
-  /* line 8, sass/layout/_content-home.scss */
-  .home .site-content .content-area {
-    float: none;
-    width: 100%;
-    margin: 0;
-  }
-}
 /* line 95, sass/media/_carousels.scss */
-.home .site-content .site-main #featured .carousel figure {
+body.home #featured .carousel figure {
   height: 30em;
 }
 /* line 99, sass/media/_carousels.scss */
-.home .site-content .site-main #featured .carousel img {
+body.home #featured .carousel img {
   position: absolute;
   top: -100%;
   bottom: -100%;
@@ -2829,7 +2817,7 @@ address.contact a.email {
   max-height: none;
 }
 /* line 120, sass/media/_carousels.scss */
-.home .site-content .site-main #featured .carousel figcaption {
+body.home #featured .carousel figcaption {
   position: relative;
   z-index: 2;
   max-width: 62em;
@@ -2840,19 +2828,19 @@ address.contact a.email {
   height: 100%;
 }
 /* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-.home .site-content .site-main #featured .carousel figcaption:after {
+body.home #featured .carousel figcaption:after {
   content: " ";
   display: block;
   clear: both;
 }
 /* line 129, sass/media/_carousels.scss */
-.home .site-content .site-main #featured .carousel .caption {
+body.home #featured .carousel .caption {
   display: table-cell;
   vertical-align: middle;
 }
 @media (max-width: 62em) {
-  /* line 22, sass/layout/_content-home.scss */
-  .home .site-content .site-main #featured .carousel {
+  /* line 8, sass/layout/_section.scss */
+  body.home #featured .carousel {
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
@@ -2862,38 +2850,39 @@ address.contact a.email {
     padding-left: 2%;
   }
 }
+
 /* line 55, sass/media/_carousels.scss */
-.home .site-content .site-main #associations .carousel figure {
+body.home #associations .carousel figure {
   position: relative;
 }
 @media (min-width: 30em) and (max-width: 48em) {
   /* line 55, sass/media/_carousels.scss */
-  .home .site-content .site-main #associations .carousel figure {
+  body.home #associations .carousel figure {
     width: 48.57143%;
     float: left;
     margin-right: 2.85714%;
   }
   /* line 27, sass/mixins/_mixins.scss */
-  .home .site-content .site-main #associations .carousel figure:nth-of-type(2n) {
+  body.home #associations .carousel figure:nth-of-type(2n) {
     float: right;
     margin-right: 0;
   }
 }
 @media (min-width: 48em) {
   /* line 55, sass/media/_carousels.scss */
-  .home .site-content .site-main #associations .carousel figure {
+  body.home #associations .carousel figure {
     width: 22.85714%;
     float: left;
     margin-right: 2.85714%;
   }
   /* line 27, sass/mixins/_mixins.scss */
-  .home .site-content .site-main #associations .carousel figure:nth-of-type(4n) {
+  body.home #associations .carousel figure:nth-of-type(4n) {
     float: right;
     margin-right: 0;
   }
 }
 /* line 68, sass/media/_carousels.scss */
-.home .site-content .site-main #associations .carousel figure:hover .caption .caption-link {
+body.home #associations .carousel figure:hover .caption .caption-link {
   position: absolute;
   top: 0;
   display: block;
@@ -2901,28 +2890,26 @@ address.contact a.email {
   height: 100%;
 }
 /* line 79, sass/media/_carousels.scss */
-.home .site-content .site-main #associations .carousel figure .caption .caption-link {
+body.home #associations .carousel figure .caption .caption-link {
   display: none;
 }
+
 @media (min-width: 62em) {
-  /* line 42, sass/layout/_content-home.scss */
-  .home .site-content .site-main #reviews {
+  /* line 32, sass/layout/_section.scss */
+  body.home #reviews {
     width: 48.57143%;
     float: left;
     margin-right: 2.85714%;
   }
 }
+
 @media (min-width: 62em) {
-  /* line 48, sass/layout/_content-home.scss */
-  .home .site-content .site-main #galleries {
+  /* line 40, sass/layout/_section.scss */
+  body.home #galleries {
     width: 48.57143%;
     float: right;
     margin-right: 0;
   }
-}
-/* line 55, sass/layout/_content-home.scss */
-.home .site-content .widget-area {
-  display: none;
 }
 
 /*--------------------------------------------------------------

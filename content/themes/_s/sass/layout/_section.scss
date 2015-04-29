@@ -1,0 +1,45 @@
+#featured {
+	h2 {
+		body.home & {
+			@extend %sr-text;
+		}
+	}
+	.carousel {
+		body.home & {
+			@include carousel-background;
+			@include susy-breakpoint(max-width $breakpoint__medium) {
+				@include bleed-x(2%);
+			}
+		}
+	}
+}
+
+#front-page {}
+
+#associations {
+	.carousel {
+		body.home & {
+			@include carousel-multiple;
+		}
+	}
+}
+
+#reviews {}
+
+#galleries {}
+
+#reviews {
+	body.home & {
+		@include susy-breakpoint($breakpoint__medium) {
+			@include span(6);
+		}
+	}
+}
+
+#galleries {
+	body.home & {
+		@include susy-breakpoint($breakpoint__medium) {
+			@include span(6 last);
+		}
+	}
+}
