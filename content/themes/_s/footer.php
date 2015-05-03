@@ -13,7 +13,7 @@
 	<footer id="colophon" class="site-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 		<section class="section-group">
 			<div>
-				<h2 class="footer-title"><?php _e( 'Footer', '_s' ); ?>Footer</h2>
+				<h2 class="footer-title"><?php _e( 'Footer', '_s' ); ?></h2>
 				<nav id="site-sitemap" class="site-sitemap section" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 					<div>
 						<h3 class="section-title"><?php _e( 'Sitemap', '_s' ); ?></h3>

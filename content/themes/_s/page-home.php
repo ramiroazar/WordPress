@@ -14,7 +14,7 @@ get_header(); ?>
 
 				<div>
 
-					<h2 class="section-title">Featured</h2>
+					<h2 class="section-title"><?php _e( 'Featured', '_s' ); ?></h2>
 
 					<?php echo _s_carousel(array('placeholder' => '1920x500')); ?>
 
@@ -56,7 +56,7 @@ get_header(); ?>
 
 				<div>
 
-					<h2 class="section-title">Associations</h2>
+					<h2 class="section-title"><?php _e( 'Associations', '_s' ); ?></h2>
 
 					<?php echo _s_carousel(array('placeholder' => '250x250')); ?>
 
@@ -72,9 +72,11 @@ get_header(); ?>
 
 						<div>
 
-							<h2 class="section-title">Reviews</h2>
+							<h2 class="section-title"><?php _e( 'Reviews', '_s' ); ?></h2>
 
 							<?php echo _s_review(array('limit' => 2)); ?>
+
+							<?php // echo _s_query(array('arguements' => 'pagename=reviews', 'markup' => 'partials/page')); ?>
 
 						</div>
 
@@ -84,9 +86,11 @@ get_header(); ?>
 
 						<div>
 
-							<h2 class="section-title">Gallery</h2>
+							<h2 class="section-title"><?php _e( 'Gallery', '_s' ); ?></h2>
 
 							<?php echo _s_gallery(); ?>
+
+							<?php // echo _s_query(array('arguements' => 'pagename=gallery', 'markup' => 'partials/page')); ?>
 
 						</div>
 
