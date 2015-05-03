@@ -9,12 +9,12 @@
 				<dl>
 
 					<dt role="presentation">
-							<a aria-controls="tab-<?php the_ID(); ?>" aria-selected="false" role="tab" data-target="tab-<?php the_ID(); ?>">
+							<a class="tab" aria-controls="tab-<?php the_ID(); ?>" aria-selected="false" role="tab" data-target="tab-<?php the_ID(); ?>">
 								<?php the_title() ?>
 							</a>
 					</dt>
 					
-					<dd aria-labelledby="tab-<?php the_ID(); ?>" aria-hidden="true" role="tabpanel" class="tabpanel" id="tab-<?php the_ID(); ?>">
+					<dd id="tab-<?php the_ID(); ?>" class="tabpanel" aria-labelledby="tab-<?php the_ID(); ?>" aria-hidden="true" role="tabpanel">
 							<?php the_content() ?>
 					</dd>
 

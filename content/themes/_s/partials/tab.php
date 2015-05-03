@@ -7,7 +7,7 @@
 		<?php while (have_posts()) : the_post(); ?>
 
 			<li role="presentation">
-				<a aria-controls="tab-<?php the_ID(); ?>" role="tab" data-target="tab-<?php the_ID(); ?>">
+				<a class="tab" aria-controls="tab-<?php the_ID(); ?>" role="tab" data-target="tab-<?php the_ID(); ?>">
 					<?php the_title() ?>
 				</a>
 			</li>
@@ -20,7 +20,7 @@
 
 		<?php while (have_posts()) : the_post(); ?>
 
-			<div role="tabpanel" class="tabpanel" id="tab-<?php the_ID(); ?>">
+			<div id="tab-<?php the_ID(); ?>" class="tabpanel" role="tabpanel">
 				<?php the_content() ?>
 			</div>
 

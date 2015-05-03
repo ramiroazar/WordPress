@@ -14,7 +14,7 @@ get_header(); ?>
 
 				<div>
 
-					<h2>Featured</h2>
+					<h2 class="section-title">Featured</h2>
 
 					<?php echo _s_carousel(array('placeholder' => '1920x500')); ?>
 
@@ -28,7 +28,7 @@ get_header(); ?>
 
 					<div>
 
-						<?php the_title("<h2>", "</h2>"); ?>
+						<?php the_title("<h2 class='section-title'>", "</h2>"); ?>
 
 						<?php the_content(); ?>
 
@@ -40,11 +40,23 @@ get_header(); ?>
 				
 			<?php endwhile; // end of the loop. ?>
 
+			<section id="services" class="section">
+
+				<div>
+
+					<h2 class="section-title"><?php bloginfo('description'); ?></h2>
+
+					<?php echo _s_query(array('arguements' => 'order=ASC&category_page=services', 'markup' => 'partials/service')); ?>
+
+				</div>
+
+			</section><!-- .section -->
+
 			<section id="associations" class="section">
 
 				<div>
 
-					<h2>Associations</h2>
+					<h2 class="section-title">Associations</h2>
 
 					<?php echo _s_carousel(array('placeholder' => '250x250')); ?>
 
@@ -60,7 +72,7 @@ get_header(); ?>
 
 						<div>
 
-							<h2>Reviews</h2>
+							<h2 class="section-title">Reviews</h2>
 
 							<?php echo _s_review(array('limit' => 2)); ?>
 
@@ -72,7 +84,7 @@ get_header(); ?>
 
 						<div>
 
-							<h2>Gallery</h2>
+							<h2 class="section-title">Gallery</h2>
 
 							<?php echo _s_gallery(); ?>
 
