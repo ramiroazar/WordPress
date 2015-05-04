@@ -1,4 +1,4 @@
-<?php
+do_shortcode(<?php
 /**
  * Plugin Name: Carousel
  * Plugin URI: https://github.com/filamentgroup/responsive-carousel
@@ -237,12 +237,12 @@ function _s_carousel( $atts ) {
 					$slide_img = null;
 
 				if ( isset( $slide['slide_caption_title'] ) )
-					$slide_caption_title = $slide['slide_caption_title'];
+					$slide_caption_title = do_shortcode($slide['slide_caption_title']);
 				else
 					$slide_caption_title = null;
 
 				if ( isset( $slide['slide_caption_content'] ) )
-					$slide_caption_content = $slide['slide_caption_content'];
+					$slide_caption_content = do_shortcode($slide['slide_caption_content']);
 				else
 					$slide_caption_content = null;
 
