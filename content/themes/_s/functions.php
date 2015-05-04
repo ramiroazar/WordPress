@@ -456,3 +456,40 @@ require get_template_directory() . '/inc/jetpack.php';
 	 
 		return $attachment_id;
 	}
+
+/**
+ * Register a taxonomy.
+ *
+ * @link http://codex.wordpress.org/Function_Reference/register_taxonomy
+ */
+
+add_action( 'init', '_s_taxonomy_page_init', 0 );
+
+function _s_taxonomy_page_init() {
+
+	$labels = array(
+		'name'              => _x( 'Categories', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Category', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Categories' ),
+		'all_items'         => __( 'All Categories' ),
+		'parent_item'       => __( 'Parent Category' ),
+		'parent_item_colon' => __( 'Parent Category:' ),
+		'edit_item'         => __( 'Edit Category' ),
+		'update_item'       => __( 'Update Category' ),
+		'add_new_item'      => __( 'Add New Category' ),
+		'new_item_name'     => __( 'New Category Name' ),
+		'menu_name'         => __( 'Categories' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'category_page' ),
+	);
+
+	register_taxonomy( 'category_page', array( 'page' ), $args );
+
+}
