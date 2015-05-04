@@ -204,6 +204,10 @@ require get_template_directory() . '/inc/jetpack.php';
 
 	add_post_type_support( "page", "excerpt" );
 
+// Add shortcode support to excerpt
+
+	add_filter('the_excerpt', 'do_shortcode');
+
 // Excerpt
 
 	// Output Read More link
