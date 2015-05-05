@@ -4,6 +4,18 @@
 
 		<ul>
 
+			<?php if (_s_contact(array("type" => name))) : ?>
+				<li>
+					<?php echo _s_contact(array("type" => name)); ?>
+				</li>
+			<?php endif; ?>
+
+			<?php if (_s_contact(array("type" => description))) : ?>
+				<li>
+					<?php echo _s_contact(array("type" => description)); ?>
+				</li>
+			<?php endif; ?>
+
 			<?php if (_s_contact(array("type" => phone))) : ?>
 				<li>
 					<?php echo _s_contact(array("type" => phone)); ?>

@@ -340,6 +340,8 @@ require get_template_directory() . '/inc/jetpack.php';
 		$contact[mobile]		= get_theme_mod('mobile');
 		$contact[fax]			= get_theme_mod('fax');
 		$contact[email]		= get_bloginfo('admin_email');
+		$contact[name]			= get_bloginfo('name');
+		$contact[description]= get_bloginfo('description');
 		$contact[address]		= get_theme_mod('address');
 		$contact[facebook]	= get_theme_mod('facebook');
 		$contact[googleplus]	= get_theme_mod('googleplus');
@@ -376,8 +378,16 @@ require get_template_directory() . '/inc/jetpack.php';
 						$output .= "<a class='" . $atts[type] . "' href='mailto:" . $contact[$atts[type]] . "' itemprop='email'>";
 							$output .= $contact[$atts[type]];
 						$output .= "</a>";
+					elseif ($atts[type] === name) :
+						$output .= "<a class='" . $atts[type] . "' href='" . esc_url( home_url( '/' ) ) . "' itemprop='name'>";
+							$output .= $contact[$atts[type]];
+						$output .= "</a>";
+					elseif ($atts[type] === description) :
+						$output .= "<span class='" . $atts[type] . "' itemprop='description'>";
+							$output .= $contact[$atts[type]];
+						$output .= "</span>";
 					elseif ($atts[type] === address) :
-						$output .= "<a class='" . $atts[type] . "' href='http://maps.google.com/?q=" . $contact[$atts[type]] . "' target='_blank' itemprop='address' itemscope itemtype='http://schema.org/PostalAddress'>";
+						$output .= "<a class='" . $atts[type] . "' href='http://maps.google.com/?q=" . $contact[$atts[type]] . "' target='_blank' itemprop='address'>"; // itemscope itemtype='http://schema.org/PostalAddress'
 							$output .= $contact[$atts[type]];
 						$output .= "</a>";
 					elseif ($atts[type] === facebook) :
