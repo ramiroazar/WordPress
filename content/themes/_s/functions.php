@@ -374,32 +374,32 @@ require get_template_directory() . '/inc/jetpack.php';
 							$output .= $contact[$atts[type]];
 						$output .= "</a>";
 					elseif ($atts[type] === facebook) :
-						$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' target='_blank'>";
-							$output .= $contact[$atts[type]];
+						$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
+							$output .= "Facebook";
 						$output .= "</a>";
 					elseif ($atts[type] === googleplus) :
-						$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' target='_blank'>";
-							$output .= $contact[$atts[type]];
+						$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
+							$output .= "Google+";
 						$output .= "</a>";
 					elseif ($atts[type] === twitter) :
-						$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' target='_blank'>";
-							$output .= $contact[$atts[type]];
+						$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
+							$output .= "Twitter";
 						$output .= "</a>";
 					elseif ($atts[type] === instagram) :
-						$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' target='_blank'>";
-							$output .= $contact[$atts[type]];
+						$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
+							$output .= "Instagram";
 						$output .= "</a>";
 					elseif ($atts[type] === pinterest) :
-						$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' target='_blank'>";
-							$output .= $contact[$atts[type]];
+						$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
+							$output .= "Pinterest";
 						$output .= "</a>";
 					elseif ($atts[type] === youtube) :
-						$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' target='_blank'>";
-							$output .= $contact[$atts[type]];
+						$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
+							$output .= "YouTube";
 						$output .= "</a>";
 					elseif ($atts[type] === linkedin) :
-						$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' target='_blank'>";
-							$output .= $contact[$atts[type]];
+						$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
+							$output .= "LinkedIn";
 						$output .= "</a>";
 					endif;
 				// Else if markup is false
