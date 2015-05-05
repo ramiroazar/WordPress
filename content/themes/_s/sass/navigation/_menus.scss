@@ -1,10 +1,6 @@
 .site-navigation {
 
-	&.toggled {
-		ul {
-			display: block;
-		}
-	}
+	// Menu Toggle Button
 	
 	.menu-toggle {
 		display: block;
@@ -12,6 +8,16 @@
 			display: none;
 		}
 	}
+
+	// Toggled Menu
+
+	&.toggled {
+		ul {
+			display: block;
+		}
+	}
+
+	// Every Menu
 
 	ul {
 		display: none;
@@ -21,6 +27,62 @@
 			margin: 0;
 			padding-left: 0;
 		}
+
+		// Root Menu
+
+		&.menu {
+			> li {
+				@include susy-breakpoint($breakpoint__medium) {
+					display: inline-block;
+				}
+
+				&:hover {
+					> a {}
+				}
+
+				&.current_page_item,
+				&.current-menu-item,
+				&.current_page_ancestor {
+					> a {}
+				}
+
+				> a {}
+			}
+		}
+
+		// List Item
+
+		li {
+			@include susy-breakpoint($breakpoint__medium) {
+				position: relative;
+			}
+
+			&:hover {
+				> ul {
+					@include susy-breakpoint($breakpoint__medium) {
+						left: auto;
+					}
+				}
+
+				> a {}
+			}
+
+			&.current_page_item,
+			&.current-menu-item,
+			&.current_page_ancestor {
+				> a {}
+			}
+
+			a {
+				@include susy-breakpoint($breakpoint__medium) {
+					display: block;
+					text-decoration: none;
+					background-color: white;
+				}
+			}
+		}
+
+		// Sub Menu
 
 		ul {
 			@include susy-breakpoint($breakpoint__medium) {
@@ -32,6 +94,8 @@
 				z-index: 99999;
 			}
 
+			// Sub Sub Menu
+
 			ul {
 				@include susy-breakpoint($breakpoint__medium) {
 					left: -999em;
@@ -39,54 +103,28 @@
 				}
 			}
 
+			// Sub Menu List Item
+
 			li {
-				@include susy-breakpoint($breakpoint__medium) {
-					&:hover > ul {
-						left: 100%;
+				&:hover {
+					> ul {
+						@include susy-breakpoint($breakpoint__medium) {
+							left: 100%;
+						}
+					}
+				}
+
+				a {
+					@include susy-breakpoint($breakpoint__medium) {
+						width: 200px;
 					}
 				}
 			}
 
-			a {
-				@include susy-breakpoint($breakpoint__medium) {
-					width: 200px;
-				}
-			}
-
-			:hover > a {
-			}
-
-			a:hover {
+			:hover {
+				> a {}
 			}
 		}
-
-		li:hover > ul {
-			@include susy-breakpoint($breakpoint__medium) {
-				left: auto;
-			}
-		}
-	}
-
-	li {
-		@include susy-breakpoint($breakpoint__medium) {
-			display: inline-block;
-			position: relative;
-		}
-
-		&:hover > a {
-		}
-	}
-
-	a {
-		@include susy-breakpoint($breakpoint__medium) {
-			display: block;
-			text-decoration: none;
-		}
-	}
-
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a {
 	}
 }
 
