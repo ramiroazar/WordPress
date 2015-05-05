@@ -124,7 +124,7 @@ function _s_review( $atts ) {
 
 		while ($the_query->have_posts()) : $the_query->the_post();
 
-			$return .= "<blockquote class='review' itemscope itemtype='http://data-vocabulary.org/Review'>";
+			$return .= "<blockquote class='review' itemscope itemtype='http://schema.org/Review'>";
 				$return .= "<div class='description' itemprop='description'>";
 					if (in_the_loop()) :
 						$return .= wpautop(get_the_content());
@@ -137,10 +137,17 @@ function _s_review( $atts ) {
 						endif;		
 					endif;
 				$return .= "</div>";
-				$return .= "<footer class='author' itemprop='author' itemscope itemtype='http://schema.org/Person'>";
-					$return .= "<cite itemprop='name'>";
-					$return .= get_the_title();
-					$return .= "</cite>";
+				$return .= "<footer>";
+					$return .= "<span itemprop='author' itemscope itemtype='http://schema.org/Person'>";
+						$return .= "<cite itemprop='name'>";
+							$return .= get_the_title();
+						$return .= "</cite>";
+					$return .= "</span>";
+					$return .= "<span itemprop='itemReviewed' itemscope itemtype='http://schema.org/Organization'>";
+						$return .= "<cite itemprop='name'>";
+							$return .= get_bloginfo('name');
+						$return .= "<cite>";
+					$return .= "</span>";
 				$return .= "</footer>";
 			$return .= "</blockquote>";
 
