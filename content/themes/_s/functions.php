@@ -260,6 +260,13 @@ require get_template_directory() . '/inc/jetpack.php';
 	// adding it to the admin area
 	add_filter( 'admin_footer_text', '_s_custom_admin_footer' );
 
+// Call to Action Shortcode
+
+	function _s_cta( $atts, $content = null ) {
+	   return '<div class="cta">' . do_shortcode($content) . '</div>';
+	}
+	add_shortcode("cta", "_s_cta");
+
 // Query Shortcode
 
    function _s_query_markup($markup, $context) {
