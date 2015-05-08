@@ -157,7 +157,7 @@ function _s_gallery( $atts ) {
 
 			$return .= "<div class='gallery gallery-columns-" . $atts[columns] . " gallery-size-" . $atts[thumbnail_size] . "'>";
 
-			if ($atts[carousel]) : 				
+			if ($atts[carousel]) :
 
 				$return .= "<div class='carousel' ";
 					$return .= ($atts[autoplay] === true) ? "data-autoplay " : "";

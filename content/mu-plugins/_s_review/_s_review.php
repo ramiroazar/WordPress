@@ -71,10 +71,10 @@ function _s_review( $atts ) {
 			'carousel' 		=> false,
 			'autoplay'		=> true,
 			'pagination'	=> false,
-			'transition' 	=> 'fade',
 			'prev' 			=> '<i class="fa fa-angle-left"></i>',
 			'next' 			=> '<i class="fa fa-angle-right"></i>',
 			'interval'		=> 5000,
+			'transition' 	=> 'fade',
 		), 
 		$atts
 	);
@@ -98,27 +98,16 @@ function _s_review( $atts ) {
 
 		$return = '';
 
-		if ($atts[carousel]) : 
+		if ($atts[carousel]) :
 
-			if ( $atts[autoplay] === true )
-				$autoplay = "data-autoplay ";
-
-			if ( $atts[pagination] === true )
-				$pagination = "data-paginate ";
-
-			if ( $atts[transition] == true )
-				$transition = "data-transition='" . $atts[transition] . "' ";
-
-			if ( $atts[prev] == true )
-				$prev = "data-prev='" . $atts[prev] . "' ";
-
-			if ( $atts[next] == true )
-				$next = "data-next='" . $atts[next] . "' ";
-
-			if ( $atts[interval] == true )
-				$interval = "data-interval='" . $atts[interval] . "' ";
-
-			$return.= "<div class='carousel' " . $pagination . $autoplay . $transition . $prev . $next . $interval . ">"; 
+			$return .= "<div class='carousel' ";
+				$return .= ($atts[autoplay] === true) ? "data-autoplay " : "";
+				$return .= ($atts[pagination] === true) ? "data-paginate " : "";
+				$return .= ($atts[prev]) ? "data-prev='" . $atts[prev] . "' " : "";
+				$return .= ($atts[next]) ? "data-next='" . $atts[next] . "' " : "";
+				$return .= ($atts[interval]) ? "data-interval='" . $atts[interval] . "' " : "";
+				$return .= ($atts[transition]) ? "data-transition='" . $atts[transition] . "' " : "";
+			$return .= ">"; 
 
 		endif;
 
@@ -155,7 +144,7 @@ function _s_review( $atts ) {
 
 		endwhile;
 
-		if ($carousel) : $return.= "</div>"; endif;
+		if ($atts[carousel]) : $return.= "</div>"; endif;
 
 	endif; 
 
