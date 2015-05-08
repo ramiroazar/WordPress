@@ -16,7 +16,7 @@ get_header(); ?>
 
 					<h2 class="section-title"><?php _e( 'Featured', '_s' ); ?></h2>
 
-					<?php echo _s_carousel(array('placeholder' => '1920x500')); ?>
+					<?php echo _s_carousel(); ?>
 
 				</div>
 
@@ -58,7 +58,7 @@ get_header(); ?>
 
 					<h2 class="section-title"><?php _e( 'Associations', '_s' ); ?></h2>
 
-					<?php echo _s_carousel(array('placeholder' => '250x250')); ?>
+					<?php echo _s_carousel(); ?>
 
 				</div>
 

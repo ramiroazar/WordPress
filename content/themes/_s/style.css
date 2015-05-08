@@ -1242,7 +1242,7 @@ body:before {
   right: 0;
   width: 96%;
   height: 100%;
-  max-width: 62em;
+  max-width: 64em;
   margin-left: auto;
   margin-right: auto;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjEiLz48c3RvcCBvZmZzZXQ9IjY2LjY2NjY3JSIgc3RvcC1jb2xvcj0iI2ZmNGQ0ZCIgc3RvcC1vcGFjaXR5PSIwLjEiLz48c3RvcCBvZmZzZXQ9IjY2LjY2NjY3JSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
@@ -1544,7 +1544,7 @@ div.wpcf7 .form-validation input.wpcf7-captchar {
 /* line 10, sass/forms/_dynamic.scss */
 #form-contact {
   position: relative;
-  max-width: 62em;
+  max-width: 64em;
   margin-left: auto;
   margin-right: auto;
   padding: 1.5em;
@@ -1636,7 +1636,7 @@ figure {
   display: inline-block;
   vertical-align: top;
 }
-@media (max-width: 62em) {
+@media (max-width: 64em) {
   /* line 18, sass/media/_galleries.scss */
   .gallery-columns-2 .gallery-item {
     width: 48.57143%;
@@ -1656,7 +1656,7 @@ figure {
     clear: none;
   }
 }
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   /* line 18, sass/media/_galleries.scss */
   .gallery-columns-2 .gallery-item {
     width: 47.82609%;
@@ -1676,7 +1676,7 @@ figure {
     clear: none;
   }
 }
-@media (max-width: 62em) {
+@media (max-width: 64em) {
   /* line 18, sass/media/_galleries.scss */
   .gallery-columns-3 .gallery-item {
     width: 31.42857%;
@@ -1702,7 +1702,7 @@ figure {
     clear: none;
   }
 }
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   /* line 18, sass/media/_galleries.scss */
   .gallery-columns-3 .gallery-item {
     width: 30.43478%;
@@ -1728,7 +1728,7 @@ figure {
     clear: none;
   }
 }
-@media (max-width: 62em) {
+@media (max-width: 64em) {
   /* line 18, sass/media/_galleries.scss */
   .gallery-columns-4 .gallery-item {
     width: 22.85714%;
@@ -1760,7 +1760,7 @@ figure {
     clear: none;
   }
 }
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   /* line 18, sass/media/_galleries.scss */
   .gallery-columns-4 .gallery-item {
     width: 21.73913%;
@@ -1792,7 +1792,7 @@ figure {
     clear: none;
   }
 }
-@media (max-width: 62em) {
+@media (max-width: 64em) {
   /* line 18, sass/media/_galleries.scss */
   .gallery-columns-5 .gallery-item {
     width: 17.71429%;
@@ -1830,7 +1830,7 @@ figure {
     clear: none;
   }
 }
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   /* line 18, sass/media/_galleries.scss */
   .gallery-columns-5 .gallery-item {
     width: 16.52174%;
@@ -1868,7 +1868,7 @@ figure {
     clear: none;
   }
 }
-@media (max-width: 62em) {
+@media (max-width: 64em) {
   /* line 18, sass/media/_galleries.scss */
   .gallery-columns-6 .gallery-item {
     width: 14.28571%;
@@ -1912,7 +1912,7 @@ figure {
     clear: none;
   }
 }
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   /* line 18, sass/media/_galleries.scss */
   .gallery-columns-6 .gallery-item {
     width: 13.04348%;
@@ -1956,7 +1956,7 @@ figure {
     clear: none;
   }
 }
-@media (max-width: 62em) {
+@media (max-width: 64em) {
   /* line 18, sass/media/_galleries.scss */
   .gallery-columns-7 .gallery-item {
     width: 11.83673%;
@@ -2006,7 +2006,7 @@ figure {
     clear: none;
   }
 }
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   /* line 18, sass/media/_galleries.scss */
   .gallery-columns-7 .gallery-item {
     width: 10.55901%;
@@ -2056,7 +2056,7 @@ figure {
     clear: none;
   }
 }
-@media (max-width: 62em) {
+@media (max-width: 64em) {
   /* line 18, sass/media/_galleries.scss */
   .gallery-columns-8 .gallery-item {
     width: 10%;
@@ -2112,7 +2112,7 @@ figure {
     clear: none;
   }
 }
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   /* line 18, sass/media/_galleries.scss */
   .gallery-columns-8 .gallery-item {
     width: 8.69565%;
@@ -2168,7 +2168,7 @@ figure {
     clear: none;
   }
 }
-@media (max-width: 62em) {
+@media (max-width: 64em) {
   /* line 18, sass/media/_galleries.scss */
   .gallery-columns-9 .gallery-item {
     width: 8.57143%;
@@ -2230,7 +2230,7 @@ figure {
     clear: none;
   }
 }
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   /* line 18, sass/media/_galleries.scss */
   .gallery-columns-9 .gallery-item {
     width: 7.24638%;
@@ -2343,7 +2343,7 @@ figure {
 /* line 18, sass/media/_carousels.scss */
 .carousel .carousel-nav ol {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   bottom: 0;
   width: 100%;
   margin: 0;
@@ -2352,7 +2352,7 @@ figure {
 /* line 27, sass/media/_carousels.scss */
 .carousel .carousel-nav .prev, .carousel .carousel-nav .next {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   top: 50%;
   width: 3em;
   height: 3em;
@@ -2426,35 +2426,61 @@ address.contact a.email {
 /*--------------------------------------------------------------
 6.2 Menus
 --------------------------------------------------------------*/
-/* line 4, sass/navigation/_menus.scss */
-.site-navigation.toggled ul {
-  display: block;
-}
-/* line 9, sass/navigation/_menus.scss */
+/* line 5, sass/navigation/_menus.scss */
 .site-navigation .menu-toggle {
   display: block;
 }
-@media (min-width: 62em) {
-  /* line 9, sass/navigation/_menus.scss */
+@media (min-width: 64em) {
+  /* line 5, sass/navigation/_menus.scss */
   .site-navigation .menu-toggle {
     display: none;
   }
 }
-/* line 16, sass/navigation/_menus.scss */
+/* line 15, sass/navigation/_menus.scss */
+.site-navigation.toggled ul {
+  display: block;
+}
+/* line 22, sass/navigation/_menus.scss */
 .site-navigation ul {
   display: none;
   list-style: none;
 }
-@media (min-width: 62em) {
-  /* line 16, sass/navigation/_menus.scss */
+@media (min-width: 64em) {
+  /* line 22, sass/navigation/_menus.scss */
   .site-navigation ul {
     display: block;
     margin: 0;
     padding-left: 0;
   }
 }
-@media (min-width: 62em) {
-  /* line 25, sass/navigation/_menus.scss */
+@media (min-width: 64em) {
+  /* line 34, sass/navigation/_menus.scss */
+  .site-navigation ul.menu > li {
+    display: inline-block;
+  }
+}
+@media (min-width: 64em) {
+  /* line 55, sass/navigation/_menus.scss */
+  .site-navigation ul li {
+    position: relative;
+  }
+}
+@media (min-width: 64em) {
+  /* line 61, sass/navigation/_menus.scss */
+  .site-navigation ul li:hover > ul {
+    left: auto;
+  }
+}
+@media (min-width: 64em) {
+  /* line 76, sass/navigation/_menus.scss */
+  .site-navigation ul li a {
+    display: block;
+    text-decoration: none;
+    background-color: white;
+  }
+}
+@media (min-width: 64em) {
+  /* line 87, sass/navigation/_menus.scss */
   .site-navigation ul ul {
     -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 3px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 3px;
@@ -2466,61 +2492,41 @@ address.contact a.email {
     z-index: 99999;
   }
 }
-@media (min-width: 62em) {
-  /* line 35, sass/navigation/_menus.scss */
+@media (min-width: 64em) {
+  /* line 99, sass/navigation/_menus.scss */
   .site-navigation ul ul ul {
     left: -999em;
     top: 0;
   }
 }
-@media (min-width: 62em) {
-  /* line 44, sass/navigation/_menus.scss */
+@media (min-width: 64em) {
+  /* line 110, sass/navigation/_menus.scss */
   .site-navigation ul ul li:hover > ul {
     left: 100%;
   }
 }
-@media (min-width: 62em) {
-  /* line 50, sass/navigation/_menus.scss */
-  .site-navigation ul ul a {
+@media (min-width: 64em) {
+  /* line 117, sass/navigation/_menus.scss */
+  .site-navigation ul ul li a {
     width: 200px;
   }
 }
-@media (min-width: 62em) {
-  /* line 63, sass/navigation/_menus.scss */
-  .site-navigation ul li:hover > ul {
-    left: auto;
-  }
-}
-@media (min-width: 62em) {
-  /* line 70, sass/navigation/_menus.scss */
-  .site-navigation li {
-    display: inline-block;
-    position: relative;
-  }
-}
-@media (min-width: 62em) {
-  /* line 80, sass/navigation/_menus.scss */
-  .site-navigation a {
-    display: block;
-    text-decoration: none;
-  }
-}
 
-/* line 97, sass/navigation/_menus.scss */
+/* line 135, sass/navigation/_menus.scss */
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
   margin: 0 0 1.5em;
   overflow: hidden;
 }
-/* line 102, sass/navigation/_menus.scss */
+/* line 140, sass/navigation/_menus.scss */
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
   float: left;
   width: 50%;
 }
-/* line 107, sass/navigation/_menus.scss */
+/* line 145, sass/navigation/_menus.scss */
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
@@ -2619,7 +2625,7 @@ address.contact a.email {
 --------------------------------------------------------------*/
 /* line 3, sass/layout/_global.scss */
 .section > div {
-  max-width: 62em;
+  max-width: 64em;
   margin-left: auto;
   margin-right: auto;
   width: 96%;
@@ -2631,10 +2637,10 @@ address.contact a.email {
   clear: both;
 }
 
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   /* line 11, sass/layout/_global.scss */
   .section-group > div {
-    max-width: 62em;
+    max-width: 64em;
     margin-left: auto;
     margin-right: auto;
     width: 96%;
@@ -2646,7 +2652,7 @@ address.contact a.email {
     clear: both;
   }
 }
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   /* line 19, sass/layout/_global.scss */
   .section-group > div .section > div {
     max-width: none;
@@ -2659,7 +2665,7 @@ address.contact a.email {
 --------------------------------------------------------------*/
 /* line 5, sass/layout/_header.scss */
 .site-header .site-branding > div {
-  max-width: 62em;
+  max-width: 64em;
   margin-left: auto;
   margin-right: auto;
 }
@@ -2675,14 +2681,14 @@ address.contact a.email {
   display: block;
   clear: both;
 }
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   /* line 5, sass/layout/_header.scss */
   .site-header .site-branding > div {
     display: table;
     width: 96%;
   }
 }
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   /* line 14, sass/layout/_header.scss */
   .site-header .site-branding .site-brand {
     display: table-cell;
@@ -2704,7 +2710,7 @@ address.contact a.email {
 .site-header .site-branding .site-brand .site-description {
   margin: 0;
 }
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   /* line 41, sass/layout/_header.scss */
   .site-header .site-branding .site-contact {
     display: table-cell;
@@ -2728,7 +2734,7 @@ address.contact a.email {
 --------------------------------------------------------------*/
 /* line 2, sass/layout/_content.scss */
 body:not(.home) .site-content {
-  max-width: 62em;
+  max-width: 64em;
   margin-left: auto;
   margin-right: auto;
   width: 96%;
@@ -2739,7 +2745,7 @@ body:not(.home) .site-content:after {
   display: block;
   clear: both;
 }
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   /* line 8, sass/layout/_content.scss */
   body:not(.home) .site-content .content-area {
     width: 65.71429%;
@@ -2751,7 +2757,7 @@ body:not(.home) .site-content:after {
 .site-content .widget-area {
   display: none;
 }
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   /* line 18, sass/layout/_content.scss */
   body:not(.home) .site-content .widget-area {
     display: block;
@@ -2760,7 +2766,7 @@ body:not(.home) .site-content:after {
     margin-right: 0;
   }
 }
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   /* line 25, sass/layout/_content.scss */
   .site-content .widget-area .sidebar-title {
     clip: rect(1px, 1px, 1px, 1px);
@@ -2797,11 +2803,15 @@ body:not(.home) .site-content:after {
 /*--------------------------------------------------------------
 8.4 Section
 --------------------------------------------------------------*/
-/* line 95, sass/media/_carousels.scss */
+/* line 8, sass/layout/_section.scss */
+body.home #featured .carousel {
+  overflow: hidden;
+}
+/* line 96, sass/media/_carousels.scss */
 body.home #featured .carousel figure {
   height: 30em;
 }
-/* line 99, sass/media/_carousels.scss */
+/* line 100, sass/media/_carousels.scss */
 body.home #featured .carousel img {
   position: absolute;
   top: -100%;
@@ -2816,11 +2826,11 @@ body.home #featured .carousel img {
   max-width: none;
   max-height: none;
 }
-/* line 120, sass/media/_carousels.scss */
+/* line 121, sass/media/_carousels.scss */
 body.home #featured .carousel figcaption {
   position: relative;
   z-index: 2;
-  max-width: 62em;
+  max-width: 64em;
   margin-left: auto;
   margin-right: auto;
   display: table;
@@ -2834,11 +2844,11 @@ body.home #featured .carousel figcaption:after {
   clear: both;
 }
 /* line 129, sass/media/_carousels.scss */
-body.home #featured .carousel .caption {
+body.home #featured .carousel figcaption > div {
   display: table-cell;
   vertical-align: middle;
 }
-@media (max-width: 62em) {
+@media (max-width: 64em) {
   /* line 8, sass/layout/_section.scss */
   body.home #featured .carousel {
     -moz-box-sizing: content-box;
@@ -2894,7 +2904,7 @@ body.home #associations .carousel figure .caption .caption-link {
   display: none;
 }
 
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   /* line 32, sass/layout/_section.scss */
   body.home #reviews {
     width: 48.57143%;
@@ -2903,7 +2913,7 @@ body.home #associations .carousel figure .caption .caption-link {
   }
 }
 
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   /* line 40, sass/layout/_section.scss */
   body.home #galleries {
     width: 48.57143%;
@@ -2915,7 +2925,7 @@ body.home #associations .carousel figure .caption .caption-link {
 /*--------------------------------------------------------------
 8.5 Footer
 --------------------------------------------------------------*/
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   /* line 7, sass/layout/_footer.scss */
   .site-footer .site-sitemap, .site-footer .site-sitemap-featured {
     width: 31.42857%;
@@ -2923,7 +2933,7 @@ body.home #associations .carousel figure .caption .caption-link {
     margin-right: 2.85714%;
   }
 }
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   /* line 13, sass/layout/_footer.scss */
   .site-footer .site-contact {
     width: 31.42857%;

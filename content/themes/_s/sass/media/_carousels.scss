@@ -17,7 +17,7 @@
 
 		ol {
 			position: absolute;
-			z-index: 1;
+			z-index: 2;
 			bottom: 0;
 			width: 100%;
 			margin: 0;
@@ -26,7 +26,7 @@
 
 		.prev, .next {
 			position: absolute;
-			z-index: 1;
+			z-index: 2;
 			top: 50%;
 			width: rhythm(2);
 			height: rhythm(2);
@@ -91,6 +91,7 @@
 // Custom background image
 
 @mixin carousel-background {
+	overflow: hidden;
 
 	figure {
 		height: rhythm(20);
@@ -124,11 +125,11 @@
 		display: table;
 		width: 96%;
 		height: 100%;
-	}
 
-	.caption {
-		display: table-cell;
-		vertical-align: middle;
+		> div {
+			display: table-cell;
+			vertical-align: middle;
+		}
 	}
 
 }

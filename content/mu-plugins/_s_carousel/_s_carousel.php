@@ -1,4 +1,4 @@
-do_shortcode(<?php
+<?php
 /**
  * Plugin Name: Carousel
  * Plugin URI: https://github.com/filamentgroup/responsive-carousel
@@ -71,82 +71,47 @@ function _s_post_type_carousel_init() {
 		'hierarchical'       => false,
 		'menu_position'      => null,
 		'menu_icon' 			=> 'dashicons-images-alt',
-		'supports'           => array( 'title' )
+		'supports'           => array( 'title', 'editor', 'thumbnail' )
 	);
 
 	register_post_type( 'carousel', $args );
 }
 
 /**
- * Register CMB2 metaboxes.
+ * Register a taxonomy.
  *
- * @link https://github.com/WebDevStudios/CMB2/wiki/Basic-Usage
+ * @link http://codex.wordpress.org/Function_Reference/register_taxonomy
  */
 
-add_filter( 'cmb2_meta_boxes', '_s_cmb2_carousel' );
+add_action( 'init', '_s_taxonomy_carousel_init', 0 );
 
-function _s_cmb2_carousel( array $meta_boxes ) {
+function _s_taxonomy_carousel_init() {
 
-	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_cmb2_';
-
-	$meta_boxes['carousel'] = array(
-		'id'         => 'carousel',
-		'title'      => __( 'Carousel', 'cmb2' ),
-		'object_types'      => array( 'carousel', ), // Post type
-		'context'    => 'normal',
-		'priority'   => 'high',
-		'show_names' => true, // Show field names on the left
-        // 'show_on' => array( 'key' => 'id', 'value' => array( #, #, # ) ),
-		// 'cmb2_styles' => true, // Enqueue the CMB stylesheet on the frontend
-		'fields'     => array(
-			array(
-				'id'          => $prefix . 'slides',
-				'type'        => 'group',
-				'name' => __( 'Slides', 'cmb2' ),
-				'description' => __( 'Generate slides', 'cmb2' ),
-				'options'     => array(
-					'group_title'   => __( 'Slide {#}', 'cmb2' ), // {#} gets replaced by row number
-					'add_button'    => __( 'Add Another Slide', 'cmb2' ),
-					'remove_button' => __( 'Remove Slide', 'cmb2' ),
-					'sortable'      => true, // beta
-				),
-				// Fields array works the same, except id's only need to be unique for this group. Prefix is not needed.
-				'fields'      => array(
-					array(
-						'name' => __( 'Slide Image', 'cmb2' ),
-						'id'   => 'slide_image',
-						'type' => 'file',
-						'options' => array(
-							// 'url' => false,
-						),
-					),
-					array(
-						'name' => __( 'Slide Caption Title', 'cmb2' ),
-						'id'   => 'slide_caption_title',
-						'type' => 'text',
-					),
-					array(
-						'name' => __( 'Slide Caption Content', 'cmb2' ),
-						'id'   => 'slide_caption_content',
-						'type' => 'textarea',
-					),
-					array(
-						'name' => __( 'Slide Caption Button Text', 'cmb2' ),
-						'id'   => 'slide_caption_button_text',
-						'type' => 'text',
-					),
-					array(
-						'name' => __( 'Slide Caption Button Link', 'cmb2' ),
-						'id'   => 'slide_caption_button_link',
-						'type' => 'text',
-					),
-				),
-			),
-		),
+	$labels = array(
+		'name'              => _x( 'Categories', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Category', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Categories' ),
+		'all_items'         => __( 'All Categories' ),
+		'parent_item'       => __( 'Parent Category' ),
+		'parent_item_colon' => __( 'Parent Category:' ),
+		'edit_item'         => __( 'Edit Category' ),
+		'update_item'       => __( 'Update Category' ),
+		'add_new_item'      => __( 'Add New Category' ),
+		'new_item_name'     => __( 'New Category Name' ),
+		'menu_name'         => __( 'Categories' ),
 	);
 
-	return $meta_boxes;
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'category_carousel' ),
+	);
+
+	register_taxonomy( 'category_carousel', array( 'carousel' ), $args );
+
 }
 
 /**
@@ -159,17 +124,18 @@ function _s_carousel( $atts ) {
 
 	$atts = shortcode_atts( 
 		array(
-			"id" 				=> null,
-			"limit" 			=> 1,
-			'heading' 		=> false,
+			"limit" 			=> null,
+			"category" 		=> null,
+			'caption' 		=> true,
+			'title' 			=> true,
+			'content' 		=> true,
 			'autoplay'		=> true,
 			'pagination'	=> false,
-			'transition' 	=> 'fade',
 			'prev' 			=> '<i class="fa fa-angle-left"></i>',
 			'next' 			=> '<i class="fa fa-angle-right"></i>',
 			'interval'		=> 5000,
-			"image_size" 	=> "1280",
-			"placeholder"	=> null,
+			'transition' 	=> 'fade',
+			'placeholder'	=> true,
 		), 
 		$atts
 	);
@@ -179,121 +145,62 @@ function _s_carousel( $atts ) {
 		"posts_per_page" => $atts[limit],
 	);
 
-	if (isset($atts[id])) :
-		$id_array = explode(",", $atts[id]);
-
-		if (isset($id_array)) :
-			$args["post__in"] = $id_array;
-		endif;
+	if ($atts[category]) :
+		$args['tax_query'] = array(
+			array(
+				'taxonomy' => 'category_carousel',
+				'field' => 'slug',
+				'terms' => explode(',', $atts[category]),
+			)
+		);
 	endif;
 
 	$the_query = "";
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) :
-		while ($the_query->have_posts()) : $the_query->the_post();
 
-			$return = "";
+		$return = "";
 
-			$prefix = "_cmb2_";
+		$return .= "<div class='carousel' ";
+			$return .= ($atts[autoplay] === true) ? "data-autoplay " : "";
+			$return .= ($atts[pagination] === true) ? "data-paginate " : "";
+			$return .= ($atts[prev]) ? "data-prev='" . $atts[prev] . "' " : "";
+			$return .= ($atts[next]) ? "data-next='" . $atts[next] . "' " : "";
+			$return .= ($atts[interval]) ? "data-interval='" . $atts[interval] . "' " : "";
+			$return .= ($atts[transition]) ? "data-transition='" . $atts[transition] . "' " : "";
+		$return .= ">";
 
-			$slides = get_post_meta( get_the_ID(), $prefix . "slides", true );
-
-			if ( $atts[autoplay] == true )
-				$autoplay = "data-autoplay ";
-
-			if ( $atts[pagination] == true )
-				$pagination = "data-paginate ";
-
-			if ( $atts[transition] == true )
-				$transition = "data-transition='" . $atts[transition] . "' ";
-
-			if ( $atts[prev] == true )
-				$prev = "data-prev='" . $atts[prev] . "' ";
-
-			if ( $atts[next] == true )
-				$next = "data-next='" . $atts[next] . "' ";
-
-			if ( $atts[interval] == true )
-				$interval = "data-interval='" . $atts[interval] . "' ";
-
-			if ($atts[heading] == true)
-				$return .= "<h3>" . get_the_title() . "</h3>";
-
-			$return .= "<div class='carousel' " . $pagination . $autoplay . $transition . $prev . $next . $interval . ">";
-
-			foreach ( (array) $slides as $key => $slide ) :
-
-				if ( isset( $slide['slide_image'] ) )
-					$slide_img = wp_get_attachment_image( 
-						$slide['slide_image_id'], 
-						$atts[image_size], 
-						null, 
-						array(
-							"sizes" => tevkori_get_sizes( $slide['slide_image_id'], $atts[image_size] ),
-							"srcset" => implode( ', ', tevkori_get_srcset_array( $slide['slide_image_id'], $atts[image_size] ) ),
-						)
-					);
-				else
-					$slide_img = null;
-
-				if ( isset( $slide['slide_caption_title'] ) )
-					$slide_caption_title = do_shortcode($slide['slide_caption_title']);
-				else
-					$slide_caption_title = null;
-
-				if ( isset( $slide['slide_caption_content'] ) )
-					$slide_caption_content = do_shortcode($slide['slide_caption_content']);
-				else
-					$slide_caption_content = null;
-
-				if ( isset( $slide['slide_caption_button_text'] ) )
-					$slide_caption_button_text = $slide['slide_caption_button_text'];
-				else
-					$slide_caption_button_text = null;
-
-				if ( isset( $slide['slide_caption_button_link'] ) )
-					$slide_caption_button_link = $slide['slide_caption_button_link'];
-				else
-					$slide_caption_button_link = null;
-
-				if ( isset( $atts[placeholder] ) )
-					$placeholder_output = "<img src='http://placehold.it/" . $atts[placeholder] . "' />";
-				else
-					$placeholder_output = null;
-
-			   // Do something with the data
+		while ($the_query->have_posts()) : $the_query->the_post();		
 
 				$return .= "<figure>";
 
-					if( $slide_img )
-						$return .= $slide_img;
-					else
-						$return .= $placeholder_output;
+					if( has_post_thumbnail() ) :
+						$return .= get_the_post_thumbnail();
+					else :
+						$return .= ($atts[placeholder] === true) ? "<img class='placeholder' />" : "";
+					endif;
 
-					$return .= "<figcaption>";
+					if ($atts[caption] === true) :
 
-						$return .= "<div class='caption'>";
+						$return .= "<figcaption>";
 
-						if ( $slide_caption_title )
-							$return .= "<p class='caption-title'>" . $slide_caption_title . "</p>";
+							$return .= "<div>";
 
-						if ( $slide_caption_content )
-							$return .= "<p class='caption-content'>" . $slide_caption_content . "</p>";
+								$return .= ($atts[title] === true) ? "<div class='figure-title'>" . get_the_title() . "</div>" : "";
 
-						if ( $slide_caption_button_text || $slide_caption_button_link )
-							$return .= "<a class='caption-link' href='" . $slide_caption_button_link . "'>" . $slide_caption_button_text . "</a>";
+								$return .= ($atts[content] === true) ? "<div class='figure-content'>" . wpautop(get_the_content()) . "</div>" : "";
 
-						$return .= "</div>";
+							$return .= "</div>";
 
-					$return .= "</figcaption>";
+						$return .= "</figcaption>";
+
+					endif;
 
 				$return .= "</figure>";
 
-			endforeach;
-
-			$return .= "</div>";
-
 		endwhile; 
+
+		$return .= "</div>";
 
 	endif;
 
