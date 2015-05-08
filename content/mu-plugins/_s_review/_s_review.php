@@ -144,9 +144,11 @@ function _s_review( $atts ) {
 						$return .= "</cite>";
 					$return .= "</span>";
 					$return .= "<span itemprop='itemReviewed' itemscope itemtype='http://schema.org/Organization'>";
-						$return .= "<cite itemprop='name'>";
-							$return .= get_bloginfo('name');
-						$return .= "<cite>";
+						$return .= "<a href='" . esc_url( home_url( '/' ) ) . "' rel='home' itemprop='url'>";
+							$return .= "<span itemprop='name'>";
+								$return .= get_bloginfo('name');
+							$return .= "<span>";
+						$return .= "</a>";
 					$return .= "</span>";
 				$return .= "</footer>";
 			$return .= "</blockquote>";
