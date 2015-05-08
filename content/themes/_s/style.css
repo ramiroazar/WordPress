@@ -2476,11 +2476,10 @@ address.contact a.email {
   .site-navigation ul li a {
     display: block;
     text-decoration: none;
-    background-color: white;
   }
 }
 @media (min-width: 64em) {
-  /* line 87, sass/navigation/_menus.scss */
+  /* line 86, sass/navigation/_menus.scss */
   .site-navigation ul ul {
     -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 3px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 3px;
@@ -2493,40 +2492,40 @@ address.contact a.email {
   }
 }
 @media (min-width: 64em) {
-  /* line 99, sass/navigation/_menus.scss */
+  /* line 98, sass/navigation/_menus.scss */
   .site-navigation ul ul ul {
     left: -999em;
     top: 0;
   }
 }
 @media (min-width: 64em) {
-  /* line 110, sass/navigation/_menus.scss */
+  /* line 109, sass/navigation/_menus.scss */
   .site-navigation ul ul li:hover > ul {
     left: 100%;
   }
 }
 @media (min-width: 64em) {
-  /* line 117, sass/navigation/_menus.scss */
+  /* line 116, sass/navigation/_menus.scss */
   .site-navigation ul ul li a {
     width: 200px;
   }
 }
 
-/* line 135, sass/navigation/_menus.scss */
+/* line 134, sass/navigation/_menus.scss */
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
   margin: 0 0 1.5em;
   overflow: hidden;
 }
-/* line 140, sass/navigation/_menus.scss */
+/* line 139, sass/navigation/_menus.scss */
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
   float: left;
   width: 50%;
 }
-/* line 145, sass/navigation/_menus.scss */
+/* line 144, sass/navigation/_menus.scss */
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
