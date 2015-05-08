@@ -103,37 +103,31 @@ function _s_cmb2_map( array $meta_boxes ) {
 				// Fields array works the same, except id's only need to be unique for this group. Prefix is not needed.
 				'fields'      => array(
 					array(
-					    'name' => __( 'Title', 'cmb2' ),
-					    'id'   => 'location_title',
-					    'type' => 'text_medium',
+					    'name' => __( 'Information', 'cmb2' ),
+					    'desc' => __( 'Populate information window content (<strong><u>Note</u></strong>: If populated, information window is displayed on marker click)', 'cmb2' ),
+					    'id'   => 'location_information',
+					    'type' => 'wysiwyg',
+					    'options' => array(
+					        'textarea_rows' => get_option('default_post_edit_rows', 4), // rows="..."
+					    ),
 					),
 					array(
-					    'name' => __( 'URL', 'cmb2' ),
-					    'id'   => 'location_url',
-					    'type' => 'text_url',
-					    // 'protocols' => array( 'http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet' ), // Array of allowed protocols
-					),
-					array(
-					    'name' => __( 'Phone', 'cmb2' ),
-					    'id'   => 'location_phone',
-					    'type' => 'text_medium',
-					),
-					array(
-					    'name' => __( 'Address', 'cmb2' ),
-					    'id'   => 'location_address',
-					    'type' => 'text_medium',
-					),
-					array(
-					    'name' => __( 'Location', 'cmb2' ),
+					    'name' => __( 'Coordinates', 'cmb2' ),
 					    'desc' => __( 'Drag the marker to set the exact map', 'cmb2' ),
 					    'id'   => 'location_coordinates',
 					    'type' => 'pw_map',
 					    'sanitization_cb' => 'pw_map_sanitise',
 					),
 					array(
-					    'name' => __( 'Master', 'cmb2' ),
-					    'desc' => __( 'Check to center map to this location and display its metadata on load', 'cmb2' ),
-					    'id'   => 'location_master',
+					    'name' => __( 'Map Center', 'cmb2' ),
+					    'desc' => __( 'Check to center map to this location (<strong><u>Note</u></strong>: Check one location per map)', 'cmb2' ),
+					    'id'   => 'location_center',
+					    'type' => 'checkbox',
+					),
+					array(
+					    'name' => __( 'Information Window', 'cmb2' ),
+					    'desc' => __( 'Check to display information window on load (<strong><u>Note</u></strong>: Check one location per map)', 'cmb2' ),
+					    'id'   => 'location_infowindow',
 					    'type' => 'checkbox',
 					),
 				),
@@ -183,78 +177,25 @@ function _s_map( $atts ) {
 
 				if ($locations) :
 
-					$return = "<div id='map-" . get_the_ID() . "' data-zoom='" . $atts[zoom] . "' data-scrollwheel='" . ($atts[scrollwheel] ? 'true' : 'false') . "' data-width='" . $atts[width] . "' data-height='" . $atts[height] . "' class='map-canvas'>";
+					$return .= "<div ";
+						$return .= "id='map-" . get_the_ID() . "' ";
+						$return .= "class='map-canvas'";
+						$return .= ($atts[zoom]) ? "data-zoom='" . $atts[zoom] . "'" : "";
+						$return .= ($atts[width]) ? "data-width='" . $atts[width] . "'" : "";
+						$return .= ($atts[height]) ? "data-height='" . $atts[height] . "'" : "";
+						$return .= ($atts[scrollwheel] === false) ? "data-scrollwheel='false'" : "";
+					$return .= ">";
 
 					// Create empty array
 					$location_array = array();
 
 					foreach ( (array) $locations as $key => $location ) :
 
-						if ( isset( $location['location_title'] ) )
-							$location_title = $location['location_title'];
-						else
-							$location_title = null;
+						$return.= "<div class='location " . ($location[location_center] ? 'location_center' : '') . " " . ($location[location_infowindow] ? 'location_infowindow' : '') . "'>";
 
-						if ( isset( $location['location_url'] ) )
-							$location_url = $location['location_url'];
-						else
-							$location_url = null;
-
-						if ( isset( $location['location_phone'] ) )
-							$location_phone = $location['location_phone'];
-						else
-							$location_phone = null;
-
-						if ( isset( $location['location_address'] ) )
-							$location_address = $location['location_address'];
-						else
-							$location_address = null;
-
-						if ( isset( $location['location_coordinates'] ) )
-							$location_coordinates = $location['location_coordinates'];
-						else
-							$location_coordinates = null;
-
-						if ( isset( $location_coordinates['latitude'] ) )
-							$location_latitude = $location_coordinates['latitude'];
-						else
-							$location_latitude = null;
-
-						if ( isset( $location_coordinates['longitude'] ) )
-							$location_longitude = $location_coordinates['longitude'];
-						else
-							$location_longitude = null;
-
-						if ( $location['location_master'] )
-							$location_master = "location_master";
-						else
-							$location_master = null;
-
-						$return.= "<div id='location-" . $location_title . "' class='location " . $location_master . "'>";
-
-							if ( $location_title ) :
-								$return.= "<input type='hidden' name='location_title' value='" . $location_title . "'>";
-							endif;
-
-							if ( $location_url ) :
-								$return.= "<input type='hidden' name='location_url' value='" . $location_url . "'>";
-							endif;
-
-							if ( $location_phone ) :
-								$return.= "<input type='hidden' name='location_phone' value='" . $location_phone . "'>";
-							endif;
-
-							if ( $location_address ) :
-								$return.= "<input type='hidden' name='location_address' value='" . $location_address . "'>";
-							endif;
-
-							if ( $location_latitude ) :
-								$return.= "<input type='hidden' name='location_latitude' value='" . $location_latitude . "'>";
-							endif;
-
-							if ( $location_longitude ) :
-								$return.= "<input type='hidden' name='location_longitude' value='" . $location_longitude . "'>";
-							endif;
+							$return .= ($location[location_information]) ? "<input type='hidden' name='location_information' value='" . wpautop($location[location_information]) . "'>" : "";
+							$return .= ($location[location_coordinates][latitude]) ? "<input type='hidden' name='location_latitude' value='" . $location[location_coordinates][latitude] . "'>" : "";
+							$return .= ($location[location_coordinates][longitude]) ? "<input type='hidden' name='location_longitude' value='" . $location[location_coordinates][longitude] . "'>" : "";
 
 						$return.= "</div>";
 
@@ -263,13 +204,9 @@ function _s_map( $atts ) {
 						// Push metadata into array
 						array_push(
 							$location_metadata_array, 
-							$location_title, 
-							$location_url, 
-							$location_phone, 
-							$location_address, 
-							$location_latitude, 
-							$location_longitude,
-							$location_master
+							$location[location_information], 
+							$location[location_coordinates][latitude], 
+							$location[location_coordinates][longitude]
 						);
 						// Push array for each into overarching array to create a 2 dimensional array.
 						array_push($location_array, $location_metadata_array);

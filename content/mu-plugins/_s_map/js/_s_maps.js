@@ -8,7 +8,7 @@ function maps() {
 
     if ($maps.length) {
 
-        // Loop through each canvas element
+        // Loop through each map canvas element
 
         $maps.each(function(index, element) {
 
@@ -51,19 +51,15 @@ function maps() {
 
                 // Get location variables
 
-                var location_title = $(this).children('[name=location_title]').val();
-                var location_url = $(this).children('[name=location_url]').val();
-                var location_phone = $(this).children('[name=location_phone]').val();
-                var location_address = $(this).children('[name=location_address]').val();
+                var location_information = $(this).children('[name=location_information]').val();
                 var location_latitude = $(this).children('[name=location_latitude]').val();
                 var location_longitude = $(this).children('[name=location_longitude]').val();
                 var location_coordinates = new google.maps.LatLng(location_latitude,location_longitude);
 
                 // Generate marker
 
-                var marker = new google.maps.Marker({
+                marker = new google.maps.Marker({
                     position: location_coordinates,
-                    title: location_title,
                 });
 
                 marker.setMap(map);
@@ -76,36 +72,12 @@ function maps() {
 
                 var infowindowcontent = '';
 
-                if (location_title) {
-                    var infowindowtitle = "<b>" + location_title + "</b><br/>";
+                if (location_information) {
+                    var infowindowinformation = location_information;
                 }
 
-                if (location_url) {
-                    var infowindowurl = "<a href='" + location_url + "' target='_blank'>" + location_url + "</a><br/>";
-                }
-
-                if (location_phone) {
-                    var infowindowphone = "<a href='tel:" + location_phone + "' target='_blank'>" + location_phone + "</a><br/>";
-                }
-
-                if (location_address) {
-                    var infowindowaddress = location_address;
-                }
-
-                if (typeof infowindowtitle !== 'undefined') {
-                    infowindowcontent += infowindowtitle;
-                }
-
-                if (typeof infowindowurl !== 'undefined') {
-                    infowindowcontent += infowindowurl;
-                }
-
-                if (typeof infowindowphone !== 'undefined') {
-                    infowindowcontent += infowindowphone;
-                }
-
-                if (typeof infowindowaddress !== 'undefined') {
-                    infowindowcontent += infowindowaddress;
+                if (typeof infowindowinformation !== 'undefined') {
+                    infowindowcontent += infowindowinformation;
                 }
 
                 // Open infowindow on click
@@ -119,14 +91,18 @@ function maps() {
                     }
                 })(marker));
 
-                // If master location selected
+                // If center location selected
 
-                if ( $(this).hasClass("location_master") ) {
-                    // Set variable to verify master location is found
-                    location_master = true;
+                if ( $(this).hasClass("location_center") ) {
+                    // Set variable to verify center location is found
+                    location_center = true;
                     // Center map to master location
                     map.setCenter(location_coordinates);
-                    // Open infowindow on load
+                }
+
+                // If location infowindow enabled
+
+                if ( $(this).hasClass("location_infowindow") ) {
                     if(infowindowcontent) {
                         infowindow.setContent(infowindowcontent);
                         infowindow.open(map, marker);
@@ -134,9 +110,9 @@ function maps() {
                 }
             });
 
-            // If no master location selected
+            // If no center location selected
 
-            if ( typeof location_master === 'undefined' ) {
+            if ( typeof location_center === 'undefined' ) {
 
                 // Fit bounds extended to include each marker
 
