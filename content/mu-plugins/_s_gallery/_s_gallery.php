@@ -112,7 +112,7 @@ function _s_gallery( $atts ) {
 	$atts = shortcode_atts( 
 		array(
 			'id' 					=> null,
-			'limit' 				=> 1,
+			'limit' 				=> null,
 			'category' 			=> null,
 			'caption' 			=> false,
 			'title' 				=> false,
@@ -159,14 +159,11 @@ function _s_gallery( $atts ) {
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) :
 
+		$return = "";
+
+		$return .= "<div class='gallery gallery-columns-" . $atts[columns] . " gallery-size-" . $atts[thumbnail_size] . "'>";
+
 		while ($the_query->have_posts()) : $the_query->the_post(); 
-
-			$return = "";
-
-			if ($atts[title] === true)
-				$return .= "<h3>" . get_the_title() . "</h3>";
-
-			$return .= "<div class='gallery gallery-columns-" . $atts[columns] . " gallery-size-" . $atts[thumbnail_size] . "'>";
 
 			if ($atts[carousel]) :
 
@@ -189,7 +186,7 @@ function _s_gallery( $atts ) {
 
 					$c = 0; foreach( $gallery_images AS $gallery_image ) : $c++;		         
 
-						$gallery_image_markup = wp_get_attachment_image( 
+						$gallery_image_thumbnail = wp_get_attachment_image( 
 							$gallery_image, 
 							$atts[thumbnail_size], 
 							null, 
@@ -198,22 +195,21 @@ function _s_gallery( $atts ) {
 								"srcset" => implode( ', ', tevkori_get_srcset_array( $gallery_image, $atts[thumbnail_size] ) ),
 							)
 						);
-			         $gallery_image_meta = wp_get_attachment($gallery_image);
 			         $gallery_image_src = wp_get_attachment_image_src($gallery_image, $atts[image_size])[0];
+			         $gallery_image_meta = wp_get_attachment($gallery_image);
 			         $gallery_image_caption = $gallery_image_meta['caption'];
 
 					   if ( $c <= $atts[image_total] ) :
-
 							$return.= "<figure class='gallery-item'>";
-							$return.= 	"<div class='gallery-icon'>";
-							$return.= 		"<a href='" . $gallery_image_src . "' target='_blank'>";
-							$return.= 			$gallery_image_markup;
-							$return.= 		"</a>";
-							$return.= 	"</div>";
+								$return.= "<div class='gallery-icon'>";
+									$return.= "<a href='" . $gallery_image_src . "' target='_blank'>";
+										$return.= $gallery_image_thumbnail;
+									$return.= "</a>";
+								$return.= "</div>";
 								if($atss[caption]) :
 									if ( $gallery_image_caption ) :
 										$return.= "<figcaption class='wp-caption-text gallery-caption'>";
-										$return.= 	$gallery_image_caption;
+											$return.= 	$gallery_image_caption;
 										$return.= "</figcaption>";
 									endif;
 								endif;
@@ -224,9 +220,9 @@ function _s_gallery( $atts ) {
 
 			if ($atts[carousel]) : $return.= "</div>"; endif;
 
-			$return.= "</div>";
-
 		endwhile; 
+
+			$return.= "</div>";
 
 	endif; 
 

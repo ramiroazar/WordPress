@@ -74,7 +74,7 @@ get_header(); ?>
 
 							<h2 class="section-title"><?php _e( 'Reviews', '_s' ); ?></h2>
 
-							<?php echo _s_review(array('limit' => 2)); ?>
+							<?php echo _s_review(array('limit' => 2, 'carousel' => true)); ?>
 
 							<?php // echo _s_query(array('arguements' => 'pagename=reviews', 'markup' => 'partials/page')); ?>
 
@@ -88,7 +88,7 @@ get_header(); ?>
 
 							<h2 class="section-title"><?php _e( 'Gallery', '_s' ); ?></h2>
 
-							<?php echo _s_gallery(array('carousel' => true)); ?>
+							<?php echo _s_gallery(array('thumbnail_size' => 'medium', 'title' => true)); ?>
 
 							<?php // echo _s_query(array('arguements' => 'pagename=gallery', 'markup' => 'partials/page')); ?>
 
