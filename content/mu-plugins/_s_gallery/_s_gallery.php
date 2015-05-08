@@ -113,12 +113,13 @@ function _s_gallery( $atts ) {
 		array(
 			'id' 					=> null,
 			'limit' 				=> 1,
-			'heading' 			=> false,
+			'category' 			=> null,
+			'caption' 			=> false,
+			'title' 				=> false,
 			'image_total' 		=> 4,
 			'image_size' 		=> 'large',
 			'thumbnail_size' 	=> 'thumbnail',
 			'columns' 			=> 2,
-			'caption' 			=> false,
 			'carousel' 			=> false,
 			'autoplay'			=> true,
 			'pagination'		=> false,
@@ -136,12 +137,22 @@ function _s_gallery( $atts ) {
 		'orderby' => 'rand', 
 	);
 
-	if (isset($atts[id])) :
+	if ($atts[id]) :
 		$id_array = explode(',', $atts[id]);
 
-		if (isset($id_array)) :
+		if ($id_array) :
 			$args['post__in'] = $id_array;
 		endif;
+	endif;
+
+	if ($atts[category]) :
+		$args['tax_query'] = array(
+			array(
+				'taxonomy' => 'category_gallery',
+				'field' => 'slug',
+				'terms' => explode(',', $atts[category]),
+			)
+		);
 	endif;
 
 	$the_query = "";
@@ -152,7 +163,7 @@ function _s_gallery( $atts ) {
 
 			$return = "";
 
-			if ($atts[heading] === true)
+			if ($atts[title] === true)
 				$return .= "<h3>" . get_the_title() . "</h3>";
 
 			$return .= "<div class='gallery gallery-columns-" . $atts[columns] . " gallery-size-" . $atts[thumbnail_size] . "'>";
