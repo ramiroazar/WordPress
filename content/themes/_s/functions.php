@@ -126,10 +126,9 @@ function _s_scripts() {
 
 	// Load lightbox
 	wp_enqueue_script('lightbox', (get_template_directory_uri() . "/js/jquery.magnific-popup.min.js"), array('jquery'), '', true);
-	wp_enqueue_script('lightbox_gallery', (get_template_directory_uri() . "/js/jquery.magnific-popup.gallery.js"), array('jquery'), '', true);
 
-	// Load lightbox toggle
-	wp_enqueue_script('lightbox-toggle', (get_template_directory_uri() . "/js/lightbox-toggle.js"), array('jquery'), '', true);
+	// Custom scripts
+	wp_enqueue_script( 'scripts', (get_template_directory_uri() . '/js/scripts.js'), array('jquery'), null);
 
 	// icon stylesheet
 	wp_enqueue_style( 'icon-stylesheet', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), null);
