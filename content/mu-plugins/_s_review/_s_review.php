@@ -7,51 +7,6 @@
  */
 
 /**
- * Register a post type.
- *
- * @link http://codex.wordpress.org/Function_Reference/register_post_type
- */
-
-add_action( 'init', '_s_post_type_review_init' );
-
-function _s_post_type_review_init() {
-	$labels = array(
-		'name'               => _x( 'Reviews', 'post type general name', '_s' ),
-		'singular_name'      => _x( 'Review', 'post type singular name', '_s' ),
-		'menu_name'          => _x( 'Reviews', 'admin menu', '_s' ),
-		'name_admin_bar'     => _x( 'Review', 'add new on admin bar', '_s' ),
-		'add_new'            => _x( 'Add New', 'review', '_s' ),
-		'add_new_item'       => __( 'Add New Review', '_s' ),
-		'new_item'           => __( 'New Review', '_s' ),
-		'edit_item'          => __( 'Edit Review', '_s' ),
-		'view_item'          => __( 'View Review', '_s' ),
-		'all_items'          => __( 'All Reviews', '_s' ),
-		'search_items'       => __( 'Search Reviews', '_s' ),
-		'parent_item_colon'  => __( 'Parent Reviews:', '_s' ),
-		'not_found'          => __( 'No reviews found.', '_s' ),
-		'not_found_in_trash' => __( 'No reviews found in Trash.', '_s' )
-	);
-
-	$args = array(
-		'labels'             => $labels,
-		'public'             => false,
-		'publicly_queryable' => false,
-		'show_ui'            => true,
-		'show_in_menu'       => true,
-		'query_var'          => true,
-		'rewrite'            => false, // array( 'slug' => 'review' ),
-		'capability_type'    => 'post',
-		'has_archive'        => false,
-		'hierarchical'       => false,
-		'menu_position'      => null,
-		'menu_icon' 			=> 'dashicons-format-quote',
-		'supports'           => array( 'title', 'editor' )
-	);
-
-	register_post_type( 'review', $args );
-}
-
-/**
  * Register shortcode.
  *
  * @link https://codex.wordpress.org/Shortcode_API
