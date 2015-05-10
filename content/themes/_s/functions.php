@@ -472,3 +472,20 @@ function _s_taxonomy_page_init() {
 	register_taxonomy( 'category_page', array( 'page' ), $args );
 
 }
+
+/**
+ * Filter attributes for the current gallery image tag.
+ *
+ * @param array   $atts       Gallery image tag attributes.
+ * @param WP_Post $attachment WP_Post object for the attachment.
+ * @return array (maybe) filtered gallery image tag attributes.
+ */
+function wpdocs_filter_gallery_img_atts( $atts, $attachment ) {
+    if ( $full_size = wp_get_attachment_image_src( $attachment->ID, 'full' ) ) {
+        if ( ! empty( $full_size[0] ) ) {
+            $atts['data-full'] = $full_size[0];
+        }
+    }
+    return $atts;
+}
+add_filter( 'wp_get_attachment_image_attributes', 'wpdocs_filter_gallery_img_atts', 10, 2 );

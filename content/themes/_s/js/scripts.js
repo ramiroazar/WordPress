@@ -29,13 +29,18 @@ jQuery(document).ready(function($) {
 
 	$('.gallery').each(function() { // the containers for all your galleries
 	   $(this).magnificPopup({
-		   delegate: '.gallery-icon a[href*=uploads]', // child items selector, by clicking on it popup will open
+		   delegate: 'img', // child items selector, by clicking on it popup will open
 		   type: 'image',
-		   title: false,
+		   //title: false,
 		   gallery: {
 		     enabled: true,
 		     navigateByImgClick: true,
-		   }
+		   },
+			callbacks: {
+				elementParse: function(item) {
+					item.src = item.el.data('full'); 
+				}
+			}
 	   });
 	});
 
