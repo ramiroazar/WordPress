@@ -17,8 +17,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php 
-			echo ($post->post_parent) ? "<a href='" . get_permalink($post->post_parent). "'>Return to ". get_the_title($post->post_parent) ."</a>" : "";
+		<?php
 			echo previous_image_link('thumbnail');
 			echo previous_image_link(false,'← Previous');
 			echo next_image_link('thumbnail');
