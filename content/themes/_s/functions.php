@@ -480,12 +480,22 @@ function _s_taxonomy_page_init() {
  * @param WP_Post $attachment WP_Post object for the attachment.
  * @return array (maybe) filtered gallery image tag attributes.
  */
-function wpdocs_filter_gallery_img_atts( $atts, $attachment ) {
+function _s_filter_gallery_img_atts( $atts, $attachment, $size ) {
     if ( $full_size = wp_get_attachment_image_src( $attachment->ID, 'full' ) ) {
         if ( ! empty( $full_size[0] ) ) {
             $atts['data-full'] = $full_size[0];
         }
     }
+    if ( $srcset = tevkori_get_srcset_array( $attachment->ID, $size, $args = null ) ) {
+        if ( ! empty( $srcset ) ) {
+            $atts['srcset'] = implode( ',', $srcset );
+        }
+    }
+    if ( $sizes = tevkori_get_sizes( $attachment->ID, $size, $args = null ) ) {
+        if ( ! empty( $sizes ) ) {
+            $atts['sizes'] = $sizes;
+        }
+    }
     return $atts;
 }
-add_filter( 'wp_get_attachment_image_attributes', 'wpdocs_filter_gallery_img_atts', 10, 2 );
+add_filter( 'wp_get_attachment_image_attributes', '_s_filter_gallery_img_atts', 10, 3 );
