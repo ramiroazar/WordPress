@@ -5,7 +5,7 @@
 	}
 
 	.content-area {
-		body:not(.home) & {
+		&:not(:only-child) {
 			@include susy-breakpoint($breakpoint__medium) {
 				@include span(8);			
 			}
@@ -15,11 +15,9 @@
 	.widget-area {
 		display: none;
 
-		body:not(.home) & {
-			@include susy-breakpoint($breakpoint__medium) {
-				display: block;
-				@include span(4 last);	
-			}
+		@include susy-breakpoint($breakpoint__medium) {
+			display: block;
+			@include span(4 last);	
 		}
 
 		.sidebar-title {

@@ -38,7 +38,11 @@ jQuery(document).ready(function($) {
 		   },
 			callbacks: {
 				elementParse: function(item) {
-					item.src = item.el.data('full'); 
+					if (item.el.data('full')) {
+						item.src = item.el.data('full');
+					} else {
+						item.src = item.el.attr('src');						
+					}
 				}
 			}
 	   });

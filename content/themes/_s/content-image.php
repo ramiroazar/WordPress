@@ -17,12 +17,13 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php
-			echo previous_image_link('thumbnail');
-			echo previous_image_link(false,'← Previous');
-			echo next_image_link('thumbnail');
-			echo next_image_link(false,'Next →');
-		?>
+		<nav class="navigation image-navigation" role="navigation">
+			<h2 class="screen-reader-text"><?php _e( 'Image navigation', '_s' ); ?></h2>
+			<div class="nav-links">
+				<div class="nav-previous"><?php previous_image_link(false,'Previous'); ?>
+				<div class="nav-next"><?php next_image_link(false,'Next'); ?>
+			</div><!-- .nav-links -->
+		</nav><!-- .navigation -->
 		<?php edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </div><!-- #post-## -->

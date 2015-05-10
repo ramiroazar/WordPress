@@ -1162,7 +1162,7 @@ big {
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
 /* line 31, sass/typography/_accessibility.scss */
-.screen-reader-text, div.wpcf7 .screen-reader-response, div.wpcf7 label, .site-header .site-branding .site-brand .site-title, .site-header .site-branding .site-brand .site-description, body.home #featured h2, .site-footer .footer-title {
+.screen-reader-text, div.wpcf7 .screen-reader-response, div.wpcf7 label, .attachment.single .entry-header .entry-title, .site-header .site-branding .site-brand .site-title, .site-header .site-branding .site-brand .site-description, body.home #featured h2, .site-footer .footer-title {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
   height: 1px;
@@ -1170,7 +1170,7 @@ big {
   overflow: hidden;
 }
 /* line 10, sass/typography/_accessibility.scss */
-.screen-reader-text:hover, div.wpcf7 .screen-reader-response:hover, div.wpcf7 label:hover, .site-header .site-branding .site-brand .site-title:hover, .site-header .site-branding .site-brand .site-description:hover, body.home #featured h2:hover, .site-footer .footer-title:hover, .screen-reader-text:active, div.wpcf7 .screen-reader-response:active, div.wpcf7 label:active, .site-header .site-branding .site-brand .site-title:active, .site-header .site-branding .site-brand .site-description:active, body.home #featured h2:active, .site-footer .footer-title:active, .screen-reader-text:focus, div.wpcf7 .screen-reader-response:focus, div.wpcf7 label:focus, .site-header .site-branding .site-brand .site-title:focus, .site-header .site-branding .site-brand .site-description:focus, body.home #featured h2:focus, .site-footer .footer-title:focus {
+.screen-reader-text:hover, div.wpcf7 .screen-reader-response:hover, div.wpcf7 label:hover, .attachment.single .entry-header .entry-title:hover, .site-header .site-branding .site-brand .site-title:hover, .site-header .site-branding .site-brand .site-description:hover, body.home #featured h2:hover, .site-footer .footer-title:hover, .screen-reader-text:active, div.wpcf7 .screen-reader-response:active, div.wpcf7 label:active, .attachment.single .entry-header .entry-title:active, .site-header .site-branding .site-brand .site-title:active, .site-header .site-branding .site-brand .site-description:active, body.home #featured h2:active, .site-footer .footer-title:active, .screen-reader-text:focus, div.wpcf7 .screen-reader-response:focus, div.wpcf7 label:focus, .attachment.single .entry-header .entry-title:focus, .site-header .site-branding .site-brand .site-title:focus, .site-header .site-branding .site-brand .site-description:focus, body.home #featured h2:focus, .site-footer .footer-title:focus {
   background-color: #f1f1f1;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -2550,26 +2550,49 @@ address.contact a.email {
   margin: 0 0 1.5em;
 }
 
-/* line 9, sass/site/primary/_posts-and-pages.scss */
+/* line 17, sass/site/primary/_posts-and-pages.scss */
 .byline,
 .updated:not(.published) {
   display: none;
 }
 
-/* line 14, sass/site/primary/_posts-and-pages.scss */
+/* line 22, sass/site/primary/_posts-and-pages.scss */
 .single .byline,
 .group-blog .byline {
   display: inline;
 }
 
-/* line 19, sass/site/primary/_posts-and-pages.scss */
+/* line 27, sass/site/primary/_posts-and-pages.scss */
 .page-content,
 .entry-content,
 .entry-summary {
   margin: 1.5em 0 0;
 }
+/* line 33, sass/site/primary/_posts-and-pages.scss */
+.attachment.single .page-content img, .attachment.single
+.entry-content img, .attachment.single
+.entry-summary img {
+  display: block;
+  margin: auto;
+}
 
-/* line 25, sass/site/primary/_posts-and-pages.scss */
+/* line 42, sass/site/primary/_posts-and-pages.scss */
+.attachment.single .entry-footer .image-navigation {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+/* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
+.attachment.single .entry-footer .image-navigation:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 46, sass/site/primary/_posts-and-pages.scss */
+.attachment.single .entry-footer .image-navigation .nav-next {
+  float: right;
+}
+
+/* line 56, sass/site/primary/_posts-and-pages.scss */
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
@@ -2746,7 +2769,7 @@ body:not(.home) .site-content:after {
 }
 @media (min-width: 64em) {
   /* line 8, sass/layout/_content.scss */
-  body:not(.home) .site-content .content-area {
+  .site-content .content-area:not(:only-child) {
     width: 65.71429%;
     float: left;
     margin-right: 2.85714%;
@@ -2757,8 +2780,8 @@ body:not(.home) .site-content:after {
   display: none;
 }
 @media (min-width: 64em) {
-  /* line 18, sass/layout/_content.scss */
-  body:not(.home) .site-content .widget-area {
+  /* line 15, sass/layout/_content.scss */
+  .site-content .widget-area {
     display: block;
     width: 31.42857%;
     float: right;
@@ -2766,7 +2789,7 @@ body:not(.home) .site-content:after {
   }
 }
 @media (min-width: 64em) {
-  /* line 25, sass/layout/_content.scss */
+  /* line 23, sass/layout/_content.scss */
   .site-content .widget-area .sidebar-title {
     clip: rect(1px, 1px, 1px, 1px);
     position: absolute !important;
