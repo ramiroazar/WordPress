@@ -157,6 +157,8 @@ function _s_map( $atts ) {
 		$atts
 	);
 
+	$return = "";
+
 	if ($atts['id']) :
 
 		$args = array(
@@ -221,11 +223,13 @@ function _s_map( $atts ) {
 
 			endwhile; 
 
-		return $return;
+		endif; 
 
-		endif; wp_reset_query();
+		wp_reset_query();
 
 	endif;
+
+	return $return;
 }
 
 add_shortcode( '_s_map', '_s_map' );
