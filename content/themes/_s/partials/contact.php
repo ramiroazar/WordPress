@@ -1,4 +1,4 @@
-<?php if (_s_contact()) : ?>
+<?php if (do_shortcode("[_s_contact]")) : ?>
 
 	<address class="contact" itemscope itemtype="http://schema.org/Organization">
 
