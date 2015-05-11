@@ -142,15 +142,15 @@ function _s_carousel( $atts ) {
 
 	$args = array(
 		"post_type" => "carousel",
-		"posts_per_page" => $atts[limit],
+		"posts_per_page" => $atts['limit'],
 	);
 
-	if ($atts[category]) :
+	if ($atts['category']) :
 		$args['tax_query'] = array(
 			array(
 				'taxonomy' => 'category_carousel',
 				'field' => 'slug',
-				'terms' => explode(',', $atts[category]),
+				'terms' => explode(',', $atts['category']),
 			)
 		);
 	endif;
@@ -162,12 +162,12 @@ function _s_carousel( $atts ) {
 		$return = "";
 
 		$return .= "<div class='carousel' ";
-			$return .= ($atts[autoplay] === true) ? "data-autoplay " : "";
-			$return .= ($atts[pagination] === true) ? "data-paginate " : "";
-			$return .= ($atts[prev]) ? "data-prev='" . $atts[prev] . "' " : "";
-			$return .= ($atts[next]) ? "data-next='" . $atts[next] . "' " : "";
-			$return .= ($atts[interval]) ? "data-interval='" . $atts[interval] . "' " : "";
-			$return .= ($atts[transition]) ? "data-transition='" . $atts[transition] . "' " : "";
+			$return .= ($atts['autoplay'] === true) ? "data-autoplay " : "";
+			$return .= ($atts['pagination'] === true) ? "data-paginate " : "";
+			$return .= ($atts['prev']) ? "data-prev='" . $atts['prev'] . "' " : "";
+			$return .= ($atts['next']) ? "data-next='" . $atts['next'] . "' " : "";
+			$return .= ($atts['interval']) ? "data-interval='" . $atts['interval'] . "' " : "";
+			$return .= ($atts['transition']) ? "data-transition='" . $atts['transition'] . "' " : "";
 		$return .= ">";
 
 		while ($the_query->have_posts()) : $the_query->the_post();		
@@ -177,18 +177,18 @@ function _s_carousel( $atts ) {
 					if( has_post_thumbnail() ) :
 						$return .= get_the_post_thumbnail();
 					else :
-						$return .= ($atts[placeholder] === true) ? "<img class='placeholder' />" : "";
+						$return .= ($atts['placeholder'] === true) ? "<img class='placeholder' />" : "";
 					endif;
 
-					if ($atts[caption] === true) :
+					if ($atts['caption'] === true) :
 
 						$return .= "<figcaption>";
 
 							$return .= "<div>";
 
-								$return .= ($atts[title] === true) ? "<div class='figure-title'>" . get_the_title() . "</div>" : "";
+								$return .= ($atts['title'] === true) ? "<div class='figure-title'>" . get_the_title() . "</div>" : "";
 
-								$return .= ($atts[content] === true) ? "<div class='figure-content'>" . wpautop(get_the_content()) . "</div>" : "";
+								$return .= ($atts['content'] === true) ? "<div class='figure-content'>" . wpautop(get_the_content()) . "</div>" : "";
 
 							$return .= "</div>";
 
