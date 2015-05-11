@@ -35,9 +35,21 @@ function _s_review( $atts ) {
 	);
 
 	$args = array(
-		'post_type' => 'review', 
 		'posts_per_page' => $atts[limit], 
 		'orderby' => $atts[order], 
+		'tax_query' => array(
+			'relation' => 'OR',
+			array(
+				'taxonomy' => 'post_format',
+				'terms' => array('post-format-quote'),
+				'field' => 'slug',
+			),
+			array(
+				'taxonomy' => 'category',
+				'terms' => array('quote'),
+				'field' => 'slug',
+			),
+		),
 	);
 
 	if (isset($atts[id])) :
@@ -88,6 +100,7 @@ function _s_review( $atts ) {
 						$return .= "</cite>";
 					$return .= "</span>";
 					$return .= "<span itemprop='itemReviewed' itemscope itemtype='http://schema.org/Organization'>";
+						$return .= ", about ";
 						$return .= "<a href='" . esc_url( home_url( '/' ) ) . "' rel='home' itemprop='url'>";
 							$return .= "<span itemprop='name'>";
 								$return .= get_bloginfo('name');
