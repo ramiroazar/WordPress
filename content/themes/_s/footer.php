@@ -42,7 +42,7 @@
 				</nav><!-- .site-sitemap-featured -->
 
 				<div class="site-contact section">
-					
+
 					<div>
 
 						<h3 class="section-title"><?php _e( 'Contact Details', '_s' ); ?></h3>
@@ -51,7 +51,7 @@
 						
 						<?php if (!is_page('contact')) : ?>
 
-							<a href="/contact" id="form-contact-toggle" class="toggle-lightbox" data-mfp-src="#form-contact"><?php _e( 'Contact', '_s' ); ?></a>
+							<a href="<?php echo get_the_permalink(get_theme_mod('page_display_contact')); ?>" id="form-contact-toggle" class="toggle-lightbox" data-mfp-src="#form-contact"><?php _e( 'Contact', '_s' ); ?></a>
 
 							<div id="form-contact" class="mfp-hide">
 								<?php echo do_shortcode("[contact-form-7 id='1']"); ?>
