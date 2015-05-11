@@ -5,28 +5,32 @@
  * @package _s
  */
 
-// Query posts with 'gallery' post format or category
-
-$args = wp_parse_args($query_string);
- 
-query_posts(array(
-	'tax_query' => array(
-		'relation' => 'OR',
-		array(
-			'taxonomy' => 'post_format',
-			'terms' => array('post-format-gallery'),
-			'field' => 'slug',
-		),
-		array(
-			'taxonomy' => 'category',
-			'terms' => array('gallery'),
-			'field' => 'slug',
-		),
-	),
-	'paged' => $args['paged'],
-) );
-
 get_header(); ?>
+
+	<?php
+
+		// Query posts with 'gallery' post format or category
+
+		$args = wp_parse_args($query_string);
+		 
+		query_posts(array(
+			'posts_per_page' => 1,
+			'tax_query' => array(
+				'relation' => 'OR',
+				array(
+					'taxonomy' => 'post_format',
+					'terms' => array('post-format-gallery'),
+					'field' => 'slug',
+				),
+				array(
+					'taxonomy' => 'category',
+					'terms' => array('gallery'),
+					'field' => 'slug',
+				),
+			),
+		) );
+
+	?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main" itemprop="mainContentOfPage">
