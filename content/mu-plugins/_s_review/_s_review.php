@@ -18,7 +18,7 @@ function _s_review( $atts ) {
 		array(
 			'id' 				=> null,
 			'limit' 			=> -1,
-			'order' 			=> 'rand',
+			'orderby' 		=> 'rand',
 			'words' 			=> 25,
 			'link' 			=> null,
 			'columns' 		=> 2,
@@ -35,8 +35,8 @@ function _s_review( $atts ) {
 	);
 
 	$args = array(
-		'posts_per_page' => $atts[limit], 
-		'orderby' => $atts[order], 
+		'posts_per_page' => $atts['limit'], 
+		'orderby' => $atts['orderby'], 
 		'tax_query' => array(
 			'relation' => 'OR',
 			array(
@@ -52,8 +52,8 @@ function _s_review( $atts ) {
 		),
 	);
 
-	if (isset($atts[id])) :
-		$id_array = explode(',', $atts[id]);
+	if (isset($atts['id'])) :
+		$id_array = explode(',', $atts['id']);
 
 		if (isset($id_array)) :
 			$args['post__in'] = $id_array;
@@ -65,15 +65,15 @@ function _s_review( $atts ) {
 
 		$return = '';
 
-		if ($atts[carousel]) :
+		if ($atts['carousel']) :
 
 			$return .= "<div class='carousel' ";
-				$return .= ($atts[autoplay] === true) ? "data-autoplay " : "";
-				$return .= ($atts[pagination] === true) ? "data-paginate " : "";
-				$return .= ($atts[prev]) ? "data-prev='" . $atts[prev] . "' " : "";
-				$return .= ($atts[next]) ? "data-next='" . $atts[next] . "' " : "";
-				$return .= ($atts[interval]) ? "data-interval='" . $atts[interval] . "' " : "";
-				$return .= ($atts[transition]) ? "data-transition='" . $atts[transition] . "' " : "";
+				$return .= ($atts['autoplay'] === true) ? "data-autoplay " : "";
+				$return .= ($atts['pagination'] === true) ? "data-paginate " : "";
+				$return .= ($atts['prev']) ? "data-prev='" . $atts['prev'] . "' " : "";
+				$return .= ($atts['next']) ? "data-next='" . $atts['next'] . "' " : "";
+				$return .= ($atts['interval']) ? "data-interval='" . $atts['interval'] . "' " : "";
+				$return .= ($atts['transition']) ? "data-transition='" . $atts['transition'] . "' " : "";
 			$return .= ">"; 
 
 		endif;
@@ -85,9 +85,9 @@ function _s_review( $atts ) {
 					if (in_the_loop()) :
 						$return .= wpautop(get_the_content());
 					else :
-						$return .= _s_excerpt($atts[words]);	
-						if ($atts[link]) :
-							$return .= "<a href='" . $atts[link] . "'>";
+						$return .= _s_excerpt($atts['words']);	
+						if ($atts['link']) :
+							$return .= "<a href='" . $atts['link'] . "'>";
 								$return .= "Read More";
 							$return .= "</a>";
 						endif;		
@@ -112,7 +112,7 @@ function _s_review( $atts ) {
 
 		endwhile;
 
-		if ($atts[carousel]) : $return.= "</div>"; endif;
+		if ($atts['carousel']) : $return.= "</div>"; endif;
 
 	endif; 
 
