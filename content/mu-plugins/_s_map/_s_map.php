@@ -157,12 +157,12 @@ function _s_map( $atts ) {
 		$atts
 	);
 
-	if ($atts[id]) :
+	if ($atts['id']) :
 
 		$args = array(
 			'post_type' => 'map',
 			'posts_per_page' => 1,
-			'p' => $atts[id],
+			'p' => $atts['id'],
 		);
 
 		$the_query = new WP_Query( $args );
@@ -180,10 +180,10 @@ function _s_map( $atts ) {
 					$return .= "<div ";
 						$return .= "id='map-" . get_the_ID() . "' ";
 						$return .= "class='map-canvas'";
-						$return .= ($atts[zoom]) ? "data-zoom='" . $atts[zoom] . "'" : "";
-						$return .= ($atts[width]) ? "data-width='" . $atts[width] . "'" : "";
-						$return .= ($atts[height]) ? "data-height='" . $atts[height] . "'" : "";
-						$return .= ($atts[scrollwheel] === false) ? "data-scrollwheel='false'" : "";
+						$return .= ($atts['zoom']) ? "data-zoom='" . $atts['zoom'] . "'" : "";
+						$return .= ($atts['width']) ? "data-width='" . $atts['width'] . "'" : "";
+						$return .= ($atts['height']) ? "data-height='" . $atts['height'] . "'" : "";
+						$return .= ($atts['scrollwheel'] === false) ? "data-scrollwheel='false'" : "";
 					$return .= ">";
 
 					// Create empty array
@@ -191,11 +191,11 @@ function _s_map( $atts ) {
 
 					foreach ( (array) $locations as $key => $location ) :
 
-						$return.= "<div class='location " . ($location[location_center] ? 'location_center' : '') . " " . ($location[location_infowindow] ? 'location_infowindow' : '') . "'>";
+						$return.= "<div class='location " . ($location['location_center'] ? 'location_center' : '') . " " . ($location['location_infowindow'] ? 'location_infowindow' : '') . "'>";
 
-							$return .= ($location[location_information]) ? "<input type='hidden' name='location_information' value='" . wpautop($location[location_information]) . "'>" : "";
-							$return .= ($location[location_coordinates][latitude]) ? "<input type='hidden' name='location_latitude' value='" . $location[location_coordinates][latitude] . "'>" : "";
-							$return .= ($location[location_coordinates][longitude]) ? "<input type='hidden' name='location_longitude' value='" . $location[location_coordinates][longitude] . "'>" : "";
+							$return .= ($location['location_information']) ? "<input type='hidden' name='location_information' value='" . wpautop($location['location_information']) . "'>" : "";
+							$return .= ($location['location_coordinates']['latitude']) ? "<input type='hidden' name='location_latitude' value='" . $location['location_coordinates']['latitude'] . "'>" : "";
+							$return .= ($location['location_coordinates']['longitude']) ? "<input type='hidden' name='location_longitude' value='" . $location['location_coordinates']['longitude'] . "'>" : "";
 
 						$return.= "</div>";
 
@@ -204,9 +204,9 @@ function _s_map( $atts ) {
 						// Push metadata into array
 						array_push(
 							$location_metadata_array, 
-							$location[location_information], 
-							$location[location_coordinates][latitude], 
-							$location[location_coordinates][longitude]
+							$location['location_information'], 
+							$location['location_coordinates']['latitude'], 
+							$location['location_coordinates']['longitude']
 						);
 						// Push array for each into overarching array to create a 2 dimensional array.
 						array_push($location_array, $location_metadata_array);
