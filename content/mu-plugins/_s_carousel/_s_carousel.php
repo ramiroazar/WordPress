@@ -155,11 +155,11 @@ function _s_carousel( $atts ) {
 		);
 	endif;
 
+	$return = "";
+
 	$the_query = "";
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) :
-
-		$return = "";
 
 		$return .= "<div class='carousel' ";
 			$return .= ($atts['autoplay'] === true) ? "data-autoplay " : "";
