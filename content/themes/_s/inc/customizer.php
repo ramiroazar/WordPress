@@ -17,6 +17,20 @@ function _s_customize_register( $wp_customize ) {
 
 	// Contact
 
+	$wp_customize->add_section( '_s_page_displays', array(
+		'title'          => 'Page displays',
+		'priority'       => 35,
+	) );
+
+	$wp_customize->add_setting( 'page_display_contact', array() );
+	$wp_customize->add_control( 'page_display_contact', array(
+		'label'   => 'Contact',
+		'section' => '_s_page_displays',
+		'type'    => 'dropdown-pages',
+	) );
+
+	// Contact
+
 	$wp_customize->add_section( '_s_contact', array(
 		'title'          => 'Contact',
 		'priority'       => 35,
