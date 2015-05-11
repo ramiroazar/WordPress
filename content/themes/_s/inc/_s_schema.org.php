@@ -14,31 +14,31 @@
 
         // Is author page
         if( is_author() ) :    
-          $type = 'ProfilePage';    
+            $type = 'ProfilePage';    
 
         // Is search results page
         elseif( is_search() ) :    
-          $type = 'SearchResultsPage';    
+            $type = 'SearchResultsPage';    
 
         //
         // Theme page types
         //
 
         // Contact page ID
-        //elseif( is_page( 0 ) ) :    
-        //  $type = 'ContactPage';
+        elseif( is_page( get_theme_mod('page_display_contact') ) ) :    
+            $type = 'ContactPage';
 
         // About page ID
-        //elseif( is_page( 0 ) ) :    
-        //  $type = 'AboutPage';
+        elseif( is_page( get_theme_mod('page_display_about') ) ) :    
+            $type = 'AboutPage';
 
         // FAQs page ID
-        //elseif( is_page( 0 ) ) :    
-        //  $type = 'QAPage';
+        elseif( is_page( get_theme_mod('page_display_faqs') ) ) :    
+            $type = 'QAPage';
 
         // Gallery page ID
-        //elseif( is_page( 0 ) ) :    
-        //  $type = 'ImageGallery';
+        elseif( is_page( get_theme_mod('page_display_gallery') ) ) :    
+            $type = 'ImageGallery';
 
         // add custom post types that describe a single item to this array
         //elseif( is_singular( array( 'book', 'movie' ) ) ) :    

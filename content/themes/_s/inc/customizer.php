@@ -29,6 +29,27 @@ function _s_customize_register( $wp_customize ) {
 		'type'    => 'dropdown-pages',
 	) );
 
+	$wp_customize->add_setting( 'page_display_about', array() );
+	$wp_customize->add_control( 'page_display_about', array(
+		'label'   => 'About',
+		'section' => '_s_page_displays',
+		'type'    => 'dropdown-pages',
+	) );
+
+	$wp_customize->add_setting( 'page_display_faqs', array() );
+	$wp_customize->add_control( 'page_display_faqs', array(
+		'label'   => 'FAQs',
+		'section' => '_s_page_displays',
+		'type'    => 'dropdown-pages',
+	) );
+
+	$wp_customize->add_setting( 'page_display_gallery', array() );
+	$wp_customize->add_control( 'page_display_gallery', array(
+		'label'   => 'Gallery',
+		'section' => '_s_page_displays',
+		'type'    => 'dropdown-pages',
+	) );
+
 	// Contact
 
 	$wp_customize->add_section( '_s_contact', array(
