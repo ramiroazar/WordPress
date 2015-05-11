@@ -361,63 +361,78 @@ require get_template_directory() . '/inc/jetpack.php';
 				// If markup is true
 				if ($atts[markup] === true) :
 					// Output value with markup
-					if ($atts[type] === phone) :
-						$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' itemprop='telephone'>";
-							$output .= $contact[$atts[type]];
-						$output .= "</a>";
-					elseif ($atts[type] === mobile) :
-						$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' itemprop='telephone'>";
-							$output .= $contact[$atts[type]];
-						$output .= "</a>";
-					elseif ($atts[type] === fax) :
-						$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' itemprop='telephone'>";
-							$output .= $contact[$atts[type]];
-						$output .= "</a>";
-					elseif ($atts[type] === email) :
-						$output .= "<a class='" . $atts[type] . "' href='mailto:" . $contact[$atts[type]] . "' itemprop='email'>";
-							$output .= $contact[$atts[type]];
-						$output .= "</a>";
-					elseif ($atts[type] === name) :
-						$output .= "<a class='" . $atts[type] . "' href='" . esc_url( home_url( '/' ) ) . "' itemprop='name'>";
-							$output .= $contact[$atts[type]];
-						$output .= "</a>";
-					elseif ($atts[type] === description) :
-						$output .= "<span class='" . $atts[type] . "' itemprop='description'>";
-							$output .= $contact[$atts[type]];
-						$output .= "</span>";
-					elseif ($atts[type] === address) :
-						$output .= "<a class='" . $atts[type] . "' href='http://maps.google.com/?q=" . $contact[$atts[type]] . "' target='_blank' itemprop='address'>"; // itemscope itemtype='http://schema.org/PostalAddress'
-							$output .= $contact[$atts[type]];
-						$output .= "</a>";
-					elseif ($atts[type] === facebook) :
-						$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
-							$output .= "Facebook";
-						$output .= "</a>";
-					elseif ($atts[type] === googleplus) :
-						$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
-							$output .= "Google+";
-						$output .= "</a>";
-					elseif ($atts[type] === twitter) :
-						$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
-							$output .= "Twitter";
-						$output .= "</a>";
-					elseif ($atts[type] === instagram) :
-						$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
-							$output .= "Instagram";
-						$output .= "</a>";
-					elseif ($atts[type] === pinterest) :
-						$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
-							$output .= "Pinterest";
-						$output .= "</a>";
-					elseif ($atts[type] === youtube) :
-						$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
-							$output .= "YouTube";
-						$output .= "</a>";
-					elseif ($atts[type] === linkedin) :
-						$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
-							$output .= "LinkedIn";
-						$output .= "</a>";
-					endif;
+					switch ($atts[type]) :
+						case (phone) :
+							$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' itemprop='telephone'>";
+								$output .= $contact[$atts[type]];
+							$output .= "</a>";
+							break;
+						case (mobile) :
+							$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' itemprop='telephone'>";
+								$output .= $contact[$atts[type]];
+							$output .= "</a>";
+							break;
+						case (fax) :
+							$output .= "<a class='" . $atts[type] . "' href='tel:" . $contact[$atts[type]] . "' itemprop='telephone'>";
+								$output .= $contact[$atts[type]];
+							$output .= "</a>";
+							break;
+						case (email) :
+							$output .= "<a class='" . $atts[type] . "' href='mailto:" . $contact[$atts[type]] . "' itemprop='email'>";
+								$output .= $contact[$atts[type]];
+							$output .= "</a>";
+							break;
+						case (name) :
+							$output .= "<a class='" . $atts[type] . "' href='" . esc_url( home_url( '/' ) ) . "' itemprop='name'>";
+								$output .= $contact[$atts[type]];
+							$output .= "</a>";
+							break;
+						case (description) :
+							$output .= "<span class='" . $atts[type] . "' itemprop='description'>";
+								$output .= $contact[$atts[type]];
+							$output .= "</span>";
+							break;
+						case (address) :
+							$output .= "<a class='" . $atts[type] . "' href='http://maps.google.com/?q=" . $contact[$atts[type]] . "' target='_blank' itemprop='address'>"; // itemscope itemtype='http://schema.org/PostalAddress'
+								$output .= $contact[$atts[type]];
+							$output .= "</a>";
+							break;
+						case (facebook) :
+							$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
+								$output .= "Facebook";
+							$output .= "</a>";
+							break;
+						case (googleplus) :
+							$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
+								$output .= "Google+";
+							$output .= "</a>";
+							break;
+						case (twitter) :
+							$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
+								$output .= "Twitter";
+							$output .= "</a>";
+							break;
+						case (instagram) :
+							$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
+								$output .= "Instagram";
+							$output .= "</a>";
+							break;
+						case (pinterest) :
+							$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
+								$output .= "Pinterest";
+							$output .= "</a>";
+							break;
+						case (youtube) :
+							$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
+								$output .= "YouTube";
+							$output .= "</a>";
+							break;
+						case (linkedin) :
+							$output .= "<a class='" . $atts[type] . "' href='" . $contact[$atts[type]] . "' target='_blank' itemprop='sameAs'>";
+								$output .= "LinkedIn";
+							$output .= "</a>";
+							break;
+					endswitch;
 				// Else if markup is false
 				else :
 					// Output value without markup
