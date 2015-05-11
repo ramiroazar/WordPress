@@ -442,7 +442,7 @@ require get_template_directory() . '/inc/jetpack.php';
 		// Else if type not declared
 		else:
 			// Output array
-			$output .= $contact;
+			$output .= implode(",", $contact);
 		endif;
 
 		// Return output
