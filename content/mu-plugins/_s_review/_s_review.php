@@ -60,10 +60,10 @@ function _s_review( $atts ) {
 		endif;
 	endif;
 
+	$return = '';
+
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) :
-
-		$return = '';
 
 		if ($atts['carousel']) :
 
