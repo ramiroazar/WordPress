@@ -14,7 +14,6 @@ get_header(); ?>
 		$args = wp_parse_args($query_string);
 		 
 		query_posts(array(
-			'posts_per_page' => 1,
 			'tax_query' => array(
 				'relation' => 'OR',
 				array(
