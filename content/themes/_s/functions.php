@@ -499,3 +499,65 @@ function _s_filter_gallery_img_atts( $atts, $attachment, $size ) {
     return $atts;
 }
 add_filter( 'wp_get_attachment_image_attributes', '_s_filter_gallery_img_atts', 10, 3 );
+
+// Get attachment ids 
+
+function _s_gallery_ids($atts) {
+
+	$atts = shortcode_atts( 
+		array(
+			'ids' => get_the_id(),
+			'gallery_total' => -1,
+			'image_total' => -1,
+		), 
+		$atts
+	);
+
+	$args_gallery = array(
+		'post__in' => explode(',', $atts['ids']),
+		'posts_per_page' => $atts['gallery_total'],
+		'tax_query' => array(
+			'relation' => 'OR',
+			array(
+				'taxonomy' => 'post_format',
+				'terms' => array('post-format-gallery'),
+				'field' => 'slug',
+			),
+			array(
+				'taxonomy' => 'category',
+				'terms' => array('gallery'),
+				'field' => 'slug',
+			),
+		),
+	);
+
+	$the_query_gallery = new WP_Query( $args_gallery );
+
+		$attachment_array = array();
+
+		while ($the_query_gallery->have_posts()) : $the_query_gallery->the_post(); 
+
+			$args_image = array(
+				'posts_per_page' => $atts['image_total'],	
+				'post_mime_type' => 'image',
+				'post_parent' => get_the_ID(),
+				'post_type' => 'attachment',
+				'post_status' => 'inherit',
+			);
+
+			$the_query_image = new WP_Query( $args_image );
+
+				while ($the_query_image->have_posts()) : $the_query_image->the_post(); 
+
+					array_push($attachment_array, get_the_id());
+
+				endwhile;
+
+				wp_reset_postdata();
+
+		endwhile;
+
+	wp_reset_postdata();
+
+	return implode(',', $attachment_array);
+}
