@@ -107,7 +107,7 @@ function _s_faq( $atts ) {
 
 	$args = array(
 		'post_type' => 'faq', 
-		'posts_per_page' => $atts[limit],
+		'posts_per_page' => $atts['limit'],
 		'orderby' => 'rand',
 	);
 
@@ -116,7 +116,7 @@ function _s_faq( $atts ) {
 
 		$return = '';
 
-		if ($atts[questions] === true) :
+		if ($atts['questions'] === true) :
 
 			$return .= "<ol class='faq'>";
 
@@ -136,7 +136,7 @@ function _s_faq( $atts ) {
 
 		endif;
 
-		if ($atts[answers] === true) :
+		if ($atts['answers'] === true) :
 
 			$return .= "<dl class='faq'>";
 
