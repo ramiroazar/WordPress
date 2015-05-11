@@ -111,10 +111,10 @@ function _s_faq( $atts ) {
 		'orderby' => 'rand',
 	);
 
+	$return = '';
+
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) :
-
-		$return = '';
 
 		if ($atts['questions'] === true) :
 
