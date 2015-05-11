@@ -17,11 +17,11 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<nav class="navigation image-navigation" role="navigation">
+		<nav class="navigation post-navigation" role="navigation">
 			<h2 class="screen-reader-text"><?php _e( 'Image navigation', '_s' ); ?></h2>
 			<div class="nav-links">
-				<div class="nav-previous"><?php previous_image_link(false,'Previous'); ?>
-				<div class="nav-next"><?php next_image_link(false,'Next'); ?>
+				<div class="nav-previous"><?php previous_image_link(false,'Previous'); ?></div>
+				<div class="nav-next"><?php next_image_link(false,'Next'); ?></div>
 			</div><!-- .nav-links -->
 		</nav><!-- .navigation -->
 		<?php edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' ); ?>

@@ -37,22 +37,6 @@
 	}
 }
 
-.entry-footer {
-	.attachment.single & {
-		.image-navigation {
-			@include susy-clearfix;
-			@include rhythm-margins;
-			.nav-previous {}
-			.nav-next {
-				float: right;
-			}
-			a {
-				//@extend %button;
-			}
-		}
-	}
-}
-
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;

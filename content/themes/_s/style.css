@@ -2522,16 +2522,18 @@ address.contact a.email {
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
+  width: 48.57143%;
   float: left;
-  width: 50%;
+  margin-right: 2.85714%;
 }
-/* line 144, sass/navigation/_menus.scss */
+/* line 143, sass/navigation/_menus.scss */
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
+  width: 48.57143%;
   float: right;
+  margin-right: 0;
   text-align: right;
-  width: 50%;
 }
 
 /*--------------------------------------------------------------
@@ -2576,23 +2578,7 @@ address.contact a.email {
   margin: auto;
 }
 
-/* line 42, sass/site/primary/_posts-and-pages.scss */
-.attachment.single .entry-footer .image-navigation {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-}
-/* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-.attachment.single .entry-footer .image-navigation:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-/* line 46, sass/site/primary/_posts-and-pages.scss */
-.attachment.single .entry-footer .image-navigation .nav-next {
-  float: right;
-}
-
-/* line 56, sass/site/primary/_posts-and-pages.scss */
+/* line 40, sass/site/primary/_posts-and-pages.scss */
 .page-links {
   clear: both;
   margin: 0 0 1.5em;

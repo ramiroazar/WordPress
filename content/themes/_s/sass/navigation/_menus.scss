@@ -132,18 +132,16 @@
 .post-navigation {
 
 	.site-main & {
-		margin: 0 0 1.5em;
+		margin: 0 0 rhythm();
 		overflow: hidden;
 	}
 
 	& .nav-previous {
-		float: left;
-		width: 50%;
+		@include span(6);
 	}
 
 	& .nav-next {
-		float: right;
+		@include span(6 last);
 		text-align: right;
-		width: 50%;
 	}
 }
