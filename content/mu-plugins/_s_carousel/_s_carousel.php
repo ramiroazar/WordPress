@@ -135,7 +135,7 @@ function _s_carousel( $atts ) {
 			'next' 			=> '<i class="fa fa-angle-right"></i>',
 			'interval'		=> 5000,
 			'transition' 	=> 'fade',
-			'placeholder'	=> true,
+			'placeholder'	=> false,
 		), 
 		$atts
 	);
@@ -177,7 +177,7 @@ function _s_carousel( $atts ) {
 					if( has_post_thumbnail() ) :
 						$return .= get_the_post_thumbnail();
 					else :
-						$return .= ($atts['placeholder'] === true) ? "<img class='placeholder' />" : "";
+						$return .= ($atts['placeholder'] == true) ? "<img class='placeholder' />" : "";
 					endif;
 
 					if ($atts['caption'] === true) :
