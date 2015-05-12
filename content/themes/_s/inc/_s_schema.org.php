@@ -25,19 +25,19 @@
         //
 
         // Contact page ID
-        elseif( is_page( get_theme_mod('page_display_contact') ) ) :    
+        elseif(get_theme_mod('page_display_contact') && is_page( get_theme_mod('page_display_contact') ) ) :    
             $type = 'ContactPage';
 
         // About page ID
-        elseif( is_page( get_theme_mod('page_display_about') ) ) :    
+        elseif(get_theme_mod('page_display_about') && is_page( get_theme_mod('page_display_about') ) ) :    
             $type = 'AboutPage';
 
         // FAQs page ID
-        elseif( is_page( get_theme_mod('page_display_faqs') ) ) :    
+        elseif(get_theme_mod('page_display_faqs') && is_page( get_theme_mod('page_display_faqs') ) ) :    
             $type = 'QAPage';
 
         // Gallery page ID
-        elseif( is_page( get_theme_mod('page_display_gallery') ) ) :    
+        elseif(get_theme_mod('page_display_gallery') && is_page( get_theme_mod('page_display_gallery') ) ) :    
             $type = 'ImageGallery';
 
         // add custom post types that describe a single item to this array
