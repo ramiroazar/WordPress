@@ -6,11 +6,11 @@
  */
 
 if ( 
-	//! is_active_sidebar( 'sidebar-1' ) ||
+	// ! is_active_sidebar( 'sidebar-1' ) ||
 	wp_is_mobile()
-) {
+) :
 	return;
-}
+endif
 ?>
 
 <section id="secondary" class="widget-area" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
