@@ -127,6 +127,9 @@ function _s_scripts() {
 	// Load lightbox
 	wp_enqueue_script('lightbox', (get_template_directory_uri() . "/js/jquery.magnific-popup.min.js"), array('jquery'), '', true);
 
+	// Match height
+	wp_enqueue_script('match-height', (get_template_directory_uri() . "/js/jquery.matchHeight-min.js"), array('jquery'), '', true);
+
 	// Custom scripts
 	wp_enqueue_script( 'scripts', (get_template_directory_uri() . '/js/scripts.js'), array('jquery'), null);
 
