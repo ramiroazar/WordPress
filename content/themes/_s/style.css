@@ -82,6 +82,10 @@ Generates pseudo element with gradient background
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 FontAwesome
+Default
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+FontAwesome
 FontAwesome fixed width
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -1069,6 +1073,7 @@ address.contact ul {
 }
 /* line 37, sass/typography/_copy.scss */
 address.contact a:before {
+  content: "";
   display: inline-block;
   width: 1.5em;
   margin: 0;
@@ -2631,38 +2636,38 @@ address.contact a.email {
 /*--------------------------------------------------------------
 8.1 Global
 --------------------------------------------------------------*/
-/* line 3, sass/layout/_global.scss */
-.section > div {
+/* line 4, sass/layout/_global.scss */
+#main .section > div, .site-footer .section > div {
   max-width: 64em;
   margin-left: auto;
   margin-right: auto;
   width: 96%;
 }
 /* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-.section > div:after {
+#main .section > div:after, .site-footer .section > div:after {
   content: " ";
   display: block;
   clear: both;
 }
 
 @media (min-width: 64em) {
-  /* line 11, sass/layout/_global.scss */
-  .section-group > div {
+  /* line 14, sass/layout/_global.scss */
+  #main .section-group > div, .site-footer .section-group > div {
     max-width: 64em;
     margin-left: auto;
     margin-right: auto;
     width: 96%;
   }
   /* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-  .section-group > div:after {
+  #main .section-group > div:after, .site-footer .section-group > div:after {
     content: " ";
     display: block;
     clear: both;
   }
 }
 @media (min-width: 64em) {
-  /* line 19, sass/layout/_global.scss */
-  .section-group > div .section > div {
+  /* line 24, sass/layout/_global.scss */
+  #main .section-group > div .section > div, .site-footer .section-group > div .section > div {
     max-width: none;
     width: auto;
   }
@@ -2729,6 +2734,7 @@ address.contact a.email {
 }
 /* line 51, sass/layout/_header.scss */
 .site-header .site-branding .site-contact .phone:before {
+  content: "";
   display: inline-block;
   width: 1.5em;
   margin: 0;
