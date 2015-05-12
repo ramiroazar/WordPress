@@ -17,9 +17,7 @@ endif
 
 	<h2 class="sidebar-title"><?php _e( 'Sidebar', '_s' ); ?></h2>
 
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-
-	<?php if (is_page(get_theme_mod('page_display_contact'))) : ?>
+	<?php if (get_theme_mod('page_display_contact') && is_page(get_theme_mod('page_display_contact'))) : ?>
 
 		<aside id="sidebar-contact" class="site-contact section">
 
@@ -28,11 +26,13 @@ endif
 				<h3 class="section-title"><?php _e( 'Contact Details', '_s' ); ?></h3>
 
 				<?php get_template_part( 'partials/contact' ); ?>
-
+				
 			</div>
-
+			
 		</aside><!-- .site-contact -->
 
 	<?php endif; ?>
+
+	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 
 </section><!-- #secondary -->
