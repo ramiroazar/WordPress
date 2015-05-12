@@ -2396,26 +2396,27 @@ figure {
 --------------------------------------------------------------*/
 /* line 1, sass/navigation/_links.scss */
 a {
+  text-decoration: none;
   color: royalblue;
 }
-/* line 4, sass/navigation/_links.scss */
+/* line 5, sass/navigation/_links.scss */
 a:visited {
   color: purple;
 }
-/* line 7, sass/navigation/_links.scss */
+/* line 8, sass/navigation/_links.scss */
 a:hover, a:focus, a:active {
   color: midnightblue;
 }
-/* line 12, sass/navigation/_links.scss */
+/* line 13, sass/navigation/_links.scss */
 a:focus {
   outline: thin dotted;
 }
-/* line 15, sass/navigation/_links.scss */
+/* line 16, sass/navigation/_links.scss */
 a:hover, a:active {
   outline: 0;
 }
 
-/* line 45, sass/navigation/_links.scss */
+/* line 46, sass/navigation/_links.scss */
 address.contact a.email {
   -ms-word-break: break-all;
   /* Be VERY careful with this, breaks normal words wh_erever */
