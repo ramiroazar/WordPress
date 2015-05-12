@@ -1289,15 +1289,14 @@ ul, ol {
 li > ul,
 li > ol {
   margin-bottom: 0;
-  margin-left: 1.5em;
 }
 
-/* line 18, sass/elements/_lists.scss */
+/* line 17, sass/elements/_lists.scss */
 dt {
   font-weight: bold;
 }
 
-/* line 22, sass/elements/_lists.scss */
+/* line 21, sass/elements/_lists.scss */
 dd {
   margin: 0 0 1.5em 0;
 }
