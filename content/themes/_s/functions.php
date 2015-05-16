@@ -579,3 +579,32 @@ function _s_gallery_ids($atts) {
 
 	return implode(',', $attachment_array);
 }
+
+/**
+ * Register Custom Variables
+ *
+ * @link https://github.com/Yoast/wordpress-seo/issues/1980
+ * @link https://github.com/Yoast/wordpress-seo/issues/1782
+ */
+
+function _s_wpseo_register_extra_replacements() {
+	wpseo_register_var_replacement( 
+		'%%contactphone%%', 
+		function () {
+			return do_shortcode( '[contact type="phone" markup="false"]' );
+		}
+	);
+	wpseo_register_var_replacement( 
+		'%%contactmobile%%', 
+		function () {
+			return do_shortcode( '[contact type="mobile" markup="false"]' );
+		}
+	);
+	wpseo_register_var_replacement( 
+		'%%contactemail%%', 
+		function () {
+			return do_shortcode( '[contact type="email" markup="false"]' );
+		}
+	);
+}
+add_action('wpseo_register_extra_replacements', '_s_wpseo_register_extra_replacements');
