@@ -2,15 +2,15 @@
 
 	<?php while (have_posts()) : the_post(); ?>
 
-		<article class="service" itemscope itemtype="http://schema.org/Article">
+		<article itemscope itemtype="http://schema.org/Article">
 			<header class="entry-header">
 				<a href="<?php the_permalink(); ?>">
-					<h3 class='entry-title' itemprop='headline'><?php the_title() ?></h3>
+					<h3 class='entry-title' itemprop='headline'><?php the_title() ?></h3>					
 					<?php
 						/*if ($context == get_option( 'page_on_front')) :
-							the_title("<h2 class='entry-title' itemprop='headline'>","</h2>");
+							the_title("<h3 class='entry-title' itemprop='name'><a href='" . get_the_permalink() . "' aria-controls='tab-" . get_the_ID() . "' aria-selected='false' role='tab' data-target='tab-" . get_the_ID() . "' itemprop='url'>","</a></h3>");
 						else:
-							the_title("<h3 class='entry-title' itemprop='headline'>","</h3>");
+							the_title("<h4 class='entry-title' itemprop='name'><a href='" . get_the_permalink() . "' aria-controls='tab-" . get_the_ID() . "' aria-selected='false' role='tab' data-target='tab-" . get_the_ID() . "' itemprop='url'>","</a></h4>");
 						endif;*/
 					?>
 				</a>
