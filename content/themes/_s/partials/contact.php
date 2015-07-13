@@ -1,6 +1,6 @@
 <?php if (do_shortcode("[_s_contact]")) : ?>
 
-	<address class="contact" itemscope itemtype="http://schema.org/Organization">
+	<address class="contact-details" itemscope itemtype="http://schema.org/Organization">
 
 		<ul>
 

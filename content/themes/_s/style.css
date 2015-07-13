@@ -1067,12 +1067,12 @@ address {
   margin: 0 0 1.5em;
 }
 /* line 31, sass/typography/_copy.scss */
-address.contact ul {
+address.contact-details ul {
   padding: 0;
   list-style-type: none;
 }
 /* line 38, sass/typography/_copy.scss */
-address.contact a.phone:before {
+address.contact-details a.phone:before {
   content: "";
   display: inline-block;
   width: 1.5em;
@@ -1082,7 +1082,7 @@ address.contact a.phone:before {
   content: "\f095";
 }
 /* line 44, sass/typography/_copy.scss */
-address.contact a.mobile:before {
+address.contact-details a.mobile:before {
   content: "";
   display: inline-block;
   width: 1.5em;
@@ -1092,7 +1092,7 @@ address.contact a.mobile:before {
   content: "\f10b";
 }
 /* line 50, sass/typography/_copy.scss */
-address.contact a.fax:before {
+address.contact-details a.fax:before {
   content: "";
   display: inline-block;
   width: 1.5em;
@@ -1102,7 +1102,7 @@ address.contact a.fax:before {
   content: "\f1ac";
 }
 /* line 57, sass/typography/_copy.scss */
-address.contact a.email:before {
+address.contact-details a.email:before {
   content: "";
   display: inline-block;
   width: 1.5em;
@@ -1112,7 +1112,7 @@ address.contact a.email:before {
   content: "\f0e0";
 }
 /* line 66, sass/typography/_copy.scss */
-address.contact a.address:before {
+address.contact-details a.address:before {
   content: "";
   display: inline-block;
   width: 1.5em;
@@ -1122,7 +1122,7 @@ address.contact a.address:before {
   content: "\f041";
 }
 /* line 72, sass/typography/_copy.scss */
-address.contact a.facebook:before {
+address.contact-details a.facebook:before {
   content: "";
   display: inline-block;
   width: 1.5em;
@@ -1132,7 +1132,7 @@ address.contact a.facebook:before {
   content: "\f09a";
 }
 /* line 78, sass/typography/_copy.scss */
-address.contact a.googleplus:before {
+address.contact-details a.googleplus:before {
   content: "";
   display: inline-block;
   width: 1.5em;
@@ -1142,7 +1142,7 @@ address.contact a.googleplus:before {
   content: "\f0d5";
 }
 /* line 84, sass/typography/_copy.scss */
-address.contact a.twitter:before {
+address.contact-details a.twitter:before {
   content: "";
   display: inline-block;
   width: 1.5em;
@@ -1152,7 +1152,7 @@ address.contact a.twitter:before {
   content: "\f099";
 }
 /* line 90, sass/typography/_copy.scss */
-address.contact a.instagram:before {
+address.contact-details a.instagram:before {
   content: "";
   display: inline-block;
   width: 1.5em;
@@ -1162,7 +1162,7 @@ address.contact a.instagram:before {
   content: "\f16d";
 }
 /* line 96, sass/typography/_copy.scss */
-address.contact a.pinterest:before {
+address.contact-details a.pinterest:before {
   content: "";
   display: inline-block;
   width: 1.5em;
@@ -1172,7 +1172,7 @@ address.contact a.pinterest:before {
   content: "\f231";
 }
 /* line 102, sass/typography/_copy.scss */
-address.contact a.youtube:before {
+address.contact-details a.youtube:before {
   content: "";
   display: inline-block;
   width: 1.5em;
@@ -1182,7 +1182,7 @@ address.contact a.youtube:before {
   content: "\f167";
 }
 /* line 108, sass/typography/_copy.scss */
-address.contact a.linkedin:before {
+address.contact-details a.linkedin:before {
   content: "";
   display: inline-block;
   width: 1.5em;
@@ -2480,7 +2480,7 @@ a:hover, a:active {
 }
 
 /* line 46, sass/navigation/_links.scss */
-address.contact a.email {
+address.contact-details a.email {
   -ms-word-break: break-all;
   /* Be VERY careful with this, breaks normal words wh_erever */
   word-break: break-all;
