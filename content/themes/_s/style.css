@@ -2636,38 +2636,38 @@ address.contact a.email {
 /*--------------------------------------------------------------
 8.1 Global
 --------------------------------------------------------------*/
-/* line 4, sass/layout/_global.scss */
-#main .section > div, .site-footer .section > div {
+/* line 3, sass/layout/_global.scss */
+.section > div {
   max-width: 64em;
   margin-left: auto;
   margin-right: auto;
   width: 96%;
 }
 /* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-#main .section > div:after, .site-footer .section > div:after {
+.section > div:after {
   content: " ";
   display: block;
   clear: both;
 }
 
 @media (min-width: 64em) {
-  /* line 14, sass/layout/_global.scss */
-  #main .section-group > div, .site-footer .section-group > div {
+  /* line 11, sass/layout/_global.scss */
+  .section-group > div {
     max-width: 64em;
     margin-left: auto;
     margin-right: auto;
     width: 96%;
   }
   /* line 12, C:/Ruby193/lib/ruby/gems/1.9.1/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-  #main .section-group > div:after, .site-footer .section-group > div:after {
+  .section-group > div:after {
     content: " ";
     display: block;
     clear: both;
   }
 }
 @media (min-width: 64em) {
-  /* line 24, sass/layout/_global.scss */
-  #main .section-group > div .section > div, .site-footer .section-group > div .section > div {
+  /* line 19, sass/layout/_global.scss */
+  .section-group > div .section > div {
     max-width: none;
     width: auto;
   }
@@ -2705,34 +2705,36 @@ address.contact a.email {
   /* line 14, sass/layout/_header.scss */
   .site-header .site-branding .site-brand {
     display: table-cell;
-    width: 51.42857%;
+    width: 50%;
+    padding-right: 1.42857%;
   }
 }
-/* line 20, sass/layout/_header.scss */
+/* line 21, sass/layout/_header.scss */
 .site-header .site-branding .site-brand .site-logo {
   display: inline-block;
 }
-/* line 22, sass/layout/_header.scss */
+/* line 23, sass/layout/_header.scss */
 .site-header .site-branding .site-brand .site-logo img {
   width: auto;
   max-height: 6em;
   display: inline-block;
   vertical-align: bottom;
 }
-/* line 35, sass/layout/_header.scss */
+/* line 36, sass/layout/_header.scss */
 .site-header .site-branding .site-brand .site-description {
   margin: 0;
 }
 @media (min-width: 64em) {
-  /* line 41, sass/layout/_header.scss */
+  /* line 42, sass/layout/_header.scss */
   .site-header .site-branding .site-contact {
     display: table-cell;
-    width: 48.57143%;
+    width: 50%;
+    padding-left: 1.42857%;
     vertical-align: middle;
     text-align: right;
   }
 }
-/* line 51, sass/layout/_header.scss */
+/* line 53, sass/layout/_header.scss */
 .site-header .site-branding .site-contact .phone:before {
   content: "";
   display: inline-block;

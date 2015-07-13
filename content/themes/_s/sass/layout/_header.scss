@@ -14,7 +14,8 @@
 		.site-brand {
 			@include susy-breakpoint($breakpoint__medium) {
 				display: table-cell;	
-				width: span(6 wide);
+				width: 50%;
+				padding-right: gutters() / 2;
 			}
 
 			.site-logo {
@@ -41,7 +42,8 @@
 		.site-contact {
 			@include susy-breakpoint($breakpoint__medium) {
 				display: table-cell;
-				width: span(6);
+				width: 50%;
+				padding-left: gutters() / 2;
 				vertical-align: middle;
 				text-align: right;
 			}

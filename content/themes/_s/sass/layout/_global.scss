@@ -1,31 +1,25 @@
 .section {
 
 	> div {
-		#main &, .site-footer & {
-			@include container;
-			width: 96%;
-		}
+		@include container;
+		width: 96%;
 	}
 }
 
 .section-group {
 
 	> div {
-		#main &, .site-footer & {
-			@include susy-breakpoint($breakpoint__medium) {
-				@include container;
-				width: 96%;
-			}
+		@include susy-breakpoint($breakpoint__medium) {
+			@include container;
+			width: 96%;
 		}
 
 		.section {
 
 			> div {
-				#main &, .site-footer & {
-					@include susy-breakpoint($breakpoint__medium) {
-						max-width: none;
-						width: auto;
-					}
+				@include susy-breakpoint($breakpoint__medium) {
+					max-width: none;
+					width: auto;
 				}
 			}
 		}
