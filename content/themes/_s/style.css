@@ -1071,65 +1071,128 @@ address.contact ul {
   padding: 0;
   list-style-type: none;
 }
-/* line 37, sass/typography/_copy.scss */
-address.contact a:before {
+/* line 38, sass/typography/_copy.scss */
+address.contact a.phone:before {
   content: "";
   display: inline-block;
   width: 1.5em;
   margin: 0;
   font: normal normal normal 1em FontAwesome;
   text-align: center;
-}
-/* line 41, sass/typography/_copy.scss */
-address.contact a.phone:before {
   content: "\f095";
 }
-/* line 46, sass/typography/_copy.scss */
+/* line 44, sass/typography/_copy.scss */
 address.contact a.mobile:before {
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  margin: 0;
+  font: normal normal normal 1em FontAwesome;
+  text-align: center;
   content: "\f10b";
 }
-/* line 51, sass/typography/_copy.scss */
+/* line 50, sass/typography/_copy.scss */
 address.contact a.fax:before {
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  margin: 0;
+  font: normal normal normal 1em FontAwesome;
+  text-align: center;
   content: "\f1ac";
 }
 /* line 57, sass/typography/_copy.scss */
 address.contact a.email:before {
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  margin: 0;
+  font: normal normal normal 1em FontAwesome;
+  text-align: center;
   content: "\f0e0";
 }
-/* line 65, sass/typography/_copy.scss */
+/* line 66, sass/typography/_copy.scss */
 address.contact a.address:before {
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  margin: 0;
+  font: normal normal normal 1em FontAwesome;
+  text-align: center;
   content: "\f041";
 }
-/* line 70, sass/typography/_copy.scss */
+/* line 72, sass/typography/_copy.scss */
 address.contact a.facebook:before {
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  margin: 0;
+  font: normal normal normal 1em FontAwesome;
+  text-align: center;
   content: "\f09a";
 }
-/* line 75, sass/typography/_copy.scss */
+/* line 78, sass/typography/_copy.scss */
 address.contact a.googleplus:before {
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  margin: 0;
+  font: normal normal normal 1em FontAwesome;
+  text-align: center;
   content: "\f0d5";
 }
-/* line 80, sass/typography/_copy.scss */
+/* line 84, sass/typography/_copy.scss */
 address.contact a.twitter:before {
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  margin: 0;
+  font: normal normal normal 1em FontAwesome;
+  text-align: center;
   content: "\f099";
 }
-/* line 85, sass/typography/_copy.scss */
+/* line 90, sass/typography/_copy.scss */
 address.contact a.instagram:before {
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  margin: 0;
+  font: normal normal normal 1em FontAwesome;
+  text-align: center;
   content: "\f16d";
 }
-/* line 90, sass/typography/_copy.scss */
+/* line 96, sass/typography/_copy.scss */
 address.contact a.pinterest:before {
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  margin: 0;
+  font: normal normal normal 1em FontAwesome;
+  text-align: center;
   content: "\f231";
 }
-/* line 95, sass/typography/_copy.scss */
+/* line 102, sass/typography/_copy.scss */
 address.contact a.youtube:before {
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  margin: 0;
+  font: normal normal normal 1em FontAwesome;
+  text-align: center;
   content: "\f167";
 }
-/* line 100, sass/typography/_copy.scss */
+/* line 108, sass/typography/_copy.scss */
 address.contact a.linkedin:before {
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  margin: 0;
+  font: normal normal normal 1em FontAwesome;
+  text-align: center;
   content: "\f0e1";
 }
 
-/* line 108, sass/typography/_copy.scss */
+/* line 117, sass/typography/_copy.scss */
 pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
@@ -1140,24 +1203,24 @@ pre {
   padding: 1.5em;
 }
 
-/* line 118, sass/typography/_copy.scss */
+/* line 127, sass/typography/_copy.scss */
 code, kbd, tt, var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 
-/* line 122, sass/typography/_copy.scss */
+/* line 131, sass/typography/_copy.scss */
 abbr, acronym {
   border-bottom: 1px dotted #666;
   cursor: help;
 }
 
-/* line 127, sass/typography/_copy.scss */
+/* line 136, sass/typography/_copy.scss */
 mark, ins {
   background: #fff9c0;
   text-decoration: none;
 }
 
-/* line 132, sass/typography/_copy.scss */
+/* line 141, sass/typography/_copy.scss */
 big {
   font-size: 125%;
 }
