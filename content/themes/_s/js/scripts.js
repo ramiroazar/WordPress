@@ -41,11 +41,23 @@ jQuery(document).ready(function($) {
 					if (item.el.data('full')) {
 						item.src = item.el.data('full');
 					} else {
-						item.src = item.el.attr('src');						
+						item.src = item.el.attr('src');
 					}
 				}
 			}
 	   });
+	});
+
+/**
+ * object-fit polyfill
+ *
+ * @link https://github.com/anselmh/object-fit/
+ */
+
+	objectFit.polyfill({
+		selector: '.carousel img',
+		fittype: 'cover',
+		disableCrossDomain: 'true'
 	});
 
 });

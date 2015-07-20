@@ -978,6 +978,110 @@ img.mfp-img {
 }
 
 /*--------------------------------------------------------------
+1.3 object-fit polyfill
+--------------------------------------------------------------*/
+/*!
+ * Polyfill CSS object-fit
+ * http://helloanselm.com/object-fit
+ *
+ * @author: Anselm Hannemann <hello@anselm-hannemann.com>
+ * @author: Christian "Schepp" Schaefer <schaepp@gmx.de>
+ * @version: 0.3.4
+ *
+ */
+/* line 11, sass/modules/_polyfill.object-fit.scss */
+x-object-fit {
+  position: relative !important;
+  display: inline-block !important;
+}
+
+/* line 16, sass/modules/_polyfill.object-fit.scss */
+x-object-fit > .x-object-fit-taller,
+x-object-fit > .x-object-fit-wider {
+  position: absolute !important;
+  left: -100% !important;
+  right: -100% !important;
+  top: -100% !important;
+  bottom: -100% !important;
+  margin: auto !important;
+}
+
+/* line 26, sass/modules/_polyfill.object-fit.scss */
+.x-object-fit-none > .x-object-fit-taller,
+.x-object-fit-none > .x-object-fit-wider {
+  width: auto !important;
+  height: auto !important;
+}
+
+/* line 32, sass/modules/_polyfill.object-fit.scss */
+.x-object-fit-fill > .x-object-fit-taller,
+.x-object-fit-fill > .x-object-fit-wider {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* line 38, sass/modules/_polyfill.object-fit.scss */
+.x-object-fit-contain > .x-object-fit-taller {
+  width: auto !important;
+  height: 100% !important;
+}
+
+/* line 43, sass/modules/_polyfill.object-fit.scss */
+.x-object-fit-contain > .x-object-fit-wider {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* line 48, sass/modules/_polyfill.object-fit.scss */
+.x-object-fit-cover > .x-object-fit-taller,
+.x-object-fit-cover > .x-object-fit-wider {
+  max-width: none !important;
+  max-height: none !important;
+}
+
+/* line 54, sass/modules/_polyfill.object-fit.scss */
+.x-object-fit-cover > .x-object-fit-taller {
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+}
+
+/* line 60, sass/modules/_polyfill.object-fit.scss */
+.x-object-fit-cover > .x-object-fit-wider {
+  width: auto !important;
+  height: 100% !important;
+  max-width: none !important;
+}
+
+/* line 66, sass/modules/_polyfill.object-fit.scss */
+.x-object-position-top > .x-object-fit-taller,
+.x-object-position-top > .x-object-fit-wider {
+  top: 0 !important;
+  bottom: auto !important;
+}
+
+/* line 72, sass/modules/_polyfill.object-fit.scss */
+.x-object-position-right > .x-object-fit-taller,
+.x-object-position-right > .x-object-fit-wider {
+  left: auto !important;
+  right: 0 !important;
+}
+
+/* line 78, sass/modules/_polyfill.object-fit.scss */
+.x-object-position-bottom > .x-object-fit-taller,
+.x-object-position-bottom > .x-object-fit-wider {
+  top: auto !important;
+  bottom: 0 !important;
+}
+
+/* line 84, sass/modules/_polyfill.object-fit.scss */
+.x-object-position-left > .x-object-fit-taller,
+.x-object-position-left > .x-object-fit-wider {
+  left: 0 !important;
+  right: auto !important;
+}
+
+/*--------------------------------------------------------------
 2.0 Typography
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -2890,22 +2994,19 @@ body.home #featured .carousel {
 body.home #featured .carousel figure {
   height: 30em;
 }
-/* line 100, sass/media/_carousels.scss */
-body.home #featured .carousel img {
-  position: absolute;
-  top: -100%;
-  bottom: -100%;
-  left: -100%;
-  right: -100%;
-  margin: auto;
-  height: auto;
-  width: auto;
-  min-width: 100%;
-  min-height: 100%;
-  max-width: none;
-  max-height: none;
+/* line 101, sass/media/_carousels.scss */
+body.home #featured .carousel x-object-fit {
+  width: 100%;
+  height: 100%;
 }
-/* line 121, sass/media/_carousels.scss */
+/* line 106, sass/media/_carousels.scss */
+body.home #featured .carousel img {
+  object-fit: cover;
+  -o-object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+/* line 131, sass/media/_carousels.scss */
 body.home #featured .carousel figcaption {
   position: relative;
   z-index: 2;
@@ -2922,7 +3023,7 @@ body.home #featured .carousel figcaption:after {
   display: block;
   clear: both;
 }
-/* line 129, sass/media/_carousels.scss */
+/* line 139, sass/media/_carousels.scss */
 body.home #featured .carousel figcaption > div {
   display: table-cell;
   vertical-align: middle;

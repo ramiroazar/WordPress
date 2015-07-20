@@ -127,7 +127,10 @@ function _s_scripts() {
 	// Load lightbox
 	wp_enqueue_script('lightbox', (get_template_directory_uri() . "/js/jquery.magnific-popup.min.js"), array('jquery'), '', true);
 
-	// Match height
+	// Load object-fit polyfill
+	wp_enqueue_script('object-fit', (get_template_directory_uri() . "/js/polyfill.object-fit.min.js"), array('jquery'), '', true);
+
+	// Load matchHeight
 	wp_enqueue_script('match-height', (get_template_directory_uri() . "/js/jquery.matchHeight-min.js"), array('jquery'), '', true);
 
 	// Custom scripts
@@ -275,9 +278,9 @@ require get_template_directory() . '/inc/jetpack.php';
 	   $context = $context;
    	$query_markup = "";
 		ob_start();
-			//get_template_part($markup); 
+			//get_template_part($markup);
 			include(locate_template($markup . '.php'));
-			$query_markup .= ob_get_contents();  
+			$query_markup .= ob_get_contents();
 		ob_end_clean();
 		return $query_markup;
    }
@@ -286,7 +289,7 @@ require get_template_directory() . '/inc/jetpack.php';
 
 	   // EXAMPLE USAGE:
 	   // [_s_query arguements="showposts=100&post_type=page&post_parent=453"]
-	   
+
 	   // Defaults
 	   extract(shortcode_atts(array(
 	      "arguements" => '',
@@ -302,9 +305,9 @@ require get_template_directory() . '/inc/jetpack.php';
 	   $context = "";
 	   $context = get_the_ID();
 
-	   // query is made               
+	   // query is made
 	   query_posts($arguements);
-	   
+
 	   // Reset and setup variables
 	   $output = '';
 
@@ -317,10 +320,10 @@ require get_template_directory() . '/inc/jetpack.php';
 		else :
 			$output .= _s_query_markup($markup, $context);
    	endif;
-	   
+
 	   wp_reset_query();
 	   return $output;
-	   
+
 	}
 	add_shortcode("_s_query", "_s_query");
 
@@ -328,11 +331,11 @@ require get_template_directory() . '/inc/jetpack.php';
 
 	function _s_contact($atts) {
 
-		$atts = shortcode_atts( 
+		$atts = shortcode_atts(
 			array(
 				'type' => false,
 				'markup' => true,
-			), 
+			),
 			$atts
 		);
 
@@ -353,7 +356,7 @@ require get_template_directory() . '/inc/jetpack.php';
 		$contact['youtube']		= get_theme_mod('youtube');
 		$contact['linkedin']	= get_theme_mod('linkedin');
 		$contact = array_filter($contact);
-	   
+
 	   // Reset and setup variables
 	   $output = '';
 
@@ -450,7 +453,7 @@ require get_template_directory() . '/inc/jetpack.php';
 
 		// Return output
 	   return $output;
-	   
+
 	}
 	add_shortcode("_s_contact", "_s_contact");
 
@@ -518,16 +521,16 @@ function _s_filter_gallery_img_atts( $atts, $attachment, $size ) {
 }
 add_filter( 'wp_get_attachment_image_attributes', '_s_filter_gallery_img_atts', 10, 3 );
 
-// Get attachment ids 
+// Get attachment ids
 
 function _s_gallery_ids($atts) {
 
-	$atts = shortcode_atts( 
+	$atts = shortcode_atts(
 		array(
 			'ids' => get_the_id(),
 			'gallery_total' => -1,
 			'image_total' => -1,
-		), 
+		),
 		$atts
 	);
 
@@ -553,10 +556,10 @@ function _s_gallery_ids($atts) {
 
 		$attachment_array = array();
 
-		while ($the_query_gallery->have_posts()) : $the_query_gallery->the_post(); 
+		while ($the_query_gallery->have_posts()) : $the_query_gallery->the_post();
 
 			$args_image = array(
-				'posts_per_page' => $atts['image_total'],	
+				'posts_per_page' => $atts['image_total'],
 				'post_mime_type' => 'image',
 				'post_parent' => get_the_ID(),
 				'post_type' => 'attachment',
@@ -565,7 +568,7 @@ function _s_gallery_ids($atts) {
 
 			$the_query_image = new WP_Query( $args_image );
 
-				while ($the_query_image->have_posts()) : $the_query_image->the_post(); 
+				while ($the_query_image->have_posts()) : $the_query_image->the_post();
 
 					array_push($attachment_array, get_the_id());
 
@@ -588,20 +591,20 @@ function _s_gallery_ids($atts) {
  */
 
 function _s_wpseo_register_extra_replacements() {
-	wpseo_register_var_replacement( 
-		'%%contactphone%%', 
+	wpseo_register_var_replacement(
+		'%%contactphone%%',
 		function () {
 			return do_shortcode( '[contact type="phone" markup="false"]' );
 		}
 	);
-	wpseo_register_var_replacement( 
-		'%%contactmobile%%', 
+	wpseo_register_var_replacement(
+		'%%contactmobile%%',
 		function () {
 			return do_shortcode( '[contact type="mobile" markup="false"]' );
 		}
 	);
-	wpseo_register_var_replacement( 
-		'%%contactemail%%', 
+	wpseo_register_var_replacement(
+		'%%contactemail%%',
 		function () {
 			return do_shortcode( '[contact type="email" markup="false"]' );
 		}
