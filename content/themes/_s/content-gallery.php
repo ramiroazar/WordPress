@@ -26,7 +26,7 @@
 			) );
 		?>
 
-		<?php echo do_shortcode("[gallery]"); ?>
+		<?php echo do_shortcode("[gallery ids='" . _s_gallery_ids(array('image_total' => 12)) . "' columns='6']"); ?>
 
 		<?php
 			wp_link_pages( array(

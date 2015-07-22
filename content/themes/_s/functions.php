@@ -564,6 +564,8 @@ function _s_gallery_ids($atts) {
 				'post_parent' => get_the_ID(),
 				'post_type' => 'attachment',
 				'post_status' => 'inherit',
+				'orderby' => 'ID',
+				'order' => 'ASC'
 			);
 
 			$the_query_image = new WP_Query( $args_image );
