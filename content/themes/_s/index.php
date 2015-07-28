@@ -13,6 +13,35 @@
 
 get_header(); ?>
 
+	<?php
+
+		// Query posts with 'standard' post format
+
+		$args = wp_parse_args($query_string);
+
+		query_posts(array(
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'post_format',
+          'terms' => array(
+						'post-format-aside',
+						'post-format-audio',
+						'post-format-chat',
+						'post-format-gallery',
+						'post-format-image',
+						'post-format-link',
+						'post-format-quote',
+						'post-format-status',
+						'post-format-video'
+          ),
+					'field' => 'slug',
+          'operator' => 'NOT IN',
+				),
+			),
+		) );
+
+	?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main" itemprop="mainContentOfPage">
 

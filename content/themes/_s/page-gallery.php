@@ -9,10 +9,10 @@ get_header(); ?>
 
 	<?php
 
-		// Query posts with 'gallery' post format or category
+		// Query posts with 'gallery' post format
 
 		$args = wp_parse_args($query_string);
-		 
+
 		query_posts(array(
 			'tax_query' => array(
 				'relation' => 'OR',
