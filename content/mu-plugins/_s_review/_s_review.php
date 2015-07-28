@@ -14,7 +14,7 @@
 
 function _s_review( $atts ) {
 
-	$atts = shortcode_atts( 
+	$atts = shortcode_atts(
 		array(
 			'id' 				=> null,
 			'limit' 			=> -1,
@@ -30,13 +30,13 @@ function _s_review( $atts ) {
 			'next' 			=> '<i class="fa fa-angle-right"></i>',
 			'interval'		=> 5000,
 			'transition' 	=> 'fade',
-		), 
+		),
 		$atts
 	);
 
 	$args = array(
-		'posts_per_page' => $atts['limit'], 
-		'orderby' => $atts['orderby'], 
+		'posts_per_page' => $atts['limit'],
+		'orderby' => $atts['orderby'],
 		'tax_query' => array(
 			'relation' => 'OR',
 			array(
@@ -74,7 +74,7 @@ function _s_review( $atts ) {
 				$return .= ($atts['next']) ? "data-next='" . $atts['next'] . "' " : "";
 				$return .= ($atts['interval']) ? "data-interval='" . $atts['interval'] . "' " : "";
 				$return .= ($atts['transition']) ? "data-transition='" . $atts['transition'] . "' " : "";
-			$return .= ">"; 
+			$return .= ">";
 
 		endif;
 
@@ -85,12 +85,12 @@ function _s_review( $atts ) {
 					if (in_the_loop()) :
 						$return .= wpautop(get_the_content());
 					else :
-						$return .= _s_excerpt($atts['words']);	
+						$return .= _s_excerpt($atts['words']);
 						if ($atts['link']) :
 							$return .= "<a href='" . $atts['link'] . "'>";
 								$return .= "Read More";
 							$return .= "</a>";
-						endif;		
+						endif;
 					endif;
 				$return .= "</div>";
 				$return .= "<footer>";
@@ -114,11 +114,11 @@ function _s_review( $atts ) {
 
 		if ($atts['carousel']) : $return.= "</div>"; endif;
 
-	endif; 
+	endif;
 
 	wp_reset_postdata();
 
 	return $return;
 }
 
-add_shortcode( '_s_review', '_s_review' );
+add_shortcode( 'review', '_s_review' );
