@@ -96,17 +96,17 @@ function _s_taxonomy_faq_init() {
 
 function _s_faq( $atts ) {
 
-	$atts = shortcode_atts( 
+	$atts = shortcode_atts(
 		array(
 			'limit' 		=> -1,
 			'questions'	=> true,
 			'answers'	=> true,
-		), 
+		),
 		$atts
 	);
 
 	$args = array(
-		'post_type' => 'faq', 
+		'post_type' => 'faq',
 		'posts_per_page' => $atts['limit'],
 		'orderby' => 'rand',
 	);
@@ -164,4 +164,4 @@ function _s_faq( $atts ) {
 	return $return;
 }
 
-add_shortcode( '_s_faq', '_s_faq' );
+add_shortcode( 'faq', '_s_faq' );
