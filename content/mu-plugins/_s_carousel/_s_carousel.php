@@ -22,7 +22,7 @@ function _s_carousel_register_scripts() {
 
     }
 }
- 
+
 function _s_carousel_register_styles() {
 
 	wp_enqueue_style('responsive-carousel.style', plugins_url("css/responsive-carousel.css", __FILE__));
@@ -122,7 +122,7 @@ function _s_taxonomy_carousel_init() {
 
 function _s_carousel( $atts ) {
 
-	$atts = shortcode_atts( 
+	$atts = shortcode_atts(
 		array(
 			"limit" 			=> null,
 			"category" 		=> null,
@@ -136,7 +136,7 @@ function _s_carousel( $atts ) {
 			'interval'		=> 5000,
 			'transition' 	=> 'fade',
 			'placeholder'	=> false,
-		), 
+		),
 		$atts
 	);
 
@@ -170,7 +170,7 @@ function _s_carousel( $atts ) {
 			$return .= ($atts['transition']) ? "data-transition='" . $atts['transition'] . "' " : "";
 		$return .= ">";
 
-		while ($the_query->have_posts()) : $the_query->the_post();		
+		while ($the_query->have_posts()) : $the_query->the_post();
 
 				$return .= "<figure>";
 
@@ -198,7 +198,7 @@ function _s_carousel( $atts ) {
 
 				$return .= "</figure>";
 
-		endwhile; 
+		endwhile;
 
 		$return .= "</div>";
 
@@ -209,4 +209,4 @@ function _s_carousel( $atts ) {
 	return $return;
 }
 
-add_shortcode( '_s_carousel', '_s_carousel' );
+add_shortcode( 'carousel', '_s_carousel' );
