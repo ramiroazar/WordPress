@@ -521,9 +521,9 @@ function _s_filter_gallery_img_atts( $atts, $attachment, $size ) {
 }
 add_filter( 'wp_get_attachment_image_attributes', '_s_filter_gallery_img_atts', 10, 3 );
 
-// Get attachment ids
+// Get attachment image ids
 
-function _s_gallery_ids($atts) {
+function _s_attachment_image_ids($atts) {
 
 	$atts = shortcode_atts(
 		array(
@@ -535,6 +535,7 @@ function _s_gallery_ids($atts) {
 	);
 
 	$args_gallery = array(
+		'post_type' => array('post', 'page'),
 		'post__in' => explode(',', $atts['ids']),
 		'posts_per_page' => $atts['gallery_total'],
 		'tax_query' => array(
@@ -577,6 +578,68 @@ function _s_gallery_ids($atts) {
 				endwhile;
 
 				wp_reset_postdata();
+
+		endwhile;
+
+	wp_reset_postdata();
+
+	return implode(',', $attachment_array);
+}
+
+// Get gallery image ids
+
+function _s_gallery_image_ids($atts) {
+
+	$atts = shortcode_atts(
+		array(
+			'ids' => get_the_id(),
+			'gallery_total' => -1,
+			'image_total' => -1,
+		),
+		$atts
+	);
+
+	$args_gallery = array(
+		'post__in' => explode(',', $atts['ids']),
+		'posts_per_page' => $atts['gallery_total'],
+		'tax_query' => array(
+			'relation' => 'OR',
+			array(
+				'taxonomy' => 'post_format',
+				'terms' => array('post-format-gallery'),
+				'field' => 'slug',
+			),
+			array(
+				'taxonomy' => 'category',
+				'terms' => array('gallery'),
+				'field' => 'slug',
+			),
+		),
+	);
+
+	$the_query_gallery = new WP_Query( $args_gallery );
+
+		$attachment_array = array();
+
+		while ($the_query_gallery->have_posts()) : $the_query_gallery->the_post();
+
+			if ( get_post_gallery() ) :
+
+				$gallery = get_post_gallery( get_the_ID(), false );
+
+				$gallery_image_ids = explode(",", $gallery['ids']);
+
+				$c = 0;
+
+				foreach( $gallery_image_ids AS $gallery_image_id ) :
+
+					array_push($attachment_array, $gallery_image_id);
+
+					if (++$c == $atts['image_total']) break;
+
+				endforeach;
+
+			endif;
 
 		endwhile;
 
