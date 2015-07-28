@@ -12,56 +12,60 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
-		<section class="section-group">
+		<section>
 
-			<div>
+			<div class="section-group">
 
-				<h2 class="footer-title"><?php _e( 'Footer', '_s' ); ?></h2>
+				<div>
 
-				<nav id="site-sitemap" class="site-sitemap section" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<h2 class="footer-title"><?php _e( 'Footer', '_s' ); ?></h2>
 
-					<div>
+					<nav id="site-sitemap" class="site-sitemap section" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 
-						<h3 class="section-title"><?php _e( 'Sitemap', '_s' ); ?></h3>
+						<div>
 
-						<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'secondary-menu' ) ); ?>
-					</div>
+							<h3 class="section-title"><?php _e( 'Sitemap', '_s' ); ?></h3>
 
-				</nav><!-- .site-sitemap -->
+							<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'secondary-menu' ) ); ?>
+						</div>
 
-				<nav id="site-sitemap-featured" class="site-sitemap-featured section" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					</nav><!-- .site-sitemap -->
 
-					<div>
+					<nav id="site-sitemap-featured" class="site-sitemap-featured section" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 
-						<h3 class="section-title"><?php _e( 'Sitemap Featured', '_s' ); ?></h3>
+						<div>
 
-						<?php wp_nav_menu( array( 'theme_location' => 'tertiary', 'menu_id' => 'tertiary-menu' ) ); ?>
+							<h3 class="section-title"><?php _e( 'Sitemap Featured', '_s' ); ?></h3>
 
-					</div>
+							<?php wp_nav_menu( array( 'theme_location' => 'tertiary', 'menu_id' => 'tertiary-menu' ) ); ?>
 
-				</nav><!-- .site-sitemap-featured -->
+						</div>
 
-				<div class="site-contact section">
+					</nav><!-- .site-sitemap-featured -->
 
-					<div>
+					<div class="site-contact section">
 
-						<h3 class="section-title"><?php _e( 'Contact Details', '_s' ); ?></h3>
+						<div>
 
-						<?php get_template_part( 'partials/contact' ); ?>
-						
-						<?php if (!is_page('contact')) : ?>
+							<h3 class="section-title"><?php _e( 'Contact Details', '_s' ); ?></h3>
 
-							<a href="<?php echo get_the_permalink(get_theme_mod('page_display_contact')); ?>" id="form-contact-toggle" class="toggle-lightbox" data-mfp-src="#form-contact"><?php _e( 'Contact', '_s' ); ?></a>
+							<?php get_template_part( 'partials/contact' ); ?>
 
-							<div id="form-contact" class="mfp-hide">
-								<?php echo do_shortcode("[contact-form-7 id='1']"); ?>
-							</div>
+							<?php if (!is_page('contact')) : ?>
 
-						<?php endif; ?>
+								<a href="<?php echo get_the_permalink(get_theme_mod('page_display_contact')); ?>" id="form-contact-toggle" class="toggle-lightbox" data-mfp-src="#form-contact"><?php _e( 'Contact', '_s' ); ?></a>
 
-					</div>
+								<div id="form-contact" class="mfp-hide">
+									<?php echo do_shortcode("[contact-form-7 id='1']"); ?>
+								</div>
 
-				</div><!-- .site-contact -->
+							<?php endif; ?>
+
+						</div>
+
+					</div><!-- .site-contact -->
+
+				</div>
 
 			</div><!-- .section-group -->
 
@@ -74,12 +78,12 @@
 				<p class="source-org copyright">
 
 					<span class="copyrightMark">
-						&copy; 
-					</span> 
+						&copy;
+					</span>
 
 					<span itemprop="copyrightYear">
 						<?php echo date('Y'); ?>
-					</span> 
+					</span>
 
 					<span itemprop="copyrightHolder" itemscope itemtype="http://schema.org/Organization">
 						<span itemprop="name">
@@ -88,8 +92,8 @@
 					</span>
 
 					<?php printf(
-						__( 'Website Designed & Developed by %2$s.', '_s' ), 
-						'_s', 
+						__( 'Website Designed & Developed by %2$s.', '_s' ),
+						'_s',
 						'<span itemscope itemtype="http://schema.org/Organization"><span itemprop="name"><a href="http://www.insightdigital.com.au" rel="designer" itemprop="url">Insight Digital Marketing</a></span></span>'
 					); ?>
 
