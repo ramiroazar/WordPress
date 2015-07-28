@@ -16,7 +16,7 @@ get_header(); ?>
 
 					<h2 class="section-title"><?php _e( 'Featured', '_s' ); ?></h2>
 
-					<?php echo do_shortcode("[_s_carousel placeholder='true']"); ?>
+					<?php echo do_shortcode("[carousel placeholder='true']"); ?>
 
 				</div>
 
@@ -37,7 +37,7 @@ get_header(); ?>
 					</div>
 
 				</section><!-- .section -->
-				
+
 			<?php endwhile; // end of the loop. ?>
 
 			<section id="services" class="section">
@@ -58,7 +58,7 @@ get_header(); ?>
 
 					<h2 class="section-title"><?php _e( 'Associations', '_s' ); ?></h2>
 
-					<?php echo do_shortcode("[_s_carousel placeholder='true']"); ?>
+					<?php echo do_shortcode("[carousel placeholder='true']"); ?>
 
 				</div>
 
@@ -76,7 +76,7 @@ get_header(); ?>
 
 							<?php // echo _s_review(array('limit' => 2, 'carousel' => true)); ?>
 
-							<?php echo do_shortcode("[_s_review limit='2' carousel='true']"); ?>
+							<?php echo do_shortcode("[review limit='2' carousel='true']"); ?>
 
 							<?php // echo _s_query(array('arguements' => 'pagename=reviews', 'markup' => 'partials/page')); ?>
 
