@@ -16,7 +16,7 @@ function _s_map_register_scripts() {
 
     }
 }
- 
+
 function _s_map_register_styles() {
 
 	//wp_enqueue_style('_s-responsive-carousel.style', plugins_url("css/responsive-carousel.css", __FILE__));
@@ -146,14 +146,14 @@ function _s_cmb2_map( array $meta_boxes ) {
 
 function _s_map( $atts ) {
 
-	$atts = shortcode_atts( 
+	$atts = shortcode_atts(
 		array(
 			'id' 				=> null,
 			'zoom'			=> 10,
 			'scrollwheel'	=> false,
 			'width'	=> '320px',
 			'height'	=> '320px',
-		), 
+		),
 		$atts
 	);
 
@@ -205,9 +205,9 @@ function _s_map( $atts ) {
 						$location_metadata_array = array();
 						// Push metadata into array
 						array_push(
-							$location_metadata_array, 
-							$location['location_information'], 
-							$location['location_coordinates']['latitude'], 
+							$location_metadata_array,
+							$location['location_information'],
+							$location['location_coordinates']['latitude'],
 							$location['location_coordinates']['longitude']
 						);
 						// Push array for each into overarching array to create a 2 dimensional array.
@@ -221,9 +221,9 @@ function _s_map( $atts ) {
 
 				endif;
 
-			endwhile; 
+			endwhile;
 
-		endif; 
+		endif;
 
 		wp_reset_query();
 
@@ -232,4 +232,4 @@ function _s_map( $atts ) {
 	return $return;
 }
 
-add_shortcode( '_s_map', '_s_map' );
+add_shortcode( 'map', '_s_map' );
