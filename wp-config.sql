@@ -79,7 +79,7 @@ SET option_value = CASE option_name
 	WHEN 'home' THEN 'http://[{_s_url}]'
 	WHEN 'default_comment_status' THEN 'closed'
 	WHEN 'permalink_structure' THEN '/%postname%/'
-	WHEN 'active_plugins' THEN 'a:8:{i:0;s:32:"cmb2-map-field/cmb-field-map.php";i:1;s:13:"cmb2/init.php";i:2;s:36:"contact-form-7-honeypot/honeypot.php";i:3;s:36:"contact-form-7/wp-contact-form-7.php";i:4;s:36:"google-sitemap-generator/sitemap.php";i:5;s:47:"really-simple-captcha/really-simple-captcha.php";i:6;s:53:"ricg-responsive-images/wp-tevko-responsive-images.php";i:7;s:24:"wordpress-seo/wp-seo.php";}'
+	WHEN 'active_plugins' THEN 'a:7:{i:0;s:32:"cmb2-map-field/cmb-field-map.php";i:1;s:13:"cmb2/init.php";i:2;s:36:"contact-form-7-honeypot/honeypot.php";i:3;s:36:"contact-form-7/wp-contact-form-7.php";i:5;s:47:"really-simple-captcha/really-simple-captcha.php";i:6;s:53:"ricg-responsive-images/wp-tevko-responsive-images.php";i:7;s:24:"wordpress-seo/wp-seo.php";}'
 	WHEN 'template' THEN '[{_s_theme}]'
 	WHEN 'stylesheet' THEN '[{_s_theme}]'
 	WHEN 'uploads_use_yearmonth_folders' THEN 'no'
