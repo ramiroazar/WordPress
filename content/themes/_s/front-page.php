@@ -16,7 +16,7 @@ get_header(); ?>
 
 					<h2 class="section-title"><?php _e( 'Featured', '_s' ); ?></h2>
 
-					<?php echo do_shortcode("[carousel placeholder='true']"); ?>
+					<?php echo do_shortcode("[carousel category='front-page' placeholder='true']"); ?>
 
 				</div>
 
@@ -58,7 +58,7 @@ get_header(); ?>
 
 					<h2 class="section-title"><?php _e( 'Associations', '_s' ); ?></h2>
 
-					<?php echo do_shortcode("[carousel placeholder='true']"); ?>
+					<?php echo do_shortcode("[carousel category='associations' placeholder='true']"); ?>
 
 				</div>
 
