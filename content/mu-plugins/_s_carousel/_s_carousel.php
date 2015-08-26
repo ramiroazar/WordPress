@@ -188,7 +188,7 @@ function _s_carousel( $atts ) {
 
 								$return .= ($atts['title'] === true) ? "<div class='figure-title'>" . get_the_title() . "</div>" : "";
 
-								$return .= ($atts['content'] === true) ? "<div class='figure-content'>" . wpautop(get_the_content()) . "</div>" : "";
+								$return .= ($atts['content'] === true) ? "<div class='figure-content'>" . wpautop(do_shortcode(get_the_content())) . "</div>" : "";
 
 							$return .= "</div>";
 
