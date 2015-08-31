@@ -1161,21 +1161,21 @@ blockquote.review, q.review {
   margin: 1.5em 0;
 }
 
-/* line 22, sass/typography/_copy.scss */
+/* line 26, sass/typography/_copy.scss */
 blockquote {
   margin: 1.5em;
 }
 
-/* line 26, sass/typography/_copy.scss */
+/* line 30, sass/typography/_copy.scss */
 address {
   margin: 0 0 1.5em;
 }
-/* line 31, sass/typography/_copy.scss */
+/* line 35, sass/typography/_copy.scss */
 address.contact-details ul {
   padding: 0;
   list-style-type: none;
 }
-/* line 38, sass/typography/_copy.scss */
+/* line 42, sass/typography/_copy.scss */
 address.contact-details a.phone:before {
   content: "";
   display: inline-block;
@@ -1185,7 +1185,7 @@ address.contact-details a.phone:before {
   text-align: center;
   content: "\f095";
 }
-/* line 44, sass/typography/_copy.scss */
+/* line 48, sass/typography/_copy.scss */
 address.contact-details a.mobile:before {
   content: "";
   display: inline-block;
@@ -1195,7 +1195,7 @@ address.contact-details a.mobile:before {
   text-align: center;
   content: "\f10b";
 }
-/* line 50, sass/typography/_copy.scss */
+/* line 54, sass/typography/_copy.scss */
 address.contact-details a.fax:before {
   content: "";
   display: inline-block;
@@ -1205,7 +1205,7 @@ address.contact-details a.fax:before {
   text-align: center;
   content: "\f1ac";
 }
-/* line 57, sass/typography/_copy.scss */
+/* line 61, sass/typography/_copy.scss */
 address.contact-details a.email:before {
   content: "";
   display: inline-block;
@@ -1215,7 +1215,7 @@ address.contact-details a.email:before {
   text-align: center;
   content: "\f0e0";
 }
-/* line 66, sass/typography/_copy.scss */
+/* line 70, sass/typography/_copy.scss */
 address.contact-details a.address:before {
   content: "";
   display: inline-block;
@@ -1225,7 +1225,7 @@ address.contact-details a.address:before {
   text-align: center;
   content: "\f041";
 }
-/* line 72, sass/typography/_copy.scss */
+/* line 76, sass/typography/_copy.scss */
 address.contact-details a.facebook:before {
   content: "";
   display: inline-block;
@@ -1235,7 +1235,7 @@ address.contact-details a.facebook:before {
   text-align: center;
   content: "\f09a";
 }
-/* line 78, sass/typography/_copy.scss */
+/* line 82, sass/typography/_copy.scss */
 address.contact-details a.googleplus:before {
   content: "";
   display: inline-block;
@@ -1245,7 +1245,7 @@ address.contact-details a.googleplus:before {
   text-align: center;
   content: "\f0d5";
 }
-/* line 84, sass/typography/_copy.scss */
+/* line 88, sass/typography/_copy.scss */
 address.contact-details a.twitter:before {
   content: "";
   display: inline-block;
@@ -1255,7 +1255,7 @@ address.contact-details a.twitter:before {
   text-align: center;
   content: "\f099";
 }
-/* line 90, sass/typography/_copy.scss */
+/* line 94, sass/typography/_copy.scss */
 address.contact-details a.instagram:before {
   content: "";
   display: inline-block;
@@ -1265,7 +1265,7 @@ address.contact-details a.instagram:before {
   text-align: center;
   content: "\f16d";
 }
-/* line 96, sass/typography/_copy.scss */
+/* line 100, sass/typography/_copy.scss */
 address.contact-details a.pinterest:before {
   content: "";
   display: inline-block;
@@ -1275,7 +1275,7 @@ address.contact-details a.pinterest:before {
   text-align: center;
   content: "\f231";
 }
-/* line 102, sass/typography/_copy.scss */
+/* line 106, sass/typography/_copy.scss */
 address.contact-details a.youtube:before {
   content: "";
   display: inline-block;
@@ -1285,7 +1285,7 @@ address.contact-details a.youtube:before {
   text-align: center;
   content: "\f167";
 }
-/* line 108, sass/typography/_copy.scss */
+/* line 112, sass/typography/_copy.scss */
 address.contact-details a.linkedin:before {
   content: "";
   display: inline-block;
@@ -1296,7 +1296,7 @@ address.contact-details a.linkedin:before {
   content: "\f0e1";
 }
 
-/* line 117, sass/typography/_copy.scss */
+/* line 121, sass/typography/_copy.scss */
 pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
@@ -1307,24 +1307,24 @@ pre {
   padding: 1.5em;
 }
 
-/* line 127, sass/typography/_copy.scss */
+/* line 131, sass/typography/_copy.scss */
 code, kbd, tt, var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 
-/* line 131, sass/typography/_copy.scss */
+/* line 135, sass/typography/_copy.scss */
 abbr, acronym {
   border-bottom: 1px dotted #666;
   cursor: help;
 }
 
-/* line 136, sass/typography/_copy.scss */
+/* line 140, sass/typography/_copy.scss */
 mark, ins {
   background: #fff9c0;
   text-decoration: none;
 }
 
-/* line 141, sass/typography/_copy.scss */
+/* line 145, sass/typography/_copy.scss */
 big {
   font-size: 125%;
 }
@@ -1334,7 +1334,7 @@ big {
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
 /* line 31, sass/typography/_accessibility.scss */
-.screen-reader-text, div.wpcf7 .screen-reader-response, div.wpcf7 label, .attachment.single .entry-header .entry-title, .site-header .site-branding .site-brand .site-title, .site-header .site-branding .site-brand .site-description, body.home #featured h2, .site-footer .footer-title {
+blockquote.review[itemprop=itemReviewed], q.review[itemprop=itemReviewed], .screen-reader-text, div.wpcf7 .screen-reader-response, div.wpcf7 label, .attachment.single .entry-header .entry-title, .site-header .site-branding .site-brand .site-title, .site-header .site-branding .site-brand .site-description, body.home #featured h2, .site-footer .footer-title {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
   height: 1px;
@@ -1342,7 +1342,7 @@ big {
   overflow: hidden;
 }
 /* line 10, sass/typography/_accessibility.scss */
-.screen-reader-text:hover, div.wpcf7 .screen-reader-response:hover, div.wpcf7 label:hover, .attachment.single .entry-header .entry-title:hover, .site-header .site-branding .site-brand .site-title:hover, .site-header .site-branding .site-brand .site-description:hover, body.home #featured h2:hover, .site-footer .footer-title:hover, .screen-reader-text:active, div.wpcf7 .screen-reader-response:active, div.wpcf7 label:active, .attachment.single .entry-header .entry-title:active, .site-header .site-branding .site-brand .site-title:active, .site-header .site-branding .site-brand .site-description:active, body.home #featured h2:active, .site-footer .footer-title:active, .screen-reader-text:focus, div.wpcf7 .screen-reader-response:focus, div.wpcf7 label:focus, .attachment.single .entry-header .entry-title:focus, .site-header .site-branding .site-brand .site-title:focus, .site-header .site-branding .site-brand .site-description:focus, body.home #featured h2:focus, .site-footer .footer-title:focus {
+blockquote.review[itemprop=itemReviewed]:hover, q.review[itemprop=itemReviewed]:hover, .screen-reader-text:hover, div.wpcf7 .screen-reader-response:hover, div.wpcf7 label:hover, .attachment.single .entry-header .entry-title:hover, .site-header .site-branding .site-brand .site-title:hover, .site-header .site-branding .site-brand .site-description:hover, body.home #featured h2:hover, .site-footer .footer-title:hover, blockquote.review[itemprop=itemReviewed]:active, q.review[itemprop=itemReviewed]:active, .screen-reader-text:active, div.wpcf7 .screen-reader-response:active, div.wpcf7 label:active, .attachment.single .entry-header .entry-title:active, .site-header .site-branding .site-brand .site-title:active, .site-header .site-branding .site-brand .site-description:active, body.home #featured h2:active, .site-footer .footer-title:active, blockquote.review[itemprop=itemReviewed]:focus, q.review[itemprop=itemReviewed]:focus, .screen-reader-text:focus, div.wpcf7 .screen-reader-response:focus, div.wpcf7 label:focus, .attachment.single .entry-header .entry-title:focus, .site-header .site-branding .site-brand .site-title:focus, .site-header .site-branding .site-brand .site-description:focus, body.home #featured h2:focus, .site-footer .footer-title:focus {
   background-color: #f1f1f1;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;

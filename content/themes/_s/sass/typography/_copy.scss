@@ -16,6 +16,10 @@ blockquote, q {
 
 	&.review {
 		margin: rhythm() 0;
+
+		&[itemprop=itemReviewed] {
+			@extend %sr-text;
+		}
 	}
 }
 
