@@ -11,6 +11,12 @@
 				@include bleed-x(2%);
 			}
 		}
+
+		.carousel-nav {
+			.prev, .next {
+				display: none;
+			}
+		}
 	}
 }
 

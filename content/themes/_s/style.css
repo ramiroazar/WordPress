@@ -3040,6 +3040,10 @@ body.home #featured .carousel figcaption > div {
     padding-left: 2%;
   }
 }
+/* line 16, sass/layout/_section.scss */
+#featured .carousel .carousel-nav .prev, #featured .carousel .carousel-nav .next {
+  display: none;
+}
 
 /* line 55, sass/media/_carousels.scss */
 body.home #associations .carousel figure {
@@ -3085,7 +3089,7 @@ body.home #associations .carousel figure .caption .caption-link {
 }
 
 @media (min-width: 64em) {
-  /* line 32, sass/layout/_section.scss */
+  /* line 38, sass/layout/_section.scss */
   body.home #reviews {
     width: 48.57143%;
     float: left;
@@ -3094,7 +3098,7 @@ body.home #associations .carousel figure .caption .caption-link {
 }
 
 @media (min-width: 64em) {
-  /* line 40, sass/layout/_section.scss */
+  /* line 46, sass/layout/_section.scss */
   body.home #galleries {
     width: 48.57143%;
     float: right;
