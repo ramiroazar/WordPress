@@ -344,7 +344,7 @@ require get_template_directory() . '/inc/jetpack.php';
 		$contact['phone']		= get_theme_mod('phone');
 		$contact['mobile']		= get_theme_mod('mobile');
 		$contact['fax']			= get_theme_mod('fax');
-		$contact['email']		= get_theme_mod('email') // get_bloginfo('admin_email');
+		$contact['email']		= get_theme_mod('email'); // get_bloginfo('admin_email');
 		$contact['name']			= get_bloginfo('name');
 		$contact['description']= get_bloginfo('description');
 		$contact['address']		= get_theme_mod('address');
