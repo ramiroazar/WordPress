@@ -57,6 +57,13 @@ function _s_customize_register( $wp_customize ) {
 		'priority'       => 35,
 	) );
 
+	$wp_customize->add_setting( 'email', array() );
+	$wp_customize->add_control( 'email', array(
+		'label'   => 'Email',
+		'section' => '_s_contact',
+		'type'    => 'text',
+	) );
+
 	$wp_customize->add_setting( 'phone', array() );
 	$wp_customize->add_control( 'phone', array(
 		'label'   => 'Phone',
