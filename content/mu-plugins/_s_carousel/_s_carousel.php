@@ -186,9 +186,9 @@ function _s_carousel( $atts ) {
 
 							$return .= "<div>";
 
-								$return .= ($atts['title'] === true) ? "<div class='figure-title'>" . get_the_title() . "</div>" : "";
+								$return .= ($atts['title'] === true) ? ((get_the_title() != "") ? "<div class='figure-title'>" . get_the_title() . "</div>" : "") : "";
 
-								$return .= ($atts['content'] === true) ? "<div class='figure-content'>" . wpautop(do_shortcode(get_the_content())) . "</div>" : "";
+								$return .= ($atts['content'] === true) ? ((get_the_content() != "") ? "<div class='figure-content'>" . wpautop(do_shortcode(get_the_content())) . "</div>" : "") : "";
 
 							$return .= "</div>";
 
