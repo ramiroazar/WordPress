@@ -10,38 +10,38 @@
 
         //
         // WordPress page types
-        //   
+        //
 
         // Is author page
-        if( is_author() ) :    
-            $type = 'ProfilePage';    
+        if( is_author() ) :
+            $type = 'ProfilePage';
 
         // Is search results page
-        elseif( is_search() ) :    
-            $type = 'SearchResultsPage';    
+        elseif( is_search() ) :
+            $type = 'SearchResultsPage';
 
         //
         // Theme page types
         //
 
         // Contact page ID
-        elseif(get_theme_mod('page_display_contact') && is_page( get_theme_mod('page_display_contact') ) ) :    
+        elseif(get_theme_mod('page_display_contact') && is_page( get_theme_mod('page_display_contact') ) ) :
             $type = 'ContactPage';
 
         // About page ID
-        elseif(get_theme_mod('page_display_about') && is_page( get_theme_mod('page_display_about') ) ) :    
+        elseif(get_theme_mod('page_display_about') && is_page( get_theme_mod('page_display_about') ) ) :
             $type = 'AboutPage';
 
         // FAQs page ID
-        elseif(get_theme_mod('page_display_faqs') && is_page( get_theme_mod('page_display_faqs') ) ) :    
+        elseif(get_theme_mod('page_display_faqs') && is_page( get_theme_mod('page_display_faqs') ) ) :
             $type = 'QAPage';
 
         // Gallery page ID
-        elseif(get_theme_mod('page_display_gallery') && is_page( get_theme_mod('page_display_gallery') ) ) :    
+        elseif(get_theme_mod('page_display_gallery') && is_page( get_theme_mod('page_display_gallery') ) ) :
             $type = 'ImageGallery';
 
         // add custom post types that describe a single item to this array
-        //elseif( is_singular( array( 'book', 'movie' ) ) ) :    
+        //elseif( is_singular( array( 'book', 'movie' ) ) ) :
         //  $type = 'ItemPage';
 
         //
@@ -49,21 +49,21 @@
         //
 
         // Is single product page
-        //elseif( is_product() ) :    
-        //  $type = 'ItemPage';
+        elseif( function_exists('is_product') && is_product() ) :
+         $type = 'ItemPage';
 
         // Is checkout page
-        //elseif( is_checkout() ) :    
-        //  $type = 'CheckoutPage';
+        elseif( function_exists('is_checkout') && is_checkout() ) :
+         $type = 'CheckoutPage';
 
         //
         // Default page type
         //
 
-        else :    
+        else :
           $type = 'WebPage';
 
-        endif;    
+        endif;
 
         return 'itemscope itemtype="' . $base . $type . '"';
 
