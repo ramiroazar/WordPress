@@ -1,7 +1,7 @@
 .site-navigation {
 
 	// Menu Toggle Button
-	
+
 	.menu-toggle {
 		display: block;
 		@include susy-breakpoint($breakpoint__medium) {
@@ -115,7 +115,7 @@
 
 				a {
 					@include susy-breakpoint($breakpoint__medium) {
-						width: 200px;
+						white-space: nowrap;
 					}
 				}
 			}
