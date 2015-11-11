@@ -90,7 +90,7 @@ get_header(); ?>
 
 							<h2 class="section-title"><?php _e( 'Gallery', '_s' ); ?></h2>
 
-							<?php // echo _s_query(array('arguements' => 'pagename=gallery', 'markup' => 'partials/page')); ?>
+							<?php echo _s_query(array('arguements' => 'post_type=post&posts_per_page=1&category_name=featured&post_format=post-format-gallery', 'markup' => 'partials/gallery')); ?>
 
 						</div>
 
