@@ -102,6 +102,7 @@ function _s_faq( $atts ) {
 			'questions'	=> true,
 			'answers'	=> true,
 			'order' => '',
+			'orderby' => '',
 		),
 		$atts
 	);
@@ -109,7 +110,8 @@ function _s_faq( $atts ) {
 	$args = array(
 		'post_type' => 'faq',
 		'posts_per_page' => $atts['limit'],
-		'orderby' => $atts['order'],
+		'order' => $atts['order'],
+		'orderby' => $atts['orderby'],
 	);
 
 	$return = '';
