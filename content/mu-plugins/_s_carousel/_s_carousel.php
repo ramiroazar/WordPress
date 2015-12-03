@@ -136,6 +136,7 @@ function _s_carousel( $atts ) {
 			'interval'		=> 5000,
 			'transition' 	=> 'fade',
 			'placeholder'	=> false,
+			'dynamic'	=> false,
 		),
 		$atts
 	);
@@ -162,8 +163,9 @@ function _s_carousel( $atts ) {
 	if ( $the_query->have_posts() ) :
 
 		$return .= "<div class='carousel' ";
-			$return .= ($atts['autoplay'] === true) ? "data-autoplay " : "";
-			$return .= ($atts['pagination'] === true) ? "data-paginate " : "";
+			$return .= ($atts['dynamic'] == true) ? "data-dynamic " : "";
+			$return .= ($atts['autoplay'] == true) ? "data-autoplay " : "";
+			$return .= ($atts['pagination'] == true) ? "data-paginate " : "";
 			$return .= ($atts['prev']) ? "data-prev='" . $atts['prev'] . "' " : "";
 			$return .= ($atts['next']) ? "data-next='" . $atts['next'] . "' " : "";
 			$return .= ($atts['interval']) ? "data-interval='" . $atts['interval'] . "' " : "";
