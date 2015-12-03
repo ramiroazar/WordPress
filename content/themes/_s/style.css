@@ -89,6 +89,10 @@ FontAwesome
 FontAwesome fixed width
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
+Hyperlink Color
+Changes color of hyperlink
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
 Triangles
 Generates CSS triangles in 8 directions
 --------------------------------------------------------------*/
@@ -1405,7 +1409,7 @@ body {
   background-size: 100% 1.5em;
   background-position: left top;
 }
-/* line 46, sass/mixins/_mixins.scss */
+/* line 50, sass/mixins/_mixins.scss */
 body:before {
   content: "";
   position: fixed;
@@ -3071,7 +3075,7 @@ body.home #associations .carousel figure {
     float: left;
     margin-right: 2.85714%;
   }
-  /* line 27, sass/mixins/_mixins.scss */
+  /* line 29, sass/mixins/_mixins.scss */
   body.home #associations .carousel figure:nth-of-type(2n) {
     float: right;
     margin-right: 0;
@@ -3084,7 +3088,7 @@ body.home #associations .carousel figure {
     float: left;
     margin-right: 2.85714%;
   }
-  /* line 27, sass/mixins/_mixins.scss */
+  /* line 29, sass/mixins/_mixins.scss */
   body.home #associations .carousel figure:nth-of-type(4n) {
     float: right;
     margin-right: 0;

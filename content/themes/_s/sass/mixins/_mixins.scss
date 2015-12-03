@@ -2,6 +2,7 @@
 Center block
 Centers element horizontally
 --------------------------------------------------------------*/
+
 @mixin center-block {
 	display: block;
 	margin-left: auto;
@@ -12,6 +13,7 @@ Centers element horizontally
 Span Per Row
 Spans columns accordiong to total columns per row
 --------------------------------------------------------------*/
+
 @mixin span-per-row($columns_per_row, $columns_total: susy-get(columns), $last: false) {
 
 	$span: $columns_total / $columns_per_row;
@@ -33,17 +35,19 @@ Spans columns accordiong to total columns per row
 Padding Center
 Centers element content with padding
 --------------------------------------------------------------*/
+
 @mixin padding-center {
 	width: 100%;
-	padding: 0 calc(50% - (#{susy-get(container)} / 2));	
+	padding: 0 calc(50% - (#{susy-get(container)} / 2));
 }
 
 /*--------------------------------------------------------------
 Grid Background
 Generates pseudo element with gradient background
 --------------------------------------------------------------*/
+
 @mixin column-grid-background {
-	&:before {  
+	&:before {
 		content: "";
 		position: fixed;
 		z-index: -1;
@@ -86,7 +90,25 @@ FontAwesome fixed width
 }
 
 /*--------------------------------------------------------------
+Hyperlink Color
+Changes color of hyperlink
+--------------------------------------------------------------*/
+
+@mixin hyperlink-color($hyperlink-color-default: $color__brand-one, $hyperlink-color-state: $color__brand-two) {
+	color: $hyperlink-color-default;
+
+	&:visited {
+		color: $hyperlink-color-default;
+	}
+
+	&:hover, &:focus {
+		color: $hyperlink-color-state;
+	}
+}
+
+/*--------------------------------------------------------------
 Triangles
 Generates CSS triangles in 8 directions
 --------------------------------------------------------------*/
+
 @import "triangles"
