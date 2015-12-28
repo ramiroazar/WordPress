@@ -1520,6 +1520,7 @@ input[type="password"],
 input[type="search"],
 input[type="number"],
 input[type="tel"],
+select,
 textarea {
   max-width: 100%;
   border: 1px solid #ccc;
@@ -1530,7 +1531,7 @@ textarea {
   line-height: 1.5em;
   color: #666;
 }
-/* line 22, sass/forms/_fields.scss */
+/* line 23, sass/forms/_fields.scss */
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -1538,11 +1539,12 @@ input[type="password"]:focus,
 input[type="search"]:focus,
 input[type="number"]:focus,
 input[type="tel"]:focus,
+select:focus,
 textarea:focus {
   color: #111;
 }
 
-/* line 27, sass/forms/_fields.scss */
+/* line 28, sass/forms/_fields.scss */
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -1550,11 +1552,12 @@ input[type="password"],
 input[type="search"],
 input[type="number"],
 input[type="tel"],
+select,
 textarea {
   padding: 0.6875em;
 }
 
-/* line 38, sass/forms/_fields.scss */
+/* line 40, sass/forms/_fields.scss */
 textarea {
   display: block;
   width: 100%;
@@ -1563,11 +1566,13 @@ textarea {
 /*--------------------------------------------------------------
 4.2 Button
 --------------------------------------------------------------*/
-/* line 10, sass/forms/_buttons.scss */
+/* line 11, sass/forms/_buttons.scss */
 button,
+a[role=button],
 input[type="button"],
 input[type="reset"],
 input[type="submit"], #form-contact-toggle {
+  display: inline-block;
   padding: 0.75em;
   border: 0;
   -moz-border-radius: 5px;

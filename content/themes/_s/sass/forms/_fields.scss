@@ -12,6 +12,7 @@ input[type="password"],
 input[type="search"],
 input[type="number"],
 input[type="tel"],
+select,
 textarea {
 	max-width: 100%;
 	border: 1px solid $color__border-input;
@@ -31,6 +32,7 @@ input[type="password"],
 input[type="search"],
 input[type="number"],
 input[type="tel"],
+select,
 textarea {
 	padding: rhythm($lines: .5, $offset: 1px);
 }

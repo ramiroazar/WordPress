@@ -1,4 +1,5 @@
 @mixin button {
+	display: inline-block;
 	padding: rhythm(.5);
 	border: 0;
 	@include border-radius;
@@ -12,6 +13,7 @@
 }
 
 button,
+a[role=button],
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
