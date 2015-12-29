@@ -32,8 +32,6 @@ get_header(); ?>
 
 						<?php the_content(); ?>
 
-						<?php // get_template_part( 'content', 'page' ); ?>
-
 					</div>
 
 				</section><!-- .section -->
@@ -51,54 +49,6 @@ get_header(); ?>
 				</div>
 
 			</section><!-- .section -->
-
-			<section id="associations" class="section">
-
-				<div>
-
-					<h2 class="section-title"><?php _e( 'Associations', '_s' ); ?></h2>
-
-					<?php echo do_shortcode("[carousel category='associations' placeholder='true' dynamic='true']"); ?>
-
-				</div>
-
-			</section><!-- .section -->
-
-			<div class="section-group">
-
-				<div>
-
-					<section id="reviews" class="section">
-
-						<div>
-
-							<h2 class="section-title"><?php _e( 'Reviews', '_s' ); ?></h2>
-
-							<?php // echo _s_review(array('limit' => 2, 'carousel' => true)); ?>
-
-							<?php echo do_shortcode("[review limit='2' carousel='true']"); ?>
-
-							<?php // echo _s_query(array('arguements' => 'pagename=reviews', 'markup' => 'partials/page')); ?>
-
-						</div>
-
-					</section><!-- .section -->
-
-					<section id="galleries" class="section">
-
-						<div>
-
-							<h2 class="section-title"><?php _e( 'Gallery', '_s' ); ?></h2>
-
-							<?php echo _s_query(array('arguements' => 'post_type=post&posts_per_page=1&category_name=featured&post_format=post-format-gallery', 'markup' => 'partials/gallery')); ?>
-
-						</div>
-
-					</section><!-- .section -->
-
-				</div>
-
-			</div><!-- .section-group -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

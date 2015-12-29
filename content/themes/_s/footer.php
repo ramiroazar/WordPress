@@ -14,11 +14,55 @@
 
 		<section>
 
+			<h2 class="footer-title"><?php _e( 'Footer', '_s' ); ?></h2>
+
+			<section id="associations" class="section">
+
+				<div>
+
+					<h2 class="section-title"><?php _e( 'Associations', '_s' ); ?></h2>
+
+					<?php echo do_shortcode("[carousel category='associations' placeholder='true' dynamic='true']"); ?>
+
+				</div>
+
+			</section><!-- .section -->
+
 			<div class="section-group">
 
 				<div>
 
-					<h2 class="footer-title"><?php _e( 'Footer', '_s' ); ?></h2>
+					<section id="reviews" class="section">
+
+						<div>
+
+							<h2 class="section-title"><?php _e( 'Reviews', '_s' ); ?></h2>
+
+							<?php echo do_shortcode("[review limit='2' carousel='true']"); ?>
+
+						</div>
+
+					</section><!-- .section -->
+
+					<section id="galleries" class="section">
+
+						<div>
+
+							<h2 class="section-title"><?php _e( 'Gallery', '_s' ); ?></h2>
+
+							<?php echo _s_query(array('arguements' => 'post_type=post&posts_per_page=1&category_name=featured&post_format=post-format-gallery', 'markup' => 'partials/gallery')); ?>
+
+						</div>
+
+					</section><!-- .section -->
+
+				</div>
+
+			</div><!-- .section-group -->
+
+			<div class="section-group">
+
+				<div>
 
 					<nav id="site-sitemap" class="site-sitemap section" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 
@@ -29,7 +73,7 @@
 							<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'secondary-menu' ) ); ?>
 						</div>
 
-					</nav><!-- .site-sitemap -->
+					</nav><!-- .section -->
 
 					<nav id="site-sitemap-featured" class="site-sitemap-featured section" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 
@@ -41,9 +85,9 @@
 
 						</div>
 
-					</nav><!-- .site-sitemap-featured -->
+					</nav><!-- .section -->
 
-					<div class="site-contact section">
+					<section class="site-contact section">
 
 						<div>
 
@@ -63,7 +107,7 @@
 
 						</div>
 
-					</div><!-- .site-contact -->
+					</section><!-- .section -->
 
 				</div>
 

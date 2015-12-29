@@ -3004,38 +3004,41 @@ body.home #featured .carousel figcaption > div {
   display: none;
 }
 
+/*--------------------------------------------------------------
+8.5 Footer
+--------------------------------------------------------------*/
 /* line 55, sass/media/_carousels.scss */
-body.home #associations .carousel figure {
+.site-footer #associations .carousel figure {
   position: relative;
 }
 @media (min-width: 30em) and (max-width: 48em) {
   /* line 55, sass/media/_carousels.scss */
-  body.home #associations .carousel figure {
+  .site-footer #associations .carousel figure {
     width: 48.57143%;
     float: left;
     margin-right: 2.85714%;
   }
   /* line 29, sass/mixins/_mixins.scss */
-  body.home #associations .carousel figure:nth-of-type(2n) {
+  .site-footer #associations .carousel figure:nth-of-type(2n) {
     float: right;
     margin-right: 0;
   }
 }
 @media (min-width: 48em) {
   /* line 55, sass/media/_carousels.scss */
-  body.home #associations .carousel figure {
+  .site-footer #associations .carousel figure {
     width: 22.85714%;
     float: left;
     margin-right: 2.85714%;
   }
   /* line 29, sass/mixins/_mixins.scss */
-  body.home #associations .carousel figure:nth-of-type(4n) {
+  .site-footer #associations .carousel figure:nth-of-type(4n) {
     float: right;
     margin-right: 0;
   }
 }
 /* line 68, sass/media/_carousels.scss */
-body.home #associations .carousel figure:hover .caption .caption-link {
+.site-footer #associations .carousel figure:hover .caption .caption-link {
   position: absolute;
   top: 0;
   display: block;
@@ -3043,33 +3046,27 @@ body.home #associations .carousel figure:hover .caption .caption-link {
   height: 100%;
 }
 /* line 79, sass/media/_carousels.scss */
-body.home #associations .carousel figure .caption .caption-link {
+.site-footer #associations .carousel figure .caption .caption-link {
   display: none;
 }
-
 @media (min-width: 64em) {
-  /* line 38, sass/layout/_section.scss */
-  body.home #reviews {
+  /* line 13, sass/layout/_footer.scss */
+  .site-footer #reviews {
     width: 48.57143%;
     float: left;
     margin-right: 2.85714%;
   }
 }
-
 @media (min-width: 64em) {
-  /* line 46, sass/layout/_section.scss */
-  body.home #galleries {
+  /* line 19, sass/layout/_footer.scss */
+  .site-footer #galleries {
     width: 48.57143%;
     float: right;
     margin-right: 0;
   }
 }
-
-/*--------------------------------------------------------------
-8.5 Footer
---------------------------------------------------------------*/
 @media (min-width: 64em) {
-  /* line 7, sass/layout/_footer.scss */
+  /* line 25, sass/layout/_footer.scss */
   .site-footer .site-sitemap, .site-footer .site-sitemap-featured {
     width: 31.42857%;
     float: left;
@@ -3077,7 +3074,7 @@ body.home #associations .carousel figure .caption .caption-link {
   }
 }
 @media (min-width: 64em) {
-  /* line 13, sass/layout/_footer.scss */
+  /* line 31, sass/layout/_footer.scss */
   .site-footer .site-contact {
     width: 31.42857%;
     float: right;

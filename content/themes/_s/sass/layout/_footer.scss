@@ -4,15 +4,33 @@
 		@extend %sr-text;
 	}
 
+	#associations {
+		.carousel {
+			@include carousel-multiple;
+		}
+	}
+
+	#reviews {
+		@include susy-breakpoint($breakpoint__medium) {
+			@include span(6);
+		}
+	}
+
+	#galleries {
+		@include susy-breakpoint($breakpoint__medium) {
+			@include span(6 last);
+		}
+	}
+
 	.site-sitemap, .site-sitemap-featured {
 		@include susy-breakpoint($breakpoint__medium) {
-			@include span(4);			
+			@include span(4);
 		}
 	}
 
 	.site-contact {
 		@include susy-breakpoint($breakpoint__medium) {
-			@include span(4 last);			
+			@include span(4 last);
 		}
 	}
 }
