@@ -1180,127 +1180,63 @@ address.contact-details ul {
   list-style-type: none;
 }
 /* line 42, sass/typography/_copy.scss */
-address.contact-details a.phone:before {
-  content: "";
+address.contact-details .contact-detail:before {
   display: inline-block;
   width: 1.5em;
   margin: 0;
   font: normal normal normal 1em FontAwesome;
   text-align: center;
+}
+/* line 47, sass/typography/_copy.scss */
+address.contact-details .contact-detail.phone:before {
   content: "\f095";
 }
-/* line 48, sass/typography/_copy.scss */
-address.contact-details a.mobile:before {
-  content: "";
-  display: inline-block;
-  width: 1.5em;
-  margin: 0;
-  font: normal normal normal 1em FontAwesome;
-  text-align: center;
+/* line 52, sass/typography/_copy.scss */
+address.contact-details .contact-detail.mobile:before {
   content: "\f10b";
 }
-/* line 54, sass/typography/_copy.scss */
-address.contact-details a.fax:before {
-  content: "";
-  display: inline-block;
-  width: 1.5em;
-  margin: 0;
-  font: normal normal normal 1em FontAwesome;
-  text-align: center;
+/* line 57, sass/typography/_copy.scss */
+address.contact-details .contact-detail.fax:before {
   content: "\f1ac";
 }
-/* line 61, sass/typography/_copy.scss */
-address.contact-details a.email:before {
-  content: "";
-  display: inline-block;
-  width: 1.5em;
-  margin: 0;
-  font: normal normal normal 1em FontAwesome;
-  text-align: center;
+/* line 63, sass/typography/_copy.scss */
+address.contact-details .contact-detail.email:before {
   content: "\f0e0";
 }
-/* line 70, sass/typography/_copy.scss */
-address.contact-details a.address:before {
-  content: "";
-  display: inline-block;
-  width: 1.5em;
-  margin: 0;
-  font: normal normal normal 1em FontAwesome;
-  text-align: center;
+/* line 71, sass/typography/_copy.scss */
+address.contact-details .contact-detail.address:before {
   content: "\f041";
 }
 /* line 76, sass/typography/_copy.scss */
-address.contact-details a.facebook:before {
-  content: "";
-  display: inline-block;
-  width: 1.5em;
-  margin: 0;
-  font: normal normal normal 1em FontAwesome;
-  text-align: center;
+address.contact-details .contact-detail.facebook:before {
   content: "\f09a";
 }
-/* line 82, sass/typography/_copy.scss */
-address.contact-details a.googleplus:before {
-  content: "";
-  display: inline-block;
-  width: 1.5em;
-  margin: 0;
-  font: normal normal normal 1em FontAwesome;
-  text-align: center;
+/* line 81, sass/typography/_copy.scss */
+address.contact-details .contact-detail.googleplus:before {
   content: "\f0d5";
 }
-/* line 88, sass/typography/_copy.scss */
-address.contact-details a.twitter:before {
-  content: "";
-  display: inline-block;
-  width: 1.5em;
-  margin: 0;
-  font: normal normal normal 1em FontAwesome;
-  text-align: center;
+/* line 86, sass/typography/_copy.scss */
+address.contact-details .contact-detail.twitter:before {
   content: "\f099";
 }
-/* line 94, sass/typography/_copy.scss */
-address.contact-details a.instagram:before {
-  content: "";
-  display: inline-block;
-  width: 1.5em;
-  margin: 0;
-  font: normal normal normal 1em FontAwesome;
-  text-align: center;
+/* line 91, sass/typography/_copy.scss */
+address.contact-details .contact-detail.instagram:before {
   content: "\f16d";
 }
-/* line 100, sass/typography/_copy.scss */
-address.contact-details a.pinterest:before {
-  content: "";
-  display: inline-block;
-  width: 1.5em;
-  margin: 0;
-  font: normal normal normal 1em FontAwesome;
-  text-align: center;
+/* line 96, sass/typography/_copy.scss */
+address.contact-details .contact-detail.pinterest:before {
   content: "\f231";
 }
-/* line 106, sass/typography/_copy.scss */
-address.contact-details a.youtube:before {
-  content: "";
-  display: inline-block;
-  width: 1.5em;
-  margin: 0;
-  font: normal normal normal 1em FontAwesome;
-  text-align: center;
+/* line 101, sass/typography/_copy.scss */
+address.contact-details .contact-detail.youtube:before {
   content: "\f167";
 }
-/* line 112, sass/typography/_copy.scss */
-address.contact-details a.linkedin:before {
-  content: "";
-  display: inline-block;
-  width: 1.5em;
-  margin: 0;
-  font: normal normal normal 1em FontAwesome;
-  text-align: center;
+/* line 106, sass/typography/_copy.scss */
+address.contact-details .contact-detail.linkedin:before {
   content: "\f0e1";
 }
 
-/* line 121, sass/typography/_copy.scss */
+/* line 114, sass/typography/_copy.scss */
 pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
@@ -1311,24 +1247,24 @@ pre {
   padding: 1.5em;
 }
 
-/* line 131, sass/typography/_copy.scss */
+/* line 124, sass/typography/_copy.scss */
 code, kbd, tt, var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 
-/* line 135, sass/typography/_copy.scss */
+/* line 128, sass/typography/_copy.scss */
 abbr, acronym {
   border-bottom: 1px dotted #666;
   cursor: help;
 }
 
-/* line 140, sass/typography/_copy.scss */
+/* line 133, sass/typography/_copy.scss */
 mark, ins {
   background: #fff9c0;
   text-decoration: none;
 }
 
-/* line 145, sass/typography/_copy.scss */
+/* line 138, sass/typography/_copy.scss */
 big {
   font-size: 125%;
 }
@@ -2598,7 +2534,7 @@ a:hover, a:active {
 }
 
 /* line 46, sass/navigation/_links.scss */
-address.contact-details a.email {
+address.contact-details .contact-detail.email {
   -ms-word-break: break-all;
   /* Be VERY careful with this, breaks normal words wh_erever */
   word-break: break-all;
@@ -2917,7 +2853,6 @@ address.contact-details a.email {
 }
 /* line 53, sass/layout/_header.scss */
 .site-header .site-branding .site-contact .phone:before {
-  content: "";
   display: inline-block;
   width: 1.5em;
   margin: 0;

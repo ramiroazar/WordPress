@@ -65,7 +65,6 @@ Default
 --------------------------------------------------------------*/
 
 @mixin fontawesome($size: 1em, $margin: 0) {
-	content: "";
 	display: inline-block;
 	font: normal normal normal 14px/1 FontAwesome;
 	font-size: inherit;
@@ -81,7 +80,6 @@ FontAwesome fixed width
 --------------------------------------------------------------*/
 
 @mixin fontawesome-fixed-width($size: 1em, $margin: 0) {
-	content: "";
 	display: inline-block;
 	width: rhythm();
 	margin: $margin;

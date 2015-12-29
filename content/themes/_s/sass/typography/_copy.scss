@@ -37,22 +37,24 @@ address {
 			list-style-type: none;
 		}
 
-		a {
+		.contact-detail {
+
+			&:before {
+				@include fontawesome-fixed-width();
+			}
+
 			&.phone {
 				&:before {
-					@include fontawesome-fixed-width();
 					content:"\f095";
 				}
 			}
 			&.mobile {
 				&:before {
-					@include fontawesome-fixed-width();
 					content:"\f10b";
 				}
 			}
 			&.fax {
 				&:before {
-					@include fontawesome-fixed-width();
 					content:"\f1ac";
 				}
 			}
@@ -62,55 +64,46 @@ address {
 					//font-family: sans-serif;
 					//content:"@";
 					//font-weight: bold;
-					@include fontawesome-fixed-width();
 					content:"\f0e0";
 				}
 			}
 			&.address {
 				&:before {
-					@include fontawesome-fixed-width();
 					content:"\f041";
 				}
 			}
 			&.facebook {
 				&:before {
-					@include fontawesome-fixed-width();
 					content:"\f09a";
 				}
 			}
 			&.googleplus {
 				&:before {
-					@include fontawesome-fixed-width();
 					content:"\f0d5";
 				}
 			}
 			&.twitter {
 				&:before {
-					@include fontawesome-fixed-width();
 					content:"\f099";
 				}
 			}
 			&.instagram {
 				&:before {
-					@include fontawesome-fixed-width();
 					content:"\f16d";
 				}
 			}
 			&.pinterest {
 				&:before {
-					@include fontawesome-fixed-width();
 					content:"\f231";
 				}
 			}
 			&.youtube {
 				&:before {
-					@include fontawesome-fixed-width();
 					content:"\f167";
 				}
 			}
 			&.linkedin {
 				&:before {
-					@include fontawesome-fixed-width();
 					content:"\f0e1";
 				}
 			}

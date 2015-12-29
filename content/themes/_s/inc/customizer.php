@@ -92,6 +92,13 @@ function _s_customize_register( $wp_customize ) {
 		'type'    => 'text',
 	) );
 
+	$wp_customize->add_setting( 'abn', array() );
+	$wp_customize->add_control( 'abn', array(
+		'label'   => 'ABN',
+		'section' => '_s_contact',
+		'type'    => 'text',
+	) );
+
 	// Social Media
 
 	$wp_customize->add_section( '_s_social_media', array(

@@ -348,6 +348,7 @@ require get_template_directory() . '/inc/jetpack.php';
 		$contact['name']			= get_bloginfo('name');
 		$contact['description']= get_bloginfo('description');
 		$contact['address']		= get_theme_mod('address');
+		$contact['address']		= get_theme_mod('abn');
 		$contact['facebook']	= get_theme_mod('facebook');
 		$contact['googleplus']	= get_theme_mod('googleplus');
 		$contact['twitter']		= get_theme_mod('twitter');
@@ -368,99 +369,106 @@ require get_template_directory() . '/inc/jetpack.php';
 				if ($atts['markup'] === true) :
 					// Output value with markup
 					switch ($atts['type']) :
+						case ('name') :
+							$output .= "<a class='" . $atts['type'] . " contact-detail' href='" . esc_url( home_url( '/' ) ) . "' itemprop='url'>";
+								$output .= "<span itemprop='name'>";
+									$output .= $contact[$atts['type']];
+								$output .= "</span>";
+							$output .= "</a>";
+							break;
+						case ('description') :
+							$output .= "<span class='" . $atts['type'] . " contact-detail' itemprop='description'>";
+								$output .= "<span>";
+									$output .= $contact[$atts['type']];
+								$output .= "</span>";
+							$output .= "</span>";
+							break;
 						case ('phone') :
-							$output .= "<a class='" . $atts['type'] . "' href='tel:" . $contact[$atts['type']] . "' itemprop='telephone'>";
+							$output .= "<a class='" . $atts['type'] . " contact-detail' href='tel:" . $contact[$atts['type']] . "' itemprop='telephone'>";
 								$output .= "<span>";
 									$output .= $contact[$atts['type']];
 								$output .= "</span>";
 							$output .= "</a>";
 							break;
 						case ('mobile') :
-							$output .= "<a class='" . $atts['type'] . "' href='tel:" . $contact[$atts['type']] . "' itemprop='telephone'>";
+							$output .= "<a class='" . $atts['type'] . " contact-detail' href='tel:" . $contact[$atts['type']] . "' itemprop='telephone'>";
 								$output .= "<span>";
 									$output .= $contact[$atts['type']];
 								$output .= "</span>";
 							$output .= "</a>";
 							break;
 						case ('fax') :
-							$output .= "<a class='" . $atts['type'] . "' href='tel:" . $contact[$atts['type']] . "' itemprop='telephone'>";
+							$output .= "<a class='" . $atts['type'] . " contact-detail' href='tel:" . $contact[$atts['type']] . "' itemprop='telephone'>";
 								$output .= "<span>";
 									$output .= $contact[$atts['type']];
 								$output .= "</span>";
 							$output .= "</a>";
 							break;
 						case ('email') :
-							$output .= "<a class='" . $atts['type'] . "' href='mailto:" . $contact[$atts['type']] . "' itemprop='email'>";
+							$output .= "<a class='" . $atts['type'] . " contact-detail' href='mailto:" . $contact[$atts['type']] . "' itemprop='email'>";
 								$output .= "<span>";
 									$output .= $contact[$atts['type']];
 								$output .= "</span>";
 							$output .= "</a>";
 							break;
-						case ('name') :
-							$output .= "<a class='" . $atts['type'] . "' href='" . esc_url( home_url( '/' ) ) . "' itemprop='name'>";
+						case ('address') :
+							$output .= "<a class='" . $atts['type'] . " contact-detail' href='http://maps.google.com/?q=" . $contact[$atts['type']] . "' target='_blank' itemprop='address'>"; // itemscope itemtype='http://schema.org/PostalAddress'
 								$output .= "<span>";
 									$output .= $contact[$atts['type']];
 								$output .= "</span>";
 							$output .= "</a>";
 							break;
-						case ('description') :
-							$output .= "<span class='" . $atts['type'] . "' itemprop='description'>";
+						case ('abn') :
+							$output .= "<span class='" . $atts['type'] . " contact-detail' itemprop='taxID'>";
 								$output .= "<span>";
 									$output .= $contact[$atts['type']];
 								$output .= "</span>";
 							$output .= "</span>";
 							break;
-						case ('address') :
-							$output .= "<a class='" . $atts['type'] . "' href='http://maps.google.com/?q=" . $contact[$atts['type']] . "' target='_blank' itemprop='address'>"; // itemscope itemtype='http://schema.org/PostalAddress'
-								$output .= "<span>";
-									$output .= $contact[$atts['type']];
-								$output .= "</span>";
-							$output .= "</a>";
-							break;
 						case ('facebook') :
-							$output .= "<a class='" . $atts['type'] . "' href='" . $contact[$atts['type']] . "' target='_blank' itemprop='sameAs'>";
+							$output .= "<a class='" . $atts['type'] . " contact-detail social-media-network' href='" . $contact[$atts['type']] . "' target='_blank' itemprop='sameAs'>";
 								$output .= "<span>";
 									$output .= "Facebook";
 								$output .= "</span>";
 							$output .= "</a>";
 							break;
 						case ('googleplus') :
-							$output .= "<a class='" . $atts['type'] . "' href='" . $contact[$atts['type']] . "' target='_blank' itemprop='sameAs'>";
+							$output .= "<a class='" . $atts['type'] . " contact-detail social-media-network' href='" . $contact[$atts['type']] . "' target='_blank' itemprop='sameAs'>";
 								$output .= "<span>";
 									$output .= "Google+";
 								$output .= "</span>";
 							$output .= "</a>";
 							break;
 						case ('twitter') :
-							$output .= "<a class='" . $atts['type'] . "' href='" . $contact[$atts['type']] . "' target='_blank' itemprop='sameAs'>";
+							$output .= "<a class='" . $atts['type'] . " contact-detail social-media-network' href='" . $contact[$atts['type']] . "' target='_blank' itemprop='sameAs'>";
 								$output .= "<span>";
 									$output .= "Twitter";
 								$output .= "</span>";
 							$output .= "</a>";
 							break;
 						case ('instagram') :
-							$output .= "<a class='" . $atts['type'] . "' href='" . $contact[$atts['type']] . "' target='_blank' itemprop='sameAs'>";
+							$output .= "<a class='" . $atts['type'] . " contact-detail social-media-network' href='" . $contact[$atts['type']] . "' target='_blank' itemprop='sameAs'>";
 								$output .= "<span>";
 									$output .= "Instagram";
 								$output .= "</span>";
 							$output .= "</a>";
 							break;
 						case ('pinterest') :
-							$output .= "<a class='" . $atts['type'] . "' href='" . $contact[$atts['type']] . "' target='_blank' itemprop='sameAs'>";
+							$output .= "<a class='" . $atts['type'] . " contact-detail social-media-network' href='" . $contact[$atts['type']] . "' target='_blank' itemprop='sameAs'>";
 								$output .= "<span>";
 									$output .= "Pinterest";
 								$output .= "</span>";
 							$output .= "</a>";
 							break;
 						case ('youtube') :
-							$output .= "<a class='" . $atts['type'] . "' href='" . $contact[$atts['type']] . "' target='_blank' itemprop='sameAs'>";
+							$output .= "<a class='" . $atts['type'] . " contact-detail social-media-network' href='" . $contact[$atts['type']] . "' target='_blank' itemprop='sameAs'>";
 								$output .= "<span>";
 									$output .= "YouTube";
 								$output .= "</span>";
 							$output .= "</a>";
 							break;
 						case ('linkedin') :
-							$output .= "<a class='" . $atts['type'] . "' href='" . $contact[$atts['type']] . "' target='_blank' itemprop='sameAs'>";
+							$output .= "<a class='" . $atts['type'] . " contact-detail social-media-network' href='" . $contact[$atts['type']] . "' target='_blank' itemprop='sameAs'>";
 								$output .= "<span>";
 									$output .= "LinkedIn";
 								$output .= "</span>";
