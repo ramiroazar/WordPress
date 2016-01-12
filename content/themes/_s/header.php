@@ -73,7 +73,7 @@
 
 		<div id="site-navigation" class="site-navigation section" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 			<div>
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Primary Menu', '_s' ); ?></button>
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span><?php _e( 'Primary Menu', '_s' ); ?></span></button>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 			</div>
 		</div><!-- .site-navigation -->
