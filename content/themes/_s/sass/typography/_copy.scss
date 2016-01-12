@@ -75,36 +75,43 @@ address {
 			&.facebook {
 				&:before {
 					content:"\f09a";
+					// content:"\f082";
 				}
 			}
 			&.googleplus {
 				&:before {
 					content:"\f0d5";
+					// content:"\f0d4";
 				}
 			}
 			&.twitter {
 				&:before {
 					content:"\f099";
+					// content:"\f081";
 				}
 			}
 			&.instagram {
 				&:before {
 					content:"\f16d";
+					// content:"\f16d";
 				}
 			}
 			&.pinterest {
 				&:before {
 					content:"\f231";
+					// content:"\f0d3";
 				}
 			}
 			&.youtube {
 				&:before {
 					content:"\f167";
+					// content:"\f166";
 				}
 			}
 			&.linkedin {
 				&:before {
 					content:"\f0e1";
+					// content:"\f08c";
 				}
 			}
 		}

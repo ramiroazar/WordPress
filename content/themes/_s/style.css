@@ -1388,22 +1388,21 @@ hr {
 --------------------------------------------------------------*/
 /* line 1, sass/elements/_lists.scss */
 ul, ol {
-  list-style-position: inside;
   margin: 0 0 1.5em 0;
 }
 
-/* line 12, sass/elements/_lists.scss */
+/* line 11, sass/elements/_lists.scss */
 li > ul,
 li > ol {
   margin-bottom: 0;
 }
 
-/* line 17, sass/elements/_lists.scss */
+/* line 16, sass/elements/_lists.scss */
 dt {
   font-weight: bold;
 }
 
-/* line 21, sass/elements/_lists.scss */
+/* line 20, sass/elements/_lists.scss */
 dd {
   margin: 0 0 1.5em 0;
 }
